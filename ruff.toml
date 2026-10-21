@@ -1,0 +1,7 @@
+line-length = 120
+
+[lint]
+select = ["E", "F", "I", "W", "B"]
+
+[lint.isort]
+known-local-folder = ["common"]
