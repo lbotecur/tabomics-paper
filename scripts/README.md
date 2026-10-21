@@ -1,3 +1,18 @@
 # Scripts
 
-One numbered script per experiment; see the table in the main README. Every script takes `--data-root`, or reads `TABOMICS_DATA`.
+One numbered script per experiment; see the table in the main README. Every script takes `--data-root`, or reads the
+environment variable `TABOMICS_DATA`. `common.py` holds what they share.
+
+Scripts 01 and 02 write manifests (`manifests/`) with `--write`, as done for the runs of the paper; without it they
+compare the data with the manifests and print every difference, so that a rerun shows whether it uses the same data,
+tasks and folds.
+
+```bash
+export TABOMICS_DATA=/path/to/data
+python scripts/01_data_manifest.py     # SHA-256 of the data files
+python scripts/02_folds.py             # tasks and folds
+python scripts/03_audit_lgg.py         # audit of LGG/methylation -> results/audit/lgg_methylation.json
+```
+
+Nothing these scripts write contains data or sample identifiers: only file names, counts, row indices, summary
+statistics and hashes.
