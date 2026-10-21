@@ -9,8 +9,9 @@ tasks and folds.
 
 ```bash
 export TABOMICS_DATA=/path/to/data
+python scripts/00_download_data.py     # downloads the data (once)
 python scripts/01_data_manifest.py     # SHA-256 of the data files
-python scripts/02_folds.py             # tasks and folds
+python scripts/02_folds.py             # tasks and folds (--tabpfn-wide <clone>: compare with TabPFN-Wide's)
 python scripts/03_audit_lgg.py         # audit of LGG/methylation -> results/audit/lgg_methylation.json
 ```
 
