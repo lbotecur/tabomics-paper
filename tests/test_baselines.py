@@ -8,7 +8,7 @@ from tabomics_paper import baselines as models
 
 def test_names():
     assert models.parse_name("tabpfn-3.5:n8") == ("tabpfn-3.5", 8)
-    assert models.parse_name("tabpfn-3.5:cover") == ("tabpfn-3.5", "cover")
+    assert models.parse_name("tabpfn-3.5:auto") == ("tabpfn-3.5", "auto")
     assert models.parse_name("tabicl-v2") == ("tabicl-v2", 1)
     with pytest.raises(ValueError, match="Unknown model"):
         models.make_model("svm", [])
