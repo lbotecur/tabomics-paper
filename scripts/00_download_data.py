@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Copyright (C) 2026 Luis Bote-Curiel
-"""00. Downloads the data of the three benchmarks into the data folder, in the layout the loaders of tabomics read.
+"""00. Downloads the data of the three benchmarks into the data folder, in the layout the loaders read.
 
     python scripts/00_download_data.py --data-root /path/to/data
 
@@ -24,7 +24,7 @@ import urllib.request
 import zipfile
 from pathlib import Path
 
-from tabomics.benchmarks import hdlss, mlomics, shamir
+from tabomics_paper.benchmarks import hdlss, mlomics, shamir
 
 from common import add_data_root, data_root
 

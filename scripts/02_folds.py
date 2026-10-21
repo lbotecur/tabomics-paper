@@ -1,14 +1,14 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Copyright (C) 2026 Luis Bote-Curiel
-"""02. Every task as loaded by tabomics, and its folds (manifests/tasks.tsv, manifests/folds/).
+"""02. Every task as loaded for the paper, and its folds (manifests/tasks.tsv, manifests/folds/).
 
     python scripts/02_folds.py --data-root /path/to/data            # compare with the manifests
     python scripts/02_folds.py --data-root /path/to/data --write    # write them (the runs of the paper)
 
-For each task of HDLSS, MLOmics and Shamir: its rows, features, class counts, the SHA-256 of the prepared features
-and labels, and the test rows of each fold (the training rows are the others), saved in
-manifests/folds/<suite>/<task>.json with their SHA-256. Every model of the paper is evaluated on these folds, through
-the loaders of tabomics. Only row indices, counts and hashes are written, never data or sample identifiers.
+For each task of HDLSS, MLOmics and Shamir, as loaded by tabomics_paper.benchmarks: its rows, features, class counts,
+the SHA-256 of the prepared features and labels, and the test rows of each fold (the training rows are the others),
+saved in manifests/folds/<suite>/<task>.json with their SHA-256. Every model of the paper is evaluated on these
+folds, through the same loaders. Only row indices, counts and hashes are written, never data or sample identifiers.
 
 With --tabpfn-wide (a clone of https://github.com/not-a-feature/TabPFN-Wide), the folds of HDLSS and MLOmics are also
 compared with those of TabPFN-Wide: the labels of every test fold, in order, must equal the "ground_truth" of its
@@ -24,7 +24,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from tabomics.benchmarks.runner import SUITES as MODULES
+
+from tabomics_paper.benchmarks.runner import SUITES as MODULES
 
 from common import MANIFESTS, SUITES, add_data_root, data_root, sha256_array, write_or_check
 
@@ -35,7 +36,7 @@ def fold_file(suite: str, task: str):
 
 
 def published_folds(tabpfn_wide: Path, suite: str) -> pd.DataFrame | None:
-    """Per-fold results published by TabPFN-Wide for its 5k model, with a "task" column named as in tabomics."""
+    """Per-fold results published by TabPFN-Wide for its 5k model, with a "task" column named as in this repository."""
     results = tabpfn_wide / "analysis_results" / "wide-v2-5k"
     if suite == "hdlss":
         published = pd.read_csv(results / "hdlss_benchmark_results.csv")
