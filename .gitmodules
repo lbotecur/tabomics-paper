@@ -1,0 +1,3 @@
+[submodule "tabomics"]
+	path = tabomics
+	url = https://github.com/lbotecur/tabomics

@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.ipynb_checkpoints/
+
+# Data never go in git: the benchmark data, and patient data of any kind
+data/
+workdir/
+*.h5
+*.parquet
+
+# Model weights never go in git (TabOmics weights live on Hugging Face)
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# Tokens and local settings
+.env
+*.token
