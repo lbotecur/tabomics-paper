@@ -5,8 +5,8 @@
     python scripts/01_data_manifest.py --data-root /path/to/data            # compare with the manifest
     python scripts/01_data_manifest.py --data-root /path/to/data --write    # write it (the runs of the paper)
 
-The files are the ones the loaders of tabomics read (tabomics/src/tabomics/benchmarks/), with the layout of
-tabomics/docs/benchmarks.md. Only file names, sizes and hashes are written, never their contents.
+The files are the ones the loaders of tabomics read (tabomics.benchmarks), with the layout of docs/benchmarks.md of
+tabomics. Only file names, sizes and hashes are written, never their contents.
 """
 
 import argparse

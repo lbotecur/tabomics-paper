@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tabomics-paper"
+version = "0.1.0"
+description = "Experiments of the TabOmics paper."
+readme = "README.md"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Luis Bote-Curiel" }]
+requires-python = ">=3.10"
+# Installing this repository installs everything the scripts need: tabomics at the tag used in the paper, with its
+# own dependencies, and the packages of the other models, with the version ranges of tabomics/baselines/requirements.
+dependencies = [
+    "tabomics @ git+https://github.com/lbotecur/tabomics@v0.1.0",
+    "xgboost>=2.0",  # XGBoost; also imported by the tree-based prior of TabICL
+    "tabpfnwide",  # TabPFN-Wide; it pins tabpfn, which includes TabPFN v2 and TabPFN-3.5
+    "tabicl>=2.2",  # TabICLv2
+]
+
+[tool.setuptools]
+packages = []  # the scripts are run from scripts/, nothing is imported from this repository
