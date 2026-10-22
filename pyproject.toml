@@ -22,6 +22,8 @@ dependencies = [
     "tabpfnwide==0.4.1",  # TabPFN-Wide and its 5k checkpoint
     "tabpfn==9.0.0",  # TabPFN v2 and TabPFN-3.5 (the version tabpfnwide 0.4.1 pins)
     "tabicl==2.2.0",  # TabICLv2
+    "scipy==1.18.1",  # statistical tests (scripts/06_statistics.py)
+    "matplotlib==3.11.2",  # figures
 ]
 
 [project.optional-dependencies]

@@ -16,6 +16,7 @@ python scripts/02_folds.py             # tasks and folds (--tabpfn-wide <clone>:
 python scripts/03_audit_lgg.py         # audit of LGG/methylation -> results/audit/lgg_methylation.json
 python scripts/04_benchmarks_tabomics.py   # TabOmics v2 and v2.5, 1 and 8 passes -> results/raw/
 python scripts/05_benchmarks_baselines.py  # other foundation models (1 and 8 members), classical models -> results/raw/
+python scripts/06_statistics.py            # means, Wilcoxon-Holm, Friedman-Nemenyi -> results/summaries/, figures/
 ```
 
 Nothing these scripts write contains data or sample identifiers: only file names, counts, row indices, summary
