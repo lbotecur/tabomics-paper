@@ -11,6 +11,9 @@ common.EXCLUDED are not run.
 
 One CSV per model in results/raw/, one row per fold (AUROC, accuracy, seconds), written after every fold: a run
 that stops resumes where it left off. Each run uses one GPU; choose it with CUDA_VISIBLE_DEVICES.
+
+With --timing, the run measures the computational cost instead (runner.time_benchmark): the first fold of each
+task, three times, after a fold that is not timed, into results/raw/timing/; on a machine running nothing else.
 """
 
 import argparse
@@ -18,7 +21,7 @@ import sys
 
 from tabomics_paper.baselines import CLASSIC, FOUNDATION, make_model
 from tabomics_paper.benchmarks.runner import SUITES as MODULES
-from tabomics_paper.benchmarks.runner import run_benchmark
+from tabomics_paper.benchmarks.runner import run_benchmark, time_benchmark
 
 from common import EXCLUDED, RESULTS, SUITES, add_data_root, data_root
 
@@ -32,20 +35,22 @@ def main() -> int:
     parser.add_argument("--suites", nargs="+", default=list(SUITES), choices=SUITES)
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--retry-failed", action="store_true", help="run again the folds that failed")
+    parser.add_argument("--timing", action="store_true", help="time the first fold of each task (results/raw/timing/)")
     args = parser.parse_args()
     root = data_root(args)
     tasks = [task for suite in args.suites for task in MODULES[suite].tasks(root) if task not in EXCLUDED]
     for name in args.models:
         print(f"== {name}", flush=True)
-        run_benchmark(
-            lambda categorical, name=name: make_model(name, categorical, args.device),
-            name,
-            args.suites,
-            root,
-            RESULTS / "raw" / f"{name.replace(':', '_')}.csv",
-            datasets=tasks,
-            retry_failed=args.retry_failed,
-        )
+        csv = f"{name.replace(':', '_')}.csv"
+
+        def make(categorical, name=name):
+            return make_model(name, categorical, args.device)
+
+        if args.timing:
+            time_benchmark(make, name, args.suites, root, RESULTS / "raw" / "timing" / csv, datasets=tasks)
+        else:
+            run_benchmark(make, name, args.suites, root, RESULTS / "raw" / csv, datasets=tasks,
+                          retry_failed=args.retry_failed)  # fmt: skip
     return 0
 
 
