@@ -4,7 +4,8 @@ What each experiment used, so that a result can be traced to exact code, weights
 
 - `models.tsv`: source, revision and SHA-256 of the weights of every model (fetched and checked by
   `tabomics_paper.weights` for the other models, and by tabomics for TabOmics).
-- `software.tsv`: the versions of every package of the environment of the runs, and the GPU, driver and CUDA (to add).
+- `software.txt`: the machine of the runs (Python, PyTorch, CUDA, GPU, driver); the versions of every package are in
+  `../requirements.lock`.
 - `data.tsv`: SHA-256 of the data files (written by `scripts/01_data_manifest.py`).
 - `tasks.tsv`, `folds/`: every task and its folds, with their SHA-256 (written by `scripts/02_folds.py`);
   `folds_tabpfn_wide.tsv`: whether they are those of TabPFN-Wide.

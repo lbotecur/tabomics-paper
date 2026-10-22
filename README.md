@@ -40,6 +40,9 @@ pip install -r requirements.lock
 pip install . --no-deps
 ```
 
+Each run uses one GPU. The runs of the paper used one NVIDIA A100 with 80 GB (`manifests/software.txt` records the
+machine); a GPU with less memory may not fit the widest tables.
+
 The weights of every model are downloaded on first use, each at a fixed revision and checked against its SHA-256
 (`manifests/models.tsv`). Those of TabPFN-3.5 are gated on Hugging Face: accept their licence on the model page and
 log in once with `hf auth login`.
