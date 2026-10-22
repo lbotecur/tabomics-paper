@@ -31,7 +31,7 @@ from common import add_data_root, data_root
 HDLSS_URL = "https://jundongl.github.io/scikit-feature/files/datasets/{name}.mat"
 SHAMIR_URL = "https://acgt.cs.tau.ac.il/multi_omic_benchmark/data/{name}.zip"
 MLOMICS_REPOSITORY = "AIBIC/MLOmics"
-MLOMICS_REVISION = None  # commit of the dataset used in the paper; None takes the latest and prints its commit
+MLOMICS_REVISION = "74b9385f5223e6490bdec8c4a38f9b231b4f2263"  # commit of the dataset used in the paper
 
 
 def download(url: str, path: Path) -> None:
@@ -84,17 +84,16 @@ def download_shamir(root: Path) -> None:
 
 
 def download_mlomics(root: Path) -> None:
-    from huggingface_hub import HfApi, snapshot_download
+    from huggingface_hub import snapshot_download
 
-    revision = MLOMICS_REVISION or HfApi().dataset_info(MLOMICS_REPOSITORY).sha
     snapshot_download(
         repo_id=MLOMICS_REPOSITORY,
         repo_type="dataset",
-        revision=revision,
+        revision=MLOMICS_REVISION,
         allow_patterns=[f"Main_Dataset/Classification_datasets/GS-{cancer}/Original/*" for cancer in mlomics.CANCERS],
         local_dir=root / mlomics.FOLDER,
     )
-    print(f"MLOmics: {MLOMICS_REPOSITORY} at revision {revision}", flush=True)
+    print(f"MLOmics: {MLOMICS_REPOSITORY} at revision {MLOMICS_REVISION}", flush=True)
 
 
 def main() -> int:

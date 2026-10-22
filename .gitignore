@@ -20,3 +20,6 @@ workdir/
 # Tokens and local settings
 .env
 *.token
+
+# Built by pip install .
+build/
