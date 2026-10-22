@@ -18,6 +18,10 @@ RESULTS = REPO / "results"
 DATA_ENV = "TABOMICS_DATA"
 # The suites of the paper (the narrow OpenML-CC18 tables are not part of it).
 SUITES = ("hdlss", "mlomics", "shamir")
+# Tasks left out of every reported result, and not run by the experiments: the four development datasets of HDLSS
+# (the model selection of the paper), and the LGG tasks with methylation, whose methylation profiles do not belong to
+# their patients (scripts/03_audit_lgg.py).
+EXCLUDED = ("madelon", "arcene", "RELATHE", "gisette", "LGG/methylation", "LGG/mrna+cnv+methylation+mirna")
 
 
 def add_data_root(parser: argparse.ArgumentParser) -> None:
