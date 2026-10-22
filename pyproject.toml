@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tabomics-paper"
+dynamic = ["version"]
+description = "Experiments of the TabOmics paper."
+readme = "README.md"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Luis Bote-Curiel" }]
+requires-python = ">=3.12"
+# `pip install .` installs everything the scripts need, at the versions of the paper: tabomics (the models) with its
+# own dependencies, and the packages of the other models compared with it.
+dependencies = [
+    "tabomics @ git+https://github.com/lbotecur/tabomics@v0.3.0",
+    "huggingface_hub>=0.23",  # downloads of the fixed weights of the other models (tabomics_paper.weights)
+    "torch==2.9.0",
+    "scikit-learn==1.9.0",
+    "xgboost==3.2.0",  # XGBoost; also imported by the tree-based prior of TabICL
+    "tabpfnwide==0.4.1",  # TabPFN-Wide and its 5k checkpoint
+    "tabpfn==9.0.0",  # TabPFN v2 and TabPFN-3.5 (the version tabpfnwide 0.4.1 pins)
+    "tabicl==2.2.0",  # TabICLv2
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.15"]
+
+[tool.setuptools.dynamic]
+version = { attr = "tabomics_paper.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

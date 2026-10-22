@@ -2,9 +2,11 @@
 
 What each experiment used, so that a result can be traced to exact code, weights and data.
 
-- `models.tsv`: source, revision and SHA-256 of the weights of every model.
-- `software.tsv`: package versions of each environment (to add).
+- `models.tsv`: source, revision and SHA-256 of the weights of every model (fetched and checked by
+  `tabomics_paper.weights` for the other models, and by tabomics for TabOmics).
+- `software.tsv`: the versions of every package of the environment of the runs, and the GPU, driver and CUDA (to add).
 - `data.tsv`: SHA-256 of the data files (written by `scripts/01_data_manifest.py`).
-- `folds/`: the folds of every task with their SHA-256 (written by `scripts/02_folds.py`).
+- `tasks.tsv`, `folds/`: every task and its folds, with their SHA-256 (written by `scripts/02_folds.py`);
+  `folds_tabpfn_wide.tsv`: whether they are those of TabPFN-Wide.
 
-The code of TabOmics is tabomics 0.1.0, tag `v0.1.0`, commit `3494338`.
+The models come from tabomics 0.3.0 (tag `v0.3.0`); the code of the experiments is this repository.

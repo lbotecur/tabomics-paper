@@ -5,7 +5,7 @@
     python scripts/03_audit_lgg.py --data-root /path/to/data
 
 Every model performs at chance level on LGG/methylation, although methylation is known to separate LGG subtypes.
-The loader of tabomics, as that of TabPFN-Wide, takes the labels by position, in the order of the label file, for
+The loader of MLOmics, as that of TabPFN-Wide, takes the labels by position, in the order of the label file, for
 every omic. This script checks, without changing anything:
 
 1. the sample identifiers of each omic file of every cancer: duplicates, and whether their set and order agree with
@@ -28,8 +28,9 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
-from tabomics.benchmarks import mlomics
-from tabomics.benchmarks.metrics import roc_auc
+
+from tabomics_paper.benchmarks import mlomics
+from tabomics_paper.benchmarks.metrics import roc_auc
 
 from common import RESULTS, add_data_root, data_root
 
@@ -39,7 +40,7 @@ SEED = 0
 
 
 def folder(root: Path, cancer: str) -> Path:
-    """The folder of a cancer, as the loader of tabomics reads it."""
+    """The folder of a cancer, as the loader of MLOmics reads it."""
     return root / mlomics.FOLDER / "Main_Dataset" / "Classification_datasets" / f"GS-{cancer}" / "Original"
 
 

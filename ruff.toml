@@ -1,7 +1,9 @@
 line-length = 120
+target-version = "py312"
 
 [lint]
 select = ["E", "F", "I", "W", "B"]
 
 [lint.isort]
+known-first-party = ["tabomics_paper"]
 known-local-folder = ["common"]
