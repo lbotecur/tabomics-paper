@@ -14,7 +14,9 @@ every omic. This script checks, without changing anything:
 3. the methylation features of every cancer: missing values, constant, all-zero and duplicated features, range;
 4. the predictability of LGG: AUROC of a logistic regression on the folds of the task, for mRNA (reference),
    methylation as loaded, methylation with its samples put in the order of mRNA (when the identifiers allow it),
-   and methylation with permuted labels (chance).
+   and methylation with permuted labels (chance);
+5. whether the methylation of every cancer belongs to the patients of its mRNA: Spearman correlation between the
+   similarities of pairs of patients by methylation and by mRNA, with the patients matched and shuffled.
 
 Only counts and summary statistics are written, never data or sample identifiers.
 """
@@ -26,6 +28,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from scipy.stats import spearmanr
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 
@@ -155,12 +158,39 @@ def predictability(root: Path, tables: dict[str, pd.DataFrame]) -> dict:
     return report
 
 
+def similarity(table: pd.DataFrame) -> np.ndarray:
+    """Correlation between samples on the most variable features of an omic file (features x samples)."""
+    values = np.nan_to_num(table.to_numpy(dtype=float))
+    return np.corrcoef(values[np.argsort(-values.std(axis=1))[:TOP_VARIANCE]].T)
+
+
+def methylation_matches_mrna(tables: dict[str, pd.DataFrame]) -> dict:
+    """Spearman correlation between the similarities of pairs of patients by methylation and by mRNA, with the
+    patients matched by identifier and shuffled; near zero when matched, the methylation is not of those patients."""
+    methylation = set(tables[OMIC].columns)
+    samples = [s for s in tables["mrna"].columns if s in methylation]
+    pairs = np.triu_indices(len(samples), 1)
+    mrna, omic = similarity(tables["mrna"][samples]), similarity(tables[OMIC][samples])
+    shuffled = np.random.default_rng(SEED).permutation(len(samples))
+    return {
+        "samples": len(samples),
+        "matched": float(spearmanr(mrna[pairs], omic[pairs]).statistic),
+        "shuffled": float(spearmanr(mrna[pairs], omic[np.ix_(shuffled, shuffled)][pairs]).statistic),
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     add_data_root(parser)
     args = parser.parse_args()
     root = data_root(args)
-    report = {"samples": {}, "combined_task_follows_mrna_order": {}, "labels": {}, "methylation_features": {}}
+    report = {
+        "samples": {},
+        "combined_task_follows_mrna_order": {},
+        "labels": {},
+        "methylation_features": {},
+        "methylation_matches_mrna": {},
+    }
     lgg_tables = None
     for cancer in mlomics.CANCERS:
         tables = {omic: raw_omic(root, cancer, omic) for omic in mlomics.OMIC_FILES}
@@ -168,6 +198,7 @@ def main() -> int:
         report["combined_task_follows_mrna_order"][cancer] = combined_follows_mrna(tables)
         report["labels"][cancer] = labels_report(root, cancer, tables["mrna"].shape[1])
         report["methylation_features"][cancer] = features_report(tables[OMIC])
+        report["methylation_matches_mrna"][cancer] = methylation_matches_mrna(tables)
         if cancer == CANCER:
             lgg_tables = tables
         print(f"{cancer}: checked", flush=True)
