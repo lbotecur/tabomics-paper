@@ -1,0 +1,68 @@
+nohup: no se tendrá en cuenta la entrada
+hdlss/ALLAML: 72 rows, 7129 features, 2 classes, 30 folds
+hdlss/BASEHOCK: 1993 rows, 4862 features, 2 classes, 30 folds
+hdlss/CLL_SUB_111: 111 rows, 11340 features, 3 classes, 30 folds
+hdlss/GLI_85: 85 rows, 22283 features, 2 classes, 30 folds
+hdlss/PCMAC: 1943 rows, 3289 features, 2 classes, 30 folds
+hdlss/Prostate_GE: 102 rows, 5966 features, 2 classes, 30 folds
+hdlss/RELATHE: 1427 rows, 4322 features, 2 classes, 30 folds
+hdlss/SMK_CAN_187: 187 rows, 19993 features, 2 classes, 30 folds
+hdlss/TOX_171: 171 rows, 5748 features, 4 classes, 30 folds
+hdlss/arcene: 200 rows, 10000 features, 2 classes, 30 folds
+hdlss/colon: 62 rows, 2000 features, 2 classes, 30 folds
+hdlss/gisette: 7000 rows, 5000 features, 2 classes, 9 folds
+hdlss/leukemia: 72 rows, 7070 features, 2 classes, 30 folds
+hdlss/lung: 203 rows, 3312 features, 5 classes, 30 folds
+hdlss/madelon: 2600 rows, 500 features, 2 classes, 9 folds
+mlomics/BRCA/mrna: 671 rows, 18206 features, 5 classes, 5 folds
+mlomics/BRCA/cnv: 671 rows, 19533 features, 5 classes, 5 folds
+mlomics/BRCA/methylation: 671 rows, 19049 features, 5 classes, 5 folds
+mlomics/BRCA/mirna: 671 rows, 345 features, 5 classes, 5 folds
+mlomics/BRCA/mrna+cnv+methylation+mirna: 671 rows, 57133 features, 5 classes, 5 folds
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=5.
+  warnings.warn(
+mlomics/COAD/mrna: 260 rows, 17261 features, 4 classes, 5 folds
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=5.
+  warnings.warn(
+mlomics/COAD/cnv: 260 rows, 19545 features, 4 classes, 5 folds
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=5.
+  warnings.warn(
+mlomics/COAD/methylation: 260 rows, 19023 features, 4 classes, 5 folds
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=5.
+  warnings.warn(
+mlomics/COAD/mirna: 260 rows, 375 features, 4 classes, 5 folds
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=5.
+  warnings.warn(
+mlomics/COAD/mrna+cnv+methylation+mirna: 260 rows, 56204 features, 4 classes, 5 folds
+mlomics/GBM/mrna: 244 rows, 17539 features, 5 classes, 5 folds
+mlomics/GBM/cnv: 244 rows, 19539 features, 5 classes, 5 folds
+mlomics/GBM/methylation: 244 rows, 19031 features, 5 classes, 5 folds
+mlomics/GBM/mirna: 244 rows, 308 features, 5 classes, 5 folds
+mlomics/GBM/mrna+cnv+methylation+mirna: 244 rows, 56417 features, 5 classes, 5 folds
+mlomics/LGG/mrna: 247 rows, 14260 features, 3 classes, 5 folds
+mlomics/LGG/cnv: 247 rows, 19528 features, 3 classes, 5 folds
+mlomics/LGG/methylation: 247 rows, 19017 features, 3 classes, 5 folds
+mlomics/LGG/mirna: 247 rows, 321 features, 3 classes, 5 folds
+mlomics/LGG/mrna+cnv+methylation+mirna: 247 rows, 53126 features, 3 classes, 5 folds
+mlomics/OV/mrna: 284 rows, 14229 features, 4 classes, 5 folds
+mlomics/OV/cnv: 284 rows, 19528 features, 4 classes, 5 folds
+mlomics/OV/methylation: 284 rows, 19031 features, 4 classes, 5 folds
+mlomics/OV/mirna: 284 rows, 244 features, 4 classes, 5 folds
+mlomics/OV/mrna+cnv+methylation+mirna: 284 rows, 53032 features, 4 classes, 5 folds
+shamir/breast/mrna: 440 rows, 20531 features, 5 classes, 5 folds
+shamir/breast/methylation: 440 rows, 5000 features, 5 classes, 5 folds
+shamir/breast/mirna: 440 rows, 1046 features, 5 classes, 5 folds
+shamir/breast/mrna+methylation+mirna: 440 rows, 26577 features, 5 classes, 5 folds
+shamir/gbm/mrna: 274 rows, 12042 features, 4 classes, 5 folds
+shamir/gbm/methylation: 274 rows, 5000 features, 4 classes, 5 folds
+shamir/gbm/mirna: 274 rows, 534 features, 4 classes, 5 folds
+shamir/gbm/mrna+methylation+mirna: 274 rows, 17576 features, 4 classes, 5 folds
+shamir/sarcoma/mrna: 254 rows, 20531 features, 7 classes, 5 folds
+shamir/sarcoma/methylation: 254 rows, 5000 features, 7 classes, 5 folds
+shamir/sarcoma/mirna: 254 rows, 1046 features, 7 classes, 5 folds
+shamir/sarcoma/mrna+methylation+mirna: 254 rows, 26577 features, 7 classes, 5 folds
+written: manifests/tasks.tsv (52 rows)
+same_folds_as_tabpfn_wide
+yes              20
+not published    20
+written: manifests/folds_tabpfn_wide.tsv (40 rows)

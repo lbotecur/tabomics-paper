@@ -1,0 +1,41 @@
+suite	task	same_folds_as_tabpfn_wide
+hdlss	ALLAML	yes
+hdlss	BASEHOCK	yes
+hdlss	CLL_SUB_111	yes
+hdlss	GLI_85	yes
+hdlss	PCMAC	yes
+hdlss	Prostate_GE	yes
+hdlss	RELATHE	yes
+hdlss	SMK_CAN_187	yes
+hdlss	TOX_171	yes
+hdlss	arcene	yes
+hdlss	colon	yes
+hdlss	gisette	yes
+hdlss	leukemia	yes
+hdlss	lung	yes
+hdlss	madelon	yes
+mlomics	BRCA/mrna	yes
+mlomics	BRCA/cnv	not published
+mlomics	BRCA/methylation	not published
+mlomics	BRCA/mirna	not published
+mlomics	BRCA/mrna+cnv+methylation+mirna	not published
+mlomics	COAD/mrna	yes
+mlomics	COAD/cnv	not published
+mlomics	COAD/methylation	not published
+mlomics	COAD/mirna	not published
+mlomics	COAD/mrna+cnv+methylation+mirna	not published
+mlomics	GBM/mrna	yes
+mlomics	GBM/cnv	not published
+mlomics	GBM/methylation	not published
+mlomics	GBM/mirna	not published
+mlomics	GBM/mrna+cnv+methylation+mirna	not published
+mlomics	LGG/mrna	yes
+mlomics	LGG/cnv	not published
+mlomics	LGG/methylation	not published
+mlomics	LGG/mirna	not published
+mlomics	LGG/mrna+cnv+methylation+mirna	not published
+mlomics	OV/mrna	yes
+mlomics	OV/cnv	not published
+mlomics	OV/methylation	not published
+mlomics	OV/mirna	not published
+mlomics	OV/mrna+cnv+methylation+mirna	not published
