@@ -1,0 +1,415 @@
+{
+  "samples": {
+    "BRCA": {
+      "mrna": {
+        "samples": 671,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 671,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      },
+      "cnv": {
+        "samples": 671,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 671,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      },
+      "methylation": {
+        "samples": 671,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 671,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      },
+      "mirna": {
+        "samples": 671,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 671,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      }
+    },
+    "COAD": {
+      "mrna": {
+        "samples": 260,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 260,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      },
+      "cnv": {
+        "samples": 260,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 260,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      },
+      "methylation": {
+        "samples": 260,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 260,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      },
+      "mirna": {
+        "samples": 260,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 260,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      }
+    },
+    "GBM": {
+      "mrna": {
+        "samples": 244,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 244,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      },
+      "cnv": {
+        "samples": 244,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 244,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      },
+      "methylation": {
+        "samples": 244,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 244,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      },
+      "mirna": {
+        "samples": 244,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 244,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      }
+    },
+    "LGG": {
+      "mrna": {
+        "samples": 247,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 247,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      },
+      "cnv": {
+        "samples": 247,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 247,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      },
+      "methylation": {
+        "samples": 247,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 247,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      },
+      "mirna": {
+        "samples": 247,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 247,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      }
+    },
+    "OV": {
+      "mrna": {
+        "samples": 284,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 284,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      },
+      "cnv": {
+        "samples": 284,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 284,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      },
+      "methylation": {
+        "samples": 284,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 284,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      },
+      "mirna": {
+        "samples": 284,
+        "duplicated_identifiers": 0,
+        "duplicated_patients": 0,
+        "identifiers_same_set_as_mrna": true,
+        "patients_same_set_as_mrna": true,
+        "patients_in_common_with_mrna": 284,
+        "same_order_as_mrna": true,
+        "positions_differing_from_mrna": 0,
+        "sorted_by_identifier": true
+      }
+    }
+  },
+  "combined_task_follows_mrna_order": {
+    "BRCA": true,
+    "COAD": true,
+    "GBM": true,
+    "LGG": true,
+    "OV": true
+  },
+  "labels": {
+    "BRCA": {
+      "rows": 671,
+      "columns": 1,
+      "rows_equal_samples_of_mrna": true,
+      "header_looks_like_identifier": false,
+      "values_look_like_identifiers": false,
+      "class_counts": [
+        353,
+        42,
+        132,
+        31,
+        113
+      ],
+      "other_label_files": [
+        "BRCA_label_num.csv"
+      ]
+    },
+    "COAD": {
+      "rows": 260,
+      "columns": 1,
+      "rows_equal_samples_of_mrna": true,
+      "header_looks_like_identifier": false,
+      "values_look_like_identifiers": false,
+      "class_counts": [
+        174,
+        48,
+        34,
+        4
+      ],
+      "other_label_files": [
+        "COAD_label_num.csv"
+      ]
+    },
+    "GBM": {
+      "rows": 244,
+      "columns": 1,
+      "rows_equal_samples_of_mrna": true,
+      "header_looks_like_identifier": false,
+      "values_look_like_identifiers": false,
+      "class_counts": [
+        61,
+        46,
+        74,
+        20,
+        43
+      ],
+      "other_label_files": [
+        "GBM_label_num.csv"
+      ]
+    },
+    "LGG": {
+      "rows": 247,
+      "columns": 1,
+      "rows_equal_samples_of_mrna": true,
+      "header_looks_like_identifier": false,
+      "values_look_like_identifiers": false,
+      "class_counts": [
+        76,
+        125,
+        46
+      ],
+      "other_label_files": [
+        "LGG_label_num.csv"
+      ]
+    },
+    "OV": {
+      "rows": 284,
+      "columns": 1,
+      "rows_equal_samples_of_mrna": true,
+      "header_looks_like_identifier": false,
+      "values_look_like_identifiers": false,
+      "class_counts": [
+        64,
+        79,
+        67,
+        74
+      ],
+      "other_label_files": [
+        "OV_label_num.csv"
+      ]
+    }
+  },
+  "methylation_features": {
+    "BRCA": {
+      "features": 19049,
+      "missing_fraction": 0.0,
+      "all_zero_features": 0,
+      "constant_features": 0,
+      "duplicated_feature_names": 0,
+      "min": -23.0982537440222,
+      "median": -0.122711064877444,
+      "max": 25.4019385649389,
+      "median_correlation_between_samples": -0.006329874624540745
+    },
+    "COAD": {
+      "features": 19023,
+      "missing_fraction": 0.0,
+      "all_zero_features": 0,
+      "constant_features": 0,
+      "duplicated_feature_names": 0,
+      "min": -15.5069405725514,
+      "median": -0.09552090849957255,
+      "max": 15.8583096855084,
+      "median_correlation_between_samples": -0.0075672598429713175
+    },
+    "GBM": {
+      "features": 19031,
+      "missing_fraction": 0.0,
+      "all_zero_features": 0,
+      "constant_features": 0,
+      "duplicated_feature_names": 0,
+      "min": 0.001894697,
+      "median": 0.132129945,
+      "max": 0.997984,
+      "median_correlation_between_samples": 0.30380578236001526
+    },
+    "LGG": {
+      "features": 19017,
+      "missing_fraction": 0.0,
+      "all_zero_features": 0,
+      "constant_features": 0,
+      "duplicated_feature_names": 0,
+      "min": 0.001894697,
+      "median": 0.13330671,
+      "max": 0.997984,
+      "median_correlation_between_samples": 0.3064235168481704
+    },
+    "OV": {
+      "features": 19031,
+      "missing_fraction": 0.0,
+      "all_zero_features": 0,
+      "constant_features": 0,
+      "duplicated_feature_names": 0,
+      "min": 0.001379915,
+      "median": 0.0870467075,
+      "max": 0.9984732,
+      "median_correlation_between_samples": 0.30273957677874996
+    }
+  },
+  "methylation_matches_mrna": {
+    "BRCA": {
+      "samples": 671,
+      "matched": 0.3416192567402028,
+      "shuffled": -0.0010734863785563137
+    },
+    "COAD": {
+      "samples": 260,
+      "matched": 0.3054381546734445,
+      "shuffled": -0.0016344337636575892
+    },
+    "GBM": {
+      "samples": 244,
+      "matched": 0.14867631240211485,
+      "shuffled": 0.0032745933407678017
+    },
+    "LGG": {
+      "samples": 247,
+      "matched": -0.012231358931860602,
+      "shuffled": -0.011747417667660858
+    },
+    "OV": {
+      "samples": 284,
+      "matched": 0.30864124610978466,
+      "shuffled": 0.00392125584734805
+    }
+  },
+  "predictability_auroc": {
+    "mrna": 0.9858555470535098,
+    "methylation_as_loaded": 0.47614521387958975,
+    "methylation_permuted_labels": 0.5234746826535492,
+    "methylation_in_mrna_order": 0.47614521387958975,
+    "methylation_in_mrna_order_samples": 247
+  }
+}
