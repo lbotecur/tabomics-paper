@@ -1,7 +1,7 @@
 # TabOmics paper: experiments
 
 Code, settings, logs and per-fold results of the experiments of the TabOmics paper. The models come from
-[tabomics](https://github.com/lbotecur/tabomics) 0.2.0; the benchmarks, the other models compared with TabOmics and
+[tabomics](https://github.com/lbotecur/tabomics) 0.3.0; the benchmarks, the other models compared with TabOmics and
 the analyses are in this repository.
 
 ## Reproducing the paper
@@ -23,7 +23,7 @@ source tabomics-paper-env/bin/activate
 ```
 
 Then clone this repository and install it, which installs everything the scripts need, at the versions of the paper
-(`pyproject.toml`): tabomics 0.2.0 with its dependencies, PyTorch, scikit-learn, XGBoost, TabPFN-Wide, TabPFN
+(`pyproject.toml`): tabomics 0.3.0 with its dependencies, PyTorch, scikit-learn, XGBoost, TabPFN-Wide, TabPFN
 (TabPFN v2 and TabPFN-3.5) and TabICL.
 
 ```bash
@@ -32,8 +32,17 @@ cd tabomics-paper
 pip install .
 ```
 
-The weights of TabPFN-3.5 are gated on Hugging Face: accept their licence on the model page and log in once with
-`hf auth login`. The other weights are downloaded on first use.
+For exactly the environment of the runs of the paper, every package at the version it had, install the versions
+of `requirements.lock` first and then this repository without letting pip change them:
+
+```bash
+pip install -r requirements.lock
+pip install . --no-deps
+```
+
+The weights of every model are downloaded on first use, each at a fixed revision and checked against its SHA-256
+(`manifests/models.tsv`). Those of TabPFN-3.5 are gated on Hugging Face: accept their licence on the model page and
+log in once with `hf auth login`.
 
 ### 2. Data
 

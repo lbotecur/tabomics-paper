@@ -15,32 +15,29 @@ import sklearn
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.impute import SimpleImputer
-from sklearn.linear_model import LogisticRegression, LogisticRegressionCV
+from sklearn.linear_model import LogisticRegressionCV
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
-# Classical models
-CLASSIC = ("random_forest", "logreg", "logreg_en", "xgboost")
-# Other tabular foundation models. A suffix ":n<k>" sets the ensemble members (default 1, a single forward pass, as
-# TabOmics and as TabPFN-Wide evaluates its own model); ":auto" uses the package's default. TabPFN-3.5 sees at most
-# 768 features per member, so one member only sees a subset of a wide table.
-FOUNDATION = ("tabpfn-wide-5k", "tabpfn-v2-gn2p4bpt", "tabpfn-3.5", "tabicl-v2", "tabicl-v1.1")
-TABICL_CHECKPOINTS = {
-    "tabicl-v2": "tabicl-classifier-v2-20260212.ckpt",
-    "tabicl-v1.1": "tabicl-classifier-v1.1-20250506.ckpt",
-}
+from tabomics_paper.weights import weights_path
+
+# Classical models, without hyperparameter search, as TabPFN-Wide evaluates them.
+CLASSIC = ("random_forest", "logreg_en", "xgboost")
+# The other tabular foundation models of the paper, each with its fixed weights (tabomics_paper.weights). A suffix
+# ":n<k>" sets the ensemble members (no suffix: 1, a single forward pass); everything else keeps the package's
+# defaults. TabPFN-3.5 sees at most 768 features per member, so one member only sees a subset of a wide table.
+FOUNDATION = ("tabpfn-3.5", "tabpfn-v2-gn2p4bpt", "tabpfn-wide-5k", "tabicl-v2")
+SEED = 42
 
 
-def parse_name(name: str) -> tuple[str, int | str]:
-    """'tabpfn-3.5:n8' -> ('tabpfn-3.5', 8); ':auto' is kept as a string; no suffix -> 1."""
+def parse_name(name: str) -> tuple[str, int]:
+    """'tabpfn-3.5:n8' -> ('tabpfn-3.5', 8); no suffix -> 1."""
     base, _, suffix = name.partition(":")
-    if not suffix:
-        return base, 1
-    return base, suffix if suffix == "auto" else int(suffix.removeprefix("n"))
+    return base, int(suffix.removeprefix("n")) if suffix else 1
 
 
 def available() -> list[str]:
-    """Names accepted by make_model (the foundation models also with a suffix)."""
+    """Names accepted by make_model (the foundation models also with ":n<k>")."""
     return [*CLASSIC, *FOUNDATION]
 
 
@@ -56,6 +53,7 @@ def elastic_net_cv() -> LogisticRegressionCV:
         tol=1e-3,
         scoring="neg_log_loss",
         n_jobs=-1,
+        random_state=SEED,
         **penalty,
     )
 
@@ -73,67 +71,56 @@ def make_model(name: str, categorical: list[int], device: str = "cuda"):
     """A fresh estimator for one fold.
 
     Args:
-        name: One of available(), the foundation models optionally with ":n<k>" or ":auto".
-        categorical: Indices of the categorical columns of the task.
+        name: One of available(), the foundation models optionally with ":n<k>".
+        categorical: Indices of the categorical columns of the task ([] in the benchmarks of the paper).
         device: Where the models that can use a GPU run.
     """
     if name == "random_forest":  # as TabPFN-Wide: default settings, missing values imputed with the mode
-        return make_pipeline(SimpleImputer(strategy="most_frequent"), RandomForestClassifier(n_jobs=-1))
-    if name == "logreg":
         return make_pipeline(
-            SimpleImputer(strategy="most_frequent"), StandardScaler(), LogisticRegression(max_iter=5000)
+            SimpleImputer(strategy="most_frequent"), RandomForestClassifier(n_jobs=-1, random_state=SEED)
         )
     if name == "logreg_en":
         return make_pipeline(linear_inputs(categorical), elastic_net_cv())
     if name == "xgboost":  # as TabPFN-Wide: 1000 trees, histogram method, on the GPU if given
         from xgboost import XGBClassifier
 
-        return XGBClassifier(n_estimators=1000, tree_method="hist", device=device, random_state=42, n_jobs=-1)
+        return XGBClassifier(n_estimators=1000, tree_method="hist", device=device, random_state=SEED, n_jobs=-1)
 
     base, n_estimators = parse_name(name)
-    tabpfn_categorical = {"categorical_features_indices": list(categorical)}
-    if base == "tabpfn-wide-5k":  # as TabPFN-Wide evaluates it: one feature per group
-        from tabpfnwide.classifier import TabPFNWideClassifier
-
-        return TabPFNWideClassifier(
-            model_name="wide-v2-5k",
-            device=device,
-            n_estimators=n_estimators,
-            features_per_group=1,
-            **tabpfn_categorical,
-        )
-    if base == "tabpfn-v2-gn2p4bpt":  # TabPFN v2 checkpoint trained with one feature per group
-        from huggingface_hub import hf_hub_download
-        from tabpfn import TabPFNClassifier
-
-        path = hf_hub_download(repo_id="Prior-Labs/TabPFN-v2-clf", filename="tabpfn-v2-classifier-gn2p4bpt.ckpt")
-        return TabPFNClassifier(
-            model_path=path,
-            device=device,
-            n_estimators=n_estimators,
-            random_state=42,
-            ignore_pretraining_limits=True,
-            **tabpfn_categorical,
-        )
-    if base == "tabpfn-3.5":
+    if base not in FOUNDATION:
+        raise ValueError(f"Unknown model {name!r}; available: {', '.join(available())}")
+    model_path = str(weights_path(base))
+    if base in ("tabpfn-3.5", "tabpfn-v2-gn2p4bpt"):
         from tabpfn import TabPFNClassifier
         from tabpfn.constants import ModelVersion
 
+        version = ModelVersion.V3_5 if base == "tabpfn-3.5" else ModelVersion.V2
         return TabPFNClassifier.create_default_for_version(
-            ModelVersion.V3_5,
-            device=device,
+            version,  # the defaults of that version of TabPFN ...
+            model_path=model_path,  # ... with these weights
             n_estimators=n_estimators,
-            random_state=42,
-            ignore_pretraining_limits=True,
-            **tabpfn_categorical,
-        )
-    if base in TABICL_CHECKPOINTS:  # TabICL detects categorical columns itself
-        from tabicl import TabICLClassifier
-
-        return TabICLClassifier(
-            checkpoint_version=TABICL_CHECKPOINTS[base],
+            random_state=SEED,
             device=device,
-            random_state=42,
-            n_estimators=8 if n_estimators == "auto" else n_estimators,
+            ignore_pretraining_limits=True,  # wide tables are beyond its pretraining limits
+            categorical_features_indices=list(categorical),
         )
-    raise ValueError(f"Unknown model {name!r}; available: {', '.join(available())}")
+    if base == "tabpfn-wide-5k":
+        from tabpfnwide.classifier import TabPFNWideClassifier
+
+        return TabPFNWideClassifier(
+            model_path=model_path,
+            features_per_group=1,  # its default: one feature per token, as TabPFN-Wide is trained and evaluated
+            n_estimators=n_estimators,
+            random_state=SEED,
+            device=device,
+            categorical_features_indices=list(categorical),
+        )
+    from tabicl import TabICLClassifier  # tabicl-v2; TabICL takes no list of categorical columns
+
+    return TabICLClassifier(
+        model_path=model_path,
+        allow_auto_download=False,
+        n_estimators=n_estimators,
+        random_state=SEED,
+        device=device,
+    )

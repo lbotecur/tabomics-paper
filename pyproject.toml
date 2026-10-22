@@ -14,7 +14,8 @@ requires-python = ">=3.12"
 # `pip install .` installs everything the scripts need, at the versions of the paper: tabomics (the models) with its
 # own dependencies, and the packages of the other models compared with it.
 dependencies = [
-    "tabomics @ git+https://github.com/lbotecur/tabomics@v0.2.0",
+    "tabomics @ git+https://github.com/lbotecur/tabomics@v0.3.0",
+    "huggingface_hub>=0.23",  # downloads of the fixed weights of the other models (tabomics_paper.weights)
     "torch==2.9.0",
     "scikit-learn==1.9.0",
     "xgboost==3.2.0",  # XGBoost; also imported by the tree-based prior of TabICL
