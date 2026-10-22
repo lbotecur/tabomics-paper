@@ -55,7 +55,9 @@ WEIGHTS = {
         "b6f67c4abb9d7bb1fc1a57514848401bbe6326b7aae7fd050621687eac7be01b",
     ),
 }
-# Where the weights downloaded from a URL are kept (those from Hugging Face stay in its own cache).
+# Where the weights are kept, as <model>/<revision>/<file>. Those from Hugging Face are real files there, not links
+# into its cache: TabPFN resolves links, and a link's target there has no extension, so it would not load a
+# .safetensors file as one.
 CACHE = Path.home() / ".cache" / "tabomics-paper" / "weights"
 
 
@@ -72,15 +74,14 @@ def sha256_of(path: Path) -> str:
 def weights_path(model: str) -> Path:
     """Local path of the weights of a model, downloaded at their fixed revision and checked against their SHA-256."""
     weights = WEIGHTS[model]
-    if weights.source.startswith("https://"):
-        path = CACHE / model / weights.revision / weights.file
-        if not path.exists():
-            path.parent.mkdir(parents=True, exist_ok=True)
-            partial = path.with_name(path.name + ".part")
-            urllib.request.urlretrieve(weights.source, partial)
-            partial.rename(path)
-    else:
-        path = Path(hf_hub_download(repo_id=weights.source, filename=weights.file, revision=weights.revision))
+    path = CACHE / model / weights.revision / weights.file
+    if weights.source.startswith("https://") and not path.exists():
+        path.parent.mkdir(parents=True, exist_ok=True)
+        partial = path.with_name(path.name + ".part")
+        urllib.request.urlretrieve(weights.source, partial)
+        partial.rename(path)
+    elif not path.exists():
+        hf_hub_download(weights.source, weights.file, revision=weights.revision, local_dir=path.parent)
     found = sha256_of(path)
     if found != weights.sha256:
         raise RuntimeError(f"{path}: SHA-256 {found}, but the weights of {model} are {weights.sha256}")
