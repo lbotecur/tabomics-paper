@@ -22,6 +22,25 @@ SUITES = ("hdlss", "mlomics", "shamir")
 # (the model selection of the paper), and the LGG tasks with methylation, whose methylation profiles do not belong to
 # their patients (scripts/03_audit_lgg.py).
 EXCLUDED = ("madelon", "arcene", "RELATHE", "gisette", "LGG/methylation", "LGG/mrna+cnv+methylation+mirna")
+# The name of each model in the paper (tables, figures, manifests/models.tsv); with several passes or ensemble members,
+# " ×<k>" is added: "tabomics-v2.5:n8" -> "TabOmics v2.5 ×8".
+NAMES = {
+    "tabomics-v2.5": "TabOmics v2.5",
+    "tabomics-v2": "TabOmics v2",
+    "tabpfn-3.5": "TabPFN-3.5",
+    "tabpfn-v2-gn2p4bpt": "TabPFN v2",
+    "tabpfn-wide-5k": "TabPFN-Wide",
+    "tabicl-v2": "TabICLv2",
+    "random_forest": "Random forest",
+    "xgboost": "XGBoost",
+    "logreg_en": "Elastic-net LR",
+}
+
+
+def paper_name(model: str) -> str:
+    """The name of a model in the paper, from its name in the code and the CSVs."""
+    base, _, passes = model.partition(":")
+    return NAMES[base] + (f" ×{passes.removeprefix('n')}" if passes else "")
 
 
 def add_data_root(parser: argparse.ArgumentParser) -> None:

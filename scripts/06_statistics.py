@@ -24,7 +24,7 @@ import numpy as np
 import pandas as pd
 from scipy.stats import friedmanchisquare, studentized_range, wilcoxon
 
-from common import EXCLUDED, MANIFESTS, REPO, RESULTS, SUITES
+from common import EXCLUDED, MANIFESTS, REPO, RESULTS, SUITES, paper_name
 
 METRICS = ("roc_auc", "accuracy")
 SETS = ("all", *SUITES)
@@ -123,7 +123,7 @@ def friedman(raw: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
             tests.append({"metric": metric, "set": subset, "models": k, "tasks": n, "statistic": test.statistic,
                           "p": test.pvalue, "critical_difference": cd})  # fmt: skip
             ranks.append(average.rename("average_rank").reset_index().assign(metric=metric, set=subset))
-            diagram(average, cd, REPO / "figures" / f"cd_{metric}_{subset}.pdf")
+            diagram(average.rename(index=paper_name), cd, REPO / "figures" / f"cd_{metric}_{subset}.pdf")
     return pd.DataFrame(tests), pd.concat(ranks, ignore_index=True) if ranks else pd.DataFrame()
 
 
@@ -160,19 +160,25 @@ def diagram(average: pd.Series, cd: float, path) -> None:
     plt.close(fig)
 
 
+def named(table: pd.DataFrame) -> pd.DataFrame:
+    """The table with the models (columns model and other) under their names in the paper."""
+    return table.assign(**{c: table[c].map(paper_name) for c in ("model", "other") if c in table})
+
+
 def main() -> int:
     raw = load()
     output = RESULTS / "summaries"
     output.mkdir(parents=True, exist_ok=True)
     per_task, per_benchmark = means(raw)
-    per_task.to_csv(output / "per_task.csv", index=False)
-    per_benchmark.to_csv(output / "per_benchmark.csv", index=False)
-    pairwise(raw).to_csv(output / "wilcoxon.csv", index=False)
+    named(per_task).to_csv(output / "per_task.csv", index=False)
+    named(per_benchmark).to_csv(output / "per_benchmark.csv", index=False)
+    named(pairwise(raw)).to_csv(output / "wilcoxon.csv", index=False)
     tests, ranks = friedman(raw)
     tests.to_csv(output / "friedman.csv", index=False)
-    ranks.to_csv(output / "ranks.csv", index=False)
-    print(per_benchmark[per_benchmark.set == "all"].sort_values("roc_auc", ascending=False).to_string(index=False))
-    print(f"complete models (Friedman, Nemenyi): {', '.join(complete_models(raw)) or 'none'}")
+    named(ranks).to_csv(output / "ranks.csv", index=False)
+    overall = named(per_benchmark[per_benchmark.set == "all"])
+    print(overall.sort_values("roc_auc", ascending=False).to_string(index=False))
+    print(f"complete models (Friedman, Nemenyi): {', '.join(map(paper_name, complete_models(raw))) or 'none'}")
     print(f"written: {output.relative_to(REPO)}/, figures/cd_*.pdf")
     return 0
 

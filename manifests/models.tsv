@@ -2,6 +2,6 @@ model	source	revision	file	sha256
 TabOmics v2	huggingface.co/lbotecur/tabomics-v2	9fb540dc21e0feb7f6550f87d9896a26ed9d9435	model.safetensors	bedc7594adf4e11ce4292f450cd01fc7be5955fc263f1e9b9eca960720d834e6
 TabOmics v2.5	huggingface.co/lbotecur/tabomics-v2.5	5b80160242101a612158820852125b2fb95940ea	model.safetensors	9d3d93560f029dea44678a387c3fdd03776ea95ebf3e59861829b2f974f4dac7
 TabPFN-3.5	huggingface.co/Prior-Labs/tabpfn_3_5	06bf2ba35c80a92a3b9abb436b99cf49e7a0365e	tabpfn-v3.5-20260909.safetensors	ece4d67eadfea42eb0e610df5189bea60cb7f31073d81e9c7a019b76eacf0be3
-TabPFN v2 (gn2p4bpt)	huggingface.co/Prior-Labs/TabPFN-v2-clf	f851f2a3c941544733b712d8c0f96dfae9b28862	tabpfn-v2-classifier-gn2p4bpt.ckpt	de01a095da7a083b25a74d1f7d85de524e8bd6137936092feab9790673ad9215
+TabPFN v2	huggingface.co/Prior-Labs/TabPFN-v2-clf	f851f2a3c941544733b712d8c0f96dfae9b28862	tabpfn-v2-classifier-gn2p4bpt.ckpt	de01a095da7a083b25a74d1f7d85de524e8bd6137936092feab9790673ad9215
 TabICLv2	huggingface.co/jingang/TabICL	4dcd344ece2c00be9e831fdd35bed57b5ad83e19	tabicl-classifier-v2-20260212.ckpt	bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0
-TabPFN-Wide 5k	github.com/not-a-feature/TabPFN-Wide/releases	v0.4.1	tabpfn-wide-v2-5k.pt	b6f67c4abb9d7bb1fc1a57514848401bbe6326b7aae7fd050621687eac7be01b
+TabPFN-Wide	github.com/not-a-feature/TabPFN-Wide/releases	v0.4.1	tabpfn-wide-v2-5k.pt	b6f67c4abb9d7bb1fc1a57514848401bbe6326b7aae7fd050621687eac7be01b
