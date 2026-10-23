@@ -104,6 +104,73 @@ def run_benchmark(
     return results
 
 
+TIMING_COLUMNS = ["suite", "dataset", "fold", "model", "repeat", "rows", "features", "seconds", "peak_gpu_mb",
+                  "status", "error"]  # fmt: skip
+
+
+def time_benchmark(
+    make_estimator: EstimatorFactory,
+    model_name: str,
+    suites: list[str],
+    data_root: str | Path,
+    output: str | Path,
+    datasets: list[str] | None = None,
+    repeats: int = 3,
+) -> pd.DataFrame:
+    """Times one model on the first fold of every task, `repeats` times, after one fold that is not timed.
+
+    The time is the wall clock from building the estimator, its weights included, to the predicted probabilities of
+    the test rows; peak_gpu_mb is the peak GPU memory allocated by PyTorch in that time (NaN without CUDA). Meant
+    for a machine running nothing else. Rows already in the output are skipped, so a run can be resumed.
+    """
+    output = Path(output)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    results = pd.read_csv(output) if output.exists() else pd.DataFrame(columns=TIMING_COLUMNS)
+    done = set(map(tuple, results[["suite", "dataset", "repeat"]].astype(str).values))
+    torch = _cuda_torch()
+    warm = False
+    for suite in suites:
+        module = SUITES[suite]
+        for task in module.tasks(data_root):
+            if datasets is not None and task not in datasets:
+                continue
+            X, y, categorical = module.load_task(task, data_root)
+            train, test = module.folds(y)[0]
+            if not warm:  # starts CUDA and reads the weights once, outside the timings
+                make_estimator(categorical).fit(X[train], y[train]).predict_proba(X[test])
+                warm = True
+            for repeat in range(repeats):
+                if (suite, task, str(repeat)) in done:
+                    continue
+                release_memory()
+                if torch:
+                    torch.cuda.reset_peak_memory_stats()
+                row = {"suite": suite, "dataset": task, "fold": 0, "model": model_name, "repeat": repeat,
+                       "rows": len(y), "features": X.shape[1]}  # fmt: skip
+                start = time.perf_counter()
+                try:
+                    np.asarray(make_estimator(categorical).fit(X[train], y[train]).predict_proba(X[test]))
+                    row.update(status="ok", error="")
+                except Exception as exc:  # recorded, not raised, as in run_benchmark
+                    row.update(status=failure_status(exc), error=f"{type(exc).__name__}: {exc}"[:500])
+                row["seconds"] = round(time.perf_counter() - start, 3)
+                row["peak_gpu_mb"] = round(torch.cuda.max_memory_allocated() / 2**20) if torch else np.nan
+                results = pd.concat([results, pd.DataFrame([row])[TIMING_COLUMNS]], ignore_index=True)
+                results.to_csv(output, index=False)
+                print(f"{suite}/{task} repeat {repeat}: {row['status']} {row['seconds']}s, "
+                      f"{row['peak_gpu_mb']} MB", flush=True)  # fmt: skip
+    return results
+
+
+def _cuda_torch():
+    """torch, if it is installed and CUDA is available; else None."""
+    try:
+        import torch
+    except ImportError:
+        return None
+    return torch if torch.cuda.is_available() else None
+
+
 def failure_status(exc: BaseException) -> str:
     """Status of a failed fold: "oom" for an out-of-memory error (CUDA or host), "error" for anything else."""
     if isinstance(exc, MemoryError) or type(exc).__name__ == "OutOfMemoryError" or "out of memory" in str(exc):
