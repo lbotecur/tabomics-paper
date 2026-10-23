@@ -1,0 +1,1067 @@
+nohup: no se tendrá en cuenta la entrada
+== tabpfn-3.5:n8
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 0: AUROC 0.9844 (5.99s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 1: AUROC 1.0000 (10.5s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 2: AUROC 1.0000 (5.97s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 3: AUROC 1.0000 (7.19s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 4: AUROC 0.9922 (8.84s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 5: AUROC 1.0000 (6.5s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 6: AUROC 1.0000 (6.38s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 7: AUROC 1.0000 (6.84s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 8: AUROC 0.9852 (6.46s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 9: AUROC 1.0000 (13.76s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 10: AUROC 1.0000 (7.09s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 11: AUROC 0.9778 (8.7s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 12: AUROC 0.9922 (8.97s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 13: AUROC 1.0000 (6.28s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 14: AUROC 1.0000 (6.54s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 15: AUROC 1.0000 (11.07s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 16: AUROC 1.0000 (10.74s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 17: AUROC 1.0000 (5.94s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 18: AUROC 1.0000 (6.99s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 19: AUROC 1.0000 (5.89s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 20: AUROC 1.0000 (6.14s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 21: AUROC 1.0000 (6.79s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 22: AUROC 0.9688 (7.6s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 23: AUROC 1.0000 (8.5s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 24: AUROC 0.9844 (10.91s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 25: AUROC 1.0000 (6.01s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 26: AUROC 1.0000 (6.39s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 27: AUROC 1.0000 (6.73s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 28: AUROC 1.0000 (6.0s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7129 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/ALLAML fold 29: AUROC 1.0000 (6.21s)
+hdlss/BASEHOCK fold 0: AUROC 0.9990 (19.94s)
+hdlss/BASEHOCK fold 1: AUROC 0.9993 (26.21s)
+hdlss/BASEHOCK fold 2: AUROC 0.9967 (22.69s)
+hdlss/BASEHOCK fold 3: AUROC 0.9977 (21.12s)
+hdlss/BASEHOCK fold 4: AUROC 0.9980 (28.24s)
+hdlss/BASEHOCK fold 5: AUROC 0.9998 (23.05s)
+hdlss/BASEHOCK fold 6: AUROC 0.9979 (28.5s)
+hdlss/BASEHOCK fold 7: AUROC 0.9994 (25.2s)
+hdlss/BASEHOCK fold 8: AUROC 0.9990 (28.98s)
+hdlss/BASEHOCK fold 9: AUROC 0.9980 (27.67s)
+hdlss/BASEHOCK fold 10: AUROC 0.9984 (34.09s)
+hdlss/BASEHOCK fold 11: AUROC 0.9996 (29.71s)
+hdlss/BASEHOCK fold 12: AUROC 0.9982 (26.43s)
+hdlss/BASEHOCK fold 13: AUROC 0.9987 (25.15s)
+hdlss/BASEHOCK fold 14: AUROC 0.9997 (29.82s)
+hdlss/BASEHOCK fold 15: AUROC 0.9985 (23.02s)
+hdlss/BASEHOCK fold 16: AUROC 0.9975 (23.81s)
+hdlss/BASEHOCK fold 17: AUROC 0.9984 (30.21s)
+hdlss/BASEHOCK fold 18: AUROC 0.9997 (23.88s)
+hdlss/BASEHOCK fold 19: AUROC 0.9982 (24.0s)
+hdlss/BASEHOCK fold 20: AUROC 0.9984 (24.14s)
+hdlss/BASEHOCK fold 21: AUROC 0.9974 (26.43s)
+hdlss/BASEHOCK fold 22: AUROC 0.9990 (23.71s)
+hdlss/BASEHOCK fold 23: AUROC 0.9980 (26.64s)
+hdlss/BASEHOCK fold 24: AUROC 0.9990 (22.89s)
+hdlss/BASEHOCK fold 25: AUROC 0.9983 (27.55s)
+hdlss/BASEHOCK fold 26: AUROC 0.9990 (33.4s)
+hdlss/BASEHOCK fold 27: AUROC 0.9987 (23.08s)
+hdlss/BASEHOCK fold 28: AUROC 0.9993 (25.74s)
+hdlss/BASEHOCK fold 29: AUROC 0.9973 (24.44s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 0: AUROC 0.9418 (6.89s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 1: AUROC 0.9112 (8.83s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 2: AUROC 0.8784 (8.06s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 3: AUROC 0.8787 (9.75s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 4: AUROC 0.9083 (12.41s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 5: AUROC 0.9245 (7.58s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 6: AUROC 0.8836 (6.41s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 7: AUROC 0.8797 (7.96s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 8: AUROC 0.8510 (8.3s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 9: AUROC 0.9339 (6.07s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 10: AUROC 0.8777 (7.59s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 11: AUROC 0.8843 (10.46s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 12: AUROC 0.8816 (11.85s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 13: AUROC 0.9172 (9.36s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 14: AUROC 0.9059 (7.91s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 15: AUROC 0.9112 (6.98s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 16: AUROC 0.9033 (12.41s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 17: AUROC 0.8853 (7.68s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 18: AUROC 0.8856 (9.23s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 19: AUROC 0.9151 (14.55s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 20: AUROC 0.8824 (7.03s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 21: AUROC 0.8895 (7.27s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 22: AUROC 0.8392 (6.37s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 23: AUROC 0.9108 (13.99s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 24: AUROC 0.8935 (6.13s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 25: AUROC 0.8432 (8.81s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 26: AUROC 0.8961 (7.68s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 27: AUROC 0.8452 (14.58s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 28: AUROC 0.9280 (7.73s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 11340 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 15 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/CLL_SUB_111 fold 29: AUROC 0.8382 (7.88s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 0: AUROC 0.9222 (8.49s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 1: AUROC 0.9750 (17.04s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 2: AUROC 0.9825 (20.73s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 3: AUROC 1.0000 (15.37s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 4: AUROC 0.8812 (16.62s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 5: AUROC 0.9766 (7.53s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 6: AUROC 0.9333 (10.65s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 7: AUROC 0.9500 (9.42s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 8: AUROC 0.9883 (8.56s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 9: AUROC 0.9278 (8.16s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 10: AUROC 1.0000 (13.3s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 11: AUROC 0.9123 (8.26s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 12: AUROC 0.8778 (8.65s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 13: AUROC 1.0000 (8.65s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 14: AUROC 0.9415 (15.04s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 15: AUROC 1.0000 (7.84s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 16: AUROC 0.9938 (8.55s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 17: AUROC 0.9006 (9.17s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 18: AUROC 0.9889 (10.87s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 19: AUROC 0.9812 (14.67s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 20: AUROC 0.8830 (9.05s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 21: AUROC 0.9778 (8.11s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 22: AUROC 0.9625 (8.66s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 23: AUROC 0.9298 (15.23s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 24: AUROC 0.9944 (8.21s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 25: AUROC 0.9688 (8.12s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 26: AUROC 0.8480 (8.16s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 27: AUROC 0.9889 (8.99s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 28: AUROC 0.9563 (14.39s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 22283 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 30 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/GLI_85 fold 29: AUROC 0.9006 (8.17s)
+hdlss/PCMAC fold 0: AUROC 0.9848 (18.75s)
+hdlss/PCMAC fold 1: AUROC 0.9865 (24.87s)
+hdlss/PCMAC fold 2: AUROC 0.9855 (21.63s)
+hdlss/PCMAC fold 3: AUROC 0.9863 (18.75s)
+hdlss/PCMAC fold 4: AUROC 0.9838 (26.97s)
+hdlss/PCMAC fold 5: AUROC 0.9894 (20.58s)
+hdlss/PCMAC fold 6: AUROC 0.9884 (22.73s)
+hdlss/PCMAC fold 7: AUROC 0.9810 (30.04s)
+hdlss/PCMAC fold 8: AUROC 0.9879 (26.3s)
+hdlss/PCMAC fold 9: AUROC 0.9832 (28.05s)
+hdlss/PCMAC fold 10: AUROC 0.9907 (25.1s)
+hdlss/PCMAC fold 11: AUROC 0.9835 (28.34s)
+hdlss/PCMAC fold 12: AUROC 0.9855 (26.89s)
+hdlss/PCMAC fold 13: AUROC 0.9898 (29.0s)
+hdlss/PCMAC fold 14: AUROC 0.9858 (23.54s)
+hdlss/PCMAC fold 15: AUROC 0.9921 (41.8s)
+hdlss/PCMAC fold 16: AUROC 0.9839 (48.74s)
+hdlss/PCMAC fold 17: AUROC 0.9864 (33.03s)
+hdlss/PCMAC fold 18: AUROC 0.9904 (45.69s)
+hdlss/PCMAC fold 19: AUROC 0.9863 (27.8s)
+hdlss/PCMAC fold 20: AUROC 0.9843 (40.62s)
+hdlss/PCMAC fold 21: AUROC 0.9888 (28.49s)
+hdlss/PCMAC fold 22: AUROC 0.9854 (26.38s)
+hdlss/PCMAC fold 23: AUROC 0.9854 (37.42s)
+hdlss/PCMAC fold 24: AUROC 0.9875 (40.27s)
+hdlss/PCMAC fold 25: AUROC 0.9864 (47.7s)
+hdlss/PCMAC fold 26: AUROC 0.9868 (43.62s)
+hdlss/PCMAC fold 27: AUROC 0.9897 (48.79s)
+hdlss/PCMAC fold 28: AUROC 0.9870 (49.29s)
+hdlss/PCMAC fold 29: AUROC 0.9850 (44.71s)
+hdlss/Prostate_GE fold 0: AUROC 0.9931 (22.58s)
+hdlss/Prostate_GE fold 1: AUROC 0.8685 (11.74s)
+hdlss/Prostate_GE fold 2: AUROC 1.0000 (10.34s)
+hdlss/Prostate_GE fold 3: AUROC 0.9965 (11.64s)
+hdlss/Prostate_GE fold 4: AUROC 0.9516 (21.4s)
+hdlss/Prostate_GE fold 5: AUROC 0.9722 (27.95s)
+hdlss/Prostate_GE fold 6: AUROC 0.9792 (26.42s)
+hdlss/Prostate_GE fold 7: AUROC 0.9446 (29.04s)
+hdlss/Prostate_GE fold 8: AUROC 0.9861 (39.17s)
+hdlss/Prostate_GE fold 9: AUROC 0.9931 (38.62s)
+hdlss/Prostate_GE fold 10: AUROC 1.0000 (34.13s)
+hdlss/Prostate_GE fold 11: AUROC 0.9271 (32.55s)
+hdlss/Prostate_GE fold 12: AUROC 0.9723 (41.53s)
+hdlss/Prostate_GE fold 13: AUROC 1.0000 (34.72s)
+hdlss/Prostate_GE fold 14: AUROC 0.9688 (33.97s)
+hdlss/Prostate_GE fold 15: AUROC 1.0000 (36.7s)
+hdlss/Prostate_GE fold 16: AUROC 0.9204 (35.61s)
+hdlss/Prostate_GE fold 17: AUROC 0.9826 (33.14s)
+hdlss/Prostate_GE fold 18: AUROC 1.0000 (25.08s)
+hdlss/Prostate_GE fold 19: AUROC 0.9446 (17.13s)
+hdlss/Prostate_GE fold 20: AUROC 0.9826 (9.38s)
+hdlss/Prostate_GE fold 21: AUROC 0.9619 (21.6s)
+hdlss/Prostate_GE fold 22: AUROC 1.0000 (25.33s)
+hdlss/Prostate_GE fold 23: AUROC 0.9583 (32.27s)
+hdlss/Prostate_GE fold 24: AUROC 0.9170 (30.73s)
+hdlss/Prostate_GE fold 25: AUROC 0.9516 (35.85s)
+hdlss/Prostate_GE fold 26: AUROC 1.0000 (35.45s)
+hdlss/Prostate_GE fold 27: AUROC 1.0000 (36.58s)
+hdlss/Prostate_GE fold 28: AUROC 0.9792 (31.14s)
+hdlss/Prostate_GE fold 29: AUROC 0.9306 (32.94s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 0: AUROC 0.7808 (43.61s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 1: AUROC 0.8063 (39.1s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 2: AUROC 0.7500 (33.77s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 3: AUROC 0.7970 (34.1s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 4: AUROC 0.7573 (31.56s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 5: AUROC 0.7458 (27.8s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 6: AUROC 0.7475 (8.0s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 7: AUROC 0.8010 (12.24s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 8: AUROC 0.7448 (19.9s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 9: AUROC 0.7283 (39.59s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 10: AUROC 0.7510 (36.19s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 11: AUROC 0.8271 (34.07s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 12: AUROC 0.6879 (43.5s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 13: AUROC 0.7323 (40.64s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 14: AUROC 0.7240 (35.69s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 15: AUROC 0.6566 (36.04s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 16: AUROC 0.7406 (38.05s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 17: AUROC 0.9021 (37.48s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 18: AUROC 0.7455 (37.59s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 19: AUROC 0.7573 (23.39s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 20: AUROC 0.7969 (14.53s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 21: AUROC 0.8283 (19.48s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 22: AUROC 0.7802 (10.34s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 23: AUROC 0.6635 (10.98s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 24: AUROC 0.7303 (19.55s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 25: AUROC 0.6479 (40.88s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 26: AUROC 0.8177 (40.36s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 27: AUROC 0.7131 (33.98s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 28: AUROC 0.8542 (39.27s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19993 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/SMK_CAN_187 fold 29: AUROC 0.7208 (37.15s)
+hdlss/TOX_171 fold 0: AUROC 0.9825 (37.79s)
+hdlss/TOX_171 fold 1: AUROC 0.9708 (35.42s)
+hdlss/TOX_171 fold 2: AUROC 0.9992 (29.14s)
+hdlss/TOX_171 fold 3: AUROC 0.9968 (39.53s)
+hdlss/TOX_171 fold 4: AUROC 0.9959 (42.53s)
+hdlss/TOX_171 fold 5: AUROC 0.9976 (35.26s)
+hdlss/TOX_171 fold 6: AUROC 0.9992 (16.05s)
+hdlss/TOX_171 fold 7: AUROC 0.9707 (10.96s)
+hdlss/TOX_171 fold 8: AUROC 0.9924 (11.17s)
+hdlss/TOX_171 fold 9: AUROC 0.9885 (22.4s)
+hdlss/TOX_171 fold 10: AUROC 0.9778 (23.93s)
+hdlss/TOX_171 fold 11: AUROC 0.9980 (38.95s)
+hdlss/TOX_171 fold 12: AUROC 0.9920 (36.7s)
+hdlss/TOX_171 fold 13: AUROC 0.9992 (37.08s)
+hdlss/TOX_171 fold 14: AUROC 0.9889 (41.41s)
+hdlss/TOX_171 fold 15: AUROC 0.9933 (40.45s)
+hdlss/TOX_171 fold 16: AUROC 0.9914 (33.25s)
+hdlss/TOX_171 fold 17: AUROC 0.9869 (34.54s)
+hdlss/TOX_171 fold 18: AUROC 0.9659 (44.23s)
+hdlss/TOX_171 fold 19: AUROC 0.9803 (40.45s)
+hdlss/TOX_171 fold 20: AUROC 0.9971 (38.29s)
+hdlss/TOX_171 fold 21: AUROC 0.9845 (35.85s)
+hdlss/TOX_171 fold 22: AUROC 0.9921 (35.15s)
+hdlss/TOX_171 fold 23: AUROC 0.9980 (27.78s)
+hdlss/TOX_171 fold 24: AUROC 0.9893 (22.93s)
+hdlss/TOX_171 fold 25: AUROC 0.9881 (9.41s)
+hdlss/TOX_171 fold 26: AUROC 0.9683 (14.18s)
+hdlss/TOX_171 fold 27: AUROC 0.9750 (28.28s)
+hdlss/TOX_171 fold 28: AUROC 0.9893 (44.88s)
+hdlss/TOX_171 fold 29: AUROC 0.9951 (42.96s)
+hdlss/colon fold 0: AUROC 0.7500 (30.66s)
+hdlss/colon fold 1: AUROC 0.9184 (32.97s)
+hdlss/colon fold 2: AUROC 0.9341 (38.21s)
+hdlss/colon fold 3: AUROC 0.8269 (34.71s)
+hdlss/colon fold 4: AUROC 0.9388 (37.05s)
+hdlss/colon fold 5: AUROC 1.0000 (32.59s)
+hdlss/colon fold 6: AUROC 0.7308 (37.67s)
+hdlss/colon fold 7: AUROC 0.8571 (34.45s)
+hdlss/colon fold 8: AUROC 0.9121 (36.88s)
+hdlss/colon fold 9: AUROC 0.8750 (34.97s)
+hdlss/colon fold 10: AUROC 0.8469 (28.23s)
+hdlss/colon fold 11: AUROC 0.9560 (27.29s)
+hdlss/colon fold 12: AUROC 0.9904 (20.69s)
+hdlss/colon fold 13: AUROC 0.8367 (16.87s)
+hdlss/colon fold 14: AUROC 0.9451 (13.66s)
+hdlss/colon fold 15: AUROC 0.9038 (29.48s)
+hdlss/colon fold 16: AUROC 0.9286 (34.48s)
+hdlss/colon fold 17: AUROC 0.8791 (35.89s)
+hdlss/colon fold 18: AUROC 0.8942 (27.88s)
+hdlss/colon fold 19: AUROC 0.8776 (38.04s)
+hdlss/colon fold 20: AUROC 0.8901 (37.5s)
+hdlss/colon fold 21: AUROC 0.9423 (38.49s)
+hdlss/colon fold 22: AUROC 0.9286 (41.56s)
+hdlss/colon fold 23: AUROC 0.8132 (45.09s)
+hdlss/colon fold 24: AUROC 0.9615 (30.6s)
+hdlss/colon fold 25: AUROC 0.8265 (27.47s)
+hdlss/colon fold 26: AUROC 0.8681 (26.61s)
+hdlss/colon fold 27: AUROC 0.9231 (20.95s)
+hdlss/colon fold 28: AUROC 0.8061 (26.6s)
+hdlss/colon fold 29: AUROC 0.9121 (21.92s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 0: AUROC 0.9844 (24.14s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 1: AUROC 1.0000 (34.24s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 2: AUROC 1.0000 (35.51s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 3: AUROC 1.0000 (34.53s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 4: AUROC 0.9922 (31.32s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 5: AUROC 1.0000 (37.01s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 6: AUROC 1.0000 (32.43s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 7: AUROC 1.0000 (29.88s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 8: AUROC 0.9926 (25.41s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 9: AUROC 1.0000 (20.38s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 10: AUROC 1.0000 (35.74s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 11: AUROC 0.9926 (37.4s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 12: AUROC 1.0000 (25.81s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 13: AUROC 1.0000 (23.63s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 14: AUROC 1.0000 (21.72s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 15: AUROC 1.0000 (28.66s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 16: AUROC 1.0000 (28.09s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 17: AUROC 1.0000 (30.83s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 18: AUROC 1.0000 (31.18s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 19: AUROC 1.0000 (34.06s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 20: AUROC 1.0000 (30.29s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 21: AUROC 1.0000 (20.71s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 22: AUROC 1.0000 (28.32s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 23: AUROC 1.0000 (28.84s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 24: AUROC 0.9922 (35.07s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 25: AUROC 1.0000 (34.85s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 26: AUROC 1.0000 (29.62s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 27: AUROC 0.9922 (27.9s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 28: AUROC 1.0000 (21.13s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 7070 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 10 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+hdlss/leukemia fold 29: AUROC 0.9926 (24.43s)
+hdlss/lung fold 0: AUROC 0.9974 (23.0s)
+hdlss/lung fold 1: AUROC 0.9973 (34.56s)
+hdlss/lung fold 2: AUROC 0.9972 (35.28s)
+hdlss/lung fold 3: AUROC 0.9952 (26.24s)
+hdlss/lung fold 4: AUROC 0.9985 (25.27s)
+hdlss/lung fold 5: AUROC 0.9935 (25.09s)
+hdlss/lung fold 6: AUROC 0.9956 (24.32s)
+hdlss/lung fold 7: AUROC 0.9934 (35.12s)
+hdlss/lung fold 8: AUROC 1.0000 (39.97s)
+hdlss/lung fold 9: AUROC 0.9987 (37.12s)
+hdlss/lung fold 10: AUROC 0.9941 (40.41s)
+hdlss/lung fold 11: AUROC 0.9998 (30.81s)
+hdlss/lung fold 12: AUROC 0.9987 (28.67s)
+hdlss/lung fold 13: AUROC 0.9964 (33.41s)
+hdlss/lung fold 14: AUROC 0.9943 (33.73s)
+hdlss/lung fold 15: AUROC 1.0000 (33.28s)
+hdlss/lung fold 16: AUROC 0.9957 (29.98s)
+hdlss/lung fold 17: AUROC 0.9966 (32.6s)
+hdlss/lung fold 18: AUROC 1.0000 (32.72s)
+hdlss/lung fold 19: AUROC 0.9944 (36.21s)
+hdlss/lung fold 20: AUROC 0.9967 (32.34s)
+hdlss/lung fold 21: AUROC 0.9989 (33.33s)
+hdlss/lung fold 22: AUROC 0.9985 (37.63s)
+hdlss/lung fold 23: AUROC 0.9952 (30.35s)
+hdlss/lung fold 24: AUROC 0.9978 (37.11s)
+hdlss/lung fold 25: AUROC 1.0000 (40.09s)
+hdlss/lung fold 26: AUROC 0.9939 (39.2s)
+hdlss/lung fold 27: AUROC 0.9942 (23.72s)
+hdlss/lung fold 28: AUROC 0.9991 (28.8s)
+hdlss/lung fold 29: AUROC 1.0000 (31.05s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 18206 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 24 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/mrna fold 0: AUROC 0.9845 (30.76s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 18206 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 24 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/mrna fold 1: AUROC 0.9796 (34.35s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 18206 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 24 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/mrna fold 2: AUROC 0.9804 (43.05s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 18206 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 24 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/mrna fold 3: AUROC 0.9879 (34.95s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 18206 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 24 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/mrna fold 4: AUROC 0.9748 (37.51s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19533 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/cnv fold 0: AUROC 0.9368 (37.26s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19533 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/cnv fold 1: AUROC 0.9121 (38.26s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19533 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/cnv fold 2: AUROC 0.9109 (48.82s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19533 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/cnv fold 3: AUROC 0.9256 (38.59s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19533 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/cnv fold 4: AUROC 0.9100 (27.26s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19049 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/methylation fold 0: AUROC 0.9462 (25.52s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19049 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/methylation fold 1: AUROC 0.9255 (16.28s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19049 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/methylation fold 2: AUROC 0.9459 (43.23s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19049 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/methylation fold 3: AUROC 0.9697 (40.26s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19049 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/methylation fold 4: AUROC 0.9516 (36.06s)
+mlomics/BRCA/mirna fold 0: AUROC 0.9589 (41.15s)
+mlomics/BRCA/mirna fold 1: AUROC 0.9533 (39.47s)
+mlomics/BRCA/mirna fold 2: AUROC 0.9418 (34.85s)
+mlomics/BRCA/mirna fold 3: AUROC 0.9823 (34.09s)
+mlomics/BRCA/mirna fold 4: AUROC 0.9621 (40.94s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 57133 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 75 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/mrna+cnv+methylation+mirna fold 0: AUROC 0.9807 (42.15s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 57133 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 75 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/mrna+cnv+methylation+mirna fold 1: AUROC 0.9770 (22.05s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 57133 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 75 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/mrna+cnv+methylation+mirna fold 2: AUROC 0.9771 (18.59s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 57133 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 75 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/mrna+cnv+methylation+mirna fold 3: AUROC 0.9835 (24.74s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 57133 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 75 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/BRCA/mrna+cnv+methylation+mirna fold 4: AUROC 0.9808 (34.05s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=5.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17261 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+mlomics/COAD/mrna fold 0: AUROC nan (44.51s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17261 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/COAD/mrna fold 1: AUROC 0.9767 (33.54s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17261 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/COAD/mrna fold 2: AUROC 0.9666 (45.58s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17261 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/COAD/mrna fold 3: AUROC 0.9249 (36.58s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17261 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/COAD/mrna fold 4: AUROC 0.9378 (42.51s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=5.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19545 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+mlomics/COAD/cnv fold 0: AUROC nan (37.71s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19545 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/COAD/cnv fold 1: AUROC 0.9518 (32.93s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19545 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/COAD/cnv fold 2: AUROC 0.8799 (42.66s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19545 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/COAD/cnv fold 3: AUROC 0.9174 (29.08s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19545 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/COAD/cnv fold 4: AUROC 0.8642 (8.08s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=5.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19023 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+mlomics/COAD/methylation fold 0: AUROC nan (21.86s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19023 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/COAD/methylation fold 1: AUROC 0.9303 (30.82s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19023 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/COAD/methylation fold 2: AUROC 0.9493 (32.12s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19023 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/COAD/methylation fold 3: AUROC 0.8767 (40.73s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19023 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/COAD/methylation fold 4: AUROC 0.9268 (40.52s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=5.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+mlomics/COAD/mirna fold 0: AUROC nan (29.59s)
+mlomics/COAD/mirna fold 1: AUROC 0.9558 (31.38s)
+mlomics/COAD/mirna fold 2: AUROC 0.9155 (37.61s)
+mlomics/COAD/mirna fold 3: AUROC 0.8602 (39.31s)
+mlomics/COAD/mirna fold 4: AUROC 0.8916 (34.15s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=5.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 56204 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 74 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+mlomics/COAD/mrna+cnv+methylation+mirna fold 0: AUROC nan (28.4s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 56204 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 74 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/COAD/mrna+cnv+methylation+mirna fold 1: AUROC 0.9791 (20.51s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 56204 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 74 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/COAD/mrna+cnv+methylation+mirna fold 2: AUROC 0.9704 (31.71s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 56204 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 74 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/COAD/mrna+cnv+methylation+mirna fold 3: AUROC 0.9169 (35.16s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 56204 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 74 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/COAD/mrna+cnv+methylation+mirna fold 4: AUROC 0.8947 (38.67s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17539 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/mrna fold 0: AUROC 0.9778 (40.14s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17539 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/mrna fold 1: AUROC 0.9510 (32.7s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17539 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/mrna fold 2: AUROC 0.9973 (40.05s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17539 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/mrna fold 3: AUROC 0.9495 (43.51s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17539 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/mrna fold 4: AUROC 0.9899 (37.3s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19539 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/cnv fold 0: AUROC 0.8237 (39.62s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19539 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/cnv fold 1: AUROC 0.7963 (38.18s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19539 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/cnv fold 2: AUROC 0.8219 (31.27s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19539 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/cnv fold 3: AUROC 0.8174 (26.64s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19539 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/cnv fold 4: AUROC 0.8094 (34.7s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19031 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/methylation fold 0: AUROC 0.9585 (26.66s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19031 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/methylation fold 1: AUROC 0.9185 (22.11s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19031 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/methylation fold 2: AUROC 0.9165 (36.4s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19031 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/methylation fold 3: AUROC 0.8563 (40.77s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19031 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/methylation fold 4: AUROC 0.8948 (33.93s)
+mlomics/GBM/mirna fold 0: AUROC 0.9350 (36.27s)
+mlomics/GBM/mirna fold 1: AUROC 0.9255 (35.75s)
+mlomics/GBM/mirna fold 2: AUROC 0.9254 (34.55s)
+mlomics/GBM/mirna fold 3: AUROC 0.8243 (31.56s)
+mlomics/GBM/mirna fold 4: AUROC 0.8985 (32.15s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 56417 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 74 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/mrna+cnv+methylation+mirna fold 0: AUROC 0.9711 (22.0s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 56417 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 74 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/mrna+cnv+methylation+mirna fold 1: AUROC 0.9440 (26.59s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 56417 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 74 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/mrna+cnv+methylation+mirna fold 2: AUROC 0.9882 (27.5s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 56417 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 74 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/mrna+cnv+methylation+mirna fold 3: AUROC 0.9314 (28.12s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 56417 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 74 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/GBM/mrna+cnv+methylation+mirna fold 4: AUROC 0.9752 (37.55s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 14260 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 19 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/LGG/mrna fold 0: AUROC 0.9989 (35.98s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 14260 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 19 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/LGG/mrna fold 1: AUROC 0.9539 (32.27s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 14260 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 19 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/LGG/mrna fold 2: AUROC 0.9980 (33.55s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 14260 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 19 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/LGG/mrna fold 3: AUROC 0.9890 (38.24s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 14260 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 19 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/LGG/mrna fold 4: AUROC 1.0000 (35.13s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19528 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/LGG/cnv fold 0: AUROC 0.9746 (25.09s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19528 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/LGG/cnv fold 1: AUROC 0.9779 (26.72s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19528 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/LGG/cnv fold 2: AUROC 0.9807 (32.43s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19528 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/LGG/cnv fold 3: AUROC 0.9914 (28.7s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19528 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/LGG/cnv fold 4: AUROC 1.0000 (23.34s)
+mlomics/LGG/mirna fold 0: AUROC 0.9933 (22.46s)
+mlomics/LGG/mirna fold 1: AUROC 0.9529 (18.22s)
+mlomics/LGG/mirna fold 2: AUROC 0.9874 (30.21s)
+mlomics/LGG/mirna fold 3: AUROC 0.9883 (32.16s)
+mlomics/LGG/mirna fold 4: AUROC 0.9987 (28.18s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 14229 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 19 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/mrna fold 0: AUROC 0.9963 (33.61s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 14229 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 19 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/mrna fold 1: AUROC 1.0000 (30.93s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 14229 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 19 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/mrna fold 2: AUROC 0.9949 (24.58s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 14229 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 19 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/mrna fold 3: AUROC 0.9823 (21.96s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 14229 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 19 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/mrna fold 4: AUROC 0.9913 (31.6s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19528 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/cnv fold 0: AUROC 0.7603 (31.94s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19528 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/cnv fold 1: AUROC 0.8350 (20.04s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19528 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/cnv fold 2: AUROC 0.8179 (20.72s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19528 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/cnv fold 3: AUROC 0.8098 (23.62s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19528 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 26 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/cnv fold 4: AUROC 0.7969 (25.46s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19031 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/methylation fold 0: AUROC 0.9421 (33.59s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19031 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/methylation fold 1: AUROC 0.9236 (35.43s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19031 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/methylation fold 2: AUROC 0.9536 (31.51s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19031 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/methylation fold 3: AUROC 0.9455 (28.59s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 19031 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 25 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/methylation fold 4: AUROC 0.9173 (25.4s)
+mlomics/OV/mirna fold 0: AUROC 0.9373 (26.27s)
+mlomics/OV/mirna fold 1: AUROC 0.9685 (31.6s)
+mlomics/OV/mirna fold 2: AUROC 0.9025 (33.6s)
+mlomics/OV/mirna fold 3: AUROC 0.9009 (33.84s)
+mlomics/OV/mirna fold 4: AUROC 0.9139 (30.9s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 53032 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 70 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/mrna+cnv+methylation+mirna fold 0: AUROC 0.9907 (32.66s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 53032 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 70 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/mrna+cnv+methylation+mirna fold 1: AUROC 0.9984 (32.24s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 53032 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 70 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/mrna+cnv+methylation+mirna fold 2: AUROC 0.9906 (32.88s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 53032 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 70 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/mrna+cnv+methylation+mirna fold 3: AUROC 0.9754 (34.28s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 53032 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 70 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+mlomics/OV/mrna+cnv+methylation+mirna fold 4: AUROC 0.9758 (30.17s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/breast/mrna fold 0: AUROC 0.9871 (50.65s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/breast/mrna fold 1: AUROC 0.9876 (44.06s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/breast/mrna fold 2: AUROC 0.9914 (48.7s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/breast/mrna fold 3: AUROC 0.9922 (43.99s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/breast/mrna fold 4: AUROC 0.9796 (40.64s)
+shamir/breast/methylation fold 0: AUROC 0.9430 (22.87s)
+shamir/breast/methylation fold 1: AUROC 0.9623 (27.78s)
+shamir/breast/methylation fold 2: AUROC 0.9732 (28.26s)
+shamir/breast/methylation fold 3: AUROC 0.9642 (31.9s)
+shamir/breast/methylation fold 4: AUROC 0.9387 (36.44s)
+shamir/breast/mirna fold 0: AUROC 0.9754 (39.95s)
+shamir/breast/mirna fold 1: AUROC 0.9806 (31.98s)
+shamir/breast/mirna fold 2: AUROC 0.9806 (34.83s)
+shamir/breast/mirna fold 3: AUROC 0.9551 (38.58s)
+shamir/breast/mirna fold 4: AUROC 0.9657 (19.32s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/breast/mrna+methylation+mirna fold 0: AUROC 0.9855 (30.02s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/breast/mrna+methylation+mirna fold 1: AUROC 0.9846 (22.56s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/breast/mrna+methylation+mirna fold 2: AUROC 0.9866 (43.47s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/breast/mrna+methylation+mirna fold 3: AUROC 0.9916 (43.45s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/breast/mrna+methylation+mirna fold 4: AUROC 0.9769 (47.68s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 12042 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 16 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/gbm/mrna fold 0: AUROC 0.9514 (35.9s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 12042 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 16 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/gbm/mrna fold 1: AUROC 0.9560 (35.4s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 12042 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 16 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/gbm/mrna fold 2: AUROC 0.9902 (43.53s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 12042 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 16 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/gbm/mrna fold 3: AUROC 0.9739 (35.08s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 12042 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 16 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/gbm/mrna fold 4: AUROC 0.9782 (31.48s)
+shamir/gbm/methylation fold 0: AUROC 0.8995 (9.14s)
+shamir/gbm/methylation fold 1: AUROC 0.8399 (8.82s)
+shamir/gbm/methylation fold 2: AUROC 0.9127 (10.08s)
+shamir/gbm/methylation fold 3: AUROC 0.9014 (15.09s)
+shamir/gbm/methylation fold 4: AUROC 0.8997 (20.34s)
+shamir/gbm/mirna fold 0: AUROC 0.8995 (29.54s)
+shamir/gbm/mirna fold 1: AUROC 0.8906 (27.71s)
+shamir/gbm/mirna fold 2: AUROC 0.9332 (28.27s)
+shamir/gbm/mirna fold 3: AUROC 0.8570 (34.84s)
+shamir/gbm/mirna fold 4: AUROC 0.9088 (27.64s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17576 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/gbm/mrna+methylation+mirna fold 0: AUROC 0.9688 (38.05s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17576 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/gbm/mrna+methylation+mirna fold 1: AUROC 0.9521 (30.89s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17576 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/gbm/mrna+methylation+mirna fold 2: AUROC 0.9793 (34.85s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17576 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/gbm/mrna+methylation+mirna fold 3: AUROC 0.9796 (33.29s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17576 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/gbm/mrna+methylation+mirna fold 4: AUROC 0.9795 (27.92s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/sarcoma/mrna fold 0: AUROC 0.9458 (13.56s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/sarcoma/mrna fold 1: AUROC 0.9396 (16.62s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/sarcoma/mrna fold 2: AUROC 0.9051 (13.58s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/sarcoma/mrna fold 3: AUROC 0.9330 (15.23s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/sarcoma/mrna fold 4: AUROC 0.9334 (48.59s)
+shamir/sarcoma/methylation fold 0: AUROC 0.9181 (27.06s)
+shamir/sarcoma/methylation fold 1: AUROC 0.9020 (32.8s)
+shamir/sarcoma/methylation fold 2: AUROC 0.8879 (34.59s)
+shamir/sarcoma/methylation fold 3: AUROC 0.9269 (33.5s)
+shamir/sarcoma/methylation fold 4: AUROC 0.9149 (34.91s)
+shamir/sarcoma/mirna fold 0: AUROC 0.9403 (32.04s)
+shamir/sarcoma/mirna fold 1: AUROC 0.9454 (32.49s)
+shamir/sarcoma/mirna fold 2: AUROC 0.9108 (34.06s)
+shamir/sarcoma/mirna fold 3: AUROC 0.9477 (24.95s)
+shamir/sarcoma/mirna fold 4: AUROC 0.9390 (15.05s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/sarcoma/mrna+methylation+mirna fold 0: AUROC 0.9356 (18.81s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/sarcoma/mrna+methylation+mirna fold 1: AUROC 0.9353 (15.57s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/sarcoma/mrna+methylation+mirna fold 2: AUROC 0.8904 (25.68s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/sarcoma/mrna+methylation+mirna fold 3: AUROC 0.9418 (43.8s)
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/sarcoma/mrna+methylation+mirna fold 4: AUROC 0.9200 (45.67s)
