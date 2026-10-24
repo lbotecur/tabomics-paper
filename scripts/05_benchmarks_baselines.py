@@ -7,7 +7,8 @@
 The models are those of tabomics_paper.baselines, with their fixed weights (manifests/models.tsv): the other tabular
 foundation models, with 1 and 8 ensemble members (the suffix ":n<k>"), and the classical models, without
 hyperparameter search. A fresh estimator is built for each fold, on the folds of scripts/02_folds.py; the tasks in
-common.EXCLUDED are not run.
+common.EXCLUDED are not run. With --development, only the development datasets of HDLSS
+(common.DEVELOPMENT) are run, for the appendix, into the same CSVs.
 
 One CSV per model in results/raw/, one row per fold (AUROC, accuracy, seconds), written after every fold: a run
 that stops resumes where it left off. Each run uses one GPU; choose it with CUDA_VISIBLE_DEVICES.
@@ -23,7 +24,7 @@ from tabomics_paper.baselines import CLASSIC, FOUNDATION, make_model
 from tabomics_paper.benchmarks.runner import SUITES as MODULES
 from tabomics_paper.benchmarks.runner import run_benchmark, time_benchmark
 
-from common import EXCLUDED, RESULTS, SUITES, add_data_root, data_root
+from common import RESULTS, SUITES, add_data_root, data_root, tasks_to_run
 
 MODELS = [*CLASSIC, *(f"{model}:n{passes}" for model in FOUNDATION for passes in (1, 8))]
 
@@ -36,9 +37,10 @@ def main() -> int:
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--retry-failed", action="store_true", help="run again the folds that failed")
     parser.add_argument("--timing", action="store_true", help="time the first fold of each task (results/raw/timing/)")
+    parser.add_argument("--development", action="store_true", help="run only the development datasets (appendix)")
     args = parser.parse_args()
     root = data_root(args)
-    tasks = [task for suite in args.suites for task in MODULES[suite].tasks(root) if task not in EXCLUDED]
+    tasks = tasks_to_run(MODULES, args.suites, root, args.development)
     for name in args.models:
         print(f"== {name}", flush=True)
         csv = f"{name.replace(':', '_')}.csv"

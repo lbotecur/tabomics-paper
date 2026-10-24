@@ -18,10 +18,12 @@ RESULTS = REPO / "results"
 DATA_ENV = "TABOMICS_DATA"
 # The suites of the paper (the narrow OpenML-CC18 tables are not part of it).
 SUITES = ("hdlss", "mlomics", "shamir")
-# Tasks left out of every reported result, and not run by the experiments: the four development datasets of HDLSS
-# (the model selection of the paper), and the LGG tasks with methylation, whose methylation profiles do not belong to
-# their patients (scripts/03_audit_lgg.py).
-EXCLUDED = ("madelon", "arcene", "RELATHE", "gisette", "LGG/methylation", "LGG/mrna+cnv+methylation+mirna")
+# The four development datasets of HDLSS (the model selection of the paper): left out of the reported results, run
+# only with --development, for an appendix.
+DEVELOPMENT = ("madelon", "arcene", "RELATHE", "gisette")
+# Tasks left out of every reported result, and not run by the experiments: the development datasets, and the LGG
+# tasks with methylation, whose methylation profiles do not belong to their patients (scripts/03_audit_lgg.py).
+EXCLUDED = (*DEVELOPMENT, "LGG/methylation", "LGG/mrna+cnv+methylation+mirna")
 # The name of each model in the paper (tables, figures, manifests/models.tsv); with several passes or ensemble members,
 # " ×<k>" is added: "tabomics-v2.5:n8" -> "TabOmics v2.5 ×8".
 NAMES = {
@@ -37,10 +39,21 @@ NAMES = {
 }
 
 
+# Ablations of scripts/07_ablations.py, the third part of a name: "tabomics-v2.5:n1:fp32" -> "TabOmics v2.5 ×1, fp32".
+VARIANTS = {"clip100": "clip 100", "fp32": "fp32"}
+
+
 def paper_name(model: str) -> str:
     """The name of a model in the paper, from its name in the code and the CSVs."""
-    base, _, passes = model.partition(":")
-    return NAMES[base] + (f" ×{passes.removeprefix('n')}" if passes else "")
+    base, *rest = model.split(":")
+    name = NAMES[base] + (f" ×{rest[0].removeprefix('n')}" if rest else "")
+    return name + (f", {VARIANTS[rest[1]]}" if len(rest) > 1 else "")
+
+
+def tasks_to_run(modules: dict, suites: list[str], root: Path, development: bool) -> list[str]:
+    """The tasks an experiment runs: those of the paper, or with development only the development datasets."""
+    tasks = [task for suite in suites for task in modules[suite].tasks(root)]
+    return [t for t in tasks if t in DEVELOPMENT] if development else [t for t in tasks if t not in EXCLUDED]
 
 
 def add_data_root(parser: argparse.ArgumentParser) -> None:
