@@ -1,11 +1,12 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Copyright (C) 2026 Luis Bote-Curiel
-"""06. Means per task and per benchmark, Wilcoxon with Holm, Friedman with Nemenyi (results/summaries/, figures/).
+"""06. Means, Wilcoxon with Holm, Friedman with Nemenyi, ablations, cost and the development datasets.
 
     python scripts/06_statistics.py
 
-Reads every CSV of results/raw/ (scripts 04 and 05), without the tasks in common.EXCLUDED, and follows the paper
-(Section 7.3), for each metric (AUROC, accuracy) and each set of tasks (all, and each benchmark):
+Reads the CSVs of results/raw/ (scripts 04 and 05) and follows the paper (Section 7.3), for each metric (AUROC,
+accuracy) and each set of tasks (all, and each benchmark), on the tasks of the paper (without common.EXCLUDED); in
+results/summaries/ and figures/:
 
 - per_task.csv, per_benchmark.csv: each metric averaged over the folds with valid results of a task, then over the
   tasks, every task weighing the same; with the folds that failed.
@@ -13,8 +14,15 @@ Reads every CSV of results/raw/ (scripts 04 and 05), without the tasks in common
   folds valid for both; p-values corrected with Holm over the comparisons of that TabOmics model.
 - friedman.csv, ranks.csv, figures/cd_<metric>_<set>.pdf: Friedman test and Nemenyi critical difference on the models
   with valid results on every fold of every task (the folds of manifests/tasks.tsv).
+- ablations_means.csv, ablations_wilcoxon.csv: the ablations (results/raw/ablations/, script 07) and TabOmics v2.5 x8
+  against the reference, TabOmics v2.5 x1, as above; Holm over the ablations.
+- timing_per_task.csv, timing_per_benchmark.csv, figures/time_vs_features.pdf: the cost runs (--timing): per task,
+  the median seconds of the repeats and the peak GPU memory; per set, the median over the tasks.
+- development.csv, development_advantage.csv: the development datasets (common.DEVELOPMENT, an appendix): means per
+  task, and the median difference of TabOmics v2.5 x1 with each model on them and on the tasks of the paper.
 
 A fold is valid when it succeeded (status "ok") and, for the AUROC, when it is defined (every class in the test rows).
+Each part is skipped when its results are not there yet.
 """
 
 import sys
@@ -24,18 +32,19 @@ import numpy as np
 import pandas as pd
 from scipy.stats import friedmanchisquare, studentized_range, wilcoxon
 
-from common import EXCLUDED, MANIFESTS, REPO, RESULTS, SUITES, paper_name
+from common import DEVELOPMENT, EXCLUDED, MANIFESTS, REPO, RESULTS, SUITES, paper_name
 
 METRICS = ("roc_auc", "accuracy")
 SETS = ("all", *SUITES)
 ALPHA = 0.05
 FOLD = ["suite", "dataset", "fold"]
+REFERENCE = "tabomics-v2.5:n1"  # the reference of the ablations
 
 
-def load() -> pd.DataFrame:
-    """Every fold of every model, without the excluded tasks."""
-    raw = pd.concat([pd.read_csv(p) for p in sorted((RESULTS / "raw").glob("*.csv"))], ignore_index=True)
-    return raw[~raw.dataset.isin(EXCLUDED)]
+def load(folder) -> pd.DataFrame:
+    """Every row of the CSVs of a folder (not of its subfolders); empty if there are none."""
+    paths = sorted(folder.glob("*.csv"))
+    return pd.concat([pd.read_csv(p) for p in paths], ignore_index=True) if paths else pd.DataFrame()
 
 
 def folds(raw: pd.DataFrame, metric: str) -> pd.DataFrame:
@@ -65,7 +74,7 @@ def means(raw: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     per_task = per_task.join(valid.reorder_levels(task)).sort_index()[[*METRICS, "folds_ok", "folds_failed"]]
     rows = []
     for subset in SETS:
-        table = per_task if subset == "all" else per_task.xs(subset, level="suite", drop_level=False)
+        table = per_task if subset == "all" else per_task[per_task.index.get_level_values("suite") == subset]
         summary = table.groupby("model").agg(
             roc_auc=("roc_auc", "mean"), accuracy=("accuracy", "mean"), tasks=("accuracy", "count"),
             folds_failed=("folds_failed", "sum"))  # fmt: skip
@@ -73,28 +82,93 @@ def means(raw: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     return per_task.reset_index(), pd.concat(rows)[["model", "set", "roc_auc", "accuracy", "tasks", "folds_failed"]]
 
 
-def pairwise(raw: pd.DataFrame) -> pd.DataFrame:
-    """Each TabOmics model against each other model: Wilcoxon on the per-task means of the folds valid for both."""
-    models = sorted(raw.model.unique())
+def compare(table: pd.DataFrame, model: str, others: list[str], metric: str, subset: str) -> pd.DataFrame:
+    """A model against each of others: Wilcoxon on the per-task means of the folds valid for both, Holm over others."""
     rows = []
+    for other in others:
+        both = in_set(table[[model, other]].dropna(), subset).groupby(["suite", "dataset"]).mean()
+        difference = both[model] - both[other]
+        p = wilcoxon(both[model], both[other]).pvalue if (difference != 0).any() else 1.0
+        rows.append({"metric": metric, "set": subset, "model": model, "other": other, "tasks": len(both),
+                     "wins": int((difference > 0).sum()), "ties": int((difference == 0).sum()),
+                     "losses": int((difference < 0).sum()), "median_difference": difference.median(),
+                     "p": p})  # fmt: skip
+    group = pd.DataFrame(rows)
+    group["p_holm"] = holm(group.p.to_numpy())
+    group["significant"] = group.p_holm < ALPHA
+    return group
+
+
+def pairwise(raw: pd.DataFrame) -> pd.DataFrame:
+    """Each TabOmics model against each other model."""
+    models = sorted(raw.model.unique())
+    others = [m for m in models if not m.startswith("tabomics-")]
+    groups = []
     for metric in METRICS:
         table = folds(raw, metric)
         for model in (m for m in models if m.startswith("tabomics-")):
-            for subset in SETS:
-                group = []
-                for other in (m for m in models if not m.startswith("tabomics-")):
-                    both = in_set(table[[model, other]].dropna(), subset).groupby(["suite", "dataset"]).mean()
-                    difference = both[model] - both[other]
-                    p = wilcoxon(both[model], both[other]).pvalue if (difference != 0).any() else 1.0
-                    group.append({"metric": metric, "set": subset, "model": model, "other": other,
-                                  "tasks": len(both), "wins": int((difference > 0).sum()),
-                                  "ties": int((difference == 0).sum()), "losses": int((difference < 0).sum()),
-                                  "median_difference": difference.median(), "p": p})  # fmt: skip
-                group = pd.DataFrame(group)
-                group["p_holm"] = holm(group.p.to_numpy())
-                group["significant"] = group.p_holm < ALPHA
-                rows.append(group)
-    return pd.concat(rows, ignore_index=True)
+            groups += [compare(table, model, others, metric, subset) for subset in SETS]
+    return pd.concat(groups, ignore_index=True)
+
+
+def ablations(raw: pd.DataFrame, ablation: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Means of the ablations, and each one against the reference (the ablation as model, the reference as other)."""
+    combined = pd.concat([raw[raw.model.isin([REFERENCE, "tabomics-v2.5:n8"])], ablation], ignore_index=True)
+    variants = sorted(set(combined.model) - {REFERENCE})
+    tests = []
+    for metric in METRICS:
+        table = folds(combined, metric)
+        for subset in SETS:  # the reference against each ablation; signs flipped so that a gain of the ablation is >0
+            group = compare(table, REFERENCE, variants, metric, subset)
+            group = group.rename(columns={"model": "other", "other": "model", "wins": "losses", "losses": "wins"})
+            tests.append(group.assign(median_difference=-group.median_difference))
+    return means(combined)[1], pd.concat(tests, ignore_index=True)
+
+
+def timing(runs: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Per task, the median seconds of the successful repeats and the peak GPU memory; per set, medians over tasks."""
+    ok = runs[runs.status == "ok"]
+    per_task = ok.groupby(["model", "suite", "dataset"]).agg(
+        features=("features", "first"), rows=("rows", "first"), seconds=("seconds", "median"),
+        peak_gpu_mb=("peak_gpu_mb", "max"), repeats=("seconds", "count")).reset_index()  # fmt: skip
+    failed = runs[runs.status != "ok"].groupby("model").size()
+    rows = []
+    for subset in SETS:
+        table = per_task if subset == "all" else per_task[per_task.suite == subset]
+        summary = table.groupby("model").agg(seconds=("seconds", "median"), peak_gpu_mb=("peak_gpu_mb", "median"),
+                                             tasks=("seconds", "count"))  # fmt: skip
+        rows.append(summary.assign(set=subset, failed_repeats=failed.reindex(summary.index, fill_value=0)))
+    return per_task, pd.concat(rows).reset_index()
+
+
+def time_figure(per_task: pd.DataFrame, path) -> None:
+    """Median seconds per fold against the number of features, one line per model (log-log)."""
+    fig, ax = plt.subplots(figsize=(7, 4.5))
+    for model, rows in per_task.sort_values("features").groupby("model"):
+        ax.plot(rows.features, rows.seconds, marker="o", markersize=3, lw=0.8, label=paper_name(model))
+    ax.set(xscale="log", yscale="log", xlabel="Features", ylabel="Seconds per fold (median)")
+    ax.legend(fontsize=6, ncol=2, frameon=False)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(path, bbox_inches="tight")
+    plt.close(fig)
+
+
+def development(everything: pd.DataFrame, raw: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Means of every model on the development datasets, and the median difference of the reference with each model
+    on them and on the tasks of the paper."""
+    per_task = means(everything[everything.dataset.isin(DEVELOPMENT)])[0]
+    reported = means(raw)[0]
+    rows = []
+    for metric in METRICS:
+        for name, table in (("development", per_task), ("reported", reported)):
+            wide = table.pivot_table(index="dataset", columns="model", values=metric)
+            if REFERENCE not in wide:
+                continue
+            difference = wide.sub(wide[REFERENCE], axis=0).mul(-1).drop(columns=REFERENCE)
+            rows.append(difference.median().rename("median_difference").reset_index()
+                        .assign(metric=metric, tasks=name))  # fmt: skip
+    advantage = pd.concat(rows).pivot_table(index=["metric", "model"], columns="tasks", values="median_difference")
+    return per_task, advantage.reset_index().rename(columns={"model": "other"}).assign(model=REFERENCE)
 
 
 def complete_models(raw: pd.DataFrame) -> list[str]:
@@ -166,7 +240,8 @@ def named(table: pd.DataFrame) -> pd.DataFrame:
 
 
 def main() -> int:
-    raw = load()
+    everything = load(RESULTS / "raw")
+    raw = everything[~everything.dataset.isin(EXCLUDED)]
     output = RESULTS / "summaries"
     output.mkdir(parents=True, exist_ok=True)
     per_task, per_benchmark = means(raw)
@@ -179,7 +254,26 @@ def main() -> int:
     overall = named(per_benchmark[per_benchmark.set == "all"])
     print(overall.sort_values("roc_auc", ascending=False).to_string(index=False))
     print(f"complete models (Friedman, Nemenyi): {', '.join(map(paper_name, complete_models(raw))) or 'none'}")
-    print(f"written: {output.relative_to(REPO)}/, figures/cd_*.pdf")
+    ablation = load(RESULTS / "raw" / "ablations")
+    if len(ablation):
+        ablation = ablation[~ablation.dataset.isin(EXCLUDED)]
+        ablation_means, ablation_tests = ablations(raw, ablation)
+        named(ablation_means).to_csv(output / "ablations_means.csv", index=False)
+        named(ablation_tests).to_csv(output / "ablations_wilcoxon.csv", index=False)
+        print("ablations:", ", ".join(sorted(map(paper_name, ablation.model.unique()))))
+    runs = pd.concat([load(RESULTS / "raw" / "timing"), load(RESULTS / "raw" / "ablations" / "timing")])
+    if len(runs):
+        timing_task, timing_benchmark = timing(runs[~runs.dataset.isin(EXCLUDED)])
+        named(timing_task).to_csv(output / "timing_per_task.csv", index=False)
+        named(timing_benchmark).to_csv(output / "timing_per_benchmark.csv", index=False)
+        time_figure(timing_task, REPO / "figures" / "time_vs_features.pdf")
+        print("timed:", ", ".join(sorted(map(paper_name, runs.model.unique()))))
+    if everything.dataset.isin(DEVELOPMENT).any():
+        development_task, advantage = development(everything, raw)
+        named(development_task).to_csv(output / "development.csv", index=False)
+        named(advantage).to_csv(output / "development_advantage.csv", index=False)
+        print("development datasets:", ", ".join(sorted(development_task.dataset.unique())))
+    print(f"written: {output.relative_to(REPO)}/, figures/")
     return 0
 
 
