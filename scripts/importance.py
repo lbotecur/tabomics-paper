@@ -23,6 +23,15 @@ from tabomics_paper.weights import weights_path
 
 METHODS = ("tabomics-v2.5:n1", "tabomics-v2.5:n1:allrows", "tabpfn-wide-5k:n1", "random_forest", "anova")
 
+# The 50 genes of the PAM50 classifier of breast cancer subtypes (Parker et al., 2009), which assign the breast labels
+# of MLOmics and Shamir; and older names of some of them that expression tables still use.
+PAM50 = frozenset(("ACTR3B", "ANLN", "BAG1", "BCL2", "BIRC5", "BLVRA", "CCNB1", "CCNE1", "CDC20", "CDC6", "CDH3",
+                   "CENPF", "CEP55", "CXXC5", "EGFR", "ERBB2", "ESR1", "EXO1", "FGFR4", "FOXA1", "FOXC1", "GPR160",
+                   "GRB7", "KIF2C", "KRT14", "KRT17", "KRT5", "MAPT", "MDM2", "MELK", "MIA", "MKI67", "MLPH", "MMP11",
+                   "MYBL2", "MYC", "NAT1", "NDC80", "NUF2", "ORC6", "PGR", "PHGDH", "PTTG1", "RRM2", "SFRP1",
+                   "SLC39A6", "TMEM45B", "TYMS", "UBE2C", "UBE2T"))  # fmt: skip
+PAM50_ALIASES = {"ORC6L": "ORC6", "KNTC2": "NDC80", "CDCA1": "NUF2"}
+
 
 def fit_and_score(method: str, X_train, y_train, X_query, device: str = "cuda"):
     """Importance scores of a method fitted on (X_train, y_train) with X_query as query rows, and the class
@@ -84,3 +93,9 @@ def recall_at_k(scores, informative) -> float:
     """Share of the k informative columns among the k top-scored ones (the Recall@k of TabPFN-Wide)."""
     informative = set(np.asarray(informative).tolist())
     return len(set(top(scores, len(informative)).tolist()) & informative) / len(informative)
+
+
+def gene_symbol(column: str) -> str:
+    """The gene symbol of a column name: 'ESR1', 'ESR1|2099' -> 'ESR1', older PAM50 names as the current ones."""
+    symbol = str(column).split("|")[0].strip().upper()
+    return PAM50_ALIASES.get(symbol, symbol)
