@@ -17,6 +17,8 @@ python scripts/03_audit_lgg.py         # audit of LGG/methylation -> results/aud
 python scripts/04_benchmarks_tabomics.py   # TabOmics v2 and v2.5, 1 and 8 passes -> results/raw/
 python scripts/05_benchmarks_baselines.py  # other foundation models (1 and 8 members), classical models -> results/raw/
 python scripts/06_statistics.py            # means, Wilcoxon-Holm, Friedman-Nemenyi -> results/summaries/, figures/
+python scripts/07_ablations.py             # TabOmics v2.5: 2 and 4 passes, clip 100, fp32 -> results/raw/ablations/
+python scripts/08_importance_synthetic.py  # feature recovery on synthetic tables -> results/raw/importance/
 ```
 
 Nothing these scripts write contains data or sample identifiers: only file names, counts, row indices, summary
