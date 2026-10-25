@@ -2,7 +2,8 @@
 # Copyright (C) 2026 Luis Bote-Curiel
 """08. Feature recovery on synthetic tables with known informative features (results/raw/importance/synthetic.csv).
 
-    python scripts/08_importance_synthetic.py
+    python scripts/08_importance_synthetic.py                              # the widths of TabPFN-Wide
+    python scripts/08_importance_synthetic.py --features 10000 20000 30000 # wider, as the omics tasks
 
 The synthetic benchmark of TabPFN-Wide (its Appendix F): tables from scikit-learn's make_classification with 200 to
 5,000 features of which 3, 5 or 7 are informative and the others noise (no redundant or repeated features), five
@@ -10,6 +11,9 @@ seeds each. Each table has 250 rows, generated together and split, stratified, i
 TabPFN-Wide, and 200 test rows that we add: the scores of TabOmics are read on the test rows, which also give the
 predictive AUROC of each method. The columns are permuted at random with the seed of the table, the same permutation
 for every method, since every TabOmics model adds a fixed random vector to each column position.
+
+With --features, other widths. The paper adds 10,000, 20,000 and 30,000 features, as wide as its omics tasks
+(12,042 to 57,133 features): beyond the 5,000 of TabPFN-Wide's protocol, they were added after the first run.
 
 For each method of importance.METHODS (but anova), one row per table: the recovery AUROC (an informative column
 scoring above a noise column), Recall@k, and the test AUROC and accuracy. Written after every table, resumable.
@@ -29,7 +33,7 @@ from sklearn.model_selection import train_test_split
 from common import RESULTS
 from importance import METHODS, fit_and_score, recall_at_k, recovery_auroc
 
-FEATURES = (200, 500, 1000, 2000, 5000)
+FEATURES = (200, 500, 1000, 2000, 5000)  # the widths of TabPFN-Wide's protocol
 INFORMATIVE = (3, 5, 7)
 SEEDS = (0, 1, 2, 3, 4)
 TRAIN_ROWS, TEST_ROWS = 50, 200
@@ -50,11 +54,12 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     methods = [m for m in METHODS if m != "anova"]
     parser.add_argument("--methods", nargs="+", default=methods, choices=methods)
+    parser.add_argument("--features", nargs="+", type=int, default=list(FEATURES))
     parser.add_argument("--device", default="cuda")
     args = parser.parse_args()
     results = pd.read_csv(OUTPUT) if OUTPUT.exists() else pd.DataFrame()
     done = set(map(tuple, results[["method", "features", "informative", "seed"]].values)) if len(results) else set()
-    for features in FEATURES:
+    for features in args.features:
         for informative in INFORMATIVE:
             for seed in SEEDS:
                 X_train, X_test, y_train, y_test, columns = table(features, informative, seed)

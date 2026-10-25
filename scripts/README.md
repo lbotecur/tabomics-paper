@@ -19,6 +19,7 @@ python scripts/05_benchmarks_baselines.py  # other foundation models (1 and 8 me
 python scripts/06_statistics.py            # means, Wilcoxon-Holm, Friedman-Nemenyi -> results/summaries/, figures/
 python scripts/07_ablations.py             # TabOmics v2.5: 2 and 4 passes, clip 100, fp32 -> results/raw/ablations/
 python scripts/08_importance_synthetic.py  # feature recovery on synthetic tables -> results/raw/importance/
+python scripts/08_importance_synthetic.py --features 10000 20000 30000  # the same, as wide as the omics tasks
 ```
 
 Nothing these scripts write contains data or sample identifiers: only file names, counts, row indices, summary
