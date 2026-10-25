@@ -1,0 +1,215 @@
+nohup: no se tendrá en cuenta la entrada
+tabomics-v2.5:n1 | 10000 features, 3 informative, seed 0 | recovery AUROC 0.862 | test AUROC 0.554
+tabomics-v2.5:n1:allrows | 10000 features, 3 informative, seed 0 | recovery AUROC 0.859 | test AUROC 0.554
+tabpfn-wide-5k:n1 | 10000 features, 3 informative, seed 0 | recovery AUROC 0.867 | test AUROC 0.509
+random_forest | 10000 features, 3 informative, seed 0 | recovery AUROC 0.651 | test AUROC 0.519
+tabomics-v2.5:n1 | 10000 features, 3 informative, seed 1 | recovery AUROC 0.725 | test AUROC 0.722
+tabomics-v2.5:n1:allrows | 10000 features, 3 informative, seed 1 | recovery AUROC 0.738 | test AUROC 0.722
+tabpfn-wide-5k:n1 | 10000 features, 3 informative, seed 1 | recovery AUROC 0.771 | test AUROC 0.545
+random_forest | 10000 features, 3 informative, seed 1 | recovery AUROC 0.652 | test AUROC 0.593
+tabomics-v2.5:n1 | 10000 features, 3 informative, seed 2 | recovery AUROC 0.948 | test AUROC 0.823
+tabomics-v2.5:n1:allrows | 10000 features, 3 informative, seed 2 | recovery AUROC 0.949 | test AUROC 0.823
+tabpfn-wide-5k:n1 | 10000 features, 3 informative, seed 2 | recovery AUROC 0.854 | test AUROC 0.681
+random_forest | 10000 features, 3 informative, seed 2 | recovery AUROC 0.650 | test AUROC 0.506
+tabomics-v2.5:n1 | 10000 features, 3 informative, seed 3 | recovery AUROC 0.886 | test AUROC 0.527
+tabomics-v2.5:n1:allrows | 10000 features, 3 informative, seed 3 | recovery AUROC 0.885 | test AUROC 0.527
+tabpfn-wide-5k:n1 | 10000 features, 3 informative, seed 3 | recovery AUROC 0.889 | test AUROC 0.524
+random_forest | 10000 features, 3 informative, seed 3 | recovery AUROC 0.478 | test AUROC 0.601
+tabomics-v2.5:n1 | 10000 features, 3 informative, seed 4 | recovery AUROC 0.809 | test AUROC 0.532
+tabomics-v2.5:n1:allrows | 10000 features, 3 informative, seed 4 | recovery AUROC 0.804 | test AUROC 0.532
+tabpfn-wide-5k:n1 | 10000 features, 3 informative, seed 4 | recovery AUROC 0.768 | test AUROC 0.541
+random_forest | 10000 features, 3 informative, seed 4 | recovery AUROC 0.478 | test AUROC 0.472
+tabomics-v2.5:n1 | 10000 features, 5 informative, seed 0 | recovery AUROC 0.948 | test AUROC 0.593
+tabomics-v2.5:n1:allrows | 10000 features, 5 informative, seed 0 | recovery AUROC 0.948 | test AUROC 0.593
+tabpfn-wide-5k:n1 | 10000 features, 5 informative, seed 0 | recovery AUROC 0.971 | test AUROC 0.560
+random_forest | 10000 features, 5 informative, seed 0 | recovery AUROC 0.684 | test AUROC 0.568
+tabomics-v2.5:n1 | 10000 features, 5 informative, seed 1 | recovery AUROC 0.937 | test AUROC 0.491
+tabomics-v2.5:n1:allrows | 10000 features, 5 informative, seed 1 | recovery AUROC 0.937 | test AUROC 0.491
+tabpfn-wide-5k:n1 | 10000 features, 5 informative, seed 1 | recovery AUROC 0.913 | test AUROC 0.486
+random_forest | 10000 features, 5 informative, seed 1 | recovery AUROC 0.478 | test AUROC 0.509
+tabomics-v2.5:n1 | 10000 features, 5 informative, seed 2 | recovery AUROC 0.933 | test AUROC 0.849
+tabomics-v2.5:n1:allrows | 10000 features, 5 informative, seed 2 | recovery AUROC 0.933 | test AUROC 0.849
+tabpfn-wide-5k:n1 | 10000 features, 5 informative, seed 2 | recovery AUROC 0.910 | test AUROC 0.870
+random_forest | 10000 features, 5 informative, seed 2 | recovery AUROC 0.683 | test AUROC 0.492
+tabomics-v2.5:n1 | 10000 features, 5 informative, seed 3 | recovery AUROC 0.629 | test AUROC 0.524
+tabomics-v2.5:n1:allrows | 10000 features, 5 informative, seed 3 | recovery AUROC 0.632 | test AUROC 0.524
+tabpfn-wide-5k:n1 | 10000 features, 5 informative, seed 3 | recovery AUROC 0.624 | test AUROC 0.478
+random_forest | 10000 features, 5 informative, seed 3 | recovery AUROC 0.583 | test AUROC 0.536
+tabomics-v2.5:n1 | 10000 features, 5 informative, seed 4 | recovery AUROC 0.592 | test AUROC 0.894
+tabomics-v2.5:n1:allrows | 10000 features, 5 informative, seed 4 | recovery AUROC 0.580 | test AUROC 0.894
+tabpfn-wide-5k:n1 | 10000 features, 5 informative, seed 4 | recovery AUROC 0.568 | test AUROC 0.916
+random_forest | 10000 features, 5 informative, seed 4 | recovery AUROC 0.478 | test AUROC 0.521
+tabomics-v2.5:n1 | 10000 features, 7 informative, seed 0 | recovery AUROC 0.726 | test AUROC 0.503
+tabomics-v2.5:n1:allrows | 10000 features, 7 informative, seed 0 | recovery AUROC 0.728 | test AUROC 0.503
+tabpfn-wide-5k:n1 | 10000 features, 7 informative, seed 0 | recovery AUROC 0.669 | test AUROC 0.550
+random_forest | 10000 features, 7 informative, seed 0 | recovery AUROC 0.478 | test AUROC 0.588
+tabomics-v2.5:n1 | 10000 features, 7 informative, seed 1 | recovery AUROC 0.932 | test AUROC 0.589
+tabomics-v2.5:n1:allrows | 10000 features, 7 informative, seed 1 | recovery AUROC 0.932 | test AUROC 0.589
+tabpfn-wide-5k:n1 | 10000 features, 7 informative, seed 1 | recovery AUROC 0.877 | test AUROC 0.489
+random_forest | 10000 features, 7 informative, seed 1 | recovery AUROC 0.552 | test AUROC 0.546
+tabomics-v2.5:n1 | 10000 features, 7 informative, seed 2 | recovery AUROC 0.827 | test AUROC 0.599
+tabomics-v2.5:n1:allrows | 10000 features, 7 informative, seed 2 | recovery AUROC 0.829 | test AUROC 0.599
+tabpfn-wide-5k:n1 | 10000 features, 7 informative, seed 2 | recovery AUROC 0.884 | test AUROC 0.597
+random_forest | 10000 features, 7 informative, seed 2 | recovery AUROC 0.622 | test AUROC 0.520
+tabomics-v2.5:n1 | 10000 features, 7 informative, seed 3 | recovery AUROC 0.826 | test AUROC 0.785
+tabomics-v2.5:n1:allrows | 10000 features, 7 informative, seed 3 | recovery AUROC 0.828 | test AUROC 0.785
+tabpfn-wide-5k:n1 | 10000 features, 7 informative, seed 3 | recovery AUROC 0.806 | test AUROC 0.813
+random_forest | 10000 features, 7 informative, seed 3 | recovery AUROC 0.552 | test AUROC 0.547
+tabomics-v2.5:n1 | 10000 features, 7 informative, seed 4 | recovery AUROC 0.817 | test AUROC 0.574
+tabomics-v2.5:n1:allrows | 10000 features, 7 informative, seed 4 | recovery AUROC 0.828 | test AUROC 0.574
+tabpfn-wide-5k:n1 | 10000 features, 7 informative, seed 4 | recovery AUROC 0.878 | test AUROC 0.586
+random_forest | 10000 features, 7 informative, seed 4 | recovery AUROC 0.551 | test AUROC 0.585
+tabomics-v2.5:n1 | 20000 features, 3 informative, seed 0 | recovery AUROC 0.895 | test AUROC 0.559
+tabomics-v2.5:n1:allrows | 20000 features, 3 informative, seed 0 | recovery AUROC 0.894 | test AUROC 0.559
+tabpfn-wide-5k:n1 | 20000 features, 3 informative, seed 0 | recovery AUROC 0.912 | test AUROC 0.535
+random_forest | 20000 features, 3 informative, seed 0 | recovery AUROC 0.829 | test AUROC 0.517
+tabomics-v2.5:n1 | 20000 features, 3 informative, seed 1 | recovery AUROC 0.925 | test AUROC 0.672
+tabomics-v2.5:n1:allrows | 20000 features, 3 informative, seed 1 | recovery AUROC 0.927 | test AUROC 0.672
+tabpfn-wide-5k:n1 | 20000 features, 3 informative, seed 1 | recovery AUROC 0.969 | test AUROC 0.431
+random_forest | 20000 features, 3 informative, seed 1 | recovery AUROC 0.660 | test AUROC 0.609
+tabomics-v2.5:n1 | 20000 features, 3 informative, seed 2 | recovery AUROC 0.853 | test AUROC 0.906
+tabomics-v2.5:n1:allrows | 20000 features, 3 informative, seed 2 | recovery AUROC 0.846 | test AUROC 0.906
+tabpfn-wide-5k:n1 | 20000 features, 3 informative, seed 2 | recovery AUROC 0.905 | test AUROC 0.866
+random_forest | 20000 features, 3 informative, seed 2 | recovery AUROC 0.660 | test AUROC 0.625
+tabomics-v2.5:n1 | 20000 features, 3 informative, seed 3 | recovery AUROC 0.900 | test AUROC 0.555
+tabomics-v2.5:n1:allrows | 20000 features, 3 informative, seed 3 | recovery AUROC 0.899 | test AUROC 0.555
+tabpfn-wide-5k:n1 | 20000 features, 3 informative, seed 3 | recovery AUROC 0.882 | test AUROC 0.548
+random_forest | 20000 features, 3 informative, seed 3 | recovery AUROC 0.490 | test AUROC 0.568
+tabomics-v2.5:n1 | 20000 features, 3 informative, seed 4 | recovery AUROC 0.707 | test AUROC 0.481
+tabomics-v2.5:n1:allrows | 20000 features, 3 informative, seed 4 | recovery AUROC 0.696 | test AUROC 0.481
+tabpfn-wide-5k:n1 | 20000 features, 3 informative, seed 4 | recovery AUROC 0.774 | test AUROC 0.528
+random_forest | 20000 features, 3 informative, seed 4 | recovery AUROC 0.489 | test AUROC 0.529
+tabomics-v2.5:n1 | 20000 features, 5 informative, seed 0 | recovery AUROC 0.924 | test AUROC 0.626
+tabomics-v2.5:n1:allrows | 20000 features, 5 informative, seed 0 | recovery AUROC 0.925 | test AUROC 0.626
+tabpfn-wide-5k:n1 | 20000 features, 5 informative, seed 0 | recovery AUROC 0.927 | test AUROC 0.553
+random_forest | 20000 features, 5 informative, seed 0 | recovery AUROC 0.591 | test AUROC 0.477
+tabomics-v2.5:n1 | 20000 features, 5 informative, seed 1 | recovery AUROC 0.863 | test AUROC 0.516
+tabomics-v2.5:n1:allrows | 20000 features, 5 informative, seed 1 | recovery AUROC 0.861 | test AUROC 0.516
+tabpfn-wide-5k:n1 | 20000 features, 5 informative, seed 1 | recovery AUROC 0.889 | test AUROC 0.482
+random_forest | 20000 features, 5 informative, seed 1 | recovery AUROC 0.589 | test AUROC 0.521
+tabomics-v2.5:n1 | 20000 features, 5 informative, seed 2 | recovery AUROC 0.903 | test AUROC 0.864
+tabomics-v2.5:n1:allrows | 20000 features, 5 informative, seed 2 | recovery AUROC 0.904 | test AUROC 0.864
+tabpfn-wide-5k:n1 | 20000 features, 5 informative, seed 2 | recovery AUROC 0.901 | test AUROC 0.461
+random_forest | 20000 features, 5 informative, seed 2 | recovery AUROC 0.694 | test AUROC 0.591
+tabomics-v2.5:n1 | 20000 features, 5 informative, seed 3 | recovery AUROC 0.659 | test AUROC 0.560
+tabomics-v2.5:n1:allrows | 20000 features, 5 informative, seed 3 | recovery AUROC 0.653 | test AUROC 0.560
+tabpfn-wide-5k:n1 | 20000 features, 5 informative, seed 3 | recovery AUROC 0.694 | test AUROC 0.565
+random_forest | 20000 features, 5 informative, seed 3 | recovery AUROC 0.591 | test AUROC 0.472
+tabomics-v2.5:n1 | 20000 features, 5 informative, seed 4 | recovery AUROC 0.774 | test AUROC 0.879
+tabomics-v2.5:n1:allrows | 20000 features, 5 informative, seed 4 | recovery AUROC 0.762 | test AUROC 0.879
+tabpfn-wide-5k:n1 | 20000 features, 5 informative, seed 4 | recovery AUROC 0.648 | test AUROC 0.419
+random_forest | 20000 features, 5 informative, seed 4 | recovery AUROC 0.693 | test AUROC 0.604
+tabomics-v2.5:n1 | 20000 features, 7 informative, seed 0 | recovery AUROC 0.698 | test AUROC 0.520
+tabomics-v2.5:n1:allrows | 20000 features, 7 informative, seed 0 | recovery AUROC 0.700 | test AUROC 0.520
+tabpfn-wide-5k:n1 | 20000 features, 7 informative, seed 0 | recovery AUROC 0.652 | test AUROC 0.578
+random_forest | 20000 features, 7 informative, seed 0 | recovery AUROC 0.634 | test AUROC 0.528
+tabomics-v2.5:n1 | 20000 features, 7 informative, seed 1 | recovery AUROC 0.856 | test AUROC 0.816
+tabomics-v2.5:n1:allrows | 20000 features, 7 informative, seed 1 | recovery AUROC 0.855 | test AUROC 0.816
+tabpfn-wide-5k:n1 | 20000 features, 7 informative, seed 1 | recovery AUROC 0.797 | test AUROC 0.655
+random_forest | 20000 features, 7 informative, seed 1 | recovery AUROC 0.635 | test AUROC 0.611
+tabomics-v2.5:n1 | 20000 features, 7 informative, seed 2 | recovery AUROC 0.757 | test AUROC 0.635
+tabomics-v2.5:n1:allrows | 20000 features, 7 informative, seed 2 | recovery AUROC 0.759 | test AUROC 0.635
+tabpfn-wide-5k:n1 | 20000 features, 7 informative, seed 2 | recovery AUROC 0.778 | test AUROC 0.580
+random_forest | 20000 features, 7 informative, seed 2 | recovery AUROC 0.562 | test AUROC 0.528
+tabomics-v2.5:n1 | 20000 features, 7 informative, seed 3 | recovery AUROC 0.902 | test AUROC 0.672
+tabomics-v2.5:n1:allrows | 20000 features, 7 informative, seed 3 | recovery AUROC 0.906 | test AUROC 0.672
+tabpfn-wide-5k:n1 | 20000 features, 7 informative, seed 3 | recovery AUROC 0.902 | test AUROC 0.489
+random_forest | 20000 features, 7 informative, seed 3 | recovery AUROC 0.562 | test AUROC 0.550
+tabomics-v2.5:n1 | 20000 features, 7 informative, seed 4 | recovery AUROC 0.792 | test AUROC 0.521
+tabomics-v2.5:n1:allrows | 20000 features, 7 informative, seed 4 | recovery AUROC 0.800 | test AUROC 0.521
+tabpfn-wide-5k:n1 | 20000 features, 7 informative, seed 4 | recovery AUROC 0.797 | test AUROC 0.534
+random_forest | 20000 features, 7 informative, seed 4 | recovery AUROC 0.489 | test AUROC 0.504
+tabomics-v2.5:n1 | 30000 features, 3 informative, seed 0 | recovery AUROC 0.906 | test AUROC 0.582
+tabomics-v2.5:n1:allrows | 30000 features, 3 informative, seed 0 | recovery AUROC 0.905 | test AUROC 0.582
+tabpfn-wide-5k:n1 | 30000 features, 3 informative, seed 0 | recovery AUROC 0.965 | test AUROC 0.547
+random_forest | 30000 features, 3 informative, seed 0 | recovery AUROC 0.493 | test AUROC 0.492
+tabomics-v2.5:n1 | 30000 features, 3 informative, seed 1 | recovery AUROC 0.973 | test AUROC 0.556
+tabomics-v2.5:n1:allrows | 30000 features, 3 informative, seed 1 | recovery AUROC 0.973 | test AUROC 0.556
+tabpfn-wide-5k:n1 | 30000 features, 3 informative, seed 1 | recovery AUROC 0.986 | test AUROC 0.446
+random_forest | 30000 features, 3 informative, seed 1 | recovery AUROC 0.661 | test AUROC 0.502
+tabomics-v2.5:n1 | 30000 features, 3 informative, seed 2 | recovery AUROC 0.894 | test AUROC 0.869
+tabomics-v2.5:n1:allrows | 30000 features, 3 informative, seed 2 | recovery AUROC 0.894 | test AUROC 0.869
+tabpfn-wide-5k:n1 | 30000 features, 3 informative, seed 2 | recovery AUROC 0.826 | test AUROC 0.470
+random_forest | 30000 features, 3 informative, seed 2 | recovery AUROC 0.493 | test AUROC 0.493
+tabomics-v2.5:n1 | 30000 features, 3 informative, seed 3 | recovery AUROC 0.718 | test AUROC 0.658
+tabomics-v2.5:n1:allrows | 30000 features, 3 informative, seed 3 | recovery AUROC 0.723 | test AUROC 0.658
+tabpfn-wide-5k:n1 | 30000 features, 3 informative, seed 3 | recovery AUROC 0.667 | test AUROC 0.574
+random_forest | 30000 features, 3 informative, seed 3 | recovery AUROC 0.493 | test AUROC 0.523
+tabomics-v2.5:n1 | 30000 features, 3 informative, seed 4 | recovery AUROC 0.806 | test AUROC 0.469
+tabomics-v2.5:n1:allrows | 30000 features, 3 informative, seed 4 | recovery AUROC 0.801 | test AUROC 0.469
+tabpfn-wide-5k:n1 | 30000 features, 3 informative, seed 4 | recovery AUROC 0.793 | test AUROC 0.463
+random_forest | 30000 features, 3 informative, seed 4 | recovery AUROC 0.493 | test AUROC 0.521
+tabomics-v2.5:n1 | 30000 features, 5 informative, seed 0 | recovery AUROC 0.985 | test AUROC 0.608
+tabomics-v2.5:n1:allrows | 30000 features, 5 informative, seed 0 | recovery AUROC 0.985 | test AUROC 0.608
+tabpfn-wide-5k:n1 | 30000 features, 5 informative, seed 0 | recovery AUROC 0.989 | test AUROC 0.599
+random_forest | 30000 features, 5 informative, seed 0 | recovery AUROC 0.493 | test AUROC 0.477
+tabomics-v2.5:n1 | 30000 features, 5 informative, seed 1 | recovery AUROC 0.776 | test AUROC 0.554
+tabomics-v2.5:n1:allrows | 30000 features, 5 informative, seed 1 | recovery AUROC 0.782 | test AUROC 0.554
+tabpfn-wide-5k:n1 | 30000 features, 5 informative, seed 1 | recovery AUROC 0.804 | test AUROC 0.488
+random_forest | 30000 features, 5 informative, seed 1 | recovery AUROC 0.493 | test AUROC 0.474
+tabomics-v2.5:n1 | 30000 features, 5 informative, seed 2 | recovery AUROC 0.905 | test AUROC 0.814
+tabomics-v2.5:n1:allrows | 30000 features, 5 informative, seed 2 | recovery AUROC 0.904 | test AUROC 0.814
+tabpfn-wide-5k:n1 | 30000 features, 5 informative, seed 2 | recovery AUROC 0.896 | test AUROC 0.539
+random_forest | 30000 features, 5 informative, seed 2 | recovery AUROC 0.593 | test AUROC 0.509
+tabomics-v2.5:n1 | 30000 features, 5 informative, seed 3 | recovery AUROC 0.667 | test AUROC 0.457
+tabomics-v2.5:n1:allrows | 30000 features, 5 informative, seed 3 | recovery AUROC 0.677 | test AUROC 0.457
+tabpfn-wide-5k:n1 | 30000 features, 5 informative, seed 3 | recovery AUROC 0.793 | test AUROC 0.483
+random_forest | 30000 features, 5 informative, seed 3 | recovery AUROC 0.493 | test AUROC 0.557
+tabomics-v2.5:n1 | 30000 features, 5 informative, seed 4 | recovery AUROC 0.806 | test AUROC 0.844
+tabomics-v2.5:n1:allrows | 30000 features, 5 informative, seed 4 | recovery AUROC 0.799 | test AUROC 0.844
+tabpfn-wide-5k:n1 | 30000 features, 5 informative, seed 4 | recovery AUROC 0.747 | test AUROC 0.397
+random_forest | 30000 features, 5 informative, seed 4 | recovery AUROC 0.594 | test AUROC 0.514
+tabomics-v2.5:n1 | 30000 features, 7 informative, seed 0 | recovery AUROC 0.729 | test AUROC 0.533
+tabomics-v2.5:n1:allrows | 30000 features, 7 informative, seed 0 | recovery AUROC 0.730 | test AUROC 0.533
+tabpfn-wide-5k:n1 | 30000 features, 7 informative, seed 0 | recovery AUROC 0.689 | test AUROC 0.573
+random_forest | 30000 features, 7 informative, seed 0 | recovery AUROC 0.493 | test AUROC 0.481
+tabomics-v2.5:n1 | 30000 features, 7 informative, seed 1 | recovery AUROC 0.824 | test AUROC 0.793
+tabomics-v2.5:n1:allrows | 30000 features, 7 informative, seed 1 | recovery AUROC 0.820 | test AUROC 0.793
+tabpfn-wide-5k:n1 | 30000 features, 7 informative, seed 1 | recovery AUROC 0.757 | test AUROC 0.352
+random_forest | 30000 features, 7 informative, seed 1 | recovery AUROC 0.493 | test AUROC 0.575
+tabomics-v2.5:n1 | 30000 features, 7 informative, seed 2 | recovery AUROC 0.979 | test AUROC 0.556
+tabomics-v2.5:n1:allrows | 30000 features, 7 informative, seed 2 | recovery AUROC 0.980 | test AUROC 0.556
+tabpfn-wide-5k:n1 | 30000 features, 7 informative, seed 2 | recovery AUROC 0.980 | test AUROC 0.472
+random_forest | 30000 features, 7 informative, seed 2 | recovery AUROC 0.493 | test AUROC 0.399
+tabomics-v2.5:n1 | 30000 features, 7 informative, seed 3 | recovery AUROC 0.827 | test AUROC 0.718
+tabomics-v2.5:n1:allrows | 30000 features, 7 informative, seed 3 | recovery AUROC 0.833 | test AUROC 0.718
+tabpfn-wide-5k:n1 | 30000 features, 7 informative, seed 3 | recovery AUROC 0.802 | test AUROC 0.379
+random_forest | 30000 features, 7 informative, seed 3 | recovery AUROC 0.636 | test AUROC 0.454
+tabomics-v2.5:n1 | 30000 features, 7 informative, seed 4 | recovery AUROC 0.829 | test AUROC 0.536
+tabomics-v2.5:n1:allrows | 30000 features, 7 informative, seed 4 | recovery AUROC 0.835 | test AUROC 0.536
+tabpfn-wide-5k:n1 | 30000 features, 7 informative, seed 4 | recovery AUROC 0.913 | test AUROC 0.473
+random_forest | 30000 features, 7 informative, seed 4 | recovery AUROC 0.564 | test AUROC 0.464
+                                   recovery_auroc  recall_at_k  test_auroc
+method                   features                                         
+random_forest            200                0.728        0.331       0.690
+                         500                0.694        0.290       0.636
+                         1000               0.709        0.288       0.596
+                         2000               0.715        0.206       0.584
+                         5000               0.654        0.136       0.549
+                         10000              0.571        0.013       0.540
+                         20000              0.611        0.090       0.549
+                         30000              0.532        0.000       0.496
+tabomics-v2.5:n1         200                0.828        0.395       0.764
+                         500                0.833        0.349       0.742
+                         1000               0.859        0.347       0.711
+                         2000               0.832        0.266       0.702
+                         5000               0.832        0.288       0.702
+                         10000              0.826        0.117       0.637
+                         20000              0.827        0.171       0.652
+                         30000              0.842        0.171       0.636
+tabomics-v2.5:n1:allrows 200                0.829        0.395       0.764
+                         500                0.831        0.349       0.742
+                         1000               0.859        0.347       0.711
+                         2000               0.830        0.266       0.702
+                         5000               0.831        0.288       0.702
+                         10000              0.827        0.117       0.637
+                         20000              0.826        0.158       0.652
+                         30000              0.843        0.171       0.636
+tabpfn-wide-5k:n1        200                0.884        0.453       0.781
+                         500                0.849        0.313       0.756
+                         1000               0.825        0.356       0.725
+                         2000               0.813        0.285       0.705
+                         5000               0.819        0.279       0.691
+                         10000              0.817        0.152       0.610
+                         20000              0.828        0.229       0.548
+                         30000              0.841        0.206       0.484
