@@ -20,6 +20,11 @@ results/summaries/ and figures/:
   the median seconds of the repeats and the peak GPU memory; per set, the median over the tasks.
 - development.csv, development_advantage.csv: the development datasets (common.DEVELOPMENT, an appendix): means per
   task, and the median difference of TabOmics v2.5 x1 with each model on them and on the tasks of the paper.
+- importance_synthetic_means.csv, importance_synthetic_wilcoxon.csv (script 08): per width, the means over the
+  tables, and TabOmics v2.5 x1 against each other method, Wilcoxon paired by table, Holm over the methods.
+- importance_omics_*.csv (script 09): the AUROC of the top-k genes per task (the mean over folds, random genes
+  averaged over draws first) and over tasks, with TabOmics v2.5 x1 against each other method, Wilcoxon paired by task,
+  Holm over the methods; stability, and the PAM50 genes found, per task.
 
 A fold is valid when it succeeded (status "ok") and, for the AUROC, when it is defined (every class in the test rows).
 Each part is skipped when its results are not there yet.
@@ -171,6 +176,63 @@ def development(everything: pd.DataFrame, raw: pd.DataFrame) -> tuple[pd.DataFra
     return per_task, advantage.reset_index().rename(columns={"model": "other"}).assign(model=REFERENCE)
 
 
+def paired_tests(table: pd.DataFrame, model: str, family: list[str]) -> pd.DataFrame:
+    """A model against each of family on the rows of table (one column per method): wins, losses, median
+    difference, Wilcoxon p, and p corrected with Holm over family."""
+    rows = []
+    for other in family:
+        both = table[[model, other]].dropna()
+        difference = both[model] - both[other]
+        p = wilcoxon(both[model], both[other]).pvalue if (difference != 0).any() else 1.0
+        rows.append({"model": model, "other": other, "n": len(both), "wins": int((difference > 0).sum()),
+                     "losses": int((difference < 0).sum()), "median_difference": difference.median(),
+                     "p": p})  # fmt: skip
+    rows = pd.DataFrame(rows)
+    rows["p_holm"] = holm(rows.p.to_numpy())
+    rows["significant"] = rows.p_holm < ALPHA
+    return rows
+
+
+def importance_synthetic(results: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Means per method and width, and TabOmics against the others per width and metric (paired by table)."""
+    metrics = ["recovery_auroc", "recall_at_k", "test_auroc", "test_accuracy"]
+    means_ = results.groupby(["method", "features"])[metrics].mean().reset_index()
+    others = [m for m in results.method.unique() if m != REFERENCE]
+    tests = []
+    for features, rows in results.groupby("features"):
+        for metric in metrics[:3]:
+            table = rows.pivot_table(index=["informative", "seed"], columns="method", values=metric)
+            tests.append(paired_tests(table, REFERENCE, others).assign(features=features, metric=metric))
+    return means_.rename(columns={"method": "model"}), pd.concat(tests, ignore_index=True)
+
+
+def importance_omics(predictive: pd.DataFrame, stability: pd.DataFrame, pam50: pd.DataFrame) -> dict[str, pd.DataFrame]:
+    """The gene rankings: per task and over tasks, with TabOmics against the others per k (paired by task)."""
+    ranked = predictive[predictive.method != "all"]
+    per_fold = ranked.groupby(["task", "method", "k", "fold"])[["roc_auc", "accuracy"]].mean()  # draws averaged
+    per_task = per_fold.groupby(["task", "method", "k"]).mean().reset_index()
+    over_tasks = per_task.groupby(["method", "k"])[["roc_auc", "accuracy"]].mean().reset_index()
+    every = predictive[predictive.method == "all"].groupby("task")[["roc_auc", "accuracy"]].mean()
+    over_tasks = pd.concat([over_tasks, every.mean().to_frame().T.assign(method="all", k=0)], ignore_index=True)
+    others = [m for m in per_task.method.unique() if m != REFERENCE]
+    tests = []
+    for k, rows in per_task.groupby("k"):
+        for metric in ("roc_auc", "accuracy"):
+            table = rows.pivot(index="task", columns="method", values=metric)
+            tests.append(paired_tests(table, REFERENCE, others).assign(k=k, metric=metric))
+    summary = pam50.groupby(["task", "method", "k"]).agg(
+        hits=("hits", "mean"), expected=("expected", "mean"), markers=("markers", "first"),
+        folds_significant=("p", lambda p: int((p < ALPHA).sum())), folds=("p", "size")).reset_index()  # fmt: skip
+    return {
+        "predictive": over_tasks.rename(columns={"method": "model"}),
+        "predictive_per_task": per_task.rename(columns={"method": "model"}),
+        "wilcoxon": pd.concat(tests, ignore_index=True),
+        "stability": stability.groupby("method")[["jaccard_top100", "spearman"]].mean().reset_index()
+        .rename(columns={"method": "model"}),
+        "pam50": summary.rename(columns={"method": "model"}),
+    }  # fmt: skip
+
+
 def complete_models(raw: pd.DataFrame) -> list[str]:
     """The models with a successful row on every fold of every reported task of manifests/tasks.tsv."""
     tasks = pd.read_csv(MANIFESTS / "tasks.tsv", sep="\t")
@@ -273,6 +335,18 @@ def main() -> int:
         named(development_task).to_csv(output / "development.csv", index=False)
         named(advantage).to_csv(output / "development_advantage.csv", index=False)
         print("development datasets:", ", ".join(sorted(development_task.dataset.unique())))
+    importance = RESULTS / "raw" / "importance"
+    if (importance / "synthetic.csv").exists():
+        synthetic_means, synthetic_tests = importance_synthetic(pd.read_csv(importance / "synthetic.csv"))
+        named(synthetic_means).to_csv(output / "importance_synthetic_means.csv", index=False)
+        named(synthetic_tests).to_csv(output / "importance_synthetic_wilcoxon.csv", index=False)
+        print("importance on synthetic tables: widths", ", ".join(map(str, sorted(synthetic_means.features.unique()))))
+    if (importance / "omics_predictive.csv").exists():
+        tables = importance_omics(*(pd.read_csv(importance / f"omics_{n}.csv") for n in ("predictive", "stability",
+                                                                                          "pam50")))  # fmt: skip
+        for name, table in tables.items():
+            named(table).to_csv(output / f"importance_omics_{name}.csv", index=False)
+        print("importance on omics: tasks", tables["predictive_per_task"].task.nunique())
     print(f"written: {output.relative_to(REPO)}/, figures/")
     return 0
 

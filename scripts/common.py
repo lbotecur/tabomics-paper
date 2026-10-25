@@ -37,6 +37,8 @@ NAMES = {
     "xgboost": "XGBoost",
     "logreg_en": "Elastic-net LR",
     "anova": "ANOVA F",
+    "random": "Random genes",
+    "all": "All genes",
 }
 
 
