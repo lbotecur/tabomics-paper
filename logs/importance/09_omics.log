@@ -1,0 +1,399 @@
+nohup: no se tendrá en cuenta la entrada
+mlomics/BRCA/mrna fold 0: done
+mlomics/BRCA/mrna fold 1: done
+mlomics/BRCA/mrna fold 2: done
+mlomics/BRCA/mrna fold 3: done
+mlomics/BRCA/mrna fold 4: done
+mlomics/BRCA/mrna: written
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=5.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+mlomics/COAD/mrna fold 0: done
+mlomics/COAD/mrna fold 1: done
+mlomics/COAD/mrna fold 2: done
+mlomics/COAD/mrna fold 3: done
+mlomics/COAD/mrna fold 4: done
+mlomics/COAD/mrna: written
+mlomics/GBM/mrna fold 0: done
+mlomics/GBM/mrna fold 1: done
+mlomics/GBM/mrna fold 2: done
+mlomics/GBM/mrna fold 3: done
+mlomics/GBM/mrna fold 4: done
+mlomics/GBM/mrna: written
+mlomics/LGG/mrna fold 0: done
+mlomics/LGG/mrna fold 1: done
+mlomics/LGG/mrna fold 2: done
+mlomics/LGG/mrna fold 3: done
+mlomics/LGG/mrna fold 4: done
+mlomics/LGG/mrna: written
+mlomics/OV/mrna fold 0: done
+mlomics/OV/mrna fold 1: done
+mlomics/OV/mrna fold 2: done
+mlomics/OV/mrna fold 3: done
+mlomics/OV/mrna fold 4: done
+mlomics/OV/mrna: written
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:110: UserWarning: Features [  172   242   313   375   513   550   572   702   719   833   843   854
+   887   955  1061  1066  1109  1121  1243  1294  1356  1471  1550  1740
+  1830  2040  2046  2283  2479  2643  2684  2739  2784  2880  2904  2912
+  2945  2949  2975  3036  3137  3194  3452  3488  3551  3567  3611  3662
+  3762  3865  3868  3900  3937  3957  4011  4424  4516  4552  4597  4688
+  4873  4908  5032  5050  5215  5297  5310  5510  5618  5623  5920  6098
+  6105  6198  6265  6357  6383  6507  6613  6670  6677  6707  6719  6780
+  6915  6976  7003  7097  7253  7460  7476  7514  7595  7611  7681  7725
+  7767  7809  7827  7926  7936  7969  7998  8024  8033  8037  8042  8084
+  8135  8157  8158  8166  8184  8266  8277  8278  8329  8458  8476  8524
+  8528  8684  8707  8715  8832  8851  8856  8918  9034  9088  9190  9238
+  9319  9323  9324  9329  9504  9510  9538  9547  9862  9948 10094 10199
+ 10239 10292 10383 10472 10584 10599 10796 10829 10966 10967 11110 11254
+ 11295 11310 11441 11534 11598 11657 11957 11965 11966 12000 12021 12079
+ 12209 12243 12358 12374 12444 12459 12461 12567 12588 12638 13013 13017
+ 13131 13149 13191 13192 13248 13566 13659 13722 13949 14015 14040 14155
+ 14194 14284 14296 14547 14559 14616 14618 14676 14741 14764 14874 14931
+ 15095 15139 15213 15232 15261 15330 15507 15541 15576 15628 15648 15652
+ 15724 15855 16013 16030 16061 16100 16161 16186 16273 16307 16320 16383
+ 16436 16510 16515 16629 16687 16758 16814 16815 16887 16904 16962 17013
+ 17360 17370 17589 17686 17800 17854 17949 18019 18104 18155 18396 18451
+ 18614 18658 18668 18817 18903 19106 19329 19392 19535 19558 19615 19618
+ 19720 19740 19760 19764 19888 19968 19986 20035 20196 20224 20233 20332
+ 20391 20436] are constant.
+  warnings.warn("Features %s are constant." % constant_features_idx, UserWarning)
+shamir/breast/mrna fold 0: done
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:110: UserWarning: Features [  126   190   239   298   355   450   455   472   598   666   690   756
+   772   823   841   995  1032  1122  1330  1536  1582  1665  1694  1711
+  1740  1775  1816  1872  1946  2133  2164  2211  2215  2409  2421  2587
+  2832  2870  3043  3046  3051  3250  3313  3334  3479  3507  3716  3783
+  3804  3844  3869  3905  3977  4025  4261  4435  4445  4485  4505  4547
+  4603  4654  4791  4866  5026  5260  5350  5464  5489  5504  5615  5815
+  5839  6033  6074  6173  6330  6382  6576  6674  6921  6922  6994  7024
+  7181  7235  7280  7395  7397  7422  7540  7780  7835  7890  7970  8007
+  8177  8282  8313  8378  8435  8484  8510  8754  8791  8979  9099  9382
+  9448  9469  9649  9652  9889  9916  9945 10019 10052 10064 10138 10172
+ 10266 10312 10416 10469 10495 10520 10625 10652 10778 10793 11111 11131
+ 11172 11196 11219 11226 11447 11483 11629 11888 11893 11940 12012 12050
+ 12089 12155 12251 12258 12263 12336 12452 12794 12843 12865 12900 13016
+ 13036 13149 13274 13392 13414 13474 13484 13529 13764 13772 13792 13890
+ 13913 13917 13930 13976 13991 14033 14072 14081 14180 14215 14223 14227
+ 14228 14234 14305 14337 14419 14429 14430 14440 14446 14520 14536 14546
+ 14563 14613 14735 14807 14839 14874 15131 15158 15207 15501 15516 15544
+ 15561 15595 15671 15726 16297 16366 16417 16463 16472 16483 16588 16607
+ 16635 16638 16670 16735 16824 16828 16881 16898 16925 16927 16996 17013
+ 17018 17113 17153 17198 17336 17370 17397 17517 17531 17601 17616 17682
+ 17797 17851 17932 18041 18180 18311 18454 18475 18516 18529 18555 18577
+ 18645 18672 18693 18749 18766 18805 18893 18900 18929 19001 19004 19055
+ 19218 19232 19349 19350 19448 19540 19749 19767 19801 20028 20066 20144
+ 20244 20256] are constant.
+  warnings.warn("Features %s are constant." % constant_features_idx, UserWarning)
+shamir/breast/mrna fold 1: done
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:110: UserWarning: Features [   54    58    87   154   192   219   257   325   326   408   426   488
+   602   892   937   948  1014  1034  1246  1337  1521  1578  1583  1623
+  1691  1698  1716  1871  2016  2021  2121  2129  2229  2291  2460  2570
+  2605  2765  2942  3008  3036  3068  3081  3089  3131  3198  3280  3368
+  3456  3483  3536  3669  3789  3790  3803  3814  3816  3909  3916  3958
+  4025  4068  4106  4170  4273  4296  4386  4454  4829  4868  4937  4938
+  4959  5083  5365  5471  5558  5647  5709  5771  5909  5929  5945  5947
+  6019  6068  6072  6081  6113  6388  6424  6452  6526  6571  6619  6637
+  6664  6677  6910  6924  6935  6984  6992  7037  7216  7288  7318  7429
+  7432  7439  7500  7751  7864  7911  7961  8016  8140  8289  8295  8434
+  8549  8596  8619  8710  8731  8947  9006  9209  9216  9341  9425  9485
+  9599  9679  9695  9715  9820  9880  9992 10128 10154 10230 10238 10260
+ 10300 10397 10450 10522 10594 10622 10743 11134 11139 11219 11314 11348
+ 11431 11570 11785 11873 12147 12169 12227 12274 12321 12336 12401 12414
+ 12449 12560 12757 12806 12825 12867 12916 12994 13118 13196 13318 13399
+ 13445 13526 13563 13564 13703 13836 13927 13934 13996 14049 14104 14188
+ 14229 14270 14293 14324 14454 14616 14786 14796 14818 14872 14909 15024
+ 15077 15096 15167 15196 15381 15452 15469 15512 15514 15528 15562 15578
+ 15596 15614 15615 15699 15830 15857 15976 16015 16139 16182 16373 16562
+ 16939 16985 17028 17144 17378 17493 17593 17643 17661 17672 17703 17731
+ 17735 17763 17792 17813 17897 18006 18256 18260 18276 18319 18376 18684
+ 18829 18852 18908 18952 19082 19225 19290 19332 19352 19407 19447 19674
+ 19725 19761 19788 19883 19947 19989 20053 20059 20071 20101 20128 20194
+ 20381 20522] are constant.
+  warnings.warn("Features %s are constant." % constant_features_idx, UserWarning)
+shamir/breast/mrna fold 2: done
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:110: UserWarning: Features [   77    81   218   228   311   482   590   594   641   677   729   849
+   987  1051  1229  1366  1412  1523  1524  1631  1847  2168  2240  2330
+  2387  2419  2494  2535  2541  2581  2596  2632  2891  2928  2939  2954
+  3046  3157  3228  3259  3395  3502  3524  3616  3651  3679  3725  3733
+  3771  3784  4009  4120  4183  4185  4221  4229  4243  4295  4308  4336
+  4339  4341  4467  4590  4691  4742  4749  4761  4775  4933  4972  5065
+  5124  5196  5204  5220  5243  5309  5398  5582  5586  5739  5752  5857
+  5923  5941  5942  5967  5989  5990  5996  6013  6090  6156  6194  6256
+  6381  6423  6515  6613  6820  6847  6973  6986  7155  7354  7458  7622
+  7698  7826  7940  7968  8119  8140  8153  8309  8388  8432  8549  8660
+  8668  8750  8765  8926  9006  9017  9115  9269  9483  9671  9712  9978
+ 10059 10138 10189 10345 10444 10488 10506 10516 10540 10607 10645 10792
+ 10943 10958 11035 11044 11055 11231 11267 11303 11353 11421 11430 11651
+ 11843 11845 11957 12000 12002 12095 12124 12246 12259 12320 12351 12361
+ 12397 12546 12589 12634 12648 12712 12736 12851 12918 13019 13060 13109
+ 13114 13116 13152 13253 13517 13567 13605 13617 13649 13916 13934 13949
+ 14030 14059 14112 14133 14180 14266 14333 14492 14542 14598 14604 14677
+ 14682 14712 14839 14873 14947 14960 15057 15075 15081 15207 15290 15378
+ 15593 15618 15638 15791 15832 15895 15994 16034 16161 16240 16473 16487
+ 16513 16514 16523 16524 16657 16680 16821 16883 16896 17073 17091 17097
+ 17257 17321 17380 17418 17676 17843 17846 17858 17906 17937 18012 18369
+ 18399 18650 18651 18780 18810 18922 18956 18968 19071 19086 19136 19175
+ 19196 19249 19307 19502 19512 19656 19724 19807 19822 19929 20016 20376
+ 20414 20479] are constant.
+  warnings.warn("Features %s are constant." % constant_features_idx, UserWarning)
+shamir/breast/mrna fold 3: done
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:110: UserWarning: Features [    7   299   346   440   514   607   729   731   735   765   830   839
+   869   875   915   932   959  1009  1010  1041  1305  1355  1369  1418
+  1535  1549  1602  1608  1755  1914  2036  2132  2414  2488  2491  2572
+  2628  2708  2724  2729  2798  2828  2841  2876  2901  2971  2987  3046
+  3083  3099  3131  3271  3352  3412  3470  3584  3605  3686  3894  4057
+  4139  4251  4307  4340  4360  4408  4532  4535  4589  4791  4819  4908
+  4922  4925  5074  5102  5130  5176  5200  5239  5358  5381  5523  5568
+  5759  5839  5959  5994  6048  6086  6184  6192  6240  6459  6475  6552
+  6636  6663  6731  6838  6864  6880  6886  6912  7068  7192  7219  7457
+  7667  7746  7755  7775  7795  7844  7954  7997  8053  8067  8192  8240
+  8368  8415  8466  8511  8548  8650  8665  8672  8724  8731  8840  9079
+  9118  9336  9349  9404  9437  9441  9459  9464  9475  9534  9615  9702
+  9953 10042 10074 10139 10410 10532 10566 10600 10618 10619 10647 10660
+ 10752 10766 10904 10916 10998 11003 11057 11065 11084 11135 11227 11233
+ 11309 11326 11406 11466 11510 11608 11639 11690 11737 11766 11775 11896
+ 11916 11961 11985 12090 12224 12384 12456 12753 12807 12937 12959 13003
+ 13062 13106 13187 13190 13252 13255 13261 13291 13311 13366 13682 13722
+ 13810 14000 14059 14184 14193 14219 14282 14371 14386 14399 14431 14670
+ 14854 14983 14997 15081 15282 15286 15351 15402 15477 15557 15691 15812
+ 15853 15997 16121 16183 16281 16317 16336 16470 16671 16686 16691 16697
+ 16701 16760 16779 16926 16932 17005 17009 17222 17346 17399 17406 17606
+ 17764 17810 17895 18019 18241 18521 18549 18600 18694 18790 18972 19196
+ 19345 19382 19429 19442 19520 19676 19741 19910 19957 19964 20292 20427
+ 20444 20517] are constant.
+  warnings.warn("Features %s are constant." % constant_features_idx, UserWarning)
+shamir/breast/mrna fold 4: done
+shamir/breast/mrna: written
+shamir/gbm/mrna fold 0: done
+shamir/gbm/mrna fold 1: done
+shamir/gbm/mrna fold 2: done
+shamir/gbm/mrna fold 3: done
+shamir/gbm/mrna fold 4: done
+shamir/gbm/mrna: written
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:110: UserWarning: Features [  172   242   313   375   550   572   663   702   719   779   833   843
+   887   921   945   955  1061  1066  1109  1121  1294  1471  1476  1550
+  1740  1830  2033  2040  2046  2169  2272  2283  2436  2479  2643  2684
+  2739  2784  2880  2904  2910  2912  2945  2949  2975  3036  3137  3194
+  3442  3452  3488  3551  3567  3611  3624  3662  3762  3868  3900  3937
+  3957  4011  4163  4296  4320  4424  4496  4516  4544  4552  4597  4688
+  4873  4908  5032  5050  5215  5297  5310  5510  5618  5623  5634  5920
+  5999  6098  6105  6198  6265  6357  6507  6560  6613  6670  6677  6707
+  6719  6780  6788  6806  6915  6976  7003  7097  7253  7295  7301  7460
+  7476  7514  7595  7611  7681  7725  7767  7809  7827  7926  7936  7969
+  7998  8024  8033  8037  8042  8084  8135  8157  8158  8166  8184  8266
+  8277  8329  8458  8476  8524  8528  8684  8707  8715  8851  8856  8918
+  9034  9088  9190  9195  9238  9319  9323  9324  9329  9334  9504  9538
+  9544  9547  9948  9990 10094 10199 10239 10292 10472 10584 10599 10755
+ 10796 10829 10966 10967 11110 11254 11295 11310 11384 11413 11441 11534
+ 11598 11657 11957 11965 11966 12021 12079 12093 12209 12238 12358 12444
+ 12459 12567 12588 12638 13013 13017 13131 13149 13190 13191 13192 13248
+ 13566 13659 13675 13694 13722 13949 14015 14040 14155 14194 14234 14284
+ 14296 14547 14559 14618 14676 14719 14741 14874 14931 15003 15059 15095
+ 15139 15160 15232 15299 15507 15541 15576 15628 15648 15652 15841 15855
+ 16013 16030 16061 16100 16161 16186 16204 16273 16320 16383 16436 16510
+ 16515 16592 16599 16629 16687 16758 16814 16815 16887 16904 16962 17013
+ 17269 17360 17589 17658 17686 17800 17854 17949 18019 18104 18155 18359
+ 18396 18451 18507 18614 18817 18903 18977 19106 19329 19370 19392 19558
+ 19615 19618 19720 19740 19760 19764 19888 19968 19986 20032 20035 20148
+ 20154 20196 20224 20233 20332 20391 20436 20470] are constant.
+  warnings.warn("Features %s are constant." % constant_features_idx, UserWarning)
+shamir/sarcoma/mrna fold 0: done
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:110: UserWarning: Features [  126   190   239   298   355   450   455   472   598   666   690   756
+   772   779   785   841   995  1032  1122  1244  1330  1359  1536  1582
+  1665  1681  1711  1740  1775  1789  1816  1872  1946  2133  2164  2211
+  2215  2409  2421  2552  2587  2782  2832  2870  3043  3046  3051  3250
+  3313  3334  3479  3507  3707  3716  3737  3783  3804  3844  3905  3977
+  4025  4261  4435  4445  4476  4485  4505  4547  4603  4654  4791  4813
+  4866  5026  5260  5402  5489  5504  5615  5654  5815  6033  6052  6074
+  6173  6330  6382  6459  6576  6674  6711  6887  6921  6922  6961  6994
+  7024  7032  7181  7197  7235  7280  7395  7401  7422  7540  7780  7835
+  7890  7970  8007  8177  8279  8282  8313  8378  8435  8484  8754  8787
+  8791  8856  8979  9001  9029  9099  9382  9448  9469  9649  9652  9707
+  9880  9889  9916  9917  9940  9945  9976  9992 10019 10052 10064 10172
+ 10266 10312 10416 10469 10495 10520 10625 10652 10778 10793 11111 11131
+ 11172 11196 11219 11447 11483 11484 11603 11629 11888 11893 12012 12030
+ 12050 12089 12155 12251 12258 12263 12268 12336 12452 12794 12843 12865
+ 12900 13016 13036 13149 13274 13392 13414 13474 13484 13529 13764 13772
+ 13792 13824 13890 13901 13913 13917 13930 13976 13991 14033 14072 14081
+ 14180 14215 14223 14227 14228 14234 14305 14419 14429 14430 14440 14446
+ 14536 14546 14613 14631 14735 14807 14874 15131 15158 15501 15516 15544
+ 15561 15595 15671 15726 15856 16297 16366 16417 16436 16469 16472 16607
+ 16635 16638 16670 16735 16824 16828 16881 16898 16925 16927 16996 17013
+ 17018 17113 17153 17161 17188 17198 17336 17370 17371 17462 17498 17517
+ 17531 17601 17616 17797 17850 17851 17932 18041 18180 18207 18311 18454
+ 18475 18516 18529 18555 18577 18672 18675 18693 18736 18766 18805 18893
+ 18900 18929 19001 19004 19055 19114 19126 19218 19232 19350 19540 19717
+ 19749 19767 19776 19801 20028 20066 20244 20256] are constant.
+  warnings.warn("Features %s are constant." % constant_features_idx, UserWarning)
+shamir/sarcoma/mrna fold 1: done
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:110: UserWarning: Features [   54    58    87   154   192   219   257   325   326   348   408   488
+   602   738   845   855   937   948  1014  1034  1144  1337  1341  1399
+  1521  1578  1583  1623  1691  1698  1716  1871  1960  2016  2021  2291
+  2460  2537  2542  2570  2713  2765  2803  2942  3008  3036  3068  3081
+  3089  3198  3280  3368  3406  3483  3517  3536  3669  3789  3790  3803
+  3814  3816  3909  4025  4076  4106  4170  4273  4296  4386  4454  4641
+  4840  4868  4899  4938  4959  5083  5365  5471  5543  5558  5709  5771
+  5909  5929  5945  5947  6019  6068  6072  6081  6112  6113  6298  6388
+  6402  6424  6452  6526  6571  6619  6637  6664  6677  6910  6924  6935
+  6984  6992  7037  7263  7288  7318  7429  7432  7477  7500  7751  7864
+  7911  7961  8140  8289  8295  8494  8549  8596  8619  8710  8731  8792
+  8947  9006  9209  9216  9341  9425  9485  9599  9679  9695  9715  9820
+  9880  9954 10060 10128 10154 10181 10230 10238 10260 10300 10397 10450
+ 10497 10522 10594 10622 10743 11125 11134 11139 11219 11314 11348 11402
+ 11431 11474 11570 11785 11873 12006 12147 12169 12191 12227 12274 12321
+ 12336 12401 12414 12449 12542 12560 12615 12757 12806 12820 12825 12867
+ 12916 12994 13118 13196 13318 13445 13526 13558 13563 13564 13703 13836
+ 13885 13927 13934 13987 14049 14104 14188 14229 14270 14293 14324 14364
+ 14454 14770 14786 14796 14818 14872 14909 15024 15077 15096 15167 15196
+ 15325 15381 15452 15469 15512 15514 15528 15562 15578 15596 15614 15615
+ 15663 15699 15719 15753 15830 15857 16015 16139 16182 16347 16373 16562
+ 16887 16939 16985 17028 17144 17378 17414 17493 17593 17643 17661 17672
+ 17703 17731 17735 17763 17792 17813 17897 18256 18260 18276 18319 18376
+ 18524 18660 18684 18829 18852 18908 18952 19145 19167 19225 19290 19332
+ 19352 19407 19447 19674 19725 19761 19788 19883 19947 19989 20053 20059
+ 20071 20101 20128 20194 20262 20381 20440 20522] are constant.
+  warnings.warn("Features %s are constant." % constant_features_idx, UserWarning)
+shamir/sarcoma/mrna fold 2: done
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:110: UserWarning: Features [   77    81   218   228   311   482   641   677   729   987  1051  1102
+  1229  1412  1524  1631  1847  1892  2168  2240  2248  2330  2387  2419
+  2494  2535  2541  2581  2584  2596  2632  2891  2928  2939  2954  3046
+  3228  3259  3289  3395  3502  3524  3548  3616  3651  3679  3719  3725
+  3771  3784  4009  4099  4120  4221  4229  4243  4295  4308  4336  4339
+  4590  4691  4749  4761  4764  4775  4933  4972  5065  5124  5196  5204
+  5220  5243  5309  5398  5582  5586  5739  5752  5857  5923  5941  5942
+  5967  5974  5989  5990  6013  6087  6090  6156  6194  6256  6381  6423
+  6515  6613  6820  6847  6973  6986  7354  7450  7458  7622  7698  7826
+  7834  7940  7968  8114  8119  8140  8153  8272  8309  8388  8432  8508
+  8544  8654  8660  8668  8741  8750  8765  8838  8926  9006  9017  9059
+  9115  9269  9446  9483  9668  9671  9712  9799  9978  9990 10059 10138
+ 10189 10345 10488 10506 10516 10540 10549 10607 10645 10792 10943 10958
+ 11035 11044 11055 11231 11267 11303 11353 11421 11430 11651 11820 11843
+ 11845 11957 12000 12003 12095 12124 12246 12248 12259 12320 12361 12397
+ 12525 12546 12562 12589 12634 12648 12662 12712 12736 12851 12918 13019
+ 13060 13109 13114 13116 13152 13208 13253 13502 13517 13567 13605 13617
+ 13649 13681 13934 13949 14030 14059 14112 14133 14180 14236 14266 14333
+ 14385 14492 14542 14598 14604 14677 14682 14712 14768 14839 14873 14880
+ 14947 14960 15057 15075 15081 15207 15290 15378 15618 15638 15791 15832
+ 15895 15927 15994 15996 16034 16161 16240 16473 16487 16514 16523 16524
+ 16660 16680 16715 16821 16883 16896 17073 17257 17292 17321 17380 17418
+ 17676 17689 17731 17811 17843 17846 17906 17937 18012 18369 18399 18461
+ 18525 18650 18651 18780 18810 18851 18922 18956 18968 18988 19071 19086
+ 19136 19175 19196 19249 19307 19421 19502 19512 19638 19656 19658 19724
+ 19807 19822 19929 20332 20376 20387 20414 20479] are constant.
+  warnings.warn("Features %s are constant." % constant_features_idx, UserWarning)
+shamir/sarcoma/mrna fold 3: done
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:110: UserWarning: Features [    7   190   299   346   440   514   546   607   729   735   765   830
+   835   839   869   875   915   932   959  1009  1010  1041  1058  1139
+  1179  1305  1355  1369  1418  1535  1549  1602  1608  1665  1755  1914
+  2036  2045  2132  2414  2488  2491  2530  2572  2628  2708  2724  2729
+  2798  2828  2841  2876  2901  2971  2987  3037  3046  3083  3099  3131
+  3271  3385  3387  3412  3470  3584  3605  3640  3686  3705  3894  4057
+  4139  4251  4307  4340  4408  4532  4535  4589  4791  4819  4908  4922
+  4925  5074  5102  5117  5176  5200  5358  5381  5523  5568  5671  5759
+  5839  5959  5994  6043  6048  6076  6086  6184  6192  6240  6293  6429
+  6459  6475  6525  6552  6636  6663  6731  6838  6864  6880  6886  6912
+  7068  7192  7219  7293  7457  7667  7746  7755  7795  7803  7844  7954
+  7997  8028  8053  8067  8170  8192  8240  8297  8368  8415  8466  8474
+  8481  8511  8548  8586  8665  8672  8724  8731  8760  8840  8943  9079
+  9118  9336  9404  9437  9459  9464  9475  9534  9615  9669  9702  9919
+  9953 10074 10139 10410 10532 10566 10600 10618 10647 10660 10752 10766
+ 10904 10916 11003 11057 11059 11065 11135 11227 11309 11326 11406 11466
+ 11510 11608 11639 11690 11737 11766 11775 11896 11916 11961 12090 12224
+ 12384 12456 12637 12753 12807 12853 12937 12959 13003 13062 13106 13187
+ 13252 13255 13261 13291 13311 13366 13682 13722 13810 14000 14012 14045
+ 14059 14168 14184 14193 14219 14282 14371 14386 14431 14547 14670 14850
+ 14983 14997 15081 15286 15351 15447 15477 15533 15548 15557 15691 15853
+ 15854 15997 16121 16183 16249 16281 16336 16373 16417 16671 16686 16691
+ 16697 16701 16760 16779 16926 16932 17005 17077 17093 17222 17346 17399
+ 17406 17452 17606 17755 17764 17810 17895 17919 18019 18184 18241 18521
+ 18549 18600 18694 18735 18790 18972 19345 19382 19429 19442 19520 19676
+ 19741 19910 19957 19964 20292 20427 20444 20483] are constant.
+  warnings.warn("Features %s are constant." % constant_features_idx, UserWarning)
+shamir/sarcoma/mrna fold 4: done
+shamir/sarcoma/mrna: written
+k                  10     50     100    500    12042  14229  14260  17261  17539  18206  20531
+method                                                                                        
+all                  NaN    NaN    NaN    NaN  0.951  0.981  0.987  0.945  0.965  0.959  0.918
+anova              0.896  0.928  0.940  0.961    NaN    NaN    NaN    NaN    NaN    NaN    NaN
+random             0.783  0.885  0.912  0.945    NaN    NaN    NaN    NaN    NaN    NaN    NaN
+random_forest      0.920  0.949  0.953  0.960    NaN    NaN    NaN    NaN    NaN    NaN    NaN
+tabomics-v2.5:n1   0.927  0.955  0.954  0.962    NaN    NaN    NaN    NaN    NaN    NaN    NaN
+tabpfn-wide-5k:n1  0.929  0.957  0.958  0.965    NaN    NaN    NaN    NaN    NaN    NaN    NaN
+                   jaccard_top100  spearman
+method                                     
+anova                       0.607     0.925
+random_forest               0.141     0.082
+tabomics-v2.5:n1            0.343     0.750
+tabpfn-wide-5k:n1           0.379     0.767
