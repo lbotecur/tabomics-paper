@@ -36,11 +36,13 @@ NAMES = {
     "random_forest": "Random forest",
     "xgboost": "XGBoost",
     "logreg_en": "Elastic-net LR",
+    "anova": "ANOVA F",
 }
 
 
-# Ablations of scripts/07_ablations.py, the third part of a name: "tabomics-v2.5:n1:fp32" -> "TabOmics v2.5 ×1, fp32".
-VARIANTS = {"clip100": "clip 100", "fp32": "fp32"}
+# The third part of a name: an ablation of scripts/07_ablations.py, or the rows of the importance scores (scripts 08
+# and 09): "tabomics-v2.5:n1:fp32" -> "TabOmics v2.5 ×1, fp32".
+VARIANTS = {"clip100": "clip 100", "fp32": "fp32", "allrows": "all rows"}
 
 
 def paper_name(model: str) -> str:

@@ -6,4 +6,4 @@ select = ["E", "F", "I", "W", "B"]
 
 [lint.isort]
 known-first-party = ["tabomics_paper"]
-known-local-folder = ["common"]
+known-local-folder = ["common", "importance"]
