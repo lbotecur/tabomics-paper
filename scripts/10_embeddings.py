@@ -21,8 +21,9 @@ representation of the samples is built from the outer training rows only:
 Every representation is standardized and given to the same two classifiers, a logistic regression (l2) and a
 k-nearest-neighbour classifier (Euclidean, uniform weights), scored on the outer test rows (AUROC, accuracy). Their
 hyperparameters (C, five values from 1e-4 to 1e4; k in 1, 3, 5, 11; and the PLS components) are chosen on the outer
-training rows by stratified 3-fold cross-validation with the macro AUROC, the representation rebuilt within each inner
-partition, so that no validation label enters it.
+training rows by stratified 3-fold cross-validation with the macro AUROC: on the embeddings of the outer training rows,
+computed once per outer fold; for the genes, with the scaling, PCA and PLS fitted within each inner partition. No
+label of the outer test rows enters a representation or the choice of a hyperparameter.
 
 One CSV per model and task, results/raw/embeddings/<model>/<suite>_<cancer>.csv, one row per fold and classifier,
 written after every fold: a run that stops resumes where it left off. On the first fold of MLOmics BRCA, also
@@ -104,19 +105,23 @@ def classifier(name: str, params: dict):
 
 
 def run_fold(model, embed, X, y, train, test):
-    """The rows of one outer fold, and the out-of-fold representation of its training rows."""
-    inner = [(train[a], train[b]) for a, b in
-             StratifiedKFold(INNER_FOLDS, shuffle=True, random_state=SEED).split(train, y[train])]  # fmt: skip
-    assert all(set(y[a]) == set(y[train]) for a, _ in inner), "an inner training partition without a class"
+    """The rows of one outer fold, and the representation of its training rows (out of fold for the embeddings)."""
+    inner = list(StratifiedKFold(INNER_FOLDS, shuffle=True, random_state=SEED).split(train, y[train]))
+    assert all(set(y[train[a]]) == set(y[train]) for a, _ in inner), "an inner training partition without a class"
+    outer = {} if embed is None else {None: represent(model, embed, X, y, train, test)}  # the embeddings, once
     scores = []  # (inner AUROC, classifier, components, hyperparameters)
     for components in PLS_COMPONENTS if model == "pls" else (None,):
-        partitions = [represent(model, embed, X, y, a, b, components) + (y[a], y[b]) for a, b in inner]
+        if embed is None:  # scaling, PCA and PLS fitted within each inner training partition
+            partitions = [represent(model, None, X, y, train[a], train[b], components) for a, b in inner]
+        else:  # the out-of-fold embeddings of the outer training rows
+            partitions = [(outer[None][0][a], outer[None][0][b]) for a, b in inner]
+        partitions = [(A, B, y[train[a]], y[train[b]]) for (A, B), (a, b) in zip(partitions, inner, strict=True)]
         for name, grid in CLASSIFIERS.items():
             for params in grid:
                 auroc = [roc_auc(yb, classifier(name, params).fit(A, ya).predict_proba(B))
                          for A, B, ya, yb in partitions]  # fmt: skip
                 scores.append((np.nanmean(auroc), name, components, params))
-    rows, outer = [], {}
+    rows = []
     for name in CLASSIFIERS:
         _, _, components, params = max((s for s in scores if s[1] == name), key=lambda s: s[0])
         if components not in outer:
