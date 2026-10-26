@@ -323,12 +323,14 @@ def main() -> int:
         named(ablation_means).to_csv(output / "ablations_means.csv", index=False)
         named(ablation_tests).to_csv(output / "ablations_wilcoxon.csv", index=False)
         print("ablations:", ", ".join(sorted(map(paper_name, ablation.model.unique()))))
-    runs = pd.concat([load(RESULTS / "raw" / "timing"), load(RESULTS / "raw" / "ablations" / "timing")])
+    main_runs = load(RESULTS / "raw" / "timing")
+    runs = pd.concat([main_runs, load(RESULTS / "raw" / "ablations" / "timing")])
     if len(runs):
         timing_task, timing_benchmark = timing(runs[~runs.dataset.isin(EXCLUDED)])
         named(timing_task).to_csv(output / "timing_per_task.csv", index=False)
         named(timing_benchmark).to_csv(output / "timing_per_benchmark.csv", index=False)
-        time_figure(timing_task, REPO / "figures" / "time_vs_features.pdf")
+        main_models = timing_task.model.isin(set(main_runs.get("model", [])))  # the ablations only in the tables
+        time_figure(timing_task[main_models], REPO / "figures" / "time_vs_features.pdf")
         print("timed:", ", ".join(sorted(map(paper_name, runs.model.unique()))))
     if everything.dataset.isin(DEVELOPMENT).any():
         development_task, advantage = development(everything, raw)
