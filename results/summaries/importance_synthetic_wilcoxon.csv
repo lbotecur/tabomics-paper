@@ -1,0 +1,73 @@
+model,other,n,wins,losses,median_difference,p,p_holm,significant,features,metric
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,6,8,-0.0010256410256410664,0.5716076449533316,0.5716076449533316,False,200,recovery_auroc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,5,9,-0.02664692820133241,0.04132685891250041,0.08265371782500082,False,200,recovery_auroc
+TabOmics v2.5 ×1,Random forest,15,12,3,0.07282051282051283,0.0008544921875,0.0025634765625,True,200,recovery_auroc
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,0,0,0.0,1.0,1.0,False,200,recall_at_k
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,1,4,0.0,0.07961580146011343,0.2388474043803403,False,200,recall_at_k
+TabOmics v2.5 ×1,Random forest,15,7,2,0.0,0.16966304970602897,0.33932609941205794,False,200,recall_at_k
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,0,0,0.0,1.0,1.0,False,200,test_auroc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,5,10,-0.014401440144014344,0.063720703125,0.12744140625,False,200,test_auroc
+TabOmics v2.5 ×1,Random forest,15,13,2,0.08164999999999989,0.0067138671875,0.0201416015625,True,200,test_auroc
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,7,5,0.0,0.3078214719088427,0.6156429438176854,False,500,recovery_auroc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,5,9,-0.010731052984573997,0.4143312335768291,0.6156429438176854,False,500,recovery_auroc
+TabOmics v2.5 ×1,Random forest,15,13,2,0.13615023474178412,0.00042724609375,0.00128173828125,True,500,recovery_auroc
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,0,0,0.0,1.0,1.0,False,500,recall_at_k
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,4,1,0.0,0.2228009911811345,0.445601982362269,False,500,recall_at_k
+TabOmics v2.5 ×1,Random forest,15,5,1,0.0,0.07393743585215212,0.22181230755645637,False,500,recall_at_k
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,0,0,0.0,1.0,1.0,False,500,test_auroc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,5,10,-0.012149999999999994,0.063720703125,0.12744140625,False,500,test_auroc
+TabOmics v2.5 ×1,Random forest,15,12,3,0.09520952095209512,0.00115966796875,0.00347900390625,True,500,test_auroc
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,7,7,0.0,0.8260910288588201,0.8260910288588201,False,1000,recovery_auroc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,10,5,0.009447236180904595,0.15142822265625,0.3028564453125,False,1000,recovery_auroc
+TabOmics v2.5 ×1,Random forest,15,13,2,0.1534603811434304,0.0006103515625,0.0018310546875,True,1000,recovery_auroc
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,0,0,0.0,1.0,1.0,False,1000,recall_at_k
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,1,2,0.0,0.7854947471183542,1.0,False,1000,recall_at_k
+TabOmics v2.5 ×1,Random forest,15,7,3,0.0,0.2005629981489917,0.6016889944469751,False,1000,recall_at_k
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,0,0,0.0,1.0,1.0,False,1000,test_auroc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,5,10,-0.02255225522552262,0.207763671875,0.41552734375,False,1000,test_auroc
+TabOmics v2.5 ×1,Random forest,15,14,1,0.1515151515151516,0.00018310546875,0.00054931640625,True,1000,test_auroc
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,9,6,0.0006676681689199437,0.207763671875,0.41552734375,False,2000,recovery_auroc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,9,6,0.009681188449340627,0.207763671875,0.41552734375,False,2000,recovery_auroc
+TabOmics v2.5 ×1,Random forest,15,11,4,0.11067307003082216,0.01507568359375,0.04522705078125,True,2000,recovery_auroc
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,0,0,0.0,1.0,1.0,False,2000,recall_at_k
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,0,2,0.0,0.15729920705028502,0.4718976211508551,False,2000,recall_at_k
+TabOmics v2.5 ×1,Random forest,15,6,3,0.0,0.23366038889458673,0.4718976211508551,False,2000,recall_at_k
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,0,0,0.0,1.0,1.0,False,2000,test_auroc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,4,11,-0.009999999999999787,0.52447509765625,1.0,False,2000,test_auroc
+TabOmics v2.5 ×1,Random forest,15,12,3,0.11799719887955173,0.0042724609375,0.0128173828125,True,2000,test_auroc
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,7,8,-0.00012012012011997086,1.0,1.0,False,5000,recovery_auroc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,8,7,0.0002668267627241594,0.42120361328125,0.8424072265625,False,5000,recovery_auroc
+TabOmics v2.5 ×1,Random forest,15,13,2,0.18010010010010014,0.0008544921875,0.0025634765625,True,5000,recovery_auroc
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,0,0,0.0,1.0,1.0,False,5000,recall_at_k
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,1,0,0.0,0.31731050786291415,0.6346210157258283,False,5000,recall_at_k
+TabOmics v2.5 ×1,Random forest,15,9,1,0.2,0.007680754447365467,0.0230422633420964,True,5000,recall_at_k
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,0,0,0.0,1.0,1.0,False,5000,test_auroc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,7,8,-0.005802320928371185,0.67877197265625,1.0,False,5000,test_auroc
+TabOmics v2.5 ×1,Random forest,15,14,1,0.14345000000000008,0.00042724609375,0.00128173828125,True,5000,test_auroc
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,5,9,-0.0005802901450723263,0.4703377962613965,0.77880859375,False,10000,recovery_auroc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,9,6,0.019599433889436857,0.389404296875,0.77880859375,False,10000,recovery_auroc
+TabOmics v2.5 ×1,Random forest,15,15,0,0.26465232616308165,6.103515625e-05,0.00018310546875,True,10000,recovery_auroc
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,0,0,0.0,1.0,1.0,False,10000,recall_at_k
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,1,3,0.0,0.25683925795785656,0.5136785159157131,False,10000,recall_at_k
+TabOmics v2.5 ×1,Random forest,15,7,0,0.0,0.01674764760318694,0.05024294280956082,False,10000,recall_at_k
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,0,0,0.0,1.0,1.0,False,10000,test_auroc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,9,6,0.0023999999999999577,0.33026123046875,0.6605224609375,False,10000,test_auroc
+TabOmics v2.5 ×1,Random forest,15,10,5,0.04370000000000007,0.041259765625,0.123779296875,False,10000,test_auroc
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,8,7,0.0006500975146271903,0.45428466796875,0.9085693359375,False,20000,recovery_auroc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,6,9,-0.004673064143879024,0.52447509765625,0.9085693359375,False,20000,recovery_auroc
+TabOmics v2.5 ×1,Random forest,15,15,0,0.21761597572969277,6.103515625e-05,0.00018310546875,True,20000,recovery_auroc
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,1,0,0.0,0.31731050786291415,0.31731050786291415,False,20000,recall_at_k
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,0,3,0.0,0.10247043485974937,0.20494086971949874,False,20000,recall_at_k
+TabOmics v2.5 ×1,Random forest,15,6,0,0.0,0.025596805385948558,0.07679041615784568,False,20000,recall_at_k
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,0,0,0.0,1.0,1.0,False,20000,test_auroc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,11,4,0.040254025402540305,0.02154541015625,0.0430908203125,True,20000,test_auroc
+TabOmics v2.5 ×1,Random forest,15,11,4,0.08783513405362148,0.0042724609375,0.0128173828125,True,20000,test_auroc
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,6,9,-0.0003905673228514761,0.5614013671875,1.0,False,30000,recovery_auroc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,8,7,0.008701450241706765,0.803955078125,1.0,False,30000,recovery_auroc
+TabOmics v2.5 ×1,Random forest,15,15,0,0.3113852308718119,6.103515625e-05,0.00018310546875,True,30000,recovery_auroc
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,0,0,0.0,1.0,1.0,False,30000,recall_at_k
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,0,2,0.0,0.17971249487899976,0.3594249897579995,False,30000,recall_at_k
+TabOmics v2.5 ×1,Random forest,15,10,0,0.1428571428571428,0.004643645257632883,0.01393093577289865,True,30000,recall_at_k
+TabOmics v2.5 ×1,"TabOmics v2.5 ×1, all rows",15,0,0,0.0,1.0,1.0,False,30000,test_auroc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,15,13,2,0.08389999999999997,0.00152587890625,0.00457763671875,True,30000,test_auroc
+TabOmics v2.5 ×1,Random forest,15,13,2,0.1302000000000001,0.00152587890625,0.00457763671875,True,30000,test_auroc
