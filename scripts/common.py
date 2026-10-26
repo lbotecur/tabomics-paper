@@ -39,6 +39,8 @@ NAMES = {
     "anova": "ANOVA F",
     "random": "Random genes",
     "all": "All genes",
+    "pca": "PCA",
+    "pls": "PLS",
 }
 
 
