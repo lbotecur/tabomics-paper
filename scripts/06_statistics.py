@@ -19,8 +19,11 @@ results/summaries/ and figures/:
   with valid results on every fold of every task (the folds of manifests/tasks.tsv).
 - ablations_means.csv, ablations_wilcoxon.csv: the ablations (results/raw/ablations/, script 07) and TabOmics v2.5 x8
   against the reference, TabOmics v2.5 x1, as above; Holm over the ablations.
-- timing_per_task.csv, timing_per_benchmark.csv, figures/time_vs_features.pdf: the cost runs (--timing): per task,
+- timing_per_task.csv, timing_per_benchmark.csv: the cost runs (--timing): per task,
   the median seconds of the repeats and the peak GPU memory; per set, the median over the tasks.
+- tables/cost.tex: the cost table of the paper for the models of the benchmarks: the mean AUROC over all tasks, the
+  median seconds per fold per benchmark and over all tasks, the slowest task, and the median and largest peak GPU
+  memory (none recorded for XGBoost and the CPU methods).
 - development.csv, development_advantage.csv: the development datasets (common.DEVELOPMENT, an appendix): means per
   task, and the median difference of TabOmics v2.5 x1 with each model on them and on the tasks of the paper.
 - importance_synthetic_means.csv, importance_synthetic_wilcoxon.csv (script 08): per width, the means over the
@@ -202,16 +205,26 @@ def timing(runs: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     return per_task, pd.concat(rows).reset_index()
 
 
-def time_figure(per_task: pd.DataFrame, path) -> None:
-    """Median seconds per fold against the number of features, one line per model (log-log)."""
-    fig, ax = plt.subplots(figsize=(7, 4.5))
-    for model, rows in per_task.sort_values("features").groupby("model"):
-        ax.plot(rows.features, rows.seconds, marker="o", markersize=3, lw=0.8, label=paper_name(model))
-    ax.set(xscale="log", yscale="log", xlabel="Features", ylabel="Seconds per fold (median)")
-    ax.legend(fontsize=6, ncol=2, frameon=False)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(path, bbox_inches="tight", metadata={"CreationDate": None})  # the same bytes on every run
-    plt.close(fig)
+def cost_table(per_task: pd.DataFrame, per_set: pd.DataFrame, per_benchmark: pd.DataFrame) -> str:
+    """The cost table of the paper, the models sorted by their mean AUROC over all tasks, as in the benchmark table."""
+    auroc = per_benchmark[per_benchmark.set == "all"].set_index("model").roc_auc
+    seconds = per_set.pivot(index="model", columns="set", values="seconds")[[*SUITES, "all"]]
+    memory = per_task.groupby("model").peak_gpu_mb.agg(["median", "max"]) / 1024
+    lines = []
+    for model in auroc.sort_values(ascending=False).index:
+        gpu = ["--", "--"] if memory.loc[model, "max"] == 0 else [f"{v:.1f}" for v in memory.loc[model]]
+        cells = [latex_name(model), f"{auroc[model]:.3f}", *(f"{v:.1f}" for v in seconds.loc[model]),
+                 f"{per_task[per_task.model == model].seconds.max():.0f}", *gpu]  # fmt: skip
+        lines.append(" & ".join(cells) + r" \\")
+    header = [
+        r"\begin{tabular}{lrrrrrrrr}",
+        r"\toprule",
+        r" & & \multicolumn{5}{c}{Seconds per fold} & \multicolumn{2}{c}{GPU memory (GB)} \\",
+        r"\cmidrule(lr){3-7} \cmidrule(lr){8-9}",
+        r"Model & AUROC & HDLSS & MLOmics & Shamir & All & Max & Median & Max \\",
+        r"\midrule",
+    ]
+    return "\n".join([*header, *lines, r"\bottomrule", r"\end{tabular}", ""])
 
 
 def development(everything: pd.DataFrame, raw: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -410,8 +423,9 @@ def main() -> int:
         timing_task, timing_benchmark = timing(runs[~runs.dataset.isin(EXCLUDED)])
         named(timing_task).to_csv(output / "timing_per_task.csv", index=False)
         named(timing_benchmark).to_csv(output / "timing_per_benchmark.csv", index=False)
-        main_models = timing_task.model.isin(set(main_runs.get("model", [])))  # the ablations only in the tables
-        time_figure(timing_task[main_models], REPO / "figures" / "time_vs_features.pdf")
+        main_models = timing_task.model.isin(set(main_runs.get("model", [])))  # the ablations only in the CSVs
+        table = cost_table(timing_task[main_models], timing_benchmark, per_benchmark)
+        (REPO / "tables" / "cost.tex").write_text(table)
         print("timed:", ", ".join(sorted(map(paper_name, runs.model.unique()))))
     if everything.dataset.isin(DEVELOPMENT).any():
         development_task, advantage = development(everything, raw)
