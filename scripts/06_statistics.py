@@ -24,6 +24,8 @@ results/summaries/ and figures/:
 - tables/cost.tex: the cost table of the paper for the models of the benchmarks: the mean AUROC over all tasks, the
   median seconds per fold per benchmark and over all tasks, the slowest task, and the median and largest peak GPU
   memory (none recorded for XGBoost and the CPU methods).
+- tables/ablations.tex: the ablation table of the paper: the mean AUROC and accuracy over all tasks of each ablation,
+  its wins-ties-losses and Holm p against the reference, and its median seconds per fold and GPU memory.
 - development.csv, development_advantage.csv: the development datasets (common.DEVELOPMENT, an appendix): means per
   task, and the median difference of TabOmics v2.5 x1 with each model on them and on the tasks of the paper.
 - importance_synthetic_means.csv, importance_synthetic_wilcoxon.csv (script 08): per width, the means over the
@@ -222,6 +224,46 @@ def cost_table(per_task: pd.DataFrame, per_set: pd.DataFrame, per_benchmark: pd.
         r" & & \multicolumn{5}{c}{Seconds per fold} & \multicolumn{2}{c}{GPU memory (GB)} \\",
         r"\cmidrule(lr){3-7} \cmidrule(lr){8-9}",
         r"Model & AUROC & HDLSS & MLOmics & Shamir & All & Max & Median & Max \\",
+        r"\midrule",
+    ]
+    return "\n".join([*header, *lines, r"\bottomrule", r"\end{tabular}", ""])
+
+
+ABLATION_ROWS = {  # the rows of the ablation table, in order
+    "tabomics-v2.5:n1": "One pass (reference)",
+    "tabomics-v2.5:n1:clip100": "Feature clip 100",
+    "tabomics-v2.5:n1:fp32": "Single precision",
+    "tabomics-v2.5:n2": "Two passes",
+    "tabomics-v2.5:n4": "Four passes",
+    "tabomics-v2.5:n8": "Eight passes",
+}
+
+
+def ablation_table(means_: pd.DataFrame, tests: pd.DataFrame, per_task: pd.DataFrame, per_set: pd.DataFrame) -> str:
+    """The ablation table of the paper: each metric over all tasks with the comparison with the reference, and the cost
+    (-- for the clip, not timed: it does not change the computation)."""
+    means_ = means_[means_.set == "all"].set_index("model")
+    tests = tests[tests.set == "all"].set_index(["model", "metric"])
+    seconds = per_set[per_set.set == "all"].set_index("model").seconds
+    memory = per_task.groupby("model").peak_gpu_mb.median() / 1024
+    lines = []
+    for model, label in ABLATION_ROWS.items():
+        cells = [label]
+        for metric in METRICS:
+            cells.append(f"{means_.loc[model, metric]:.4f}")
+            if model == REFERENCE:
+                cells += ["--", "--"]
+            else:
+                test = tests.loc[(model, metric)]
+                cells += [f"{test.wins}--{test.ties}--{test.losses}", latex_p(test.p_holm)]
+        cells += [f"{seconds[model]:.1f}", f"{memory[model]:.1f}"] if model in seconds.index else ["--", "--"]
+        lines.append(" & ".join(cells) + r" \\")
+    header = [
+        r"\begin{tabular}{lrcrrcrrr}",
+        r"\toprule",
+        r" & \multicolumn{3}{c}{AUROC} & \multicolumn{3}{c}{Accuracy} & & \\",
+        r"\cmidrule(lr){2-4} \cmidrule(lr){5-7}",
+        r"TabOmics v2.5 & Mean & W--T--L & $p$ & Mean & W--T--L & $p$ & Seconds & GPU (GB) \\",
         r"\midrule",
     ]
     return "\n".join([*header, *lines, r"\bottomrule", r"\end{tabular}", ""])
@@ -426,6 +468,9 @@ def main() -> int:
         main_models = timing_task.model.isin(set(main_runs.get("model", [])))  # the ablations only in the CSVs
         table = cost_table(timing_task[main_models], timing_benchmark, per_benchmark)
         (REPO / "tables" / "cost.tex").write_text(table)
+        if len(ablation):
+            table = ablation_table(ablation_means, ablation_tests, timing_task, timing_benchmark)
+            (REPO / "tables" / "ablations.tex").write_text(table)
         print("timed:", ", ".join(sorted(map(paper_name, runs.model.unique()))))
     if everything.dataset.isin(DEVELOPMENT).any():
         development_task, advantage = development(everything, raw)
