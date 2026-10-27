@@ -85,7 +85,7 @@ CUDA_VISIBLE_DEVICES=0 nohup python scripts/04_benchmarks_tabomics.py --models t
 | 07 | `07_ablations.py` | TabOmics v2.5: 2 and 4 passes, feature clip 100, fp32 | `results/raw/ablations/` | `logs/ablations/` | Sections 6.4, 7 |
 | 08 | `08_importance_synthetic.py`, then with `--features 10000 20000 30000` | feature recovery on synthetic tables | `results/raw/importance/` | `logs/importance/` | Sections 6.5, 7 |
 | 09 | `09_importance_omics.py` | gene rankings on the mRNA tasks | `results/raw/importance/` | `logs/importance/` | Sections 6.5, 7 |
-| 10 | `10_embeddings.py` | sample embeddings on the mRNA tasks | `results/raw/embeddings/` | `logs/embeddings/10_<model>.log` | Sections 6.6, 7 |
+| 10 | `10_embeddings.py`, then with `--figure` | sample embeddings on the mRNA tasks, and their figure | `results/raw/embeddings/` | `logs/embeddings/10_<model>.log` | Sections 6.6, 7 |
 | 06 | `06_statistics.py`, after the others | means, Wilcoxon with Holm, Friedman with Nemenyi, figures | `results/summaries/`, `figures/` | | Sections 6.3, 7 |
 
 `<model>` is the name of a model with `:` written as `_` (`tabomics-v2.5:n1` → `tabomics-v2.5_n1`); `--help` lists
@@ -123,7 +123,7 @@ the per-fold results of `results/raw/`:
 | Computational cost | `timing_per_benchmark.csv`, `timing_per_task.csv`; `tables/cost.tex` | |
 | Feature importance, synthetic tables | `importance_synthetic_means.csv`, `importance_synthetic_wilcoxon.csv` | `importance_synthetic.pdf` |
 | Feature importance, gene rankings | `importance_omics_*.csv`; `tables/importance_omics.tex`; the top genes of every fold in `results/raw/importance/omics_top_genes.csv` | |
-| Sample embeddings | `embeddings_means.csv`, `embeddings_per_task.csv`, `embeddings_wilcoxon.csv` | `embeddings/` (written by 10) |
+| Sample embeddings | `embeddings_means.csv`, `embeddings_per_task.csv`, `embeddings_wilcoxon.csv`; `tables/embeddings.tex` | `embeddings.pdf` (written by 10 with `--figure`) |
 | Development datasets (appendix) | `development.csv`, `development_advantage.csv` | |
 | Audit of LGG methylation | `results/audit/lgg_methylation.json` (written by 03) | |
 

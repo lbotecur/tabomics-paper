@@ -26,10 +26,10 @@ computed once per outer fold; for the genes, with the scaling, PCA and PLS fitte
 label of the outer test rows enters a representation or the choice of a hyperparameter.
 
 One CSV per model and task, results/raw/embeddings/<model>/<suite>_<cancer>.csv, one row per fold and classifier,
-written after every fold: a run that stops resumes where it left off. On the first fold of Shamir breast, also
-figures/embeddings/<model>.pdf: the out-of-fold embeddings of the training rows (the genes for "all") on their first
-two principal components, by PAM50 subtype; --figure writes only these figures, from that fold alone. Only scores
-and figures are written, never data. One GPU, chosen with CUDA_VISIBLE_DEVICES.
+written after every fold: a run that stops resumes where it left off. With --figure, only figures/embeddings.pdf,
+from the first fold of Shamir breast: for the genes and the embeddings of the four foundation models, the out-of-fold
+representation of the training rows on its first two principal components, by PAM50 subtype, one panel each. Only
+scores and a figure are written, never data. One GPU, chosen with CUDA_VISIBLE_DEVICES.
 """
 
 import argparse
@@ -63,7 +63,10 @@ PARTS, INNER_FOLDS = 10, 3
 FIGURE = ("shamir/breast/mrna", 0)
 # Its classes in the order of their codes: the PAM50 subtypes of Shamir are text, coded in alphabetical order (those of
 # MLOmics are numbers whose subtypes are not documented, hence not this task).
-FIGURE_CLASSES = ("Basal", "Her2", "LumA", "LumB", "Normal")
+# Colours of the Okabe-Ito palette, distinguishable with colour-vision deficiencies.
+FIGURE_CLASSES = {"Basal": "#0072B2", "Her2": "#E69F00", "LumA": "#009E73", "LumB": "#D55E00", "Normal": "#CC79A7"}
+FIGURE_MODELS = ("all", "tabomics-v2.5:n1", "tabomics-v2.5:n8", "tabpfn-wide-5k:n1", "tabpfn-v2-gn2p4bpt:n1")
+FIGURE_PATH = REPO / "figures" / "embeddings.pdf"
 OUTPUT = RESULTS / "raw" / "embeddings"
 
 
@@ -137,17 +140,19 @@ def run_fold(model, embed, X, y, train, test):
     return rows, next(iter(outer.values()))[0]
 
 
-def figure(Z, y, model: str) -> None:
-    """The training rows on the first two principal components of their representation, by class."""
-    points = PCA(2, random_state=SEED).fit_transform(StandardScaler().fit_transform(Z))
-    fig, ax = plt.subplots(figsize=(3.2, 3))
-    for c in np.unique(y):
-        ax.scatter(*points[y == c].T, s=4, label=FIGURE_CLASSES[c])
-    ax.set(xticks=[], yticks=[], title=paper_name(model), xlabel="PC 1", ylabel="PC 2")
-    ax.legend(fontsize=6, frameon=False, markerscale=2)
-    path = REPO / "figures" / "embeddings" / f"{model.replace(':', '_')}.pdf"
-    path.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(path, bbox_inches="tight", metadata={"CreationDate": None})  # the same bytes on every run
+def figure(panels: list[tuple[str, np.ndarray]], y: np.ndarray) -> None:
+    """One panel per representation: the training rows on its first two principal components, by subtype; one legend."""
+    fig, axes = plt.subplots(1, len(panels), figsize=(1.45 * len(panels), 1.5))
+    for ax, (model, Z) in zip(axes, panels, strict=True):
+        points = PCA(2, random_state=SEED).fit_transform(StandardScaler().fit_transform(Z))
+        for code, (name, colour) in enumerate(FIGURE_CLASSES.items()):
+            ax.scatter(*points[y == code].T, s=2.5, color=colour, linewidths=0, label=name)
+        ax.set(xticks=[], yticks=[], box_aspect=1)
+        ax.set_title(paper_name(model), fontsize=8)
+    fig.legend(*axes[0].get_legend_handles_labels(), loc="upper center", bbox_to_anchor=(0.5, 0.08),
+               ncol=len(FIGURE_CLASSES), fontsize=7, frameon=False, markerscale=3, handletextpad=0.1)  # fmt: skip
+    FIGURE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(FIGURE_PATH, bbox_inches="tight", metadata={"CreationDate": None})  # the same bytes on every run
     plt.close(fig)
 
 
@@ -157,17 +162,20 @@ def main() -> int:
     parser.add_argument("--models", nargs="+", default=list(MODELS), choices=MODELS)
     parser.add_argument("--tasks", nargs="+", default=TASKS, choices=TASKS)
     parser.add_argument("--device", default="cuda")
-    parser.add_argument("--figure", action="store_true", help="only the figures of FIGURE, from its fold alone")
+    parser.add_argument("--figure", action="store_true", help="only the figure (FIGURE_PATH), from its fold alone")
     args = parser.parse_args()
     root = data_root(args)
-    if args.figure:  # the out-of-fold representation of the training rows of that fold; no CSV is written
+    if args.figure:  # the out-of-fold representations of the training rows of that fold; no CSV is written
         suite, task = FIGURE[0].split("/", 1)
         X, y, _ = SUITES[suite].load_task(task, root)
         train, test = SUITES[suite].folds(y)[FIGURE[1]]
-        for model in (m for m in args.models if m not in ("pca", "pls")):
+        panels = []
+        for model in FIGURE_MODELS:
             embed = None if model in GENES else embedder(model, args.device)
-            figure(represent(model, embed, X, y, train, test)[0], y[train], model)
-            print(f"{model}: figure written", flush=True)
+            panels.append((model, represent(model, embed, X, y, train, test)[0]))
+            print(f"{model}: represented", flush=True)
+        figure(panels, y[train])
+        print(f"written: {FIGURE_PATH.relative_to(REPO)}", flush=True)
         return 0
     for model in args.models:
         embed = None if model in GENES else embedder(model, args.device)
@@ -180,9 +188,7 @@ def main() -> int:
             for fold, (train, test) in enumerate(module.folds(y)):
                 if len(results) and fold in set(results.fold):
                     continue
-                rows, Z = run_fold(model, embed, X, y, train, test)
-                if (name, fold) == FIGURE and model not in ("pca", "pls"):
-                    figure(Z, y[train], model)
+                rows, _ = run_fold(model, embed, X, y, train, test)
                 fold_rows = pd.DataFrame(rows).assign(model=model, suite=suite, task=task, fold=fold)
                 results = pd.concat([results, fold_rows], ignore_index=True)
                 path.parent.mkdir(parents=True, exist_ok=True)
