@@ -118,9 +118,9 @@ the per-fold results of `results/raw/`:
 
 | Paper | Results (`results/summaries/`) | Figures (`figures/`) |
 |---|---|---|
-| Benchmarks | `per_benchmark.csv`, `per_task.csv`, `wilcoxon.csv`, `friedman.csv`, `ranks.csv` | `cd_<metric>_<set>.pdf` |
+| Benchmarks | `per_benchmark.csv`, `per_task.csv`, `wilcoxon.csv`, `friedman.csv`, `ranks.csv`, `versions.csv`; `tables/benchmarks_<metric>.tex` | `cd_<metric>_<set>.pdf` |
 | Ablations | `ablations_means.csv`, `ablations_wilcoxon.csv` | |
-| Computational cost | `timing_per_benchmark.csv`, `timing_per_task.csv` | `time_vs_features.pdf` |
+| Computational cost | `timing_per_benchmark.csv`, `timing_per_task.csv`; `tables/cost.tex` | |
 | Feature importance, synthetic tables | `importance_synthetic_means.csv`, `importance_synthetic_wilcoxon.csv` | |
 | Feature importance, gene rankings | `importance_omics_*.csv`; the top genes of every fold in `results/raw/importance/omics_top_genes.csv` | |
 | Sample embeddings | `embeddings_means.csv`, `embeddings_per_task.csv`, `embeddings_wilcoxon.csv` | `embeddings/` (written by 10) |
