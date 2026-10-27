@@ -28,12 +28,14 @@ label of the outer test rows enters a representation or the choice of a hyperpar
 One CSV per model and task, results/raw/embeddings/<model>/<suite>_<cancer>.csv, one row per fold and classifier,
 written after every fold: a run that stops resumes where it left off. With --figure, only figures/embeddings.pdf,
 from the first fold of Shamir breast: for the genes and the embeddings of the four foundation models, the out-of-fold
-representation of the training rows on its first two principal components, by PAM50 subtype, one panel each. Only
-scores and a figure are written, never data. One GPU, chosen with CUDA_VISIBLE_DEVICES.
+representation of the training rows on its first two principal components, by PAM50 subtype, one panel each; the
+representations are kept in FIGURE_CACHE, outside the repository, so that the figure is drawn again in seconds. Only
+scores and a figure are written to the repository, never data. One GPU, chosen with CUDA_VISIBLE_DEVICES.
 """
 
 import argparse
 import sys
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -67,6 +69,9 @@ FIGURE = ("shamir/breast/mrna", 0)
 FIGURE_CLASSES = {"Basal": "#0072B2", "Her2": "#E69F00", "LumA": "#009E73", "LumB": "#D55E00", "Normal": "#CC79A7"}
 FIGURE_MODELS = ("all", "tabomics-v2.5:n1", "tabomics-v2.5:n8", "tabpfn-wide-5k:n1", "tabpfn-v2-gn2p4bpt:n1")
 FIGURE_PATH = REPO / "figures" / "embeddings.pdf"
+# The representations drawn, kept outside the repository (they are per sample, never committed), so that the figure
+# can be drawn again in seconds; delete the file to compute them again.
+FIGURE_CACHE = Path.home() / ".cache" / "tabomics-paper" / "embeddings_figure.npz"
 OUTPUT = RESULTS / "raw" / "embeddings"
 
 
@@ -166,15 +171,19 @@ def main() -> int:
     args = parser.parse_args()
     root = data_root(args)
     if args.figure:  # the out-of-fold representations of the training rows of that fold; no CSV is written
-        suite, task = FIGURE[0].split("/", 1)
-        X, y, _ = SUITES[suite].load_task(task, root)
-        train, test = SUITES[suite].folds(y)[FIGURE[1]]
-        panels = []
-        for model in FIGURE_MODELS:
-            embed = None if model in GENES else embedder(model, args.device)
-            panels.append((model, represent(model, embed, X, y, train, test)[0]))
-            print(f"{model}: represented", flush=True)
-        figure(panels, y[train])
+        if not FIGURE_CACHE.exists():
+            suite, task = FIGURE[0].split("/", 1)
+            X, y, _ = SUITES[suite].load_task(task, root)
+            train, test = SUITES[suite].folds(y)[FIGURE[1]]
+            representations = {"y": y[train]}
+            for i, model in enumerate(FIGURE_MODELS):
+                embed = None if model in GENES else embedder(model, args.device)
+                representations[f"panel{i}"] = represent(model, embed, X, y, train, test)[0]
+                print(f"{model}: represented", flush=True)
+            FIGURE_CACHE.parent.mkdir(parents=True, exist_ok=True)
+            np.savez(FIGURE_CACHE, **representations)
+        cached = np.load(FIGURE_CACHE)
+        figure([(model, cached[f"panel{i}"]) for i, model in enumerate(FIGURE_MODELS)], cached["y"])
         print(f"written: {FIGURE_PATH.relative_to(REPO)}", flush=True)
         return 0
     for model in args.models:
