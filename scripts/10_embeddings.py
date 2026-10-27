@@ -144,7 +144,7 @@ def figure(Z, y, model: str) -> None:
     ax.legend(fontsize=6, frameon=False, markerscale=2)
     path = REPO / "figures" / "embeddings" / f"{model.replace(':', '_')}.pdf"
     path.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(path, bbox_inches="tight")
+    fig.savefig(path, bbox_inches="tight", metadata={"CreationDate": None})  # the same bytes on every run
     plt.close(fig)
 
 
