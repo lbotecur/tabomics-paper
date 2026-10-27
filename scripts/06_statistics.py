@@ -4,7 +4,7 @@
 
     python scripts/06_statistics.py
 
-Reads the CSVs of results/raw/ (scripts 04 and 05) and follows the paper (Section 7.3), for each metric (AUROC,
+Reads the CSVs of results/raw/ (scripts 04 and 05) and follows the paper (Section 6.3), for each metric (AUROC,
 accuracy) and each set of tasks (all, and each benchmark), on the tasks of the paper (without common.EXCLUDED); in
 results/summaries/ and figures/:
 
