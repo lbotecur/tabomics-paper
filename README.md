@@ -66,24 +66,69 @@ The sources, the layout of the data folder, the folds and the metrics are descri
 
 ### 3. Experiments
 
-Run the scripts in order; each writes its results under `results/`.
+Every script writes its results under `results/`, after every fold, so that a run that stops resumes where it left
+off (with `--retry-failed`, 04 and 05 also run again the folds that failed). Each run uses one GPU, chosen with
+`CUDA_VISIBLE_DEVICES`. The runs of the paper started one process per model, each with its own log, as in:
 
-| # | Command | Experiment | Paper |
-|---|---|---|---|
-| 03 | `python scripts/03_audit_lgg.py` | audit of the LGG methylation task of MLOmics | Section 7.1 |
-| 04 | `python scripts/04_benchmarks_tabomics.py` | TabOmics v2 and v2.5 on HDLSS, MLOmics and Shamir | Sections 7.2, 8 |
-| 05 | `python scripts/05_benchmarks_baselines.py` | other TFMs and classical methods on the same folds | Sections 7.2, 8 |
-| 06 | `python scripts/06_statistics.py` | Wilcoxon with Holm, Friedman with Nemenyi, critical difference diagram | Sections 7.3, 8 |
-| 07 | `python scripts/07_ablations.py` | feature clip, ensemble members, low-memory path | Sections 7.4, 8 |
-| 08 | `python scripts/08_importance_synthetic.py` | feature recovery on synthetic tables | Sections 7.5, 8 |
-| 09 | `python scripts/09_importance_omics.py` | top-ranked genes and subtype markers | Sections 7.5, 8 |
-| 10 | `python scripts/10_embeddings.py` | sample embeddings | Sections 7.6, 8 |
+```bash
+export TABOMICS_DATA=/path/to/data
+CUDA_VISIBLE_DEVICES=0 nohup python scripts/04_benchmarks_tabomics.py --models tabomics-v2.5:n1 \
+    > logs/04_tabomics-v2.5_n1.log 2>&1 &
+```
 
-Scripts 04 to 10 are being written; the GPU and time each one needs will be listed here.
+| # | Script | Experiment | Results | Logs | Paper |
+|---|---|---|---|---|---|
+| 03 | `03_audit_lgg.py` | audit of the LGG methylation tasks of MLOmics | `results/audit/` | `logs/03_audit_lgg.log` | Section 7.1 |
+| 04 | `04_benchmarks_tabomics.py` | TabOmics v2 and v2.5, 1 and 8 passes | `results/raw/` | `logs/04_<model>.log` | Sections 7.2, 8 |
+| 05 | `05_benchmarks_baselines.py` | TabPFN-3.5, TabPFNv2, TabPFN-Wide and TabICLv2 (1 and 8 members), random forest, XGBoost, elastic-net LR | `results/raw/` | `logs/05_<model>.log` | Sections 7.2, 8 |
+| 04, 05 | the same, with `--development` | the development datasets | `results/raw/` | `logs/development/` | Appendix |
+| 07 | `07_ablations.py` | TabOmics v2.5: 2 and 4 passes, feature clip 100, fp32 | `results/raw/ablations/` | `logs/ablations/` | Sections 7.4, 8 |
+| 08 | `08_importance_synthetic.py`, then with `--features 10000 20000 30000` | feature recovery on synthetic tables | `results/raw/importance/` | `logs/importance/` | Sections 7.5, 8 |
+| 09 | `09_importance_omics.py` | gene rankings on the mRNA tasks | `results/raw/importance/` | `logs/importance/` | Sections 7.5, 8 |
+| 10 | `10_embeddings.py` | sample embeddings on the mRNA tasks | `results/raw/embeddings/` | `logs/embeddings/10_<model>.log` | Sections 7.6, 8 |
+| 06 | `06_statistics.py`, after the others | means, Wilcoxon with Holm, Friedman with Nemenyi, figures | `results/summaries/`, `figures/` | | Sections 7.3, 8 |
+
+`<model>` is the name of a model with `:` written as `_` (`tabomics-v2.5:n1` → `tabomics-v2.5_n1`); `--help` lists
+the models of each script. 08 and 09 run their methods in one process, 03 and 06 need no GPU.
+
+**Computational cost.** The timings are a separate run, `--timing` in 04, 05 and 07: the first fold of each task,
+three times after a fold that is not timed, into `results/raw/timing/` and `results/raw/ablations/timing/`. They need
+a machine that runs nothing else; the paper ran every model one after another on the same GPU:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 nohup bash -c '
+for m in tabomics-v2:n1 tabomics-v2:n8 tabomics-v2.5:n1 tabomics-v2.5:n8; do
+    python scripts/04_benchmarks_tabomics.py --timing --models $m > logs/timing/04_${m//:/_}.log 2>&1; done
+for m in random_forest logreg_en xgboost tabpfn-3.5:n1 tabpfn-3.5:n8 tabpfn-v2-gn2p4bpt:n1 tabpfn-v2-gn2p4bpt:n8 \
+         tabpfn-wide-5k:n1 tabpfn-wide-5k:n8 tabicl-v2:n1 tabicl-v2:n8; do
+    python scripts/05_benchmarks_baselines.py --timing --models $m > logs/timing/05_${m//:/_}.log 2>&1; done
+for m in tabomics-v2.5:n2 tabomics-v2.5:n4 tabomics-v2.5:n1:fp32; do
+    python scripts/07_ablations.py --timing --models $m > logs/timing/07_${m//:/_}.log 2>&1; done' &
+```
+
+**Machines.** The runs of the paper used two identical machines, each with eight NVIDIA A100 80 GB GPUs and the same
+environment (`manifests/software.txt`): the benchmarks (04, 05) and every timing on the first, the timings on its GPU 0
+alone; the ablations (07), the development datasets, 08, 09 and 10 on the second. Summed over their folds, the
+benchmark runs took 32 GPU hours for 04 (3 to 13 per model) and about 97 for 05 (1 to 26 per model), and 07 took 27.
 
 ### 4. Results
 
-Each table and figure of the paper will be listed here with the script and the result file it comes from.
+`06_statistics.py` writes every number of the paper into `results/summaries/` and its figures into `figures/`, from
+the per-fold results of `results/raw/`:
+
+| Paper | Results (`results/summaries/`) | Figures (`figures/`) |
+|---|---|---|
+| Benchmarks | `per_benchmark.csv`, `per_task.csv`, `wilcoxon.csv`, `friedman.csv`, `ranks.csv` | `cd_<metric>_<set>.pdf` |
+| Ablations | `ablations_means.csv`, `ablations_wilcoxon.csv` | |
+| Computational cost | `timing_per_benchmark.csv`, `timing_per_task.csv` | `time_vs_features.pdf` |
+| Feature importance, synthetic tables | `importance_synthetic_means.csv`, `importance_synthetic_wilcoxon.csv` | |
+| Feature importance, gene rankings | `importance_omics_*.csv`; the top genes of every fold in `results/raw/importance/omics_top_genes.csv` | |
+| Sample embeddings | `embeddings_means.csv`, `embeddings_per_task.csv`, `embeddings_wilcoxon.csv` | `embeddings/` (written by 10) |
+| Development datasets (appendix) | `development.csv`, `development_advantage.csv` | |
+| Audit of LGG methylation | `results/audit/lgg_methylation.json` (written by 03) | |
+
+Rerunning 06 on the results of this repository, in the environment of `requirements.lock`, gives the same files, byte
+for byte.
 
 ## Layout
 
@@ -93,11 +138,11 @@ Each table and figure of the paper will be listed here with the script and the r
 | `scripts/` | one numbered script per step (00 to 10) |
 | `docs/` | the benchmarks: sources, data layout, folds and metrics |
 | `manifests/` | SHA-256 of the model weights and data used, and the tasks and folds |
-| `configs/` | settings of each experiment |
-| `logs/` | logs of the runs, and the pretraining logs of TabOmics v2 and v2.5 |
+| `logs/` | logs of the runs, one per script and model |
 | `results/raw/` | one row per fold, as written by the runs |
 | `results/summaries/` | means per task and per benchmark, and statistical tests |
-| `tables/`, `figures/` | tables and figures of the paper, generated from `results/` |
+| `results/audit/` | the audit of the LGG methylation tasks (script 03) |
+| `figures/` | figures of the paper, generated from `results/` (scripts 06 and 10) |
 | `tests/` | tests of the package (`pip install ".[dev]"`, then `pytest`) |
 
 The benchmark suites, the runner and the definitions of the other models were part of tabomics until version 0.1.0;
