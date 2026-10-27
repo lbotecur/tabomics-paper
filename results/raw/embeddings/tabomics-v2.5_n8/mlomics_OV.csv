@@ -1,0 +1,11 @@
+classifier,roc_auc,accuracy,hyperparameter,components,dimension,model,suite,task,fold
+logreg,0.9982919857919859,0.9649122807017544,0.01,,192,tabomics-v2.5:n8,mlomics,OV/mrna,0
+knn,0.995336612066795,0.9298245614035088,11.0,,192,tabomics-v2.5:n8,mlomics,OV/mrna,0
+logreg,1.0,1.0,0.01,,192,tabomics-v2.5:n8,mlomics,OV/mrna,1
+knn,1.0,1.0,11.0,,192,tabomics-v2.5:n8,mlomics,OV/mrna,1
+logreg,0.9979018074948308,0.9473684210526315,0.01,,192,tabomics-v2.5:n8,mlomics,OV/mrna,2
+knn,0.9968200404246915,0.9473684210526315,11.0,,192,tabomics-v2.5:n8,mlomics,OV/mrna,2
+logreg,0.9831171576527504,0.8947368421052632,0.01,,192,tabomics-v2.5:n8,mlomics,OV/mrna,3
+knn,0.9748650191547596,0.9122807017543859,11.0,,192,tabomics-v2.5:n8,mlomics,OV/mrna,3
+logreg,0.9837783789286909,0.8571428571428571,0.01,,192,tabomics-v2.5:n8,mlomics,OV/mrna,4
+knn,0.9703208400599213,0.875,11.0,,192,tabomics-v2.5:n8,mlomics,OV/mrna,4

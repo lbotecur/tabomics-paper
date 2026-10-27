@@ -1,0 +1,67 @@
+nohup: no se tendrá en cuenta la entrada
+tabomics-v2.5:n1 | mlomics/BRCA/mrna fold 0 | logreg AUROC 0.988 | knn AUROC 0.981
+tabomics-v2.5:n1 | mlomics/BRCA/mrna fold 1 | logreg AUROC 0.976 | knn AUROC 0.967
+tabomics-v2.5:n1 | mlomics/BRCA/mrna fold 2 | logreg AUROC 0.982 | knn AUROC 0.950
+tabomics-v2.5:n1 | mlomics/BRCA/mrna fold 3 | logreg AUROC 0.989 | knn AUROC 0.968
+tabomics-v2.5:n1 | mlomics/BRCA/mrna fold 4 | logreg AUROC 0.977 | knn AUROC 0.934
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=5.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=10.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+tabomics-v2.5:n1 | mlomics/COAD/mrna fold 0 | logreg AUROC nan | knn AUROC nan
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 3 members, which is less than n_splits=10.
+  warnings.warn(
+tabomics-v2.5:n1 | mlomics/COAD/mrna fold 1 | logreg AUROC 0.971 | knn AUROC 0.945
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 3 members, which is less than n_splits=10.
+  warnings.warn(
+tabomics-v2.5:n1 | mlomics/COAD/mrna fold 2 | logreg AUROC 0.961 | knn AUROC 0.958
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 3 members, which is less than n_splits=10.
+  warnings.warn(
+tabomics-v2.5:n1 | mlomics/COAD/mrna fold 3 | logreg AUROC 0.878 | knn AUROC 0.927
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 3 members, which is less than n_splits=10.
+  warnings.warn(
+tabomics-v2.5:n1 | mlomics/COAD/mrna fold 4 | logreg AUROC 0.907 | knn AUROC 0.810
+tabomics-v2.5:n1 | mlomics/GBM/mrna fold 0 | logreg AUROC 0.984 | knn AUROC 0.973
+tabomics-v2.5:n1 | mlomics/GBM/mrna fold 1 | logreg AUROC 0.943 | knn AUROC 0.936
+tabomics-v2.5:n1 | mlomics/GBM/mrna fold 2 | logreg AUROC 0.994 | knn AUROC 0.988
+tabomics-v2.5:n1 | mlomics/GBM/mrna fold 3 | logreg AUROC 0.949 | knn AUROC 0.923
+tabomics-v2.5:n1 | mlomics/GBM/mrna fold 4 | logreg AUROC 0.992 | knn AUROC 0.981
+tabomics-v2.5:n1 | mlomics/LGG/mrna fold 0 | logreg AUROC 0.999 | knn AUROC 1.000
+tabomics-v2.5:n1 | mlomics/LGG/mrna fold 1 | logreg AUROC 0.960 | knn AUROC 0.974
+tabomics-v2.5:n1 | mlomics/LGG/mrna fold 2 | logreg AUROC 0.996 | knn AUROC 0.996
+tabomics-v2.5:n1 | mlomics/LGG/mrna fold 3 | logreg AUROC 0.987 | knn AUROC 0.985
+tabomics-v2.5:n1 | mlomics/LGG/mrna fold 4 | logreg AUROC 0.999 | knn AUROC 0.988
+tabomics-v2.5:n1 | mlomics/OV/mrna fold 0 | logreg AUROC 0.998 | knn AUROC 0.995
+tabomics-v2.5:n1 | mlomics/OV/mrna fold 1 | logreg AUROC 1.000 | knn AUROC 1.000
+tabomics-v2.5:n1 | mlomics/OV/mrna fold 2 | logreg AUROC 0.998 | knn AUROC 0.997
+tabomics-v2.5:n1 | mlomics/OV/mrna fold 3 | logreg AUROC 0.983 | knn AUROC 0.975
+tabomics-v2.5:n1 | mlomics/OV/mrna fold 4 | logreg AUROC 0.984 | knn AUROC 0.971
+tabomics-v2.5:n1 | shamir/breast/mrna fold 0 | logreg AUROC 0.990 | knn AUROC 0.961
+tabomics-v2.5:n1 | shamir/breast/mrna fold 1 | logreg AUROC 0.989 | knn AUROC 0.991
+tabomics-v2.5:n1 | shamir/breast/mrna fold 2 | logreg AUROC 0.992 | knn AUROC 0.976
+tabomics-v2.5:n1 | shamir/breast/mrna fold 3 | logreg AUROC 0.993 | knn AUROC 0.977
+tabomics-v2.5:n1 | shamir/breast/mrna fold 4 | logreg AUROC 0.986 | knn AUROC 0.968
+tabomics-v2.5:n1 | shamir/gbm/mrna fold 0 | logreg AUROC 0.945 | knn AUROC 0.944
+tabomics-v2.5:n1 | shamir/gbm/mrna fold 1 | logreg AUROC 0.889 | knn AUROC 0.914
+tabomics-v2.5:n1 | shamir/gbm/mrna fold 2 | logreg AUROC 0.984 | knn AUROC 0.963
+tabomics-v2.5:n1 | shamir/gbm/mrna fold 3 | logreg AUROC 0.959 | knn AUROC 0.929
+tabomics-v2.5:n1 | shamir/gbm/mrna fold 4 | logreg AUROC 0.974 | knn AUROC 0.964
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 5 members, which is less than n_splits=10.
+  warnings.warn(
+tabomics-v2.5:n1 | shamir/sarcoma/mrna fold 0 | logreg AUROC 0.945 | knn AUROC 0.928
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 5 members, which is less than n_splits=10.
+  warnings.warn(
+tabomics-v2.5:n1 | shamir/sarcoma/mrna fold 1 | logreg AUROC 0.943 | knn AUROC 0.903
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=10.
+  warnings.warn(
+tabomics-v2.5:n1 | shamir/sarcoma/mrna fold 2 | logreg AUROC 0.905 | knn AUROC 0.832
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 5 members, which is less than n_splits=10.
+  warnings.warn(
+tabomics-v2.5:n1 | shamir/sarcoma/mrna fold 3 | logreg AUROC 0.928 | knn AUROC 0.905
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 5 members, which is less than n_splits=10.
+  warnings.warn(
+tabomics-v2.5:n1 | shamir/sarcoma/mrna fold 4 | logreg AUROC 0.926 | knn AUROC 0.882

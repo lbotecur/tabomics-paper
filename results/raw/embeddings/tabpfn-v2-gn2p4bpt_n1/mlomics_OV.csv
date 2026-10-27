@@ -1,0 +1,11 @@
+classifier,roc_auc,accuracy,hyperparameter,components,dimension,model,suite,task,fold
+logreg,0.9805985850193166,0.8596491228070176,0.01,,128,tabpfn-v2-gn2p4bpt:n1,mlomics,OV/mrna,0
+knn,0.9650711204445961,0.8421052631578947,11.0,,128,tabpfn-v2-gn2p4bpt:n1,mlomics,OV/mrna,0
+logreg,0.9881997829406367,0.8947368421052632,0.01,,128,tabpfn-v2-gn2p4bpt:n1,mlomics,OV/mrna,1
+knn,0.979981371101798,0.8245614035087719,5.0,,128,tabpfn-v2-gn2p4bpt:n1,mlomics,OV/mrna,1
+logreg,0.9829328888638305,0.8421052631578947,0.01,,128,tabpfn-v2-gn2p4bpt:n1,mlomics,OV/mrna,2
+knn,0.9624657726703246,0.8421052631578947,11.0,,128,tabpfn-v2-gn2p4bpt:n1,mlomics,OV/mrna,2
+logreg,0.9593018754107807,0.8070175438596491,0.01,,128,tabpfn-v2-gn2p4bpt:n1,mlomics,OV/mrna,3
+knn,0.9355551597805569,0.8245614035087719,11.0,,128,tabpfn-v2-gn2p4bpt:n1,mlomics,OV/mrna,3
+logreg,0.9719883066451416,0.8392857142857143,0.01,,128,tabpfn-v2-gn2p4bpt:n1,mlomics,OV/mrna,4
+knn,0.9555834315051559,0.8571428571428571,11.0,,128,tabpfn-v2-gn2p4bpt:n1,mlomics,OV/mrna,4

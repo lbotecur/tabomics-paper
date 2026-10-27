@@ -1,0 +1,11 @@
+classifier,roc_auc,accuracy,hyperparameter,components,dimension,model,suite,task,fold
+logreg,0.9246550302601366,0.7272727272727273,1.0,,128,tabpfn-v2-gn2p4bpt:n1,shamir,gbm/mrna,0
+knn,0.9080454181961152,0.7090909090909091,11.0,,128,tabpfn-v2-gn2p4bpt:n1,shamir,gbm/mrna,0
+logreg,0.9095771365884822,0.6181818181818182,0.01,,128,tabpfn-v2-gn2p4bpt:n1,shamir,gbm/mrna,1
+knn,0.8764569247868074,0.6727272727272727,11.0,,128,tabpfn-v2-gn2p4bpt:n1,shamir,gbm/mrna,1
+logreg,0.9647567862354448,0.7818181818181819,0.01,,128,tabpfn-v2-gn2p4bpt:n1,shamir,gbm/mrna,2
+knn,0.9434421532058728,0.7636363636363637,11.0,,128,tabpfn-v2-gn2p4bpt:n1,shamir,gbm/mrna,2
+logreg,0.9455046511544285,0.8,0.01,,128,tabpfn-v2-gn2p4bpt:n1,shamir,gbm/mrna,3
+knn,0.9182426834661978,0.7636363636363637,11.0,,128,tabpfn-v2-gn2p4bpt:n1,shamir,gbm/mrna,3
+logreg,0.9482377247695876,0.7777777777777778,0.01,,128,tabpfn-v2-gn2p4bpt:n1,shamir,gbm/mrna,4
+knn,0.9227023986521535,0.7222222222222222,11.0,,128,tabpfn-v2-gn2p4bpt:n1,shamir,gbm/mrna,4
