@@ -138,11 +138,11 @@ for byte.
 | `scripts/` | one numbered script per step (00 to 10) |
 | `docs/` | the benchmarks: sources, data layout, folds and metrics |
 | `manifests/` | SHA-256 of the model weights and data used, and the tasks and folds |
-| `configs/` | settings of each experiment |
-| `logs/` | logs of the runs, and the pretraining logs of TabOmics v2 and v2.5 |
+| `logs/` | logs of the runs, one per script and model |
 | `results/raw/` | one row per fold, as written by the runs |
 | `results/summaries/` | means per task and per benchmark, and statistical tests |
-| `tables/`, `figures/` | tables and figures of the paper, generated from `results/` |
+| `results/audit/` | the audit of the LGG methylation tasks (script 03) |
+| `figures/` | figures of the paper, generated from `results/` (scripts 06 and 10) |
 | `tests/` | tests of the package (`pip install ".[dev]"`, then `pytest`) |
 
 The benchmark suites, the runner and the definitions of the other models were part of tabomics until version 0.1.0;
