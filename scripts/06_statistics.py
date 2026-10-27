@@ -41,6 +41,8 @@ results/summaries/ and figures/:
   over folds) and over tasks, with the direct predictions of the foundation models (scripts 04 and 05) on the same
   folds as a reference; TabOmics v2.5 x1 against each other representation per classifier, Wilcoxon paired by task,
   Holm over the representations.
+- tables/embeddings.tex: the embedding table of the paper: per representation and classifier, the mean AUROC over
+  the tasks with the wins-losses and Holm p of TabOmics v2.5 x1 against it, and the direct predictions.
 
 A fold is valid when it succeeded (status "ok") and, for the AUROC, when it is defined (every class in the test rows).
 Each part is skipped when its results are not there yet.
@@ -436,6 +438,36 @@ def importance_table(tables: dict[str, pd.DataFrame]) -> str:
     return "\n".join([*header, *lines, r"\bottomrule", r"\end{tabular}", ""])
 
 
+EMBEDDING_ROWS = ("tabomics-v2.5:n1", "tabomics-v2.5:n8", "tabpfn-wide-5k:n1", "tabpfn-v2-gn2p4bpt:n1", "all", "pls",
+                  "pca")  # fmt: skip
+
+
+def embeddings_table(tables: dict[str, pd.DataFrame]) -> str:
+    """The embedding table of the paper, AUROC only; the best value of each column in bold."""
+    auroc = tables["means"].pivot(index="model", columns="classifier", values="roc_auc").round(3)
+    tests = tables["wilcoxon"][tables["wilcoxon"].metric == "roc_auc"].set_index(["classifier", "other"])
+    lines = []
+    for model in EMBEDDING_ROWS:
+        cells = [latex_name(model)]
+        for classifier in ("logreg", "knn", "direct"):
+            value = auroc.loc[model, classifier]
+            best = value == auroc[classifier].max()
+            cells.append("--" if pd.isna(value) else rf"\textbf{{{value:.3f}}}" if best else f"{value:.3f}")
+            if classifier != "direct":
+                test = tests.loc[(classifier, model)] if (classifier, model) in tests.index else None
+                cells += ["--", "--"] if test is None else [f"{test.wins}--{test.losses}", latex_p(test.p_holm)]
+        lines.append(" & ".join(cells) + r" \\")
+    header = [
+        r"\begin{tabular}{lrcrrcrr}",
+        r"\toprule",
+        r" & \multicolumn{3}{c}{Logistic regression} & \multicolumn{3}{c}{Nearest neighbours} & Direct \\",
+        r"\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-8}",
+        r"Representation & AUROC & W--L & $p$ & AUROC & W--L & $p$ & AUROC \\",
+        r"\midrule",
+    ]
+    return "\n".join([*header, *lines, r"\bottomrule", r"\end{tabular}", ""])
+
+
 def complete_models(raw: pd.DataFrame) -> list[str]:
     """The models with a successful row on every fold of every reported task of manifests/tasks.tsv."""
     tasks = pd.read_csv(MANIFESTS / "tasks.tsv", sep="\t")
@@ -569,6 +601,7 @@ def main() -> int:
         tables = embeddings(pd.concat(map(pd.read_csv, embedding_runs), ignore_index=True), raw)
         for name, table in tables.items():
             named(table).to_csv(output / f"embeddings_{name}.csv", index=False)
+        (REPO / "tables" / "embeddings.tex").write_text(embeddings_table(tables))
         print("embeddings: tasks", tables["per_task"].task.nunique())
     print(f"written: {output.relative_to(REPO)}/, figures/")
     return 0
