@@ -33,6 +33,10 @@ results/summaries/ and figures/:
 - importance_omics_*.csv (script 09): the AUROC of the top-k genes per task (the mean over folds, random genes
   averaged over draws first) and over tasks, with TabOmics v2.5 x1 against each other method, Wilcoxon paired by task,
   Holm over the methods; stability, and the PAM50 genes found, per task.
+- figures/importance_synthetic.pdf: the recovery AUROC and the test AUROC on the synthetic tables against their
+  width, mean and standard error over the 15 tables of each width.
+- tables/importance_omics.tex: the gene table of the paper: the AUROC of the top-k genes over the tasks, the
+  stability of the rankings, and the PAM50 genes among the top 10 of the breast tasks.
 - embeddings_*.csv (script 10): the AUROC and accuracy of each representation and classifier per task (the mean
   over folds) and over tasks, with the direct predictions of the foundation models (scripts 04 and 05) on the same
   folds as a reference; TabOmics v2.5 x1 against each other representation per classifier, Wilcoxon paired by task,
@@ -363,6 +367,75 @@ def embeddings(results: pd.DataFrame, raw: pd.DataFrame) -> dict[str, pd.DataFra
     return {"means": over_tasks, "per_task": per_task, "wilcoxon": pd.concat(tests, ignore_index=True)}
 
 
+IMPORTANCE_STYLES = {  # colour and line of each method in the figure of the synthetic tables (TabOmics on all
+    # the rows is left out: its curve lies on that of TabOmics, importance_synthetic_wilcoxon.csv)
+    "tabomics-v2.5:n1": ("#1f4e79", "-"),
+    "tabpfn-wide-5k:n1": ("#d95f02", "-"),
+    "random_forest": ("#7f7f7f", "-"),
+}
+
+
+def synthetic_figure(results: pd.DataFrame, path) -> None:
+    """Recovery AUROC and test AUROC against the number of features: mean and standard error over the tables."""
+    fig, axes = plt.subplots(1, 2, figsize=(9, 3.2), sharey=True)
+    panels = (("recovery_auroc", "Feature recovery"), ("test_auroc", "Test rows"))
+    for ax, (metric, title) in zip(axes, panels, strict=True):
+        for method, (color, line) in IMPORTANCE_STYLES.items():
+            values = results[results.method == method].groupby("features")[metric]
+            ax.errorbar(values.mean().index, values.mean(), yerr=values.sem(), color=color, ls=line, marker="o",
+                        markersize=3, lw=1.2, capsize=2, label=paper_name(method))  # fmt: skip
+        ax.axhline(0.5, color="black", lw=0.6, ls=":")  # chance
+        ax.axvline(5000, color="grey", lw=0.6, ls=":")  # the widest tables of TabPFN-Wide's protocol
+        ax.set(xscale="log", xlabel="Features", title=title)
+    axes[0].set_ylabel("AUROC")
+    fig.legend(*axes[0].get_legend_handles_labels(), loc="lower center", ncol=3, fontsize=8, frameon=False,
+               bbox_to_anchor=(0.5, -0.16))  # fmt: skip
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(path, bbox_inches="tight", metadata={"CreationDate": None})  # the same bytes on every run
+    plt.close(fig)
+
+
+GENE_ROWS = ("tabomics-v2.5:n1", "tabpfn-wide-5k:n1", "random_forest", "anova", "random", "all")
+BREAST = ("BRCA/mrna", "breast/mrna")
+
+
+def importance_table(tables: dict[str, pd.DataFrame]) -> str:
+    """The gene table of the paper; the best value of each column among the rankings in bold."""
+    auroc = tables["predictive"].pivot(index="model", columns="k", values="roc_auc").round(3)
+    ks = [k for k in auroc.columns if k > 0]
+    stability = tables["stability"].set_index("model")[["jaccard_top100", "spearman"]].round(2)
+    pam50 = tables["pam50"][tables["pam50"].k == 10].pivot(index="model", columns="task", values="hits")[list(BREAST)]
+    pam50 = pam50.round(1)
+    ranked = [m for m in GENE_ROWS if m != "all"]
+
+    def cell(table, model, column, digits):
+        if model not in table.index or pd.isna(table.loc[model, column]):
+            return "--"
+        value = table.loc[model, column]
+        best = table.loc[table.index.intersection(ranked), column].max()
+        return rf"\textbf{{{value:.{digits}f}}}" if value == best else f"{value:.{digits}f}"
+
+    lines = []
+    for model in GENE_ROWS:
+        if model == "all":
+            cells = [paper_name(model), rf"\multicolumn{{4}}{{c}}{{{auroc.loc[model, 0]:.3f}}}", "--", "--", "--", "--"]
+        else:
+            cells = [latex_name(model), *(cell(auroc, model, k, 3) for k in ks),
+                     *(cell(stability, model, c, 2) for c in stability.columns),
+                     *(cell(pam50, model, t, 1) for t in BREAST)]  # fmt: skip
+        lines.append(" & ".join(cells) + r" \\")
+    header = [
+        r"\begin{tabular}{lrrrrrrrr}",
+        r"\toprule",
+        r" & \multicolumn{4}{c}{AUROC of the top $k$ genes} & \multicolumn{2}{c}{Stability} & "
+        r"\multicolumn{2}{c}{PAM50 in top 10} \\",
+        r"\cmidrule(lr){2-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}",
+        "Method & " + " & ".join(f"$k={k}$" for k in ks) + r" & Jaccard & Spearman & MLOmics & Shamir \\",
+        r"\midrule",
+    ]
+    return "\n".join([*header, *lines, r"\bottomrule", r"\end{tabular}", ""])
+
+
 def complete_models(raw: pd.DataFrame) -> list[str]:
     """The models with a successful row on every fold of every reported task of manifests/tasks.tsv."""
     tasks = pd.read_csv(MANIFESTS / "tasks.tsv", sep="\t")
@@ -482,12 +555,14 @@ def main() -> int:
         synthetic_means, synthetic_tests = importance_synthetic(pd.read_csv(importance / "synthetic.csv"))
         named(synthetic_means).to_csv(output / "importance_synthetic_means.csv", index=False)
         named(synthetic_tests).to_csv(output / "importance_synthetic_wilcoxon.csv", index=False)
+        synthetic_figure(pd.read_csv(importance / "synthetic.csv"), REPO / "figures" / "importance_synthetic.pdf")
         print("importance on synthetic tables: widths", ", ".join(map(str, sorted(synthetic_means.features.unique()))))
     if (importance / "omics_predictive.csv").exists():
         tables = importance_omics(*(pd.read_csv(importance / f"omics_{n}.csv") for n in ("predictive", "stability",
                                                                                           "pam50")))  # fmt: skip
         for name, table in tables.items():
             named(table).to_csv(output / f"importance_omics_{name}.csv", index=False)
+        (REPO / "tables" / "importance_omics.tex").write_text(importance_table(tables))
         print("importance on omics: tasks", tables["predictive_per_task"].task.nunique())
     embedding_runs = sorted((RESULTS / "raw" / "embeddings").glob("*/*.csv"))
     if embedding_runs:

@@ -121,8 +121,8 @@ the per-fold results of `results/raw/`:
 | Benchmarks | `per_benchmark.csv`, `per_task.csv`, `wilcoxon.csv`, `friedman.csv`, `ranks.csv`, `versions.csv`; `tables/benchmarks_<metric>.tex` | `cd_<metric>_<set>.pdf` |
 | Ablations | `ablations_means.csv`, `ablations_wilcoxon.csv` | |
 | Computational cost | `timing_per_benchmark.csv`, `timing_per_task.csv`; `tables/cost.tex` | |
-| Feature importance, synthetic tables | `importance_synthetic_means.csv`, `importance_synthetic_wilcoxon.csv` | |
-| Feature importance, gene rankings | `importance_omics_*.csv`; the top genes of every fold in `results/raw/importance/omics_top_genes.csv` | |
+| Feature importance, synthetic tables | `importance_synthetic_means.csv`, `importance_synthetic_wilcoxon.csv` | `importance_synthetic.pdf` |
+| Feature importance, gene rankings | `importance_omics_*.csv`; `tables/importance_omics.tex`; the top genes of every fold in `results/raw/importance/omics_top_genes.csv` | |
 | Sample embeddings | `embeddings_means.csv`, `embeddings_per_task.csv`, `embeddings_wilcoxon.csv` | `embeddings/` (written by 10) |
 | Development datasets (appendix) | `development.csv`, `development_advantage.csv` | |
 | Audit of LGG methylation | `results/audit/lgg_methylation.json` (written by 03) | |
