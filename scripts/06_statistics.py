@@ -158,7 +158,7 @@ def time_figure(per_task: pd.DataFrame, path) -> None:
     ax.set(xscale="log", yscale="log", xlabel="Features", ylabel="Seconds per fold (median)")
     ax.legend(fontsize=6, ncol=2, frameon=False)
     path.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(path, bbox_inches="tight")
+    fig.savefig(path, bbox_inches="tight", metadata={"CreationDate": None})  # the same bytes on every run
     plt.close(fig)
 
 
@@ -315,7 +315,7 @@ def diagram(average: pd.Series, cd: float, path) -> None:
     for line, (start, end) in enumerate(cliques):
         ax.hlines(0.4 + 0.3 * line, start - 0.05, end + 0.05, color="black", lw=2.5)
     path.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(path, bbox_inches="tight")
+    fig.savefig(path, bbox_inches="tight", metadata={"CreationDate": None})  # the same bytes on every run
     plt.close(fig)
 
 
