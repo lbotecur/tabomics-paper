@@ -26,10 +26,10 @@ computed once per outer fold; for the genes, with the scaling, PCA and PLS fitte
 label of the outer test rows enters a representation or the choice of a hyperparameter.
 
 One CSV per model and task, results/raw/embeddings/<model>/<suite>_<cancer>.csv, one row per fold and classifier,
-written after every fold: a run that stops resumes where it left off. On the first fold of MLOmics BRCA, also
+written after every fold: a run that stops resumes where it left off. On the first fold of Shamir breast, also
 figures/embeddings/<model>.pdf: the out-of-fold embeddings of the training rows (the genes for "all") on their first
-two principal components, by class. Only scores and figures are written, never data. One GPU, chosen with
-CUDA_VISIBLE_DEVICES.
+two principal components, by PAM50 subtype; --figure writes only these figures, from that fold alone. Only scores
+and figures are written, never data. One GPU, chosen with CUDA_VISIBLE_DEVICES.
 """
 
 import argparse
@@ -60,7 +60,10 @@ EMBEDDING_SIZE = 192  # of TabOmics v2.5, the components of pca
 PLS_COMPONENTS = (2, 5, 10, 20)
 CLASSIFIERS = {"logreg": [{"C": c} for c in np.logspace(-4, 4, 5)], "knn": [{"n_neighbors": k} for k in (1, 3, 5, 11)]}
 PARTS, INNER_FOLDS = 10, 3
-FIGURE = ("mlomics/BRCA/mrna", 0)
+FIGURE = ("shamir/breast/mrna", 0)
+# Its classes in the order of their codes: the PAM50 subtypes of Shamir are text, coded in alphabetical order (those of
+# MLOmics are numbers whose subtypes are not documented, hence not this task).
+FIGURE_CLASSES = ("Basal", "Her2", "LumA", "LumB", "Normal")
 OUTPUT = RESULTS / "raw" / "embeddings"
 
 
@@ -139,7 +142,7 @@ def figure(Z, y, model: str) -> None:
     points = PCA(2, random_state=SEED).fit_transform(StandardScaler().fit_transform(Z))
     fig, ax = plt.subplots(figsize=(3.2, 3))
     for c in np.unique(y):
-        ax.scatter(*points[y == c].T, s=4, label=f"class {c}")
+        ax.scatter(*points[y == c].T, s=4, label=FIGURE_CLASSES[c])
     ax.set(xticks=[], yticks=[], title=paper_name(model), xlabel="PC 1", ylabel="PC 2")
     ax.legend(fontsize=6, frameon=False, markerscale=2)
     path = REPO / "figures" / "embeddings" / f"{model.replace(':', '_')}.pdf"
@@ -154,8 +157,18 @@ def main() -> int:
     parser.add_argument("--models", nargs="+", default=list(MODELS), choices=MODELS)
     parser.add_argument("--tasks", nargs="+", default=TASKS, choices=TASKS)
     parser.add_argument("--device", default="cuda")
+    parser.add_argument("--figure", action="store_true", help="only the figures of FIGURE, from its fold alone")
     args = parser.parse_args()
     root = data_root(args)
+    if args.figure:  # the out-of-fold representation of the training rows of that fold; no CSV is written
+        suite, task = FIGURE[0].split("/", 1)
+        X, y, _ = SUITES[suite].load_task(task, root)
+        train, test = SUITES[suite].folds(y)[FIGURE[1]]
+        for model in (m for m in args.models if m not in ("pca", "pls")):
+            embed = None if model in GENES else embedder(model, args.device)
+            figure(represent(model, embed, X, y, train, test)[0], y[train], model)
+            print(f"{model}: figure written", flush=True)
+        return 0
     for model in args.models:
         embed = None if model in GENES else embedder(model, args.device)
         for name in args.tasks:
