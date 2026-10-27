@@ -78,15 +78,15 @@ CUDA_VISIBLE_DEVICES=0 nohup python scripts/04_benchmarks_tabomics.py --models t
 
 | # | Script | Experiment | Results | Logs | Paper |
 |---|---|---|---|---|---|
-| 03 | `03_audit_lgg.py` | audit of the LGG methylation tasks of MLOmics | `results/audit/` | `logs/03_audit_lgg.log` | Section 7.1 |
-| 04 | `04_benchmarks_tabomics.py` | TabOmics v2 and v2.5, 1 and 8 passes | `results/raw/` | `logs/04_<model>.log` | Sections 7.2, 8 |
-| 05 | `05_benchmarks_baselines.py` | TabPFN-3.5, TabPFNv2, TabPFN-Wide and TabICLv2 (1 and 8 members), random forest, XGBoost, elastic-net LR | `results/raw/` | `logs/05_<model>.log` | Sections 7.2, 8 |
+| 03 | `03_audit_lgg.py` | audit of the LGG methylation tasks of MLOmics | `results/audit/` | `logs/03_audit_lgg.log` | Section 6.1 |
+| 04 | `04_benchmarks_tabomics.py` | TabOmics v2 and v2.5, 1 and 8 passes | `results/raw/` | `logs/04_<model>.log` | Sections 6.2, 7 |
+| 05 | `05_benchmarks_baselines.py` | TabPFN-3.5, TabPFNv2, TabPFN-Wide and TabICLv2 (1 and 8 members), random forest, XGBoost, elastic-net LR | `results/raw/` | `logs/05_<model>.log` | Sections 6.2, 7 |
 | 04, 05 | the same, with `--development` | the development datasets | `results/raw/` | `logs/development/` | Appendix |
-| 07 | `07_ablations.py` | TabOmics v2.5: 2 and 4 passes, feature clip 100, fp32 | `results/raw/ablations/` | `logs/ablations/` | Sections 7.4, 8 |
-| 08 | `08_importance_synthetic.py`, then with `--features 10000 20000 30000` | feature recovery on synthetic tables | `results/raw/importance/` | `logs/importance/` | Sections 7.5, 8 |
-| 09 | `09_importance_omics.py` | gene rankings on the mRNA tasks | `results/raw/importance/` | `logs/importance/` | Sections 7.5, 8 |
-| 10 | `10_embeddings.py` | sample embeddings on the mRNA tasks | `results/raw/embeddings/` | `logs/embeddings/10_<model>.log` | Sections 7.6, 8 |
-| 06 | `06_statistics.py`, after the others | means, Wilcoxon with Holm, Friedman with Nemenyi, figures | `results/summaries/`, `figures/` | | Sections 7.3, 8 |
+| 07 | `07_ablations.py` | TabOmics v2.5: 2 and 4 passes, feature clip 100, fp32 | `results/raw/ablations/` | `logs/ablations/` | Sections 6.4, 7 |
+| 08 | `08_importance_synthetic.py`, then with `--features 10000 20000 30000` | feature recovery on synthetic tables | `results/raw/importance/` | `logs/importance/` | Sections 6.5, 7 |
+| 09 | `09_importance_omics.py` | gene rankings on the mRNA tasks | `results/raw/importance/` | `logs/importance/` | Sections 6.5, 7 |
+| 10 | `10_embeddings.py` | sample embeddings on the mRNA tasks | `results/raw/embeddings/` | `logs/embeddings/10_<model>.log` | Sections 6.6, 7 |
+| 06 | `06_statistics.py`, after the others | means, Wilcoxon with Holm, Friedman with Nemenyi, figures | `results/summaries/`, `figures/` | | Sections 6.3, 7 |
 
 `<model>` is the name of a model with `:` written as `_` (`tabomics-v2.5:n1` → `tabomics-v2.5_n1`); `--help` lists
 the models of each script. 08 and 09 run their methods in one process, 03 and 06 need no GPU.

@@ -5,7 +5,7 @@
     python scripts/10_embeddings.py --data-root /path/to/data
     python scripts/10_embeddings.py --models tabomics-v2.5:n8 --tasks mlomics/BRCA/mrna   # one model and task
 
-The protocol of Section 7.6 of the paper, on the 8 mRNA tasks and their outer folds (scripts/02_folds.py). Each
+The protocol of Section 6.6 of the paper, on the 8 mRNA tasks and their outer folds (scripts/02_folds.py). Each
 representation of the samples is built from the outer training rows only:
 
 - tabomics-v2.5:n1 and tabomics-v2.5:n8 (the passes averaged, with the class indices fixed), tabpfn-wide-5k:n1 and

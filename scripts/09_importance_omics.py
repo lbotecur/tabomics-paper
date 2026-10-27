@@ -4,7 +4,7 @@
 
     python scripts/09_importance_omics.py --data-root /path/to/data
 
-The protocol of Section 7.5 of the paper, on the 8 mRNA tasks (MLOmics: BRCA, COAD, GBM, LGG, OV; Shamir: breast,
+The protocol of Section 6.5 of the paper, on the 8 mRNA tasks (MLOmics: BRCA, COAD, GBM, LGG, OV; Shamir: breast,
 gbm, sarcoma) and their folds (scripts/02_folds.py). In each outer fold, every method ranks the genes from the outer
 training rows only: TabOmics v2.5 x1 and TabPFN-Wide 5k x1 are fitted on 80% of them (context rows, stratified) and
 score the other 20% (inner query rows), TabOmics reading its scores on the query rows and TabPFN-Wide on all the rows
