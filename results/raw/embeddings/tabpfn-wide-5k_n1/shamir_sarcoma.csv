@@ -1,0 +1,11 @@
+classifier,roc_auc,accuracy,hyperparameter,components,dimension,model,suite,task,fold
+logreg,0.9380289673121328,0.7450980392156863,0.01,,192,tabpfn-wide-5k:n1,shamir,sarcoma/mrna,0
+knn,0.943405203224626,0.7450980392156863,11.0,,192,tabpfn-wide-5k:n1,shamir,sarcoma/mrna,0
+logreg,0.9338449521849247,0.803921568627451,0.01,,192,tabpfn-wide-5k:n1,shamir,sarcoma/mrna,1
+knn,0.9276832375281467,0.8431372549019608,11.0,,192,tabpfn-wide-5k:n1,shamir,sarcoma/mrna,1
+logreg,0.8890965736611303,0.6862745098039216,0.01,,192,tabpfn-wide-5k:n1,shamir,sarcoma/mrna,2
+knn,0.8696235226257504,0.6666666666666666,11.0,,192,tabpfn-wide-5k:n1,shamir,sarcoma/mrna,2
+logreg,0.9215880122046937,0.7254901960784313,0.01,,192,tabpfn-wide-5k:n1,shamir,sarcoma/mrna,3
+knn,0.8984228988665546,0.6862745098039216,11.0,,192,tabpfn-wide-5k:n1,shamir,sarcoma/mrna,3
+logreg,0.9194123211573414,0.74,0.01,,192,tabpfn-wide-5k:n1,shamir,sarcoma/mrna,4
+knn,0.8731707868622893,0.74,11.0,,192,tabpfn-wide-5k:n1,shamir,sarcoma/mrna,4

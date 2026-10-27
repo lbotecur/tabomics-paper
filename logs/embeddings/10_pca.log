@@ -1,0 +1,47 @@
+nohup: no se tendrá en cuenta la entrada
+pca | mlomics/BRCA/mrna fold 0 | logreg AUROC 0.961 | knn AUROC 0.661
+pca | mlomics/BRCA/mrna fold 1 | logreg AUROC 0.955 | knn AUROC 0.639
+pca | mlomics/BRCA/mrna fold 2 | logreg AUROC 0.962 | knn AUROC 0.623
+pca | mlomics/BRCA/mrna fold 3 | logreg AUROC 0.970 | knn AUROC 0.662
+pca | mlomics/BRCA/mrna fold 4 | logreg AUROC 0.943 | knn AUROC 0.646
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=5.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+pca | mlomics/COAD/mrna fold 0 | logreg AUROC nan | knn AUROC nan
+pca | mlomics/COAD/mrna fold 1 | logreg AUROC 0.935 | knn AUROC 0.605
+pca | mlomics/COAD/mrna fold 2 | logreg AUROC 0.943 | knn AUROC 0.649
+pca | mlomics/COAD/mrna fold 3 | logreg AUROC 0.930 | knn AUROC 0.725
+pca | mlomics/COAD/mrna fold 4 | logreg AUROC 0.955 | knn AUROC 0.592
+pca | mlomics/GBM/mrna fold 0 | logreg AUROC 0.970 | knn AUROC 0.883
+pca | mlomics/GBM/mrna fold 1 | logreg AUROC 0.926 | knn AUROC 0.858
+pca | mlomics/GBM/mrna fold 2 | logreg AUROC 0.973 | knn AUROC 0.919
+pca | mlomics/GBM/mrna fold 3 | logreg AUROC 0.929 | knn AUROC 0.809
+pca | mlomics/GBM/mrna fold 4 | logreg AUROC 0.958 | knn AUROC 0.835
+pca | mlomics/LGG/mrna fold 0 | logreg AUROC 1.000 | knn AUROC 0.971
+pca | mlomics/LGG/mrna fold 1 | logreg AUROC 0.963 | knn AUROC 0.964
+pca | mlomics/LGG/mrna fold 2 | logreg AUROC 0.997 | knn AUROC 0.952
+pca | mlomics/LGG/mrna fold 3 | logreg AUROC 0.978 | knn AUROC 0.964
+pca | mlomics/LGG/mrna fold 4 | logreg AUROC 1.000 | knn AUROC 0.973
+pca | mlomics/OV/mrna fold 0 | logreg AUROC 0.958 | knn AUROC 0.649
+pca | mlomics/OV/mrna fold 1 | logreg AUROC 0.963 | knn AUROC 0.672
+pca | mlomics/OV/mrna fold 2 | logreg AUROC 0.939 | knn AUROC 0.595
+pca | mlomics/OV/mrna fold 3 | logreg AUROC 0.917 | knn AUROC 0.680
+pca | mlomics/OV/mrna fold 4 | logreg AUROC 0.922 | knn AUROC 0.652
+pca | shamir/breast/mrna fold 0 | logreg AUROC 0.918 | knn AUROC 0.637
+pca | shamir/breast/mrna fold 1 | logreg AUROC 0.914 | knn AUROC 0.623
+pca | shamir/breast/mrna fold 2 | logreg AUROC 0.937 | knn AUROC 0.716
+pca | shamir/breast/mrna fold 3 | logreg AUROC 0.948 | knn AUROC 0.619
+pca | shamir/breast/mrna fold 4 | logreg AUROC 0.944 | knn AUROC 0.678
+pca | shamir/gbm/mrna fold 0 | logreg AUROC 0.931 | knn AUROC 0.741
+pca | shamir/gbm/mrna fold 1 | logreg AUROC 0.894 | knn AUROC 0.607
+pca | shamir/gbm/mrna fold 2 | logreg AUROC 0.960 | knn AUROC 0.778
+pca | shamir/gbm/mrna fold 3 | logreg AUROC 0.933 | knn AUROC 0.697
+pca | shamir/gbm/mrna fold 4 | logreg AUROC 0.958 | knn AUROC 0.703
+pca | shamir/sarcoma/mrna fold 0 | logreg AUROC 0.894 | knn AUROC 0.690
+pca | shamir/sarcoma/mrna fold 1 | logreg AUROC 0.859 | knn AUROC 0.685
+pca | shamir/sarcoma/mrna fold 2 | logreg AUROC 0.834 | knn AUROC 0.630
+pca | shamir/sarcoma/mrna fold 3 | logreg AUROC 0.913 | knn AUROC 0.776
+pca | shamir/sarcoma/mrna fold 4 | logreg AUROC 0.824 | knn AUROC 0.682

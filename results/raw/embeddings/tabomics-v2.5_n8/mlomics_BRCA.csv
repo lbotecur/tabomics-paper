@@ -1,0 +1,11 @@
+classifier,roc_auc,accuracy,hyperparameter,components,dimension,model,suite,task,fold
+logreg,0.9881359359140776,0.9111111111111111,0.01,,192,tabomics-v2.5:n8,mlomics,BRCA/mrna,0
+knn,0.9815156325363569,0.8814814814814815,11.0,,192,tabomics-v2.5:n8,mlomics,BRCA/mrna,0
+logreg,0.9761304135050557,0.8432835820895522,0.01,,192,tabomics-v2.5:n8,mlomics,BRCA/mrna,1
+knn,0.9673361768600843,0.8432835820895522,11.0,,192,tabomics-v2.5:n8,mlomics,BRCA/mrna,1
+logreg,0.9815384235361778,0.8805970149253731,0.01,,192,tabomics-v2.5:n8,mlomics,BRCA/mrna,2
+knn,0.9504089810112462,0.8656716417910447,11.0,,192,tabomics-v2.5:n8,mlomics,BRCA/mrna,2
+logreg,0.9890013227513229,0.9328358208955224,0.01,,192,tabomics-v2.5:n8,mlomics,BRCA/mrna,3
+knn,0.9678844564000816,0.8955223880597015,11.0,,192,tabomics-v2.5:n8,mlomics,BRCA/mrna,3
+logreg,0.9766491359431576,0.8507462686567164,0.01,,192,tabomics-v2.5:n8,mlomics,BRCA/mrna,4
+knn,0.9340135612260612,0.8432835820895522,11.0,,192,tabomics-v2.5:n8,mlomics,BRCA/mrna,4

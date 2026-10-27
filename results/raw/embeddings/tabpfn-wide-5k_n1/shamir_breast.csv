@@ -1,0 +1,11 @@
+classifier,roc_auc,accuracy,hyperparameter,components,dimension,model,suite,task,fold
+logreg,0.987587936750233,0.8977272727272727,0.01,,192,tabpfn-wide-5k:n1,shamir,breast/mrna,0
+knn,0.9605542665629736,0.9090909090909091,11.0,,192,tabpfn-wide-5k:n1,shamir,breast/mrna,0
+logreg,0.9901636689893751,0.9204545454545454,0.01,,192,tabpfn-wide-5k:n1,shamir,breast/mrna,1
+knn,0.990365020521647,0.9090909090909091,11.0,,192,tabpfn-wide-5k:n1,shamir,breast/mrna,1
+logreg,0.9895925584320846,0.9545454545454546,0.01,,192,tabpfn-wide-5k:n1,shamir,breast/mrna,2
+knn,0.9662151344319007,0.9318181818181818,11.0,,192,tabpfn-wide-5k:n1,shamir,breast/mrna,2
+logreg,0.988350356655112,0.9090909090909091,0.01,,192,tabpfn-wide-5k:n1,shamir,breast/mrna,3
+knn,0.9678175745742761,0.875,11.0,,192,tabpfn-wide-5k:n1,shamir,breast/mrna,3
+logreg,0.9840086070036034,0.8636363636363636,0.01,,192,tabpfn-wide-5k:n1,shamir,breast/mrna,4
+knn,0.9815835743594544,0.8636363636363636,11.0,,192,tabpfn-wide-5k:n1,shamir,breast/mrna,4

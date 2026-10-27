@@ -1,0 +1,11 @@
+classifier,roc_auc,accuracy,hyperparameter,components,dimension,model,suite,task,fold
+logreg,0.9447585883029256,0.8235294117647058,0.01,,192,tabomics-v2.5:n8,shamir,sarcoma/mrna,0
+knn,0.9281073609737545,0.7254901960784313,11.0,,192,tabomics-v2.5:n8,shamir,sarcoma/mrna,0
+logreg,0.9446346579122353,0.7647058823529411,0.01,,192,tabomics-v2.5:n8,shamir,sarcoma/mrna,1
+knn,0.9035853351934456,0.7647058823529411,11.0,,192,tabomics-v2.5:n8,shamir,sarcoma/mrna,1
+logreg,0.905275541749706,0.6666666666666666,0.01,,192,tabomics-v2.5:n8,shamir,sarcoma/mrna,2
+knn,0.8345010452700798,0.6470588235294118,11.0,,192,tabomics-v2.5:n8,shamir,sarcoma/mrna,2
+logreg,0.9286638195023288,0.7058823529411765,0.01,,192,tabomics-v2.5:n8,shamir,sarcoma/mrna,3
+knn,0.906968409109048,0.7254901960784313,11.0,,192,tabomics-v2.5:n8,shamir,sarcoma/mrna,3
+logreg,0.925759904733186,0.78,0.01,,192,tabomics-v2.5:n8,shamir,sarcoma/mrna,4
+knn,0.8805046642988387,0.78,11.0,,192,tabomics-v2.5:n8,shamir,sarcoma/mrna,4
