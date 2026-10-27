@@ -1,0 +1,14 @@
+\begin{tabular}{lrrrrrrrr}
+\toprule
+ & \multicolumn{4}{c}{AUROC of the top $k$ genes} & \multicolumn{2}{c}{Stability} & \multicolumn{2}{c}{PAM50 in top 10} \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+Method & $k=10$ & $k=50$ & $k=100$ & $k=500$ & Jaccard & Spearman & MLOmics & Shamir \\
+\midrule
+TabOmics v2.5 $\times$1 & 0.926 & 0.955 & 0.954 & 0.961 & 0.34 & 0.75 & \textbf{4.8} & 4.2 \\
+TabPFN-Wide $\times$1 & \textbf{0.929} & \textbf{0.956} & \textbf{0.958} & \textbf{0.965} & 0.38 & 0.77 & 4.2 & \textbf{4.4} \\
+Random forest & 0.920 & 0.949 & 0.953 & 0.959 & 0.14 & 0.08 & 2.0 & 1.6 \\
+ANOVA F & 0.897 & 0.928 & 0.939 & 0.961 & \textbf{0.61} & \textbf{0.92} & 4.0 & 0.2 \\
+Random genes & 0.782 & 0.884 & 0.911 & 0.945 & -- & -- & -- & -- \\
+All genes & \multicolumn{4}{c}{0.953} & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
