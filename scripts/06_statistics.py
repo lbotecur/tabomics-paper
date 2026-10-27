@@ -12,6 +12,9 @@ results/summaries/ and figures/:
   tasks, every task weighing the same; with the folds that failed.
 - wilcoxon.csv: each TabOmics model against each other model, Wilcoxon signed-rank test on the per-task means of the
   folds valid for both; p-values corrected with Holm over the comparisons of that TabOmics model.
+- versions.csv: TabOmics v2.5 against v2 with the same passes, as above (one comparison per family).
+- tables/benchmarks_<metric>.tex: the table of the paper, the means per benchmark and over all tasks, the average
+  rank, and the wins-losses and Holm p of TabOmics v2.5 x1 and x8 against each model (from wilcoxon.csv).
 - friedman.csv, ranks.csv, figures/cd_<metric>_<set>.pdf: Friedman test and Nemenyi critical difference on the models
   with valid results on every fold of every task (the folds of manifests/tasks.tsv).
 - ablations_means.csv, ablations_wilcoxon.csv: the ablations (results/raw/ablations/, script 07) and TabOmics v2.5 x8
@@ -118,6 +121,55 @@ def pairwise(raw: pd.DataFrame) -> pd.DataFrame:
         for model in (m for m in models if m.startswith("tabomics-")):
             groups += [compare(table, model, others, metric, subset) for subset in SETS]
     return pd.concat(groups, ignore_index=True)
+
+
+def versions(raw: pd.DataFrame) -> pd.DataFrame:
+    """TabOmics v2.5 against v2, with one and with eight passes."""
+    tests = []
+    for metric in METRICS:
+        table = folds(raw, metric)
+        tests += [compare(table, f"tabomics-v2.5:n{k}", [f"tabomics-v2:n{k}"], metric, subset)
+                  for k in (1, 8) for subset in SETS]  # fmt: skip
+    return pd.concat(tests, ignore_index=True)
+
+
+def latex_name(model: str) -> str:
+    return paper_name(model).replace("×", r"$\times$")
+
+
+def latex_p(p: float) -> str:
+    return "$<$0.001" if p < 0.001 else f"{p:.3f}"
+
+
+def benchmark_table(per_benchmark: pd.DataFrame, ranks: pd.DataFrame, tests: pd.DataFrame, metric: str) -> str:
+    """The table of the paper for a metric: the mean per benchmark and over all tasks, the average rank, and the
+    wins-losses and Holm p of TabOmics v2.5 x1 and x8 against each model, over all tasks; the best values in bold."""
+    columns = [*SUITES, "all"]
+    means_ = per_benchmark.pivot(index="model", columns="set", values=metric)[columns]
+    table = means_.round(3)  # as printed: equal values are equally bold
+    rank = ranks[(ranks.metric == metric) & (ranks.set == "all")].set_index("model").average_rank.round(2)
+    tests = tests[(tests.metric == metric) & (tests.set == "all")].set_index(["model", "other"])
+    references = ["tabomics-v2.5:n1", "tabomics-v2.5:n8"]
+    lines = []
+    for model in means_.sort_values("all", ascending=False).index:
+        cells = [latex_name(model)]
+        cells += [rf"\textbf{{{v:.3f}}}" if v == table[c].max() else f"{v:.3f}" for c, v in table.loc[model].items()]
+        cells.append(rf"\textbf{{{rank[model]:.2f}}}" if rank[model] == rank.min() else f"{rank[model]:.2f}")
+        for reference in references:
+            test = tests.loc[(reference, model)] if (reference, model) in tests.index else None
+            cells += ["--", "--"] if test is None else [f"{test.wins}--{test.losses}", latex_p(test.p_holm)]
+        lines.append(" & ".join(cells) + r" \\")
+    name = {"roc_auc": "AUROC", "accuracy": "accuracy"}[metric]
+    header = [
+        r"\begin{tabular}{lrrrrrcrcr}",
+        r"\toprule",
+        rf" & \multicolumn{{4}}{{c}}{{Mean {name}}} & & \multicolumn{{2}}{{c}}{{{latex_name(references[0])} vs.}} & "
+        rf"\multicolumn{{2}}{{c}}{{{latex_name(references[1])} vs.}} \\",
+        r"\cmidrule(lr){2-5} \cmidrule(lr){7-8} \cmidrule(lr){9-10}",
+        r"Model & HDLSS & MLOmics & Shamir & All & Rank & W--L & $p$ & W--L & $p$ \\",
+        r"\midrule",
+    ]
+    return "\n".join([*header, *lines, r"\bottomrule", r"\end{tabular}", ""])
 
 
 def ablations(raw: pd.DataFrame, ablation: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -332,10 +384,16 @@ def main() -> int:
     per_task, per_benchmark = means(raw)
     named(per_task).to_csv(output / "per_task.csv", index=False)
     named(per_benchmark).to_csv(output / "per_benchmark.csv", index=False)
-    named(pairwise(raw)).to_csv(output / "wilcoxon.csv", index=False)
+    pairwise_tests = pairwise(raw)
+    named(pairwise_tests).to_csv(output / "wilcoxon.csv", index=False)
+    named(versions(raw)).to_csv(output / "versions.csv", index=False)
     tests, ranks = friedman(raw)
     tests.to_csv(output / "friedman.csv", index=False)
     named(ranks).to_csv(output / "ranks.csv", index=False)
+    (REPO / "tables").mkdir(exist_ok=True)
+    for metric in METRICS:
+        table = benchmark_table(per_benchmark, ranks, pairwise_tests, metric)
+        (REPO / "tables" / f"benchmarks_{metric}.tex").write_text(table)
     overall = named(per_benchmark[per_benchmark.set == "all"])
     print(overall.sort_values("roc_auc", ascending=False).to_string(index=False))
     print(f"complete models (Friedman, Nemenyi): {', '.join(map(paper_name, complete_models(raw))) or 'none'}")
