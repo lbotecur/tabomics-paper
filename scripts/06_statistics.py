@@ -25,6 +25,10 @@ results/summaries/ and figures/:
 - importance_omics_*.csv (script 09): the AUROC of the top-k genes per task (the mean over folds, random genes
   averaged over draws first) and over tasks, with TabOmics v2.5 x1 against each other method, Wilcoxon paired by task,
   Holm over the methods; stability, and the PAM50 genes found, per task.
+- embeddings_*.csv (script 10): the AUROC and accuracy of each representation and classifier per task (the mean
+  over folds) and over tasks, with the direct predictions of the foundation models (scripts 04 and 05) on the same
+  folds as a reference; TabOmics v2.5 x1 against each other representation per classifier, Wilcoxon paired by task,
+  Holm over the representations.
 
 A fold is valid when it succeeded (status "ok") and, for the AUROC, when it is defined (every class in the test rows).
 Each part is skipped when its results are not there yet.
@@ -233,6 +237,25 @@ def importance_omics(predictive: pd.DataFrame, stability: pd.DataFrame, pam50: p
     }  # fmt: skip
 
 
+def embeddings(results: pd.DataFrame, raw: pd.DataFrame) -> dict[str, pd.DataFrame]:
+    """The sample embeddings: per task and over tasks, with the direct predictions of the foundation models as the
+    classifier "direct"; TabOmics against the other representations per classifier and metric (paired by task)."""
+    direct = raw[raw.status == "ok"].rename(columns={"dataset": "task"}).assign(classifier="direct")
+    tasks = pd.MultiIndex.from_frame(results[["suite", "task"]])
+    direct = direct[direct.model.isin(results.model) & pd.MultiIndex.from_frame(direct[["suite", "task"]]).isin(tasks)]
+    rows = pd.concat([results, direct[["model", "classifier", "suite", "task", "fold", *METRICS]]], ignore_index=True)
+    per_task = rows.groupby(["suite", "task", "model", "classifier"])[list(METRICS)].mean().reset_index()
+    over_tasks = per_task.groupby(["model", "classifier"])[list(METRICS)].mean().reset_index()
+    others = [m for m in results.model.unique() if m != REFERENCE]
+    tests = []
+    for classifier in results.classifier.unique():
+        for metric in METRICS:
+            table = per_task[per_task.classifier == classifier].pivot(index=["suite", "task"], columns="model",
+                                                                      values=metric)  # fmt: skip
+            tests.append(paired_tests(table, REFERENCE, others).assign(classifier=classifier, metric=metric))
+    return {"means": over_tasks, "per_task": per_task, "wilcoxon": pd.concat(tests, ignore_index=True)}
+
+
 def complete_models(raw: pd.DataFrame) -> list[str]:
     """The models with a successful row on every fold of every reported task of manifests/tasks.tsv."""
     tasks = pd.read_csv(MANIFESTS / "tasks.tsv", sep="\t")
@@ -349,6 +372,12 @@ def main() -> int:
         for name, table in tables.items():
             named(table).to_csv(output / f"importance_omics_{name}.csv", index=False)
         print("importance on omics: tasks", tables["predictive_per_task"].task.nunique())
+    embedding_runs = sorted((RESULTS / "raw" / "embeddings").glob("*/*.csv"))
+    if embedding_runs:
+        tables = embeddings(pd.concat(map(pd.read_csv, embedding_runs), ignore_index=True), raw)
+        for name, table in tables.items():
+            named(table).to_csv(output / f"embeddings_{name}.csv", index=False)
+        print("embeddings: tasks", tables["per_task"].task.nunique())
     print(f"written: {output.relative_to(REPO)}/, figures/")
     return 0
 
