@@ -4,7 +4,8 @@
 
     python scripts/03_audit_lgg.py --data-root /path/to/data
 
-Every model performs at chance level on LGG/methylation, although methylation is known to separate LGG subtypes.
+Every model performs at chance level on LGG/methylation, although DNA methylation is known to separate
+the molecular subtypes of these gliomas (Ceccarelli et al., Cell 2016).
 The loader of MLOmics, as that of TabPFN-Wide, takes the labels by position, in the order of the label file, for
 every omic. This script checks, without changing anything:
 
