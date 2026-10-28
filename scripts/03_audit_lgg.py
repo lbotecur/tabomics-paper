@@ -16,7 +16,7 @@ every omic. This script checks, without changing anything:
 4. the predictability of LGG: AUROC of a logistic regression on the folds of the task, for mRNA (reference),
    methylation as loaded, methylation with its samples put in the order of mRNA (when the identifiers allow it),
    and methylation with permuted labels (chance);
-5. whether the methylation of every cancer is consistent with the patients of its mRNA: Spearman correlation between the
+5. whether the methylation of every cancer agrees with the mRNA of the same patients: Spearman correlation between the
    similarities of pairs of patients by methylation and by mRNA, with the patients matched and shuffled.
 
 Only counts and summary statistics are written, never data or sample identifiers.
@@ -167,7 +167,8 @@ def similarity(table: pd.DataFrame) -> np.ndarray:
 
 def methylation_matches_mrna(tables: dict[str, pd.DataFrame]) -> dict:
     """Spearman correlation between the similarities of pairs of patients by methylation and by mRNA, with the
-    patients matched by identifier and shuffled; near zero when matched, the methylation is not of those patients."""
+    patients matched by identifier and shuffled; near zero when matched, the methylation does not agree with the
+    mRNA of the same patients."""
     methylation = set(tables[OMIC].columns)
     samples = [s for s in tables["mrna"].columns if s in methylation]
     pairs = np.triu_indices(len(samples), 1)

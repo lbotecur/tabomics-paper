@@ -22,7 +22,8 @@ SUITES = ("hdlss", "mlomics", "shamir")
 # only with --development, for an appendix.
 DEVELOPMENT = ("madelon", "arcene", "RELATHE", "gisette")
 # Tasks left out of every reported result, and not run by the experiments: the development datasets, and the LGG
-# tasks with methylation, whose methylation profiles are inconsistent with their patients (scripts/03_audit_lgg.py).
+# tasks with methylation, whose methylation profiles do not agree with the mRNA profiles of the same patients
+# (scripts/03_audit_lgg.py).
 EXCLUDED = (*DEVELOPMENT, "LGG/methylation", "LGG/mrna+cnv+methylation+mirna")
 # The name of each model in the paper (tables, figures, manifests/models.tsv); with several ensemble members,
 # " ×<k>" is added: "tabomics-v2.5:n8" -> "TabOmics v2.5 ×8".
