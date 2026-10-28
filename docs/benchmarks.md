@@ -8,12 +8,16 @@ row per fold to a CSV (it resumes an interrupted run).
 | Suite | Tasks | Folds |
 |---|---|---|
 | `hdlss` | 15 high-dimensional datasets of scikit-feature [1] (500 to 22,283 features), the selection of TabPFN-Wide [2] | stratified 3-fold x 10 repeats (x 3 with >= 2500 rows), seed 42 |
-| `mlomics` | 5 TCGA cancers of MLOmics [3] x (mRNA, CNV, methylation, miRNA, all four) | stratified 5-fold, seed 42 |
+| `mlomics` | 5 TCGA cancers of MLOmics [3] x (mRNA, copy number (CNV), methylation, miRNA, all four) | stratified 5-fold, seed 42 |
 | `shamir` | breast, gbm and sarcoma of the TCGA benchmark of Rappoport and Shamir [4] x (mRNA, methylation, miRNA, all three) | stratified 5-fold, seed 42 |
 
 The suites are prepared as in the code of TabPFN-Wide [5], so the folds of `hdlss` and `mlomics` are theirs
 (`scripts/02_folds.py --tabpfn-wide` checks it). For `shamir`, two differences: classes with fewer patients than folds
 are left out, and samples are sorted, since TabPFN-Wide's order (and so its folds) changes from run to run.
+
+The paper reports 46 of these tasks: the four development datasets of `hdlss` (`common.DEVELOPMENT`) and the
+methylation and combined tasks of LGG in `mlomics` are left out (`common.EXCLUDED`; Sections 4.3 and 6.1 of the
+paper).
 
 ## Data
 

@@ -26,7 +26,7 @@ from tabomics_paper.benchmarks.runner import run_benchmark, time_benchmark
 
 from common import RESULTS, SUITES, add_data_root, data_root, tasks_to_run
 
-MODELS = [*CLASSIC, *(f"{model}:n{passes}" for model in FOUNDATION for passes in (1, 8))]
+MODELS = [*CLASSIC, *(f"{model}:n{members}" for model in FOUNDATION for members in (1, 8))]
 
 
 def main() -> int:

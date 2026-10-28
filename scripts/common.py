@@ -24,7 +24,7 @@ DEVELOPMENT = ("madelon", "arcene", "RELATHE", "gisette")
 # Tasks left out of every reported result, and not run by the experiments: the development datasets, and the LGG
 # tasks with methylation, whose methylation profiles do not belong to their patients (scripts/03_audit_lgg.py).
 EXCLUDED = (*DEVELOPMENT, "LGG/methylation", "LGG/mrna+cnv+methylation+mirna")
-# The name of each model in the paper (tables, figures, manifests/models.tsv); with several passes or ensemble members,
+# The name of each model in the paper (tables, figures, manifests/models.tsv); with several ensemble members,
 # " ×<k>" is added: "tabomics-v2.5:n8" -> "TabOmics v2.5 ×8".
 NAMES = {
     "tabomics-v2.5": "TabOmics v2.5",

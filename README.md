@@ -24,7 +24,7 @@ source tabomics-paper-env/bin/activate
 
 Then clone this repository and install it, which installs everything the scripts need, at the versions of the paper
 (`pyproject.toml`): tabomics 0.3.0 with its dependencies, PyTorch, scikit-learn, XGBoost, TabPFN-Wide, TabPFN
-(TabPFN v2 and TabPFN-3.5) and TabICL.
+(TabPFNv2 and TabPFN-3.5) and TabICL.
 
 ```bash
 git clone https://github.com/lbotecur/tabomics-paper
@@ -44,7 +44,7 @@ Each run uses one GPU. The runs of the paper used one NVIDIA A100 with 80 GB (`m
 machine); a GPU with less memory may not fit the widest tables.
 
 The weights of every model are downloaded on first use, each at a fixed revision and checked against its SHA-256
-(`manifests/models.tsv`). Those of TabPFN-3.5 are gated on Hugging Face: accept their licence on the model page and
+(`manifests/models.tsv`). Those of TabPFN-3.5 are gated on Hugging Face: accept their license on the model page and
 log in once with `hf auth login`.
 
 ### 2. Data
@@ -121,7 +121,7 @@ for m in tabomics-v2.5:n2 tabomics-v2.5:n4 tabomics-v2.5:n1:fp32; do
 environment (`manifests/software.txt`): the benchmarks (04, 05) and every timing on the first, the timings on its GPU 0
 alone; the ablations (07), the development datasets, 08, 09 and 10 on the second, and the figure of 10 on the first.
 Summed over their folds, the
-benchmark runs took 32 GPU hours for 04 (3 to 13 per model) and about 97 for 05 (1 to 26 per model), and 07 took 27.
+benchmark runs took 32 GPU hours for 04 (3 to 13 per model) and about 98 for 05 (1 to 26 per model), and 07 took 27.
 
 ### 4. Results
 
@@ -162,6 +162,6 @@ for byte.
 The benchmark suites, the runner and the definitions of the other models were part of tabomics until version 0.1.0;
 they were brought here unchanged, except for their imports, when tabomics 0.2.0 kept only the models.
 
-## Licence
+## License
 
 GPL-3.0-or-later; see `LICENSE` and `NOTICE`.

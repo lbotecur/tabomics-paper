@@ -5,7 +5,7 @@
     python scripts/08_importance_synthetic.py                              # the widths of TabPFN-Wide
     python scripts/08_importance_synthetic.py --features 10000 20000 30000 # wider, as the omics tasks
 
-The synthetic benchmark of TabPFN-Wide (its Appendix F): tables from scikit-learn's make_classification with 200 to
+The synthetic benchmark of TabPFN-Wide (its Appendix F): tables from make_classification of scikit-learn with 200 to
 5,000 features of which 3, 5 or 7 are informative and the others noise (no redundant or repeated features), five
 seeds each. Each table has 250 rows, generated together and split, stratified, into 50 training rows, as in
 TabPFN-Wide, and 200 test rows that we add: the scores of TabOmics are read on the test rows, which also give the
