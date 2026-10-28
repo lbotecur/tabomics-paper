@@ -8,7 +8,8 @@ The protocol of Section 6.5 of the paper, on the 8 mRNA tasks (MLOmics: BRCA, CO
 gbm, sarcoma) and their folds (scripts/02_folds.py). In each outer fold, every method ranks the genes from the outer
 training rows only: TabOmics v2.5 x1 and TabPFN-Wide 5k x1 are fitted on 80% of them (context rows, stratified) and
 score the other 20% (inner query rows), TabOmics reading its scores on the query rows and TabPFN-Wide on all the rows
-of the same forward pass, as it does by default; the random forest and the ANOVA F statistic use all of them. No
+of the same forward pass, as it does by default; the random forest and the ANOVA F statistic use all of them. The
+cleaning of MLOmics (mlomics.prepare) is fitted on the outer training rows too; the genes it drops are ranked last. No
 method sees the outer test rows. The columns are permuted at random in every fold, the same permutation for every
 method, and the scores mapped back to the genes: every TabOmics model adds a fixed random vector to each column
 position, and with the genes always at the same positions a ranking could repeat across folds through the positions.
@@ -89,24 +90,29 @@ def run_task(suite: str, task: str, root: Path, device: str) -> dict[str, pd.Dat
     scores = {method: [] for method in METHODS}
     for fold, (train, test) in enumerate(module.folds(y)):
         context, query = train_test_split(train, test_size=QUERY_FRACTION, stratify=y[train], random_state=SEED)
-        order = np.random.default_rng(SEED + fold).permutation(X.shape[1])  # the columns as the methods see them
-        Xp = X[:, order]
+        # The cleaning of the suite fitted on the outer training rows; the columns it drops stay NaN, are never used,
+        # and score NaN, below every other gene.
+        X_train, X_test, kept = module.prepare(X, train, test)
+        Xf = np.full(X.shape, np.nan, dtype=X.dtype)
+        Xf[np.ix_(train, kept)], Xf[np.ix_(test, kept)] = X_train, X_test
+        order = kept[np.random.default_rng(SEED + fold).permutation(len(kept))]  # the columns as the methods see them
+        Xp = Xf[:, order]
         for method in METHODS:
             if method in ("random_forest", "anova"):  # all the outer training rows; the query rows are unused
                 permuted, _ = fit_and_score(method, Xp[train], y[train], Xp[train[:1]], device=device)
             else:
                 permuted, _ = fit_and_score(method, Xp[context], y[context], Xp[query], device=device)
-            score = np.empty(X.shape[1])
+            score = np.full(X.shape[1], np.nan)
             score[order] = permuted  # back to the genes, in the order of the task
             scores[method].append(score)
             for k in TOP_K:
-                auroc, accuracy = predictive(X, y, train, test, top(score, k))
+                auroc, accuracy = predictive(Xf, y, train, test, top(score, k))
                 rows["predictive"].append({"method": method, "fold": fold, "k": k, "draw": 0, "roc_auc": auroc,
                                            "accuracy": accuracy})  # fmt: skip
             rows["top"] += [{"method": method, "fold": fold, "rank": r + 1, "gene": symbols[c]}
                             for r, c in enumerate(top(score, 100))]  # fmt: skip
             if task in BREAST:
-                universe = set(symbols)
+                universe = {symbols[c] for c in kept}
                 markers = PAM50 & universe
                 for k in PAM50_K:
                     hits = len({symbols[c] for c in top(score, k)} & markers)
@@ -117,12 +123,12 @@ def run_task(suite: str, task: str, root: Path, device: str) -> dict[str, pd.Dat
         for k in TOP_K:  # references: random genes, and all the genes
             for draw in range(RANDOM_DRAWS):
                 draws = np.random.default_rng(SEED + 1000 * fold + draw)
-                columns = draws.choice(X.shape[1], min(k, X.shape[1]), replace=False)
-                auroc, accuracy = predictive(X, y, train, test, columns)
+                columns = draws.choice(kept, min(k, len(kept)), replace=False)
+                auroc, accuracy = predictive(Xf, y, train, test, columns)
                 rows["predictive"].append({"method": "random", "fold": fold, "k": k, "draw": draw, "roc_auc": auroc,
                                            "accuracy": accuracy})  # fmt: skip
-        auroc, accuracy = predictive(X, y, train, test, np.arange(X.shape[1]))
-        rows["predictive"].append({"method": "all", "fold": fold, "k": X.shape[1], "draw": 0, "roc_auc": auroc,
+        auroc, accuracy = predictive(Xf, y, train, test, kept)
+        rows["predictive"].append({"method": "all", "fold": fold, "k": len(kept), "draw": 0, "roc_auc": auroc,
                                    "accuracy": accuracy})  # fmt: skip
         print(f"{suite}/{task} fold {fold}: done", flush=True)
     stability = []

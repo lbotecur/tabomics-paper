@@ -69,9 +69,10 @@ def run_benchmark(
     """Evaluates one model on every fold of the given suites.
 
     The estimator only needs fit(X, y) and predict_proba(X), as in scikit-learn. A fresh one is built for every
-    fold, so nothing carries over between folds. Rows already in the output (same suite, dataset, fold and model
-    name) are skipped, so an interrupted run can be resumed, but only with the same settings of the estimator
-    (check_settings).
+    fold, so nothing carries over between folds. It receives the rows of the fold as the suite prepares them, with
+    anything fitted (MLOmics: features dropped, missing values filled) fitted on the training rows only. Rows
+    already in the output (same suite, dataset, fold and model name) are skipped, so an interrupted run can be
+    resumed, but only with the same settings of the estimator (check_settings).
 
     A fold that raises an exception does not stop the run: its row records the status "oom" (out of memory) or
     "error" (with the message), NaN metrics and the seconds spent, and the next fold follows. Failed rows count as
@@ -115,12 +116,14 @@ def run_benchmark(
                 row = {"suite": suite, "dataset": task, "fold": fold, "model": model_name, "rows": len(y),
                        "features": X.shape[1], "classes": int(y.max()) + 1}  # fmt: skip
                 try:
+                    X_train, X_test, _ = module.prepare(X, train, test)  # fitted on the training rows only
+                    row["features"] = X_train.shape[1]  # the columns the model receives
                     estimator = make_estimator(categorical)
                     if not checked:  # the first estimator of this run, before anything is written
                         check_settings(estimator, output)
                         checked = True
-                    estimator.fit(X[train], y[train])
-                    proba = check_probabilities(estimator.predict_proba(X[test]), len(test))
+                    estimator.fit(X_train, y[train])
+                    proba = check_probabilities(estimator.predict_proba(X_test), len(test))
                     row.update(roc_auc=roc_auc(y[test], proba), accuracy=accuracy(y[test], proba), status="ok",
                                error="")  # fmt: skip
                 except SettingsMismatch:
@@ -128,7 +131,7 @@ def run_benchmark(
                 except Exception as exc:  # recorded, not raised: the other folds still run (Ctrl-C still stops)
                     row.update(roc_auc=np.nan, accuracy=np.nan, status=failure_status(exc),
                                error=f"{type(exc).__name__}: {exc}"[:500])  # fmt: skip
-                    estimator = proba = None
+                    estimator = proba = X_train = X_test = None
                     release_memory()
                 row["seconds"] = round(time.time() - start, 2)
                 results = pd.concat([results, pd.DataFrame([row])[COLUMNS]], ignore_index=True)
@@ -171,11 +174,12 @@ def time_benchmark(
                 continue
             X, y, categorical = module.load_task(task, data_root)
             train, test = module.folds(y)[0]
+            X_train, X_test, _ = module.prepare(X, train, test)  # outside the timings, as the loading
             if not warm:  # starts CUDA and reads the weights once, outside the timings
                 estimator = make_estimator(categorical)
                 check_settings(estimator, output)
                 try:
-                    estimator.fit(X[train], y[train]).predict_proba(X[test])
+                    estimator.fit(X_train, y[train]).predict_proba(X_test)
                     warm = True
                 except Exception:  # not raised: the timed repeats of this task record the failure
                     pass
@@ -188,10 +192,10 @@ def time_benchmark(
                 if torch:
                     torch.cuda.reset_peak_memory_stats()
                 row = {"suite": suite, "dataset": task, "fold": 0, "model": model_name, "repeat": repeat,
-                       "rows": len(y), "features": X.shape[1]}  # fmt: skip
+                       "rows": len(y), "features": X_train.shape[1]}  # fmt: skip
                 start = time.perf_counter()
                 try:
-                    proba = make_estimator(categorical).fit(X[train], y[train]).predict_proba(X[test])
+                    proba = make_estimator(categorical).fit(X_train, y[train]).predict_proba(X_test)
                     check_probabilities(proba, len(test))  # the estimator is not kept: its memory is released
                     row.update(status="ok", error="")
                 except Exception as exc:  # recorded, not raised, as in run_benchmark

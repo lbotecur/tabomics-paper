@@ -3,10 +3,12 @@
 """Shamir suite: TCGA multi-omics benchmark of Rappoport & Shamir (2018), with subtype labels as in TabPFN-Wide.
 
 Breast (PAM50), gbm (expression subtype) and sarcoma (histological type); colon is left out (its labels are not
-in the public download) and kidney too (a single subtype). Prepared as TabPFN-Wide does: each omic standardized
-over all samples, duplicated samples dropped, only patients with all three omics and a label. Two differences:
-classes with fewer patients than folds (5) are left out, and samples are sorted (TabPFN-Wide intersects them
-through a Python set, so its order and folds change from run to run). Stratified 5-fold, seed 42.
+in the public download) and kidney too (a single subtype). Prepared as TabPFN-Wide does: duplicated samples dropped,
+only patients with all three omics and a label. Three differences: TabPFN-Wide standardizes each omic over all the
+samples, which is not done here (it would use the test rows; every model standardizes, or is unaffected by scale, with
+its own preprocessing fitted on the training rows); classes with fewer patients than folds (5) are left out; and
+samples are sorted (TabPFN-Wide intersects them through a Python set, so its order and folds change from run to run).
+Stratified 5-fold, seed 42.
 A task is a cancer and one omic or several: "breast/mrna", "breast/mrna+methylation+mirna".
 
 Data: https://acgt.cs.tau.ac.il/multi_omic_benchmark/download.html, each zip unpacked in its own folder:
@@ -22,7 +24,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import RepeatedStratifiedKFold
-from sklearn.preprocessing import LabelEncoder, scale
+from sklearn.preprocessing import LabelEncoder
 
 FOLDER = "Shamir"
 LABEL_COLUMNS = {"breast": "PAM50Call_RNAseq", "gbm": "GeneExp_Subtype", "sarcoma": "histological_type"}
@@ -42,12 +44,11 @@ def _key(sample: str) -> str:
 
 
 def _load_omic(path: Path) -> pd.DataFrame:
-    """One omic file (features x samples, whitespace separated) -> samples x features, standardized."""
+    """One omic file (features x samples, whitespace separated) -> samples x features."""
     data = pd.read_table(path, header=0, index_col=0, sep=r"\s+").T
     data = data[~data.index.duplicated(keep="first")]
     if data.isna().any().any():
         raise ValueError(f"missing values in {path}")
-    data[:] = scale(data)
     data.index = data.index.map(_key)
     return data
 
@@ -73,3 +74,8 @@ def folds(y: np.ndarray) -> list[tuple[np.ndarray, np.ndarray]]:
     """Stratified 5-fold, one repeat, seed 42."""
     cv = RepeatedStratifiedKFold(n_splits=N_SPLITS, n_repeats=1, random_state=SEED)
     return list(cv.split(np.zeros(len(y)), y))
+
+
+def prepare(X: np.ndarray, train: np.ndarray, test: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """The training and test rows as they are (nothing is fitted), and the indices of all the columns."""
+    return X[train], X[test], np.arange(X.shape[1])

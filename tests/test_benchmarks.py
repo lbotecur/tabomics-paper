@@ -28,9 +28,9 @@ def fake_mlomics(root: Path, cancer="BRCA", n=40):
     samples = [f"s{i}" for i in range(n)]
     for omic, file in mlomics.OMIC_FILES.items():
         values = RNG.normal(size=(8, n))
-        values[0] = 0.0  # an all-zero feature: dropped
+        values[0] = 0.0  # an all-zero feature: dropped by prepare
         frame = pd.DataFrame(values, index=[f"{omic}{j}" for j in range(8)], columns=samples)
-        frame.iloc[1, 3] = np.nan  # a missing value: filled with the feature mean
+        frame.iloc[1, 3] = np.nan  # a missing value: filled by prepare
         frame.to_csv(folder / f"{cancer}_{file}.csv")
     pd.DataFrame({"label": RNG.integers(0, 3, n)}).to_csv(folder / f"{cancer}_label_num.csv", index=False)
 
@@ -62,19 +62,35 @@ def test_hdlss_shuffles_encodes_and_folds_as_tabpfn_wide(tmp_path):
     assert hdlss.tasks(tmp_path) == list(hdlss.DATASETS)
 
 
-def test_mlomics_cleans_and_concatenates_omics(tmp_path):
+def test_mlomics_loads_and_concatenates_omics_without_fitting_anything(tmp_path):
     fake_mlomics(tmp_path)
     X, y, _ = mlomics.load_task("BRCA/mrna", tmp_path)
-    assert X.shape == (40, 7) and not np.isnan(X).any()  # all-zero feature dropped, missing value filled
+    assert X.shape == (40, 8) and np.isnan(X).sum() == 1  # nothing dropped or filled over all the samples
     X_all, _, _ = mlomics.load_task("BRCA/mrna+cnv+methylation+mirna", tmp_path)
-    assert X_all.shape == (40, 28)
+    assert X_all.shape == (40, 32)
     assert len(mlomics.folds(y)) == 5 and "BRCA/mrna+cnv+methylation+mirna" in mlomics.tasks(tmp_path)
+
+
+def test_mlomics_prepare_fits_on_the_training_rows_only():
+    X = np.array([[0, 1, np.nan], [0, 3, 2], [0, 5, 4], [7, np.nan, 6]], dtype=np.float32)
+    train, test = np.array([0, 1, 2]), np.array([3])
+    X_train, X_test, kept = mlomics.prepare(X, train, test)
+    assert kept.tolist() == [1, 2]  # zero in every training row: dropped, although not zero in the test row
+    assert X_train.tolist() == [[1, 3], [3, 2], [5, 4]]  # filled with the mean of the training rows
+    assert X_test.tolist() == [[3, 6]]
+    X[3] = [100, np.nan, 100]  # the test rows change nothing that is fitted
+    assert np.array_equal(mlomics.prepare(X, train, test)[0], X_train)
+    for module in (hdlss, shamir):  # nothing is fitted
+        X_train, X_test, kept = module.prepare(X, train, test)
+        assert np.array_equal(X_train, X[train], equal_nan=True) and kept.tolist() == [0, 1, 2]
 
 
 def test_shamir_matches_samples_and_drops_rare_classes(tmp_path):
     fake_shamir(tmp_path)
     X, y, _ = shamir.load_task("gbm/mrna+methylation+mirna", tmp_path)
     assert X.shape == (39, 18) and set(y) == {0, 1, 2}  # the patient of the rare class is left out
+    raw = pd.read_table(tmp_path / shamir.FOLDER / "gbm" / "exp", header=0, index_col=0, sep=r"\s+").T
+    assert np.allclose(X[:, :6], raw.to_numpy()[1:])  # not standardized over all the samples
 
 
 def test_metrics():

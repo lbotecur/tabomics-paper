@@ -47,3 +47,8 @@ def folds(y: np.ndarray) -> list[tuple[np.ndarray, np.ndarray]]:
     repeats = 10 if len(y) < LARGE else 3
     cv = RepeatedStratifiedKFold(n_splits=N_SPLITS, n_repeats=repeats, random_state=SEED)
     return list(cv.split(np.zeros(len(y)), y))
+
+
+def prepare(X: np.ndarray, train: np.ndarray, test: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """The training and test rows as they are (nothing is fitted), and the indices of all the columns."""
+    return X[train], X[test], np.arange(X.shape[1])
