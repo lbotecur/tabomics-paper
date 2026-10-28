@@ -14,11 +14,11 @@ python scripts/00_download_data.py     # downloads the data (once)
 python scripts/01_data_manifest.py     # SHA-256 of the data files
 python scripts/02_folds.py             # tasks and folds (--tabpfn-wide <clone>: compare with TabPFN-Wide's)
 python scripts/03_audit_lgg.py         # audit of LGG/methylation -> results/audit/lgg_methylation.json
-python scripts/04_benchmarks_tabomics.py   # TabOmics v2 and v2.5, 1 and 8 passes -> results/raw/
+python scripts/04_benchmarks_tabomics.py   # TabOmics v2 and v2.5, 1 and 8 members -> results/raw/
 python scripts/05_benchmarks_baselines.py  # other foundation models (1 and 8 members), classical models -> results/raw/
 python scripts/04_benchmarks_tabomics.py --development   # the same on the development datasets (appendix)
 python scripts/05_benchmarks_baselines.py --development
-python scripts/07_ablations.py             # TabOmics v2.5: 2 and 4 passes, clip 100, fp32 -> results/raw/ablations/
+python scripts/07_ablations.py             # TabOmics v2.5: 2 and 4 members, clip 100, fp32 -> results/raw/ablations/
 python scripts/08_importance_synthetic.py  # feature recovery on synthetic tables -> results/raw/importance/
 python scripts/08_importance_synthetic.py --features 10000 20000 30000  # the same, as wide as the omics tasks
 python scripts/09_importance_omics.py      # gene rankings on the mRNA tasks: predictive value, stability, PAM50

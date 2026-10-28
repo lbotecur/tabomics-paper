@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Copyright (C) 2026 Luis Bote-Curiel
-"""04. TabOmics v2 and v2.5, with 1 and 8 passes, on every fold of HDLSS, MLOmics and Shamir (results/raw/).
+"""04. TabOmics v2 and v2.5, with 1 and 8 ensemble members, on every fold of HDLSS, MLOmics and Shamir (results/raw/).
 
     python scripts/04_benchmarks_tabomics.py --data-root /path/to/data
     python scripts/04_benchmarks_tabomics.py --models tabomics-v2.5:n1      # one model only

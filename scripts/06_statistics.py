@@ -12,7 +12,7 @@ results/summaries/ and figures/:
   tasks, every task weighing the same; with the folds that failed.
 - wilcoxon.csv: each TabOmics model against each other model, Wilcoxon signed-rank test on the per-task means of the
   folds valid for both; p-values corrected with Holm over the comparisons of that TabOmics model.
-- versions.csv: TabOmics v2.5 against v2 with the same passes, as above (one comparison per family).
+- versions.csv: TabOmics v2.5 against v2 with the same members, as above (one comparison per family).
 - tables/benchmarks_<metric>.tex: the table of the paper, the means per benchmark and over all tasks, the average
   rank, and the wins-losses and Holm p of TabOmics v2.5 x1 and x8 against each model (from wilcoxon.csv).
 - friedman.csv, ranks.csv, figures/cd_<metric>_<set>.pdf: Friedman test and Nemenyi critical difference on the models
@@ -142,7 +142,7 @@ def pairwise(raw: pd.DataFrame) -> pd.DataFrame:
 
 
 def versions(raw: pd.DataFrame) -> pd.DataFrame:
-    """TabOmics v2.5 against v2, with one and with eight passes."""
+    """TabOmics v2.5 against v2, with one and with eight members."""
     tests = []
     for metric in METRICS:
         table = folds(raw, metric)
@@ -243,12 +243,12 @@ def cost_table(per_task: pd.DataFrame, per_set: pd.DataFrame, per_benchmark: pd.
 
 
 ABLATION_ROWS = {  # the rows of the ablation table, in order
-    "tabomics-v2.5:n1": "One pass (reference)",
+    "tabomics-v2.5:n1": "One member (reference)",
     "tabomics-v2.5:n1:clip100": "Feature clip 100",
     "tabomics-v2.5:n1:fp32": "Single precision",
-    "tabomics-v2.5:n2": "Two passes",
-    "tabomics-v2.5:n4": "Four passes",
-    "tabomics-v2.5:n8": "Eight passes",
+    "tabomics-v2.5:n2": "Two members",
+    "tabomics-v2.5:n4": "Four members",
+    "tabomics-v2.5:n8": "Eight members",
 }
 
 
