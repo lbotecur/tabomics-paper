@@ -376,7 +376,7 @@ def embeddings(results: pd.DataFrame, raw: pd.DataFrame) -> dict[str, pd.DataFra
     return {"means": over_tasks, "per_task": per_task, "wilcoxon": pd.concat(tests, ignore_index=True)}
 
 
-IMPORTANCE_STYLES = {  # colour and line of each method in the figure of the synthetic tables (TabOmics on all
+IMPORTANCE_STYLES = {  # color and line of each method in the figure of the synthetic tables (TabOmics on all
     # the rows is left out: its curve lies on that of TabOmics, importance_synthetic_wilcoxon.csv)
     "tabomics-v2.5:n1": ("#1f4e79", "-"),
     "tabpfn-wide-5k:n1": ("#d95f02", "-"),
@@ -467,7 +467,7 @@ def embeddings_table(tables: dict[str, pd.DataFrame]) -> str:
     header = [
         r"\begin{tabular}{lrcrrcrr}",
         r"\toprule",
-        r" & \multicolumn{3}{c}{Logistic regression} & \multicolumn{3}{c}{Nearest neighbours} & Direct \\",
+        r" & \multicolumn{3}{c}{Logistic regression} & \multicolumn{3}{c}{Nearest neighbors} & Direct \\",
         r"\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-8}",
         r"Representation & AUROC & W--L & $p$ & AUROC & W--L & $p$ & AUROC \\",
         r"\midrule",
