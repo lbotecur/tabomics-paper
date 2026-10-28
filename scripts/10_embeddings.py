@@ -19,7 +19,7 @@ representation of the samples is built from the outer training rows only:
   standardized first.
 
 Every representation is standardized and given to the same two classifiers, a logistic regression (l2) and a
-k-nearest-neighbour classifier (Euclidean, uniform weights), scored on the outer test rows (AUROC, accuracy). Their
+k-nearest-neighbor classifier (Euclidean, uniform weights), scored on the outer test rows (AUROC, accuracy). Their
 hyperparameters (C, five values from 1e-4 to 1e4; k in 1, 3, 5, 11; and the PLS components) are chosen on the outer
 training rows by stratified 3-fold cross-validation with the macro AUROC: on the embeddings of the outer training rows,
 computed once per outer fold; for the genes, with the scaling, PCA and PLS fitted within each inner partition. No
@@ -65,7 +65,7 @@ PARTS, INNER_FOLDS = 10, 3
 FIGURE = ("shamir/breast/mrna", 0)
 # Its classes in the order of their codes: the PAM50 subtypes of Shamir are text, coded in alphabetical order (those of
 # MLOmics are numbers whose subtypes are not documented, hence not this task).
-# Colours of the Okabe-Ito palette, distinguishable with colour-vision deficiencies.
+# Colors of the Okabe-Ito palette, distinguishable with color-vision deficiencies.
 FIGURE_CLASSES = {"Basal": "#0072B2", "Her2": "#E69F00", "LumA": "#009E73", "LumB": "#D55E00", "Normal": "#CC79A7"}
 FIGURE_MODELS = ("all", "tabomics-v2.5:n1", "tabomics-v2.5:n8", "tabpfn-wide-5k:n1", "tabpfn-v2-gn2p4bpt:n1")
 FIGURE_PATH = REPO / "figures" / "embeddings.pdf"
@@ -150,8 +150,8 @@ def figure(panels: list[tuple[str, np.ndarray]], y: np.ndarray) -> None:
     fig, axes = plt.subplots(1, len(panels), figsize=(1.45 * len(panels), 1.5))
     for ax, (model, Z) in zip(axes, panels, strict=True):
         points = PCA(2, random_state=SEED).fit_transform(StandardScaler().fit_transform(Z))
-        for code, (name, colour) in enumerate(FIGURE_CLASSES.items()):
-            ax.scatter(*points[y == code].T, s=2.5, color=colour, linewidths=0, label=name)
+        for code, (name, color) in enumerate(FIGURE_CLASSES.items()):
+            ax.scatter(*points[y == code].T, s=2.5, color=color, linewidths=0, label=name)
         ax.set(xticks=[], yticks=[], box_aspect=1)
         ax.set_title(paper_name(model), fontsize=8)
     fig.legend(*axes[0].get_legend_handles_labels(), loc="upper center", bbox_to_anchor=(0.5, 0.08),
