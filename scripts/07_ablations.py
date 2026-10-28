@@ -4,10 +4,10 @@
 
     python scripts/07_ablations.py --data-root /path/to/data --models tabomics-v2.5:n1:clip100
 
-Each ablation changes one setting of the reference model of the paper, TabOmics v2.5 with one pass as run by
+Each ablation changes one setting of the reference model of the paper, TabOmics v2.5 with one member as run by
 scripts/04_benchmarks_tabomics.py (whose results are the reference):
 
-- tabomics-v2.5:n2, tabomics-v2.5:n4: two and four passes (one and eight are in results/raw/);
+- tabomics-v2.5:n2, tabomics-v2.5:n4: two and four members (one and eight are in results/raw/);
 - tabomics-v2.5:n1:clip100: feature clip 100, the value of pretraining, instead of the model's 10;
 - tabomics-v2.5:n1:fp32: single precision instead of bfloat16 mixed precision.
 

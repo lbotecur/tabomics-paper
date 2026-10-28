@@ -8,7 +8,7 @@
 The protocol of Section 6.6 of the paper, on the 8 mRNA tasks and their outer folds (scripts/02_folds.py). Each
 representation of the samples is built from the outer training rows only:
 
-- tabomics-v2.5:n1 and tabomics-v2.5:n8 (the passes averaged, with the class indices fixed), tabpfn-wide-5k:n1 and
+- tabomics-v2.5:n1 and tabomics-v2.5:n8 (the members averaged, with the class indices fixed), tabpfn-wide-5k:n1 and
   tabpfn-v2-gn2p4bpt:n1 (TabPFNv2): the representation of the label token after the last block, as in the benchmarks.
   The training rows are embedded out of fold (Ye et al., 2025): in ten stratified parts, each as test rows with the
   other nine as context, so that no row is embedded with its own label; the test rows with all the training rows as

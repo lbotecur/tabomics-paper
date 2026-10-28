@@ -5,7 +5,7 @@
 Every method is fitted on the same training rows and returns one score per column (higher means more important; NaN
 for a column it dropped) and, if it predicts, the class probabilities of the query rows:
 
-- tabomics-v2.5:n1: TabOmics v2.5, one pass, the attention of the label tokens of the query rows (the default);
+- tabomics-v2.5:n1: TabOmics v2.5, one member, the attention of the label tokens of the query rows (the default);
 - tabomics-v2.5:n1:allrows: the same, averaged over all the rows, training and query, as TabPFN-Wide;
 - tabpfn-wide-5k:n1: TabPFN-Wide, its 5k checkpoint, one member and one feature per group, the attention of the label
   token averaged over all the rows (its default);
