@@ -9,7 +9,7 @@ from scipy.io import savemat
 from sklearn.linear_model import LogisticRegression
 
 from tabomics_paper.benchmarks import SUITES, hdlss, mlomics, run_benchmark, shamir, summarize
-from tabomics_paper.benchmarks.metrics import accuracy, roc_auc
+from tabomics_paper.benchmarks.metrics import accuracy, check_probabilities, roc_auc
 
 RNG = np.random.default_rng(0)
 
@@ -150,3 +150,34 @@ def test_runner_reads_results_written_before_the_status_column(tmp_path):
     assert len(resumed) == 30 and (resumed.status == "ok").all()
     assert "status" not in pd.read_csv(output)  # nothing new to write, so the old file is left as it was
     assert summarize(pd.read_csv(output)).loc[("hdlss", "m"), "failed"] == 0
+
+
+def test_runner_records_invalid_probabilities_as_errors(tmp_path):
+    fake_hdlss(tmp_path, "colon")
+
+    class NaNs:
+        def fit(self, X, y):
+            return self
+
+        def predict_proba(self, X):
+            return np.full((len(X), 2), np.nan)
+
+    results = run_benchmark(lambda c: NaNs(), "m", ["hdlss"], tmp_path, tmp_path / "out.csv", datasets=["colon"],
+                            verbose=False)  # fmt: skip
+    assert (results.status == "error").all() and results.accuracy.isna().all()
+    assert results.error.str.contains("invalid probabilities").all()
+    with pytest.raises(ValueError):
+        check_probabilities(np.full((3, 2), 0.2), 3)  # rows not summing to 1
+    assert check_probabilities(np.full((3, 2), 0.5), 3).shape == (3, 2)
+
+
+def test_runner_refuses_to_resume_with_other_settings(tmp_path):
+    fake_hdlss(tmp_path, "colon")
+    fake_hdlss(tmp_path, "arcene")
+    output = tmp_path / "out.csv"
+    run_benchmark(lambda c: LogisticRegression(C=1.0, max_iter=1000), "m", ["hdlss"], tmp_path, output,
+                  datasets=["colon"], verbose=False)  # fmt: skip
+    assert (tmp_path / "out.csv.settings.json").exists()
+    with pytest.raises(ValueError, match="other settings"):  # SettingsMismatch
+        run_benchmark(lambda c: LogisticRegression(C=0.1, max_iter=1000), "m", ["hdlss"], tmp_path, output,
+                      datasets=["arcene", "colon"], verbose=False)  # fmt: skip

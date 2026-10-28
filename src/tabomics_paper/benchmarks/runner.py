@@ -8,6 +8,7 @@ Brought from tabomics 0.1.0 (src/tabomics/benchmarks/runner.py), where it was pa
 from __future__ import annotations
 
 import gc
+import json
 import time
 from collections.abc import Callable
 from pathlib import Path
@@ -16,7 +17,7 @@ import numpy as np
 import pandas as pd
 
 from tabomics_paper.benchmarks import hdlss, mlomics, shamir
-from tabomics_paper.benchmarks.metrics import accuracy, roc_auc
+from tabomics_paper.benchmarks.metrics import accuracy, check_probabilities, roc_auc
 
 SUITES = {"hdlss": hdlss, "mlomics": mlomics, "shamir": shamir}
 COLUMNS = ["suite", "dataset", "fold", "model", "rows", "features", "classes", "roc_auc", "accuracy", "seconds",
@@ -26,6 +27,33 @@ STATUSES = ("ok", "oom", "error")
 
 # Builds the estimator for one fold, given the indices of the categorical columns of the task.
 EstimatorFactory = Callable[[list[int]], object]
+
+
+class SettingsMismatch(ValueError):
+    """The output of a run was written with other settings of the estimator."""
+
+
+def check_settings(estimator: object, output: Path) -> None:
+    """Refuses to resume an output written with other settings of the estimator.
+
+    The settings are the parameters of the estimator (scikit-learn get_params), recorded next to the output in
+    <output>.settings.json on the first run; an estimator without get_params is not checked. Without this, a model
+    name reused after changing its settings would mix their results, or skip folds that should run again.
+
+    Raises:
+        SettingsMismatch: The output was written with other settings.
+    """
+    if not hasattr(estimator, "get_params"):
+        return
+    params = {key: str(value) for key, value in estimator.get_params(deep=False).items()}
+    settings = {"estimator": type(estimator).__name__, "params": params}
+    path = output.with_name(output.name + ".settings.json")
+    if path.exists():
+        recorded = json.loads(path.read_text())
+        if recorded != settings:
+            raise SettingsMismatch(f"{output} was written with other settings ({path}); use another output")
+    else:
+        path.write_text(json.dumps(settings, indent=1, sort_keys=True) + "\n")
 
 
 def run_benchmark(
@@ -42,7 +70,8 @@ def run_benchmark(
 
     The estimator only needs fit(X, y) and predict_proba(X), as in scikit-learn. A fresh one is built for every
     fold, so nothing carries over between folds. Rows already in the output (same suite, dataset, fold and model
-    name) are skipped, so an interrupted run can be resumed.
+    name) are skipped, so an interrupted run can be resumed, but only with the same settings of the estimator
+    (check_settings).
 
     A fold that raises an exception does not stop the run: its row records the status "oom" (out of memory) or
     "error" (with the message), NaN metrics and the seconds spent, and the next fold follows. Failed rows count as
@@ -72,6 +101,7 @@ def run_benchmark(
     if retry_failed:
         results = results[results.status == "ok"].reset_index(drop=True)
     done = set(map(tuple, results[["suite", "dataset", "fold", "model"]].astype(str).values))
+    checked = False
     for suite in suites:
         module = SUITES[suite]
         for task in module.tasks(data_root):
@@ -86,10 +116,15 @@ def run_benchmark(
                        "features": X.shape[1], "classes": int(y.max()) + 1}  # fmt: skip
                 try:
                     estimator = make_estimator(categorical)
+                    if not checked:  # the first estimator of this run, before anything is written
+                        check_settings(estimator, output)
+                        checked = True
                     estimator.fit(X[train], y[train])
-                    proba = np.asarray(estimator.predict_proba(X[test]))
+                    proba = check_probabilities(estimator.predict_proba(X[test]), len(test))
                     row.update(roc_auc=roc_auc(y[test], proba), accuracy=accuracy(y[test], proba), status="ok",
                                error="")  # fmt: skip
+                except SettingsMismatch:
+                    raise
                 except Exception as exc:  # recorded, not raised: the other folds still run (Ctrl-C still stops)
                     row.update(roc_auc=np.nan, accuracy=np.nan, status=failure_status(exc),
                                error=f"{type(exc).__name__}: {exc}"[:500])  # fmt: skip
@@ -137,8 +172,15 @@ def time_benchmark(
             X, y, categorical = module.load_task(task, data_root)
             train, test = module.folds(y)[0]
             if not warm:  # starts CUDA and reads the weights once, outside the timings
-                make_estimator(categorical).fit(X[train], y[train]).predict_proba(X[test])
-                warm = True
+                estimator = make_estimator(categorical)
+                check_settings(estimator, output)
+                try:
+                    estimator.fit(X[train], y[train]).predict_proba(X[test])
+                    warm = True
+                except Exception:  # not raised: the timed repeats of this task record the failure
+                    pass
+                estimator = None
+                release_memory()
             for repeat in range(repeats):
                 if (suite, task, str(repeat)) in done:
                     continue
@@ -149,7 +191,8 @@ def time_benchmark(
                        "rows": len(y), "features": X.shape[1]}  # fmt: skip
                 start = time.perf_counter()
                 try:
-                    np.asarray(make_estimator(categorical).fit(X[train], y[train]).predict_proba(X[test]))
+                    proba = make_estimator(categorical).fit(X[train], y[train]).predict_proba(X[test])
+                    check_probabilities(proba, len(test))  # the estimator is not kept: its memory is released
                     row.update(status="ok", error="")
                 except Exception as exc:  # recorded, not raised, as in run_benchmark
                     row.update(status=failure_status(exc), error=f"{type(exc).__name__}: {exc}"[:500])

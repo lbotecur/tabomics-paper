@@ -11,6 +11,21 @@ import numpy as np
 from sklearn.metrics import accuracy_score, roc_auc_score
 
 
+def check_probabilities(proba: np.ndarray, rows: int) -> np.ndarray:
+    """Checks predicted probabilities before any metric: one row per test row, finite, non-negative, rows summing to 1.
+
+    Raises:
+        ValueError: The predictions are not valid probabilities; the runner records the fold as an error, so that an
+            invalid output is never scored (a missing class only makes the AUROC undefined, see roc_auc).
+    """
+    proba = np.asarray(proba, dtype=float)
+    if proba.ndim != 2 or proba.shape[0] != rows or proba.shape[1] < 2:
+        raise ValueError(f"invalid probabilities: shape {proba.shape} for {rows} test rows")
+    if not np.isfinite(proba).all() or (proba < 0).any() or not np.allclose(proba.sum(axis=1), 1, atol=1e-3):
+        raise ValueError("invalid probabilities: not finite, negative, or rows not summing to 1")
+    return proba
+
+
 def roc_auc(y_true: np.ndarray, proba: np.ndarray) -> float:
     """AUROC. Binary: of the probability of class 1. Multiclass: one-vs-rest, macro average.
 
