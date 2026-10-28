@@ -1,0 +1,15 @@
+\begin{tabular}{lrcrrcrr}
+\toprule
+ & \multicolumn{3}{c}{Logistic regression} & \multicolumn{3}{c}{Nearest neighbours} & Direct \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-8}
+Representation & AUROC & W--L & $p$ & AUROC & W--L & $p$ & AUROC \\
+\midrule
+TabOmics v2.5 $\times$1 & \textbf{0.967} & -- & -- & \textbf{0.952} & -- & -- & 0.972 \\
+TabOmics v2.5 $\times$8 & \textbf{0.967} & 2--5 & 0.469 & \textbf{0.952} & 6--1 & 0.297 & \textbf{0.973} \\
+TabPFN-Wide $\times$1 & 0.963 & 7--1 & 0.445 & 0.948 & 6--2 & 0.297 & 0.963 \\
+TabPFNv2 $\times$1 & 0.950 & 7--1 & 0.156 & 0.932 & 7--1 & 0.164 & 0.937 \\
+All genes & 0.957 & 6--2 & 0.445 & 0.892 & 8--0 & 0.047 & -- \\
+PLS & 0.945 & 7--1 & 0.141 & 0.927 & 7--1 & 0.094 & -- \\
+PCA & 0.939 & 7--1 & 0.141 & 0.727 & 8--0 & 0.047 & -- \\
+\bottomrule
+\end{tabular}
