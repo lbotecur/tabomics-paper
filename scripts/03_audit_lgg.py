@@ -16,7 +16,7 @@ every omic. This script checks, without changing anything:
 4. the predictability of LGG: AUROC of a logistic regression on the folds of the task, for mRNA (reference),
    methylation as loaded, methylation with its samples put in the order of mRNA (when the identifiers allow it),
    and methylation with permuted labels (chance);
-5. whether the methylation of every cancer belongs to the patients of its mRNA: Spearman correlation between the
+5. whether the methylation of every cancer is consistent with the patients of its mRNA: Spearman correlation between the
    similarities of pairs of patients by methylation and by mRNA, with the patients matched and shuffled.
 
 Only counts and summary statistics are written, never data or sample identifiers.
