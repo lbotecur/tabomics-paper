@@ -87,8 +87,7 @@ def combined_follows_mrna(tables: dict[str, pd.DataFrame]) -> bool:
     """Whether the rows of the combined task, built as the loader builds it, are in the order of mRNA."""
     parts = []
     for table in tables.values():
-        data = table.loc[~(table == 0).all(axis=1)]
-        parts.append(data[~data.index.duplicated(keep="first")].T)
+        parts.append(table[~table.index.duplicated(keep="first")].T)
     return list(pd.concat(parts, axis=1).index) == list(tables["mrna"].columns)
 
 
@@ -130,10 +129,11 @@ def cross_validated_auroc(X: np.ndarray, y: np.ndarray) -> float:
     """Mean AUROC over the folds of the task of a logistic regression on the most variable features."""
     scores = []
     for train, test in mlomics.folds(y):
-        keep = np.argsort(-X[train].var(axis=0))[:TOP_VARIANCE]
-        scaler = StandardScaler().fit(X[train][:, keep])
-        model = LogisticRegression(max_iter=2000).fit(scaler.transform(X[train][:, keep]), y[train])
-        scores.append(roc_auc(y[test], model.predict_proba(scaler.transform(X[test][:, keep]))))
+        X_train, X_test, _ = mlomics.prepare(X, train, test)
+        keep = np.argsort(-X_train.var(axis=0))[:TOP_VARIANCE]
+        scaler = StandardScaler().fit(X_train[:, keep])
+        model = LogisticRegression(max_iter=2000).fit(scaler.transform(X_train[:, keep]), y[train])
+        scores.append(roc_auc(y[test], model.predict_proba(scaler.transform(X_test[:, keep]))))
     return float(np.nanmean(scores))
 
 

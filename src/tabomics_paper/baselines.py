@@ -11,11 +11,13 @@ Brought from tabomics 0.1.0 (baselines/models.py), where the baselines were kept
 
 from __future__ import annotations
 
+import numpy as np
 import sklearn
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.impute import SimpleImputer
-from sklearn.linear_model import LogisticRegressionCV
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import GridSearchCV, StratifiedKFold
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
@@ -41,20 +43,18 @@ def available() -> list[str]:
     return [*CLASSIC, *FOUNDATION]
 
 
-def elastic_net_cv() -> LogisticRegressionCV:
-    """Elastic-net logistic regression (l1_ratio 0.5), C chosen by 3-fold CV on the training rows."""
+def elastic_net_cv(categorical: list[int]) -> GridSearchCV:
+    """Elastic-net logistic regression (l1_ratio 0.5), C among five values from 1e-4 to 1e4 chosen by 3-fold CV on
+    the training rows with the log-loss, then refitted on all of them. The imputation and standardization are part of
+    the pipeline, so that they are fitted within each partition of the cross-validation."""
     penalty = {} if tuple(map(int, sklearn.__version__.split(".")[:2])) >= (1, 8) else {"penalty": "elasticnet"}
-    return LogisticRegressionCV(
-        solver="saga",
-        l1_ratios=[0.5],
-        Cs=5,
-        cv=3,
-        max_iter=500,
-        tol=1e-3,
+    model = LogisticRegression(solver="saga", l1_ratio=0.5, max_iter=500, tol=1e-3, random_state=SEED, **penalty)
+    return GridSearchCV(
+        make_pipeline(linear_inputs(categorical), model),
+        {"logisticregression__C": np.logspace(-4, 4, 5)},
+        cv=StratifiedKFold(3),
         scoring="neg_log_loss",
         n_jobs=-1,
-        random_state=SEED,
-        **penalty,
     )
 
 
@@ -80,7 +80,7 @@ def make_model(name: str, categorical: list[int], device: str = "cuda"):
             SimpleImputer(strategy="most_frequent"), RandomForestClassifier(n_jobs=-1, random_state=SEED)
         )
     if name == "logreg_en":
-        return make_pipeline(linear_inputs(categorical), elastic_net_cv())
+        return elastic_net_cv(categorical)
     if name == "xgboost":  # as TabPFN-Wide: 1000 trees, histogram method, on the GPU if given
         from xgboost import XGBClassifier
 

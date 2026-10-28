@@ -22,8 +22,9 @@ Every representation is standardized and given to the same two classifiers, a lo
 k-nearest-neighbor classifier (Euclidean, uniform weights), scored on the outer test rows (AUROC, accuracy). Their
 hyperparameters (C, five values from 1e-4 to 1e4; k in 1, 3, 5, 11; and the PLS components) are chosen on the outer
 training rows by stratified 3-fold cross-validation with the macro AUROC: on the embeddings of the outer training rows,
-computed once per outer fold; for the genes, with the scaling, PCA and PLS fitted within each inner partition. No
-label of the outer test rows enters a representation or the choice of a hyperparameter.
+computed once per outer fold; for the genes, with the cleaning of MLOmics (mlomics.prepare), the scaling, PCA and
+PLS fitted within each inner partition. No label of the outer test rows enters a representation or the choice of a
+hyperparameter, and no value of the outer test rows enters anything fitted.
 
 One CSV per model and task, results/raw/embeddings/<model>/<suite>_<cancer>.csv, one row per fold and classifier,
 written after every fold: a run that stops resumes where it left off. With --figure, only figures/embeddings.pdf,
@@ -87,21 +88,23 @@ def embedder(model: str, device: str):
     return lambda X, y, X_query: make_model(model, [], device).fit(X, y).get_embeddings(X_query)[0]
 
 
-def represent(model, embed, X, y, train, query, components=None):
-    """The representation of the training and query rows, built from the training rows only."""
+def represent(prepare, model, embed, X, y, train, query, components=None):
+    """The representation of the training and query rows, built from the training rows only, the cleaning of the
+    suite (prepare) included."""
+    A, B, _ = prepare(X, train, query)
     if embed is not None:
         parts = list(StratifiedKFold(PARTS).split(train, y[train]))
         Z = None
         for context, part in parts:
             assert set(y[train[context]]) == set(y[train]), "a context without a class encodes the labels otherwise"
-            z = embed(X[train[context]], y[train[context]], X[train[part]])
+            z = embed(A[context], y[train[context]], A[part])
             Z = np.empty((len(train), z.shape[1])) if Z is None else Z
             Z[part] = z
-        return Z, embed(X[train], y[train], X[query])
-    scaler = StandardScaler().fit(X[train])
-    A, B = scaler.transform(X[train]), scaler.transform(X[query])
+        return Z, embed(A, y[train], B)
+    scaler = StandardScaler().fit(A)
+    A, B = scaler.transform(A), scaler.transform(B)
     if model == "pca":
-        pca = PCA(min(EMBEDDING_SIZE, len(train) - 1, X.shape[1]), random_state=SEED).fit(A)
+        pca = PCA(min(EMBEDDING_SIZE, len(train) - 1, A.shape[1]), random_state=SEED).fit(A)
         return pca.transform(A), pca.transform(B)
     if model == "pls":
         pls = PLSRegression(components, scale=False).fit(A, np.eye(y.max() + 1)[y[train]])
@@ -115,15 +118,15 @@ def classifier(name: str, params: dict):
     return make_pipeline(StandardScaler(), estimator)
 
 
-def run_fold(model, embed, X, y, train, test):
+def run_fold(prepare, model, embed, X, y, train, test):
     """The rows of one outer fold, and the representation of its training rows (out of fold for the embeddings)."""
     inner = list(StratifiedKFold(INNER_FOLDS, shuffle=True, random_state=SEED).split(train, y[train]))
     assert all(set(y[train[a]]) == set(y[train]) for a, _ in inner), "an inner training partition without a class"
-    outer = {} if embed is None else {None: represent(model, embed, X, y, train, test)}  # the embeddings, once
+    outer = {} if embed is None else {None: represent(prepare, model, embed, X, y, train, test)}  # the embeddings, once
     scores = []  # (inner AUROC, classifier, components, hyperparameters)
     for components in PLS_COMPONENTS if model == "pls" else (None,):
         if embed is None:  # scaling, PCA and PLS fitted within each inner training partition
-            partitions = [represent(model, None, X, y, train[a], train[b], components) for a, b in inner]
+            partitions = [represent(prepare, model, None, X, y, train[a], train[b], components) for a, b in inner]
         else:  # the out-of-fold embeddings of the outer training rows
             partitions = [(outer[None][0][a], outer[None][0][b]) for a, b in inner]
         partitions = [(A, B, y[train[a]], y[train[b]]) for (A, B), (a, b) in zip(partitions, inner, strict=True)]
@@ -136,7 +139,7 @@ def run_fold(model, embed, X, y, train, test):
     for name in CLASSIFIERS:
         _, _, components, params = max((s for s in scores if s[1] == name), key=lambda s: s[0])
         if components not in outer:
-            outer[components] = represent(model, embed, X, y, train, test, components)
+            outer[components] = represent(prepare, model, embed, X, y, train, test, components)
         A, B = outer[components]
         proba = classifier(name, params).fit(A, y[train]).predict_proba(B)
         rows.append({"classifier": name, "roc_auc": roc_auc(y[test], proba), "accuracy": accuracy(y[test], proba),
@@ -178,7 +181,7 @@ def main() -> int:
             representations = {"y": y[train]}
             for i, model in enumerate(FIGURE_MODELS):
                 embed = None if model in GENES else embedder(model, args.device)
-                representations[f"panel{i}"] = represent(model, embed, X, y, train, test)[0]
+                representations[f"panel{i}"] = represent(SUITES[suite].prepare, model, embed, X, y, train, test)[0]
                 print(f"{model}: represented", flush=True)
             FIGURE_CACHE.parent.mkdir(parents=True, exist_ok=True)
             np.savez(FIGURE_CACHE, **representations)
@@ -197,7 +200,7 @@ def main() -> int:
             for fold, (train, test) in enumerate(module.folds(y)):
                 if len(results) and fold in set(results.fold):
                     continue
-                rows, _ = run_fold(model, embed, X, y, train, test)
+                rows, _ = run_fold(module.prepare, model, embed, X, y, train, test)
                 fold_rows = pd.DataFrame(rows).assign(model=model, suite=suite, task=task, fold=fold)
                 results = pd.concat([results, fold_rows], ignore_index=True)
                 path.parent.mkdir(parents=True, exist_ok=True)

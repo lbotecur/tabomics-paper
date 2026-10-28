@@ -11,9 +11,17 @@ row per fold to a CSV (it resumes an interrupted run).
 | `mlomics` | 5 TCGA cancers of MLOmics [3] x (mRNA, copy number (CNV), methylation, miRNA, all four) | stratified 5-fold, seed 42 |
 | `shamir` | breast, gbm and sarcoma of the TCGA benchmark of Rappoport and Shamir [4] x (mRNA, methylation, miRNA, all three) | stratified 5-fold, seed 42 |
 
-The suites are prepared as in the code of TabPFN-Wide [5], so the folds of `hdlss` and `mlomics` are theirs
+The tasks and folds are those of the code of TabPFN-Wide [5]: the folds of `hdlss` and `mlomics` are theirs
 (`scripts/02_folds.py --tabpfn-wide` checks it). For `shamir`, two differences: classes with fewer patients than folds
 are left out, and samples are sorted, since TabPFN-Wide's order (and so its folds) changes from run to run.
+
+Unlike TabPFN-Wide, nothing is fitted on all the samples. TabPFN-Wide drops the features of `mlomics` that are zero in
+every sample and fills its missing values with the feature mean, and standardizes each omic of `shamir`, over all the
+samples, test rows included. Here the loaders only read the data (duplicated feature names and samples dropped), and
+each suite's `prepare(X, train, test)` fits what it needs on the training rows of each split: for `mlomics`, the
+features that are zero in every training row are dropped and missing values are filled with the mean of the training
+rows; for `hdlss` and `shamir`, nothing. Each model then applies its own preprocessing, also fitted on the training
+rows (the elastic-net LR within each partition of its cross-validation).
 
 The paper reports 46 of these tasks: the four development datasets of `hdlss` (`common.DEVELOPMENT`) and the
 methylation and combined tasks of LGG in `mlomics` are left out (`common.EXCLUDED`; Sections 4.3 and 6.1 of the
