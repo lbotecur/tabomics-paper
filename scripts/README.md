@@ -16,13 +16,20 @@ python scripts/02_folds.py             # tasks and folds (--tabpfn-wide <clone>:
 python scripts/03_audit_lgg.py         # audit of LGG/methylation -> results/audit/lgg_methylation.json
 python scripts/04_benchmarks_tabomics.py   # TabOmics v2 and v2.5, 1 and 8 passes -> results/raw/
 python scripts/05_benchmarks_baselines.py  # other foundation models (1 and 8 members), classical models -> results/raw/
-python scripts/06_statistics.py            # means, Wilcoxon-Holm, Friedman-Nemenyi -> results/summaries/, figures/
+python scripts/04_benchmarks_tabomics.py --development   # the same on the development datasets (appendix)
+python scripts/05_benchmarks_baselines.py --development
 python scripts/07_ablations.py             # TabOmics v2.5: 2 and 4 passes, clip 100, fp32 -> results/raw/ablations/
 python scripts/08_importance_synthetic.py  # feature recovery on synthetic tables -> results/raw/importance/
 python scripts/08_importance_synthetic.py --features 10000 20000 30000  # the same, as wide as the omics tasks
 python scripts/09_importance_omics.py      # gene rankings on the mRNA tasks: predictive value, stability, PAM50
 python scripts/10_embeddings.py            # sample embeddings on the mRNA tasks -> results/raw/embeddings/
+python scripts/10_embeddings.py --figure   # their figure -> figures/embeddings.pdf
+python scripts/06_statistics.py            # last: summaries, tests, tables and figures -> results/summaries/, tables/, figures/
 ```
 
-Nothing these scripts write contains data or sample identifiers: only file names, counts, row indices, summary
-statistics and hashes.
+The computational cost is a separate run, `--timing` in 04, 05 and 07, on a machine that runs nothing else; the main
+README gives the loop used for the paper.
+
+Nothing these scripts write into the repository contains data or sample identifiers: only file names, counts, row
+indices, summary statistics, hashes, tables and figures. The only per-sample output, the representations of the
+embedding figure, stays in a cache outside the repository (`10_embeddings.py --figure`).

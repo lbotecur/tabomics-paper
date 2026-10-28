@@ -89,7 +89,18 @@ CUDA_VISIBLE_DEVICES=0 nohup python scripts/04_benchmarks_tabomics.py --models t
 | 06 | `06_statistics.py`, after the others | means, Wilcoxon with Holm, Friedman with Nemenyi, figures | `results/summaries/`, `figures/` | | Sections 6.3, 7 |
 
 `<model>` is the name of a model with `:` written as `_` (`tabomics-v2.5:n1` → `tabomics-v2.5_n1`); `--help` lists
-the models of each script. 08 and 09 run their methods in one process, 03 and 06 need no GPU.
+the models of each script. 08 and 09 run their methods in one process, 03 and 06 need no GPU. The development datasets
+were run as the other tasks, with `--development` added, and the second run of 08 with `--features 10000 20000 30000`:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 nohup python scripts/04_benchmarks_tabomics.py --development --models tabomics-v2.5:n1 \
+    > logs/development/04_tabomics-v2.5_n1.log 2>&1 &
+```
+
+**Figure of the embeddings.** `python scripts/10_embeddings.py --figure` draws `figures/embeddings.pdf` from the first
+fold of Shamir breast, after the runs of 10. The first time it computes the five representations of the figure in one
+process (about 40 minutes on one GPU) and keeps them in `~/.cache/tabomics-paper/embeddings_figure.npz`, outside the
+repository, since they are per sample; later runs only draw, in seconds. Delete that file to compute them again.
 
 **Computational cost.** The timings are a separate run, `--timing` in 04, 05 and 07: the first fold of each task,
 three times after a fold that is not timed, into `results/raw/timing/` and `results/raw/ablations/timing/`. They need
@@ -108,24 +119,27 @@ for m in tabomics-v2.5:n2 tabomics-v2.5:n4 tabomics-v2.5:n1:fp32; do
 
 **Machines.** The runs of the paper used two identical machines, each with eight NVIDIA A100 80 GB GPUs and the same
 environment (`manifests/software.txt`): the benchmarks (04, 05) and every timing on the first, the timings on its GPU 0
-alone; the ablations (07), the development datasets, 08, 09 and 10 on the second. Summed over their folds, the
+alone; the ablations (07), the development datasets, 08, 09 and 10 on the second, and the figure of 10 on the first.
+Summed over their folds, the
 benchmark runs took 32 GPU hours for 04 (3 to 13 per model) and about 97 for 05 (1 to 26 per model), and 07 took 27.
 
 ### 4. Results
 
-`06_statistics.py` writes every number of the paper into `results/summaries/` and its figures into `figures/`, from
-the per-fold results of `results/raw/`:
+`06_statistics.py` writes, from the per-fold results of `results/raw/`, the summaries and tests into
+`results/summaries/`, the tables of the paper into `tables/` (as LaTeX, so that no number is copied by hand) and its
+figures into `figures/`:
 
-| Paper | Results (`results/summaries/`) | Figures (`figures/`) |
-|---|---|---|
-| Benchmarks | `per_benchmark.csv`, `per_task.csv`, `wilcoxon.csv`, `friedman.csv`, `ranks.csv`, `versions.csv`; `tables/benchmarks_<metric>.tex`, `tables/per_task_<1,2>.tex` (appendix) | `cd_<metric>_<set>.pdf` |
-| Ablations | `ablations_means.csv`, `ablations_wilcoxon.csv` | |
-| Computational cost | `timing_per_benchmark.csv`, `timing_per_task.csv`; `tables/cost.tex` | |
-| Feature importance, synthetic tables | `importance_synthetic_means.csv`, `importance_synthetic_wilcoxon.csv` | `importance_synthetic.pdf` |
-| Feature importance, gene rankings | `importance_omics_*.csv`; `tables/importance_omics.tex`, `tables/top_genes.tex` (appendix); the top genes of every fold in `results/raw/importance/omics_top_genes.csv` | |
-| Sample embeddings | `embeddings_means.csv`, `embeddings_per_task.csv`, `embeddings_wilcoxon.csv`; `tables/embeddings.tex` | `embeddings.pdf` (written by 10 with `--figure`) |
-| Development datasets (appendix) | `development.csv`, `development_advantage.csv`; `tables/development.tex` | |
-| Audit of LGG methylation | `results/audit/lgg_methylation.json` (written by 03) | |
+| Paper | Summaries (`results/summaries/`) | Tables (`tables/`) | Figures (`figures/`) |
+|---|---|---|---|
+| 7.1 Predictive performance | `per_benchmark.csv`, `per_task.csv`, `wilcoxon.csv`, `friedman.csv`, `ranks.csv`, `versions.csv` | `benchmarks_roc_auc.tex`, `benchmarks_accuracy.tex` | `cd_roc_auc_all.pdf` (and per benchmark and metric) |
+| 7.2 Computational cost | `timing_per_benchmark.csv`, `timing_per_task.csv` | `cost.tex` | |
+| 7.3 Ablations | `ablations_means.csv`, `ablations_wilcoxon.csv` | `ablations.tex` | |
+| 7.4 Feature importance | `importance_synthetic_*.csv`, `importance_omics_*.csv`; the top genes of every fold in `results/raw/importance/omics_top_genes.csv` | `importance_omics.tex` | `importance_synthetic.pdf` |
+| 7.5 Sample embeddings | `embeddings_means.csv`, `embeddings_per_task.csv`, `embeddings_wilcoxon.csv` | `embeddings.tex` | `embeddings.pdf` (by 10 with `--figure`) |
+| Appendix A, per-task results | `per_task.csv` | `per_task_1.tex`, `per_task_2.tex` | |
+| Appendix B, development datasets | `development.csv`, `development_advantage.csv` | `development.tex` | |
+| Appendix C, top-ranked genes | `results/raw/importance/omics_top_genes.csv` | `top_genes.tex` | |
+| 6.1, audit of LGG methylation | `results/audit/lgg_methylation.json` (by 03) | | |
 
 Rerunning 06 on the results of this repository, in the environment of `requirements.lock`, gives the same files, byte
 for byte.
