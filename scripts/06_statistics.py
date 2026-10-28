@@ -525,7 +525,10 @@ def development_table(per_task: pd.DataFrame, advantage: pd.DataFrame) -> str:
     lines = []
     for model, row in table.iterrows():
         cells = [rf"\textbf{{{v:.3f}}}" if v == table[c].max() else f"{v:.3f}" for c, v in row.items()]
-        cells += [f"{v:+.3f}" for v in difference.loc[model]] if model in difference.index else ["--", "--"]
+        if model in difference.index:  # a math minus; adding 0.0 turns a rounded -0.000 into +0.000
+            cells += [f"${v + 0.0:+.3f}$" for v in difference.loc[model]]
+        else:
+            cells += ["--", "--"]
         lines.append(" & ".join([latex_name(model), *cells]) + r" \\")
     header = [r"\begin{tabular}{lrrrrrrr}", r"\toprule",
               r" & \multicolumn{5}{c}{AUROC} & \multicolumn{2}{c}{TabOmics v2.5 $\times$1 minus model} \\",
