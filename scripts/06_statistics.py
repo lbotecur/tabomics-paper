@@ -26,6 +26,12 @@ results/summaries/ and figures/:
   memory (none recorded for XGBoost and the CPU methods).
 - tables/ablations.tex: the ablation table of the paper: the mean AUROC and accuracy over all tasks of each ablation,
   its wins-ties-losses and Holm p against the reference, and its median seconds per fold and GPU memory.
+- tables/per_task_<1,2>.tex: the AUROC of every model on every task (appendix), the TFMs that run with one and eight
+  members in the first, the others in the second; the best of the 15 models on each task in bold.
+- tables/development.tex: the development datasets (appendix): the AUROC of every model on each, and the median
+  difference of TabOmics v2.5 x1 with each model on them and on the tasks of the paper.
+- tables/top_genes.tex: the genes most often among the top 10 of TabOmics v2.5 x1 in the folds of the breast tasks,
+  PAM50 genes in bold (appendix).
 - development.csv, development_advantage.csv: the development datasets (common.DEVELOPMENT, an appendix): means per
   task, and the median difference of TabOmics v2.5 x1 with each model on them and on the tasks of the paper.
 - importance_synthetic_means.csv, importance_synthetic_wilcoxon.csv (script 08): per width, the means over the
@@ -56,6 +62,7 @@ import pandas as pd
 from scipy.stats import friedmanchisquare, studentized_range, wilcoxon
 
 from common import DEVELOPMENT, EXCLUDED, MANIFESTS, REPO, RESULTS, SUITES, paper_name
+from importance import PAM50
 
 METRICS = ("roc_auc", "accuracy")
 SETS = ("all", *SUITES)
@@ -468,6 +475,82 @@ def embeddings_table(tables: dict[str, pd.DataFrame]) -> str:
     return "\n".join([*header, *lines, r"\bottomrule", r"\end{tabular}", ""])
 
 
+OMIC_NAMES = {"mrna": "mRNA", "cnv": "CNV", "methylation": "methylation", "mirna": "miRNA"}
+
+
+def latex_task(dataset: str) -> str:
+    """The name of a task in a table: 'BRCA/mrna' -> 'BRCA mRNA', a combined task -> 'BRCA all omics'."""
+    if "/" not in dataset:
+        return dataset.replace("_", r"\_")
+    cancer, omics = dataset.split("/")
+    return f"{cancer} " + ("all omics" if "+" in omics else OMIC_NAMES[omics])
+
+
+PER_TASK_GROUPS = (  # the columns of the two per-task tables: a family with its models
+    (("TabOmics v2.5", ("tabomics-v2.5:n1", "tabomics-v2.5:n8")), ("TabOmics v2", ("tabomics-v2:n1", "tabomics-v2:n8")),
+     ("TabPFN-3.5", ("tabpfn-3.5:n1", "tabpfn-3.5:n8")), ("TabPFN-Wide", ("tabpfn-wide-5k:n1", "tabpfn-wide-5k:n8"))),
+    (("TabPFNv2", ("tabpfn-v2-gn2p4bpt:n1", "tabpfn-v2-gn2p4bpt:n8")), ("TabICLv2", ("tabicl-v2:n1", "tabicl-v2:n8")),
+     ("XGBoost", ("xgboost",)), ("Random forest", ("random_forest",)), ("Elastic-net LR", ("logreg_en",))),
+)  # fmt: skip
+
+
+def per_task_table(per_task: pd.DataFrame, groups) -> str:
+    """The AUROC per task of the models of groups, by benchmark; the best of all the models on each task in bold."""
+    table = per_task.pivot_table(index=["suite", "dataset"], columns="model", values="roc_auc", sort=False).round(3)
+    models = [m for _, members in groups for m in members]
+    lines = []
+    for suite, name in zip(SUITES, ("HDLSS", "MLOmics", "Shamir"), strict=True):
+        lines.append(rf"\midrule \multicolumn{{{len(models) + 1}}}{{l}}{{\emph{{{name}}}}} \\")
+        for (_, dataset), row in table.loc[[suite]].iterrows():
+            cells = [rf"\textbf{{{row[m]:.3f}}}" if row[m] == row.max() else f"{row[m]:.3f}" for m in models]
+            lines.append(" & ".join([latex_task(dataset), *cells]) + r" \\")
+    families = " & ".join(rf"\multicolumn{{{len(members)}}}{{c}}{{{family}}}" for family, members in groups)
+    rules, column = [], 2
+    for _, members in groups:
+        rules.append(rf"\cmidrule(lr){{{column}-{column + len(members) - 1}}}")
+        column += len(members)
+    passes = " & ".join(rf"$\times${m.split(':n')[1]}" if ":n" in m else "" for m in models)
+    header = [rf"\begin{{tabular}}{{l{'r' * len(models)}}}", r"\toprule", f"Task & {families} \\\\", " ".join(rules),
+              f" & {passes} \\\\"]  # fmt: skip
+    return "\n".join([*header, *lines, r"\bottomrule", r"\end{tabular}", ""])
+
+
+def development_table(per_task: pd.DataFrame, advantage: pd.DataFrame) -> str:
+    """The AUROC of every model on each development dataset and their mean, with the median difference of TabOmics
+    v2.5 x1 with the model on them and on the tasks of the paper; the best value of each dataset in bold."""
+    table = per_task.pivot(index="model", columns="dataset", values="roc_auc")[list(DEVELOPMENT)]
+    table["mean"] = table.mean(axis=1)
+    table = table.sort_values("mean", ascending=False).round(3)
+    difference = advantage[advantage.metric == "roc_auc"].set_index("other")[["development", "reported"]].round(3)
+    lines = []
+    for model, row in table.iterrows():
+        cells = [rf"\textbf{{{v:.3f}}}" if v == table[c].max() else f"{v:.3f}" for c, v in row.items()]
+        cells += [f"{v:+.3f}" for v in difference.loc[model]] if model in difference.index else ["--", "--"]
+        lines.append(" & ".join([latex_name(model), *cells]) + r" \\")
+    header = [r"\begin{tabular}{lrrrrrrr}", r"\toprule",
+              r" & \multicolumn{5}{c}{AUROC} & \multicolumn{2}{c}{TabOmics v2.5 $\times$1 minus model} \\",
+              r"\cmidrule(lr){2-6} \cmidrule(lr){7-8}",
+              r"Model & madelon & arcene & RELATHE & gisette & Mean & Development & Reported \\",
+              r"\midrule"]  # fmt: skip
+    return "\n".join([*header, *lines, r"\bottomrule", r"\end{tabular}", ""])
+
+
+def top_genes_table(top: pd.DataFrame) -> str:
+    """For each breast task, the ten genes most often among the top 10 of TabOmics v2.5 x1 over the folds (ties by
+    their mean rank), with the number of folds; PAM50 genes in bold."""
+    columns = []
+    for task in BREAST:
+        rows = top[(top.method == REFERENCE) & (top.task == task) & (top["rank"] <= 10)]
+        genes = rows.groupby("gene").agg(folds=("fold", "nunique"), rank=("rank", "mean"))
+        genes = genes.sort_values(["folds", "rank"], ascending=[False, True]).head(10)
+        columns.append([(rf"\textbf{{{g}}}" if g in PAM50 else g, str(n)) for g, n in genes.folds.items()])
+    lines = [" & ".join(a + b) + r" \\" for a, b in zip(*columns, strict=True)]
+    header = [r"\begin{tabular}{lrlr}", r"\toprule",
+              r"\multicolumn{2}{c}{MLOmics BRCA} & \multicolumn{2}{c}{Shamir breast} \\",
+              r"\cmidrule(lr){1-2} \cmidrule(lr){3-4}", r"Gene & Folds & Gene & Folds \\", r"\midrule"]  # fmt: skip
+    return "\n".join([*header, *lines, r"\bottomrule", r"\end{tabular}", ""])
+
+
 def complete_models(raw: pd.DataFrame) -> list[str]:
     """The models with a successful row on every fold of every reported task of manifests/tasks.tsv."""
     tasks = pd.read_csv(MANIFESTS / "tasks.tsv", sep="\t")
@@ -551,6 +634,8 @@ def main() -> int:
     tests.to_csv(output / "friedman.csv", index=False)
     named(ranks).to_csv(output / "ranks.csv", index=False)
     (REPO / "tables").mkdir(exist_ok=True)
+    for number, groups in enumerate(PER_TASK_GROUPS, start=1):
+        (REPO / "tables" / f"per_task_{number}.tex").write_text(per_task_table(per_task, groups))
     for metric in METRICS:
         table = benchmark_table(per_benchmark, ranks, pairwise_tests, metric)
         (REPO / "tables" / f"benchmarks_{metric}.tex").write_text(table)
@@ -581,6 +666,7 @@ def main() -> int:
         development_task, advantage = development(everything, raw)
         named(development_task).to_csv(output / "development.csv", index=False)
         named(advantage).to_csv(output / "development_advantage.csv", index=False)
+        (REPO / "tables" / "development.tex").write_text(development_table(development_task, advantage))
         print("development datasets:", ", ".join(sorted(development_task.dataset.unique())))
     importance = RESULTS / "raw" / "importance"
     if (importance / "synthetic.csv").exists():
@@ -595,6 +681,8 @@ def main() -> int:
         for name, table in tables.items():
             named(table).to_csv(output / f"importance_omics_{name}.csv", index=False)
         (REPO / "tables" / "importance_omics.tex").write_text(importance_table(tables))
+        top = pd.read_csv(importance / "omics_top_genes.csv")
+        (REPO / "tables" / "top_genes.tex").write_text(top_genes_table(top))
         print("importance on omics: tasks", tables["predictive_per_task"].task.nunique())
     embedding_runs = sorted((RESULTS / "raw" / "embeddings").glob("*/*.csv"))
     if embedding_runs:
