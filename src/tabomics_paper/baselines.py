@@ -46,9 +46,11 @@ def available() -> list[str]:
 def elastic_net_cv(categorical: list[int]) -> GridSearchCV:
     """Elastic-net logistic regression (l1_ratio 0.5), C among five values from 1e-4 to 1e4 chosen by 3-fold CV on
     the training rows with the log-loss, then refitted on all of them. The imputation and standardization are part of
-    the pipeline, so that they are fitted within each partition of the cross-validation."""
+    the pipeline, so that they are fitted within each partition of the cross-validation. saga stops when it converges;
+    max_iter 5000, as the other logistic regressions of the repository, is well above what every fit needs (at most
+    about 600 iterations on the tasks checked), so that no fit stops before converging."""
     penalty = {} if tuple(map(int, sklearn.__version__.split(".")[:2])) >= (1, 8) else {"penalty": "elasticnet"}
-    model = LogisticRegression(solver="saga", l1_ratio=0.5, max_iter=500, tol=1e-3, random_state=SEED, **penalty)
+    model = LogisticRegression(solver="saga", l1_ratio=0.5, max_iter=5000, tol=1e-3, random_state=SEED, **penalty)
     return GridSearchCV(
         make_pipeline(linear_inputs(categorical), model),
         {"logisticregression__C": np.logspace(-4, 4, 5)},
