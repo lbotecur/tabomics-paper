@@ -1,4 +1,3 @@
-nohup: no se tendrá en cuenta la entrada
 pca | mlomics/BRCA/mrna fold 0 | logreg AUROC 0.961 | knn AUROC 0.661
 pca | mlomics/BRCA/mrna fold 1 | logreg AUROC 0.955 | knn AUROC 0.639
 pca | mlomics/BRCA/mrna fold 2 | logreg AUROC 0.962 | knn AUROC 0.623

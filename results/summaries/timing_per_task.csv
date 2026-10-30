@@ -1,50 +1,50 @@
 model,suite,dataset,features,rows,seconds,peak_gpu_mb,repeats
-Elastic-net LR,hdlss,ALLAML,7129,72,2.437,0,3
-Elastic-net LR,hdlss,BASEHOCK,4862,1993,33.484,0,3
-Elastic-net LR,hdlss,CLL_SUB_111,11340,111,7.027,0,3
-Elastic-net LR,hdlss,GLI_85,22283,85,10.505,0,3
-Elastic-net LR,hdlss,PCMAC,3289,1943,25.024,0,3
-Elastic-net LR,hdlss,Prostate_GE,5966,102,2.939,0,3
-Elastic-net LR,hdlss,SMK_CAN_187,19993,187,13.302,0,3
-Elastic-net LR,hdlss,TOX_171,5748,171,7.143,0,3
-Elastic-net LR,hdlss,colon,2000,62,0.554,0,3
-Elastic-net LR,hdlss,leukemia,7070,72,1.506,0,3
-Elastic-net LR,hdlss,lung,3312,203,8.448,0,3
-Elastic-net LR,mlomics,BRCA/cnv,19533,671,402.708,0,3
-Elastic-net LR,mlomics,BRCA/methylation,19049,671,130.025,0,3
-Elastic-net LR,mlomics,BRCA/mirna,345,671,2.677,0,3
-Elastic-net LR,mlomics,BRCA/mrna,18206,671,109.827,0,3
-Elastic-net LR,mlomics,BRCA/mrna+cnv+methylation+mirna,57133,671,314.22,0,3
-Elastic-net LR,mlomics,COAD/cnv,19545,260,92.624,0,3
-Elastic-net LR,mlomics,COAD/methylation,19023,260,73.3,0,3
-Elastic-net LR,mlomics,COAD/mirna,375,260,1.017,0,3
-Elastic-net LR,mlomics,COAD/mrna,17261,260,67.809,0,3
-Elastic-net LR,mlomics,COAD/mrna+cnv+methylation+mirna,56204,260,220.187,0,3
-Elastic-net LR,mlomics,GBM/cnv,19539,244,66.328,0,3
-Elastic-net LR,mlomics,GBM/methylation,19031,244,83.645,0,3
-Elastic-net LR,mlomics,GBM/mirna,308,244,0.855,0,3
-Elastic-net LR,mlomics,GBM/mrna,17539,244,73.443,0,3
-Elastic-net LR,mlomics,GBM/mrna+cnv+methylation+mirna,56417,244,265.977,0,3
-Elastic-net LR,mlomics,LGG/cnv,19528,247,92.784,0,3
-Elastic-net LR,mlomics,LGG/mirna,321,247,0.561,0,3
-Elastic-net LR,mlomics,LGG/mrna,14260,247,47.632,0,3
-Elastic-net LR,mlomics,OV/cnv,19528,284,48.369,0,3
-Elastic-net LR,mlomics,OV/methylation,19031,284,81.819,0,3
-Elastic-net LR,mlomics,OV/mirna,244,284,0.653,0,3
-Elastic-net LR,mlomics,OV/mrna,14229,284,35.038,0,3
-Elastic-net LR,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,141.817,0,3
-Elastic-net LR,shamir,breast/methylation,5000,440,41.273,0,3
-Elastic-net LR,shamir,breast/mirna,1046,440,6.256,0,3
-Elastic-net LR,shamir,breast/mrna,20531,440,111.881,0,3
-Elastic-net LR,shamir,breast/mrna+methylation+mirna,26577,440,130.034,0,3
-Elastic-net LR,shamir,gbm/methylation,5000,274,21.05,0,3
-Elastic-net LR,shamir,gbm/mirna,534,274,1.499,0,3
-Elastic-net LR,shamir,gbm/mrna,12042,274,65.735,0,3
-Elastic-net LR,shamir,gbm/mrna+methylation+mirna,17576,274,87.0,0,3
-Elastic-net LR,shamir,sarcoma/methylation,5000,254,32.519,0,3
-Elastic-net LR,shamir,sarcoma/mirna,1046,254,6.139,0,3
-Elastic-net LR,shamir,sarcoma/mrna,20531,254,115.991,0,3
-Elastic-net LR,shamir,sarcoma/mrna+methylation+mirna,26577,254,198.172,0,3
+Elastic-net LR,hdlss,ALLAML,7129,72,11.994,0,3
+Elastic-net LR,hdlss,BASEHOCK,4862,1993,56.461,0,3
+Elastic-net LR,hdlss,CLL_SUB_111,11340,111,20.23,0,3
+Elastic-net LR,hdlss,GLI_85,22283,85,15.26,0,3
+Elastic-net LR,hdlss,PCMAC,3289,1943,39.018,0,3
+Elastic-net LR,hdlss,Prostate_GE,5966,102,4.336,0,3
+Elastic-net LR,hdlss,SMK_CAN_187,19993,187,13.094,0,3
+Elastic-net LR,hdlss,TOX_171,5748,171,17.885,0,3
+Elastic-net LR,hdlss,colon,2000,62,0.73,0,3
+Elastic-net LR,hdlss,leukemia,7070,72,2.396,0,3
+Elastic-net LR,hdlss,lung,3312,203,13.825,0,3
+Elastic-net LR,mlomics,BRCA/cnv,19533,671,474.632,0,3
+Elastic-net LR,mlomics,BRCA/methylation,19049,671,372.201,0,3
+Elastic-net LR,mlomics,BRCA/mirna,345,671,18.435,0,3
+Elastic-net LR,mlomics,BRCA/mrna,18206,671,367.769,0,3
+Elastic-net LR,mlomics,BRCA/mrna+cnv+methylation+mirna,57133,671,1306.378,0,3
+Elastic-net LR,mlomics,COAD/cnv,19545,260,104.546,0,3
+Elastic-net LR,mlomics,COAD/methylation,19023,260,99.932,0,3
+Elastic-net LR,mlomics,COAD/mirna,375,260,1.333,0,3
+Elastic-net LR,mlomics,COAD/mrna,17261,260,123.925,0,3
+Elastic-net LR,mlomics,COAD/mrna+cnv+methylation+mirna,56204,260,328.273,0,3
+Elastic-net LR,mlomics,GBM/cnv,19539,244,81.51,0,3
+Elastic-net LR,mlomics,GBM/methylation,19031,244,131.941,0,3
+Elastic-net LR,mlomics,GBM/mirna,308,244,1.088,0,3
+Elastic-net LR,mlomics,GBM/mrna,17539,244,149.518,0,3
+Elastic-net LR,mlomics,GBM/mrna+cnv+methylation+mirna,56417,244,416.461,0,3
+Elastic-net LR,mlomics,LGG/cnv,19528,247,115.929,0,3
+Elastic-net LR,mlomics,LGG/mirna,321,247,0.755,0,3
+Elastic-net LR,mlomics,LGG/mrna,14260,247,85.165,0,3
+Elastic-net LR,mlomics,OV/cnv,19528,284,59.812,0,3
+Elastic-net LR,mlomics,OV/methylation,19031,284,126.117,0,3
+Elastic-net LR,mlomics,OV/mirna,244,284,0.731,0,3
+Elastic-net LR,mlomics,OV/mrna,14229,284,57.042,0,3
+Elastic-net LR,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,355.131,0,3
+Elastic-net LR,shamir,breast/methylation,5000,440,55.407,0,3
+Elastic-net LR,shamir,breast/mirna,1046,440,6.313,0,3
+Elastic-net LR,shamir,breast/mrna,20531,440,309.484,0,3
+Elastic-net LR,shamir,breast/mrna+methylation+mirna,26577,440,389.291,0,3
+Elastic-net LR,shamir,gbm/methylation,5000,274,29.881,0,3
+Elastic-net LR,shamir,gbm/mirna,534,274,1.953,0,3
+Elastic-net LR,shamir,gbm/mrna,12042,274,100.866,0,3
+Elastic-net LR,shamir,gbm/mrna+methylation+mirna,17576,274,125.074,0,3
+Elastic-net LR,shamir,sarcoma/methylation,5000,254,47.857,0,3
+Elastic-net LR,shamir,sarcoma/mirna,1046,254,3.597,0,3
+Elastic-net LR,shamir,sarcoma/mrna,20531,254,204.292,0,3
+Elastic-net LR,shamir,sarcoma/mrna+methylation+mirna,26577,254,253.373,0,3
 Random forest,hdlss,ALLAML,7129,72,2.525,0,3
 Random forest,hdlss,BASEHOCK,4862,1993,2.0,0,3
 Random forest,hdlss,CLL_SUB_111,11340,111,3.928,0,3
@@ -79,18 +79,18 @@ Random forest,mlomics,OV/methylation,19031,284,6.598,0,3
 Random forest,mlomics,OV/mirna,244,284,0.262,0,3
 Random forest,mlomics,OV/mrna,14229,284,4.934,0,3
 Random forest,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,17.978,0,3
-Random forest,shamir,breast/methylation,5000,440,1.899,0,3
-Random forest,shamir,breast/mirna,1046,440,0.533,0,3
-Random forest,shamir,breast/mrna,20531,440,7.189,0,3
-Random forest,shamir,breast/mrna+methylation+mirna,26577,440,9.271,0,3
-Random forest,shamir,gbm/methylation,5000,274,1.843,0,3
-Random forest,shamir,gbm/mirna,534,274,0.35,0,3
-Random forest,shamir,gbm/mrna,12042,274,4.204,0,3
-Random forest,shamir,gbm/mrna+methylation+mirna,17576,274,6.092,0,3
-Random forest,shamir,sarcoma/methylation,5000,254,1.843,0,3
-Random forest,shamir,sarcoma/mirna,1046,254,0.528,0,3
-Random forest,shamir,sarcoma/mrna,20531,254,7.083,0,3
-Random forest,shamir,sarcoma/mrna+methylation+mirna,26577,254,9.158,0,3
+Random forest,shamir,breast/methylation,5000,440,1.927,0,3
+Random forest,shamir,breast/mirna,1046,440,0.545,0,3
+Random forest,shamir,breast/mrna,20531,440,7.381,0,3
+Random forest,shamir,breast/mrna+methylation+mirna,26577,440,9.435,0,3
+Random forest,shamir,gbm/methylation,5000,274,1.874,0,3
+Random forest,shamir,gbm/mirna,534,274,0.356,0,3
+Random forest,shamir,gbm/mrna,12042,274,4.275,0,3
+Random forest,shamir,gbm/mrna+methylation+mirna,17576,274,6.158,0,3
+Random forest,shamir,sarcoma/methylation,5000,254,1.876,0,3
+Random forest,shamir,sarcoma/mirna,1046,254,0.526,0,3
+Random forest,shamir,sarcoma/mrna,20531,254,7.17,0,3
+Random forest,shamir,sarcoma/mrna+methylation+mirna,26577,254,9.246,0,3
 TabICLv2 ×1,hdlss,ALLAML,7129,72,0.767,3416,3
 TabICLv2 ×1,hdlss,BASEHOCK,4862,1993,2.966,30842,3
 TabICLv2 ×1,hdlss,CLL_SUB_111,11340,111,1.12,6088,3
@@ -125,18 +125,18 @@ TabICLv2 ×1,mlomics,OV/methylation,19031,284,3.587,19475,3
 TabICLv2 ×1,mlomics,OV/mirna,244,284,0.402,372,3
 TabICLv2 ×1,mlomics,OV/mrna,14229,284,2.397,14592,3
 TabICLv2 ×1,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,19.038,49990,3
-TabICLv2 ×1,shamir,breast/methylation,5000,440,1.095,7663,3
-TabICLv2 ×1,shamir,breast/mirna,1046,440,0.501,1421,3
-TabICLv2 ×1,shamir,breast/mrna,20531,440,5.604,30544,3
-TabICLv2 ×1,shamir,breast/mrna+methylation+mirna,26577,440,8.672,39371,3
-TabICLv2 ×1,shamir,gbm/methylation,5000,274,0.864,5052,3
-TabICLv2 ×1,shamir,gbm/mirna,534,274,0.45,649,3
-TabICLv2 ×1,shamir,gbm/mrna,12042,274,1.954,11990,3
-TabICLv2 ×1,shamir,gbm/mrna+methylation+mirna,17576,274,3.111,17443,3
-TabICLv2 ×1,shamir,sarcoma/methylation,5000,254,0.843,4735,3
-TabICLv2 ×1,shamir,sarcoma/mirna,1046,254,0.459,890,3
-TabICLv2 ×1,shamir,sarcoma/mrna,20531,254,3.523,18766,3
-TabICLv2 ×1,shamir,sarcoma/mrna+methylation+mirna,26577,254,5.127,24144,3
+TabICLv2 ×1,shamir,breast/methylation,5000,440,1.043,7663,3
+TabICLv2 ×1,shamir,breast/mirna,1046,440,0.441,1421,3
+TabICLv2 ×1,shamir,breast/mrna,20531,440,5.558,30544,3
+TabICLv2 ×1,shamir,breast/mrna+methylation+mirna,26577,440,8.63,39371,3
+TabICLv2 ×1,shamir,gbm/methylation,5000,274,0.81,5052,3
+TabICLv2 ×1,shamir,gbm/mirna,534,274,0.411,649,3
+TabICLv2 ×1,shamir,gbm/mrna,12042,274,1.876,11990,3
+TabICLv2 ×1,shamir,gbm/mrna+methylation+mirna,17576,274,3.107,17443,3
+TabICLv2 ×1,shamir,sarcoma/methylation,5000,254,0.777,4735,3
+TabICLv2 ×1,shamir,sarcoma/mirna,1046,254,0.414,890,3
+TabICLv2 ×1,shamir,sarcoma/mrna,20531,254,3.518,18766,3
+TabICLv2 ×1,shamir,sarcoma/mrna+methylation+mirna,26577,254,5.091,24144,3
 TabICLv2 ×8,hdlss,ALLAML,7129,72,38.655,13302,3
 TabICLv2 ×8,hdlss,BASEHOCK,4862,1993,98.454,60182,3
 TabICLv2 ×8,hdlss,CLL_SUB_111,11340,111,65.899,23993,3
@@ -171,18 +171,18 @@ TabICLv2 ×8,mlomics,OV/methylation,19031,284,134.111,53207,3
 TabICLv2 ×8,mlomics,OV/mirna,244,284,1.671,1129,3
 TabICLv2 ×8,mlomics,OV/mrna,14229,284,83.963,50505,3
 TabICLv2 ×8,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,406.374,72350,3
-TabICLv2 ×8,shamir,breast/methylation,5000,440,31.587,30278,3
-TabICLv2 ×8,shamir,breast/mirna,1046,440,9.657,5321,3
-TabICLv2 ×8,shamir,breast/mrna,20531,440,188.636,59667,3
-TabICLv2 ×8,shamir,breast/mrna+methylation+mirna,26577,440,243.51,64775,3
-TabICLv2 ×8,shamir,gbm/methylation,5000,274,29.676,19843,3
-TabICLv2 ×8,shamir,gbm/mirna,534,274,3.791,2242,3
-TabICLv2 ×8,shamir,gbm/mrna,12042,274,75.289,49084,3
-TabICLv2 ×8,shamir,gbm/mrna+methylation+mirna,17576,274,113.145,52084,3
-TabICLv2 ×8,shamir,sarcoma/methylation,5000,254,28.177,18587,3
-TabICLv2 ×8,shamir,sarcoma/mirna,1046,254,8.795,3189,3
-TabICLv2 ×8,shamir,sarcoma/mrna,20531,254,171.372,52807,3
-TabICLv2 ×8,shamir,sarcoma/mrna+methylation+mirna,26577,254,215.527,55741,3
+TabICLv2 ×8,shamir,breast/methylation,5000,440,31.167,30278,3
+TabICLv2 ×8,shamir,breast/mirna,1046,440,9.494,5321,3
+TabICLv2 ×8,shamir,breast/mrna,20531,440,187.31,59697,3
+TabICLv2 ×8,shamir,breast/mrna+methylation+mirna,26577,440,240.511,64806,3
+TabICLv2 ×8,shamir,gbm/methylation,5000,274,29.786,19843,3
+TabICLv2 ×8,shamir,gbm/mirna,534,274,3.761,2242,3
+TabICLv2 ×8,shamir,gbm/mrna,12042,274,74.456,49112,3
+TabICLv2 ×8,shamir,gbm/mrna+methylation+mirna,17576,274,112.122,52115,3
+TabICLv2 ×8,shamir,sarcoma/methylation,5000,254,28.304,18587,3
+TabICLv2 ×8,shamir,sarcoma/mirna,1046,254,8.769,3189,3
+TabICLv2 ×8,shamir,sarcoma/mrna,20531,254,172.453,52836,3
+TabICLv2 ×8,shamir,sarcoma/mrna+methylation+mirna,26577,254,216.15,55771,3
 TabOmics v2.5 ×1,hdlss,ALLAML,7129,72,4.708,424,3
 TabOmics v2.5 ×1,hdlss,BASEHOCK,4862,1993,12.135,7196,3
 TabOmics v2.5 ×1,hdlss,CLL_SUB_111,11340,111,7.999,978,3
@@ -217,18 +217,18 @@ TabOmics v2.5 ×1,mlomics,OV/methylation,19031,284,21.09,4058,3
 TabOmics v2.5 ×1,mlomics,OV/mirna,244,284,0.355,98,3
 TabOmics v2.5 ×1,mlomics,OV/mrna,14229,284,14.372,3047,3
 TabOmics v2.5 ×1,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,96.727,11227,3
-TabOmics v2.5 ×1,shamir,breast/methylation,5000,440,4.899,1668,3
-TabOmics v2.5 ×1,shamir,breast/mirna,1046,440,0.782,324,3
-TabOmics v2.5 ×1,shamir,breast/mrna,20531,440,29.339,6595,3
-TabOmics v2.5 ×1,shamir,breast/mrna+methylation+mirna,26577,440,42.901,8497,3
-TabOmics v2.5 ×1,shamir,gbm/methylation,5000,274,4.095,1066,3
-TabOmics v2.5 ×1,shamir,gbm/mirna,534,274,0.811,155,3
-TabOmics v2.5 ×1,shamir,gbm/mrna,12042,274,11.456,2504,3
-TabOmics v2.5 ×1,shamir,gbm/mrna+methylation+mirna,17576,274,18.752,3634,3
-TabOmics v2.5 ×1,shamir,sarcoma/methylation,5000,254,4.006,987,3
-TabOmics v2.5 ×1,shamir,sarcoma/mirna,1046,254,0.66,202,3
-TabOmics v2.5 ×1,shamir,sarcoma/mrna,20531,254,21.757,3845,3
-TabOmics v2.5 ×1,shamir,sarcoma/mrna+methylation+mirna,26577,254,30.988,4940,3
+TabOmics v2.5 ×1,shamir,breast/methylation,5000,440,4.852,1668,3
+TabOmics v2.5 ×1,shamir,breast/mirna,1046,440,0.783,324,3
+TabOmics v2.5 ×1,shamir,breast/mrna,20531,440,29.309,6595,3
+TabOmics v2.5 ×1,shamir,breast/mrna+methylation+mirna,26577,440,42.809,8497,3
+TabOmics v2.5 ×1,shamir,gbm/methylation,5000,274,4.062,1066,3
+TabOmics v2.5 ×1,shamir,gbm/mirna,534,274,0.487,155,3
+TabOmics v2.5 ×1,shamir,gbm/mrna,12042,274,11.433,2504,3
+TabOmics v2.5 ×1,shamir,gbm/mrna+methylation+mirna,17576,274,18.612,3634,3
+TabOmics v2.5 ×1,shamir,sarcoma/methylation,5000,254,3.986,987,3
+TabOmics v2.5 ×1,shamir,sarcoma/mirna,1046,254,0.657,202,3
+TabOmics v2.5 ×1,shamir,sarcoma/mrna,20531,254,21.762,3845,3
+TabOmics v2.5 ×1,shamir,sarcoma/mrna+methylation+mirna,26577,254,30.808,4940,3
 "TabOmics v2.5 ×1, fp32",hdlss,ALLAML,7129,72,7.333,798,3
 "TabOmics v2.5 ×1, fp32",hdlss,BASEHOCK,4862,1993,57.727,14262,3
 "TabOmics v2.5 ×1, fp32",hdlss,CLL_SUB_111,11340,111,18.088,1896,3
@@ -263,18 +263,18 @@ TabOmics v2.5 ×1,shamir,sarcoma/mrna+methylation+mirna,26577,254,30.988,4940,3
 "TabOmics v2.5 ×1, fp32",mlomics,OV/mirna,244,284,0.375,139,3
 "TabOmics v2.5 ×1, fp32",mlomics,OV/mrna,14229,284,54.315,5986,3
 "TabOmics v2.5 ×1, fp32",mlomics,OV/mrna+cnv+methylation+mirna,53032,284,623.677,22208,3
-"TabOmics v2.5 ×1, fp32",shamir,breast/methylation,5000,440,14.367,3274,3
-"TabOmics v2.5 ×1, fp32",shamir,breast/mirna,1046,440,1.461,595,3
-"TabOmics v2.5 ×1, fp32",shamir,breast/mrna,20531,440,151.318,13102,3
-"TabOmics v2.5 ×1, fp32",shamir,breast/mrna+methylation+mirna,26577,440,241.871,16893,3
-"TabOmics v2.5 ×1, fp32",shamir,gbm/methylation,5000,274,9.854,2055,3
-"TabOmics v2.5 ×1, fp32",shamir,gbm/mirna,534,274,0.692,254,3
-"TabOmics v2.5 ×1, fp32",shamir,gbm/mrna,12042,274,39.68,4895,3
-"TabOmics v2.5 ×1, fp32",shamir,gbm/mrna+methylation+mirna,17576,274,76.287,7128,3
-"TabOmics v2.5 ×1, fp32",shamir,sarcoma/methylation,5000,254,9.335,1907,3
-"TabOmics v2.5 ×1, fp32",shamir,sarcoma/mirna,1046,254,1.012,347,3
-"TabOmics v2.5 ×1, fp32",shamir,sarcoma/mrna,20531,254,91.57,7596,3
-"TabOmics v2.5 ×1, fp32",shamir,sarcoma/mrna+methylation+mirna,26577,254,144.919,9775,3
+"TabOmics v2.5 ×1, fp32",shamir,breast/methylation,5000,440,14.385,3274,3
+"TabOmics v2.5 ×1, fp32",shamir,breast/mirna,1046,440,1.467,594,3
+"TabOmics v2.5 ×1, fp32",shamir,breast/mrna,20531,440,151.491,13101,3
+"TabOmics v2.5 ×1, fp32",shamir,breast/mrna+methylation+mirna,26577,440,242.34,16893,3
+"TabOmics v2.5 ×1, fp32",shamir,gbm/methylation,5000,274,9.877,2055,3
+"TabOmics v2.5 ×1, fp32",shamir,gbm/mirna,534,274,0.725,254,3
+"TabOmics v2.5 ×1, fp32",shamir,gbm/mrna,12042,274,39.788,4895,3
+"TabOmics v2.5 ×1, fp32",shamir,gbm/mrna+methylation+mirna,17576,274,76.437,7127,3
+"TabOmics v2.5 ×1, fp32",shamir,sarcoma/methylation,5000,254,9.344,1907,3
+"TabOmics v2.5 ×1, fp32",shamir,sarcoma/mirna,1046,254,1.022,347,3
+"TabOmics v2.5 ×1, fp32",shamir,sarcoma/mrna,20531,254,91.65,7595,3
+"TabOmics v2.5 ×1, fp32",shamir,sarcoma/mrna+methylation+mirna,26577,254,145.346,9775,3
 TabOmics v2.5 ×2,hdlss,ALLAML,7129,72,5.316,424,3
 TabOmics v2.5 ×2,hdlss,BASEHOCK,4862,1993,21.377,7196,3
 TabOmics v2.5 ×2,hdlss,CLL_SUB_111,11340,111,10.058,978,3
@@ -309,18 +309,18 @@ TabOmics v2.5 ×2,mlomics,OV/methylation,19031,284,31.754,4058,3
 TabOmics v2.5 ×2,mlomics,OV/mirna,244,284,0.493,98,3
 TabOmics v2.5 ×2,mlomics,OV/mrna,14229,284,20.931,3047,3
 TabOmics v2.5 ×2,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,163.942,11227,3
-TabOmics v2.5 ×2,shamir,breast/methylation,5000,440,6.953,1668,3
-TabOmics v2.5 ×2,shamir,breast/mirna,1046,440,1.028,324,3
-TabOmics v2.5 ×2,shamir,breast/mrna,20531,440,47.633,6595,3
-TabOmics v2.5 ×2,shamir,breast/mrna+methylation+mirna,26577,440,71.37,8497,3
-TabOmics v2.5 ×2,shamir,gbm/methylation,5000,274,5.418,1066,3
-TabOmics v2.5 ×2,shamir,gbm/mirna,534,274,0.633,155,3
-TabOmics v2.5 ×2,shamir,gbm/mrna,12042,274,16.279,2504,3
-TabOmics v2.5 ×2,shamir,gbm/mrna+methylation+mirna,17576,274,27.606,3634,3
-TabOmics v2.5 ×2,shamir,sarcoma/methylation,5000,254,5.229,987,3
-TabOmics v2.5 ×2,shamir,sarcoma/mirna,1046,254,0.813,202,3
-TabOmics v2.5 ×2,shamir,sarcoma/mrna,20531,254,32.364,3845,3
-TabOmics v2.5 ×2,shamir,sarcoma/mrna+methylation+mirna,26577,254,47.529,4940,3
+TabOmics v2.5 ×2,shamir,breast/methylation,5000,440,6.809,1668,3
+TabOmics v2.5 ×2,shamir,breast/mirna,1046,440,1.024,324,3
+TabOmics v2.5 ×2,shamir,breast/mrna,20531,440,47.048,6595,3
+TabOmics v2.5 ×2,shamir,breast/mrna+methylation+mirna,26577,440,70.687,8497,3
+TabOmics v2.5 ×2,shamir,gbm/methylation,5000,274,5.296,1066,3
+TabOmics v2.5 ×2,shamir,gbm/mirna,534,274,0.624,155,3
+TabOmics v2.5 ×2,shamir,gbm/mrna,12042,274,16.014,2504,3
+TabOmics v2.5 ×2,shamir,gbm/mrna+methylation+mirna,17576,274,27.417,3634,3
+TabOmics v2.5 ×2,shamir,sarcoma/methylation,5000,254,5.122,987,3
+TabOmics v2.5 ×2,shamir,sarcoma/mirna,1046,254,0.802,202,3
+TabOmics v2.5 ×2,shamir,sarcoma/mrna,20531,254,32.018,3845,3
+TabOmics v2.5 ×2,shamir,sarcoma/mrna+methylation+mirna,26577,254,46.889,4940,3
 TabOmics v2.5 ×4,hdlss,ALLAML,7129,72,6.493,424,3
 TabOmics v2.5 ×4,hdlss,BASEHOCK,4862,1993,39.737,7196,3
 TabOmics v2.5 ×4,hdlss,CLL_SUB_111,11340,111,13.513,978,3
@@ -355,18 +355,18 @@ TabOmics v2.5 ×4,mlomics,OV/methylation,19031,284,52.521,4058,3
 TabOmics v2.5 ×4,mlomics,OV/mirna,244,284,0.775,98,3
 TabOmics v2.5 ×4,mlomics,OV/mrna,14229,284,33.679,3047,3
 TabOmics v2.5 ×4,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,298.111,11227,3
-TabOmics v2.5 ×4,shamir,breast/methylation,5000,440,10.94,1668,3
+TabOmics v2.5 ×4,shamir,breast/methylation,5000,440,10.944,1668,3
 TabOmics v2.5 ×4,shamir,breast/mirna,1046,440,1.53,324,3
-TabOmics v2.5 ×4,shamir,breast/mrna,20531,440,82.975,6595,3
-TabOmics v2.5 ×4,shamir,breast/mrna+methylation+mirna,26577,440,127.202,8497,3
-TabOmics v2.5 ×4,shamir,gbm/methylation,5000,274,8.8,1066,3
-TabOmics v2.5 ×4,shamir,gbm/mirna,534,274,0.902,155,3
-TabOmics v2.5 ×4,shamir,gbm/mrna,12042,274,25.786,2504,3
-TabOmics v2.5 ×4,shamir,gbm/mrna+methylation+mirna,17576,274,45.267,3634,3
-TabOmics v2.5 ×4,shamir,sarcoma/methylation,5000,254,7.597,987,3
-TabOmics v2.5 ×4,shamir,sarcoma/mirna,1046,254,1.108,202,3
-TabOmics v2.5 ×4,shamir,sarcoma/mrna,20531,254,52.925,3845,3
-TabOmics v2.5 ×4,shamir,sarcoma/mrna+methylation+mirna,26577,254,79.878,4940,3
+TabOmics v2.5 ×4,shamir,breast/mrna,20531,440,82.895,6595,3
+TabOmics v2.5 ×4,shamir,breast/mrna+methylation+mirna,26577,440,127.091,8497,3
+TabOmics v2.5 ×4,shamir,gbm/methylation,5000,274,7.917,1066,3
+TabOmics v2.5 ×4,shamir,gbm/mirna,534,274,0.908,155,3
+TabOmics v2.5 ×4,shamir,gbm/mrna,12042,274,25.689,2504,3
+TabOmics v2.5 ×4,shamir,gbm/mrna+methylation+mirna,17576,274,45.215,3634,3
+TabOmics v2.5 ×4,shamir,sarcoma/methylation,5000,254,7.563,987,3
+TabOmics v2.5 ×4,shamir,sarcoma/mirna,1046,254,1.103,202,3
+TabOmics v2.5 ×4,shamir,sarcoma/mrna,20531,254,52.885,3845,3
+TabOmics v2.5 ×4,shamir,sarcoma/mrna+methylation+mirna,26577,254,79.911,4940,3
 TabOmics v2.5 ×8,hdlss,ALLAML,7129,72,8.972,424,3
 TabOmics v2.5 ×8,hdlss,BASEHOCK,4862,1993,76.521,7196,3
 TabOmics v2.5 ×8,hdlss,CLL_SUB_111,11340,111,20.662,978,3
@@ -401,18 +401,18 @@ TabOmics v2.5 ×8,mlomics,OV/methylation,19031,284,94.482,4058,3
 TabOmics v2.5 ×8,mlomics,OV/mirna,244,284,1.34,98,3
 TabOmics v2.5 ×8,mlomics,OV/mrna,14229,284,59.387,3047,3
 TabOmics v2.5 ×8,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,566.697,11227,3
-TabOmics v2.5 ×8,shamir,breast/methylation,5000,440,19.041,1668,3
-TabOmics v2.5 ×8,shamir,breast/mirna,1046,440,2.53,324,3
-TabOmics v2.5 ×8,shamir,breast/mrna,20531,440,154.334,6595,3
-TabOmics v2.5 ×8,shamir,breast/mrna+methylation+mirna,26577,440,239.748,8497,3
-TabOmics v2.5 ×8,shamir,gbm/methylation,5000,274,13.084,1066,3
+TabOmics v2.5 ×8,shamir,breast/methylation,5000,440,19.073,1668,3
+TabOmics v2.5 ×8,shamir,breast/mirna,1046,440,2.539,324,3
+TabOmics v2.5 ×8,shamir,breast/mrna,20531,440,154.435,6595,3
+TabOmics v2.5 ×8,shamir,breast/mrna+methylation+mirna,26577,440,239.728,8497,3
+TabOmics v2.5 ×8,shamir,gbm/methylation,5000,274,13.076,1066,3
 TabOmics v2.5 ×8,shamir,gbm/mirna,534,274,1.482,155,3
-TabOmics v2.5 ×8,shamir,gbm/mrna,12042,274,44.578,2504,3
-TabOmics v2.5 ×8,shamir,gbm/mrna+methylation+mirna,17576,274,80.735,3634,3
-TabOmics v2.5 ×8,shamir,sarcoma/methylation,5000,254,12.386,987,3
-TabOmics v2.5 ×8,shamir,sarcoma/mirna,1046,254,1.698,202,3
-TabOmics v2.5 ×8,shamir,sarcoma/mrna,20531,254,94.434,3845,3
-TabOmics v2.5 ×8,shamir,sarcoma/mrna+methylation+mirna,26577,254,145.231,4940,3
+TabOmics v2.5 ×8,shamir,gbm/mrna,12042,274,44.58,2504,3
+TabOmics v2.5 ×8,shamir,gbm/mrna+methylation+mirna,17576,274,80.816,3634,3
+TabOmics v2.5 ×8,shamir,sarcoma/methylation,5000,254,12.372,987,3
+TabOmics v2.5 ×8,shamir,sarcoma/mirna,1046,254,1.697,202,3
+TabOmics v2.5 ×8,shamir,sarcoma/mrna,20531,254,94.44,3845,3
+TabOmics v2.5 ×8,shamir,sarcoma/mrna+methylation+mirna,26577,254,145.263,4940,3
 TabOmics v2 ×1,hdlss,ALLAML,7129,72,4.656,424,3
 TabOmics v2 ×1,hdlss,BASEHOCK,4862,1993,12.14,7196,3
 TabOmics v2 ×1,hdlss,CLL_SUB_111,11340,111,8.169,978,3
@@ -447,18 +447,18 @@ TabOmics v2 ×1,mlomics,OV/methylation,19031,284,21.282,4058,3
 TabOmics v2 ×1,mlomics,OV/mirna,244,284,0.357,98,3
 TabOmics v2 ×1,mlomics,OV/mrna,14229,284,14.419,3047,3
 TabOmics v2 ×1,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,97.146,11227,3
-TabOmics v2 ×1,shamir,breast/methylation,5000,440,4.92,1668,3
-TabOmics v2 ×1,shamir,breast/mirna,1046,440,0.8,324,3
-TabOmics v2 ×1,shamir,breast/mrna,20531,440,29.59,6595,3
-TabOmics v2 ×1,shamir,breast/mrna+methylation+mirna,26577,440,43.047,8497,3
-TabOmics v2 ×1,shamir,gbm/methylation,5000,274,4.124,1066,3
-TabOmics v2 ×1,shamir,gbm/mirna,534,274,0.505,155,3
-TabOmics v2 ×1,shamir,gbm/mrna,12042,274,11.551,2504,3
-TabOmics v2 ×1,shamir,gbm/mrna+methylation+mirna,17576,274,18.917,3634,3
-TabOmics v2 ×1,shamir,sarcoma/methylation,5000,254,4.037,987,3
-TabOmics v2 ×1,shamir,sarcoma/mirna,1046,254,0.677,202,3
-TabOmics v2 ×1,shamir,sarcoma/mrna,20531,254,22.017,3845,3
-TabOmics v2 ×1,shamir,sarcoma/mrna+methylation+mirna,26577,254,31.084,4940,3
+TabOmics v2 ×1,shamir,breast/methylation,5000,440,4.848,1668,3
+TabOmics v2 ×1,shamir,breast/mirna,1046,440,0.779,324,3
+TabOmics v2 ×1,shamir,breast/mrna,20531,440,29.434,6595,3
+TabOmics v2 ×1,shamir,breast/mrna+methylation+mirna,26577,440,42.977,8497,3
+TabOmics v2 ×1,shamir,gbm/methylation,5000,274,4.038,1066,3
+TabOmics v2 ×1,shamir,gbm/mirna,534,274,0.49,155,3
+TabOmics v2 ×1,shamir,gbm/mrna,12042,274,11.414,2504,3
+TabOmics v2 ×1,shamir,gbm/mrna+methylation+mirna,17576,274,18.776,3634,3
+TabOmics v2 ×1,shamir,sarcoma/methylation,5000,254,3.975,987,3
+TabOmics v2 ×1,shamir,sarcoma/mirna,1046,254,0.66,202,3
+TabOmics v2 ×1,shamir,sarcoma/mrna,20531,254,21.853,3845,3
+TabOmics v2 ×1,shamir,sarcoma/mrna+methylation+mirna,26577,254,30.996,4940,3
 TabOmics v2 ×8,hdlss,ALLAML,7129,72,9.073,424,3
 TabOmics v2 ×8,hdlss,BASEHOCK,4862,1993,76.451,7196,3
 TabOmics v2 ×8,hdlss,CLL_SUB_111,11340,111,20.811,978,3
@@ -493,18 +493,18 @@ TabOmics v2 ×8,mlomics,OV/methylation,19031,284,94.616,4058,3
 TabOmics v2 ×8,mlomics,OV/mirna,244,284,1.329,98,3
 TabOmics v2 ×8,mlomics,OV/mrna,14229,284,59.474,3047,3
 TabOmics v2 ×8,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,567.446,11227,3
-TabOmics v2 ×8,shamir,breast/methylation,5000,440,19.093,1668,3
-TabOmics v2 ×8,shamir,breast/mirna,1046,440,2.539,324,3
-TabOmics v2 ×8,shamir,breast/mrna,20531,440,154.602,6595,3
-TabOmics v2 ×8,shamir,breast/mrna+methylation+mirna,26577,440,240.914,8497,3
-TabOmics v2 ×8,shamir,gbm/methylation,5000,274,13.143,1066,3
-TabOmics v2 ×8,shamir,gbm/mirna,534,274,1.49,155,3
-TabOmics v2 ×8,shamir,gbm/mrna,12042,274,44.872,2504,3
-TabOmics v2 ×8,shamir,gbm/mrna+methylation+mirna,17576,274,80.924,3634,3
-TabOmics v2 ×8,shamir,sarcoma/methylation,5000,254,12.455,987,3
-TabOmics v2 ×8,shamir,sarcoma/mirna,1046,254,1.704,202,3
-TabOmics v2 ×8,shamir,sarcoma/mrna,20531,254,94.789,3845,3
-TabOmics v2 ×8,shamir,sarcoma/mrna+methylation+mirna,26577,254,145.498,4940,3
+TabOmics v2 ×8,shamir,breast/methylation,5000,440,19.137,1668,3
+TabOmics v2 ×8,shamir,breast/mirna,1046,440,2.554,324,3
+TabOmics v2 ×8,shamir,breast/mrna,20531,440,154.648,6595,3
+TabOmics v2 ×8,shamir,breast/mrna+methylation+mirna,26577,440,239.879,8497,3
+TabOmics v2 ×8,shamir,gbm/methylation,5000,274,13.159,1066,3
+TabOmics v2 ×8,shamir,gbm/mirna,534,274,1.515,155,3
+TabOmics v2 ×8,shamir,gbm/mrna,12042,274,44.825,2504,3
+TabOmics v2 ×8,shamir,gbm/mrna+methylation+mirna,17576,274,81.119,3634,3
+TabOmics v2 ×8,shamir,sarcoma/methylation,5000,254,12.486,987,3
+TabOmics v2 ×8,shamir,sarcoma/mirna,1046,254,1.756,202,3
+TabOmics v2 ×8,shamir,sarcoma/mrna,20531,254,94.802,3845,3
+TabOmics v2 ×8,shamir,sarcoma/mrna+methylation+mirna,26577,254,145.457,4940,3
 TabPFN-3.5 ×1,hdlss,ALLAML,7129,72,2.091,1247,3
 TabPFN-3.5 ×1,hdlss,BASEHOCK,4862,1993,9.805,6594,3
 TabPFN-3.5 ×1,hdlss,CLL_SUB_111,11340,111,2.348,1296,3
@@ -539,18 +539,18 @@ TabPFN-3.5 ×1,mlomics,OV/methylation,19031,284,2.774,1721,3
 TabPFN-3.5 ×1,mlomics,OV/mirna,244,284,1.533,1252,3
 TabPFN-3.5 ×1,mlomics,OV/mrna,14229,284,2.342,1721,3
 TabPFN-3.5 ×1,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,4.393,1669,3
-TabPFN-3.5 ×1,shamir,breast/methylation,5000,440,1.911,2198,3
-TabPFN-3.5 ×1,shamir,breast/mirna,1046,440,1.977,1960,3
-TabPFN-3.5 ×1,shamir,breast/mrna,20531,440,9.125,2100,3
-TabPFN-3.5 ×1,shamir,breast/mrna+methylation+mirna,26577,440,10.789,2100,3
-TabPFN-3.5 ×1,shamir,gbm/methylation,5000,274,1.882,1689,3
-TabPFN-3.5 ×1,shamir,gbm/mirna,534,274,1.567,1435,3
-TabPFN-3.5 ×1,shamir,gbm/mrna,12042,274,2.201,1689,3
-TabPFN-3.5 ×1,shamir,gbm/mrna+methylation+mirna,17576,274,2.769,1689,3
-TabPFN-3.5 ×1,shamir,sarcoma/methylation,5000,254,1.826,1629,3
-TabPFN-3.5 ×1,shamir,sarcoma/mirna,1046,254,1.936,1469,3
-TabPFN-3.5 ×1,shamir,sarcoma/mrna,20531,254,8.386,1621,3
-TabPFN-3.5 ×1,shamir,sarcoma/mrna+methylation+mirna,26577,254,10.394,1567,3
+TabPFN-3.5 ×1,shamir,breast/methylation,5000,440,1.906,2199,3
+TabPFN-3.5 ×1,shamir,breast/mirna,1046,440,2.16,1960,3
+TabPFN-3.5 ×1,shamir,breast/mrna,20531,440,9.399,2100,3
+TabPFN-3.5 ×1,shamir,breast/mrna+methylation+mirna,26577,440,10.705,2100,3
+TabPFN-3.5 ×1,shamir,gbm/methylation,5000,274,1.832,1689,3
+TabPFN-3.5 ×1,shamir,gbm/mirna,534,274,1.589,1435,3
+TabPFN-3.5 ×1,shamir,gbm/mrna,12042,274,2.198,1689,3
+TabPFN-3.5 ×1,shamir,gbm/mrna+methylation+mirna,17576,274,2.77,1689,3
+TabPFN-3.5 ×1,shamir,sarcoma/methylation,5000,254,2.018,1629,3
+TabPFN-3.5 ×1,shamir,sarcoma/mirna,1046,254,2.083,1470,3
+TabPFN-3.5 ×1,shamir,sarcoma/mrna,20531,254,9.958,1622,3
+TabPFN-3.5 ×1,shamir,sarcoma/mrna+methylation+mirna,26577,254,10.667,1568,3
 TabPFN-3.5 ×8,hdlss,ALLAML,7129,72,2.381,1247,3
 TabPFN-3.5 ×8,hdlss,BASEHOCK,4862,1993,15.733,6594,3
 TabPFN-3.5 ×8,hdlss,CLL_SUB_111,11340,111,2.525,1296,3
@@ -585,18 +585,18 @@ TabPFN-3.5 ×8,mlomics,OV/methylation,19031,284,3.247,1721,3
 TabPFN-3.5 ×8,mlomics,OV/mirna,244,284,1.952,1252,3
 TabPFN-3.5 ×8,mlomics,OV/mrna,14229,284,3.008,1721,3
 TabPFN-3.5 ×8,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,5.238,1669,3
-TabPFN-3.5 ×8,shamir,breast/methylation,5000,440,2.775,2198,3
-TabPFN-3.5 ×8,shamir,breast/mirna,1046,440,3.165,1978,3
-TabPFN-3.5 ×8,shamir,breast/mrna,20531,440,9.752,2109,3
-TabPFN-3.5 ×8,shamir,breast/mrna+methylation+mirna,26577,440,11.735,2108,3
-TabPFN-3.5 ×8,shamir,gbm/methylation,5000,274,2.522,1689,3
-TabPFN-3.5 ×8,shamir,gbm/mirna,534,274,2.114,1435,3
-TabPFN-3.5 ×8,shamir,gbm/mrna,12042,274,2.897,1689,3
-TabPFN-3.5 ×8,shamir,gbm/mrna+methylation+mirna,17576,274,3.314,1689,3
-TabPFN-3.5 ×8,shamir,sarcoma/methylation,5000,254,2.467,1629,3
-TabPFN-3.5 ×8,shamir,sarcoma/mirna,1046,254,2.867,1478,3
-TabPFN-3.5 ×8,shamir,sarcoma/mrna,20531,254,9.223,1623,3
-TabPFN-3.5 ×8,shamir,sarcoma/mrna+methylation+mirna,26577,254,11.407,1575,3
+TabPFN-3.5 ×8,shamir,breast/methylation,5000,440,3.243,2199,3
+TabPFN-3.5 ×8,shamir,breast/mirna,1046,440,3.159,1977,3
+TabPFN-3.5 ×8,shamir,breast/mrna,20531,440,10.339,2109,3
+TabPFN-3.5 ×8,shamir,breast/mrna+methylation+mirna,26577,440,11.939,2109,3
+TabPFN-3.5 ×8,shamir,gbm/methylation,5000,274,2.719,1689,3
+TabPFN-3.5 ×8,shamir,gbm/mirna,534,274,2.142,1436,3
+TabPFN-3.5 ×8,shamir,gbm/mrna,12042,274,2.954,1689,3
+TabPFN-3.5 ×8,shamir,gbm/mrna+methylation+mirna,17576,274,3.24,1689,3
+TabPFN-3.5 ×8,shamir,sarcoma/methylation,5000,254,2.543,1630,3
+TabPFN-3.5 ×8,shamir,sarcoma/mirna,1046,254,2.88,1478,3
+TabPFN-3.5 ×8,shamir,sarcoma/mrna,20531,254,9.352,1623,3
+TabPFN-3.5 ×8,shamir,sarcoma/mrna+methylation+mirna,26577,254,11.318,1575,3
 TabPFNv2 ×1,hdlss,ALLAML,7129,72,1.543,1162,3
 TabPFNv2 ×1,hdlss,BASEHOCK,4862,1993,16.744,5109,3
 TabPFNv2 ×1,hdlss,CLL_SUB_111,11340,111,3.137,2807,3
@@ -631,18 +631,18 @@ TabPFNv2 ×1,mlomics,OV/methylation,19031,284,11.018,11963,3
 TabPFNv2 ×1,mlomics,OV/mirna,244,284,0.603,349,3
 TabPFNv2 ×1,mlomics,OV/mrna,14229,284,9.318,8956,3
 TabPFNv2 ×1,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,55.755,7739,3
-TabPFNv2 ×1,shamir,breast/methylation,5000,440,2.82,4917,3
-TabPFNv2 ×1,shamir,breast/mirna,1046,440,0.789,899,3
-TabPFNv2 ×1,shamir,breast/mrna,20531,440,23.116,4576,3
-TabPFNv2 ×1,shamir,breast/mrna+methylation+mirna,26577,440,33.008,5897,3
-TabPFNv2 ×1,shamir,gbm/methylation,5000,274,2.192,3063,3
-TabPFNv2 ×1,shamir,gbm/mirna,534,274,0.256,366,3
-TabPFNv2 ×1,shamir,gbm/mrna,12042,274,6.049,7318,3
-TabPFNv2 ×1,shamir,gbm/mrna+methylation+mirna,17576,274,9.832,10662,3
-TabPFNv2 ×1,shamir,sarcoma/methylation,5000,254,4.147,2842,3
-TabPFNv2 ×1,shamir,sarcoma/mirna,1046,254,0.649,506,3
-TabPFNv2 ×1,shamir,sarcoma/mrna,20531,254,17.055,11358,3
-TabPFNv2 ×1,shamir,sarcoma/mrna+methylation+mirna,26577,254,24.171,3414,3
+TabPFNv2 ×1,shamir,breast/methylation,5000,440,2.785,4916,3
+TabPFNv2 ×1,shamir,breast/mirna,1046,440,0.813,899,3
+TabPFNv2 ×1,shamir,breast/mrna,20531,440,23.17,4576,3
+TabPFNv2 ×1,shamir,breast/mrna+methylation+mirna,26577,440,33.421,5897,3
+TabPFNv2 ×1,shamir,gbm/methylation,5000,274,2.129,3063,3
+TabPFNv2 ×1,shamir,gbm/mirna,534,274,0.244,366,3
+TabPFNv2 ×1,shamir,gbm/mrna,12042,274,5.805,7318,3
+TabPFNv2 ×1,shamir,gbm/mrna+methylation+mirna,17576,274,9.656,10662,3
+TabPFNv2 ×1,shamir,sarcoma/methylation,5000,254,1.997,2841,3
+TabPFNv2 ×1,shamir,sarcoma/mirna,1046,254,0.658,506,3
+TabPFNv2 ×1,shamir,sarcoma/mrna,20531,254,17.444,11358,3
+TabPFNv2 ×1,shamir,sarcoma/mrna+methylation+mirna,26577,254,24.17,3414,3
 TabPFNv2 ×8,hdlss,ALLAML,7129,72,6.852,1162,3
 TabPFNv2 ×8,hdlss,BASEHOCK,4862,1993,66.478,5109,3
 TabPFNv2 ×8,hdlss,CLL_SUB_111,11340,111,15.322,2807,3
@@ -677,18 +677,18 @@ TabPFNv2 ×8,mlomics,OV/methylation,19031,284,68.333,11963,3
 TabPFNv2 ×8,mlomics,OV/mirna,244,284,1.089,349,3
 TabPFNv2 ×8,mlomics,OV/mrna,14229,284,43.498,8956,3
 TabPFNv2 ×8,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,392.312,7739,3
-TabPFNv2 ×8,shamir,breast/methylation,5000,440,16.176,4917,3
-TabPFNv2 ×8,shamir,breast/mirna,1046,440,2.608,899,3
-TabPFNv2 ×8,shamir,breast/mrna,20531,440,121.675,4576,3
-TabPFNv2 ×8,shamir,breast/mrna+methylation+mirna,26577,440,179.6,5897,3
-TabPFNv2 ×8,shamir,gbm/methylation,5000,274,11.345,3063,3
-TabPFNv2 ×8,shamir,gbm/mirna,534,274,0.94,366,3
-TabPFNv2 ×8,shamir,gbm/mrna,12042,274,39.387,7318,3
-TabPFNv2 ×8,shamir,gbm/mrna+methylation+mirna,17576,274,59.218,10662,3
-TabPFNv2 ×8,shamir,sarcoma/methylation,5000,254,10.324,2842,3
-TabPFNv2 ×8,shamir,sarcoma/mirna,1046,254,2.198,506,3
-TabPFNv2 ×8,shamir,sarcoma/mrna,20531,254,75.795,11358,3
-TabPFNv2 ×8,shamir,sarcoma/mrna+methylation+mirna,26577,254,113.692,3414,3
+TabPFNv2 ×8,shamir,breast/methylation,5000,440,14.922,4916,3
+TabPFNv2 ×8,shamir,breast/mirna,1046,440,2.671,899,3
+TabPFNv2 ×8,shamir,breast/mrna,20531,440,118.047,4576,3
+TabPFNv2 ×8,shamir,breast/mrna+methylation+mirna,26577,440,178.566,5897,3
+TabPFNv2 ×8,shamir,gbm/methylation,5000,274,13.014,3063,3
+TabPFNv2 ×8,shamir,gbm/mirna,534,274,0.954,366,3
+TabPFNv2 ×8,shamir,gbm/mrna,12042,274,33.9,7318,3
+TabPFNv2 ×8,shamir,gbm/mrna+methylation+mirna,17576,274,58.691,10662,3
+TabPFNv2 ×8,shamir,sarcoma/methylation,5000,254,9.89,2841,3
+TabPFNv2 ×8,shamir,sarcoma/mirna,1046,254,1.808,506,3
+TabPFNv2 ×8,shamir,sarcoma/mrna,20531,254,75.534,11358,3
+TabPFNv2 ×8,shamir,sarcoma/mrna+methylation+mirna,26577,254,112.763,3414,3
 TabPFN-Wide ×1,hdlss,ALLAML,7129,72,1.794,1748,3
 TabPFN-Wide ×1,hdlss,BASEHOCK,4862,1993,19.772,7556,3
 TabPFN-Wide ×1,hdlss,CLL_SUB_111,11340,111,4.87,4215,3
@@ -723,18 +723,18 @@ TabPFN-Wide ×1,mlomics,OV/methylation,19031,284,15.367,17930,3
 TabPFN-Wide ×1,mlomics,OV/mirna,244,284,0.354,533,3
 TabPFN-Wide ×1,mlomics,OV/mrna,14229,284,10.961,13425,3
 TabPFN-Wide ×1,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,78.111,11440,3
-TabPFN-Wide ×1,shamir,breast/methylation,5000,440,4.191,7376,3
-TabPFN-Wide ×1,shamir,breast/mirna,1046,440,0.985,1354,3
-TabPFN-Wide ×1,shamir,breast/mrna,20531,440,29.233,6767,3
-TabPFN-Wide ×1,shamir,breast/mrna+methylation+mirna,26577,440,43.501,8717,3
-TabPFN-Wide ×1,shamir,gbm/methylation,5000,274,3.821,4598,3
-TabPFN-Wide ×1,shamir,gbm/mirna,534,274,0.505,555,3
-TabPFN-Wide ×1,shamir,gbm/mrna,12042,274,7.534,10972,3
-TabPFN-Wide ×1,shamir,gbm/mrna+methylation+mirna,17576,274,12.616,15981,3
-TabPFN-Wide ×1,shamir,sarcoma/methylation,5000,254,2.525,4266,3
-TabPFN-Wide ×1,shamir,sarcoma/mirna,1046,254,0.73,765,3
-TabPFN-Wide ×1,shamir,sarcoma/mrna,20531,254,21.367,17026,3
-TabPFN-Wide ×1,shamir,sarcoma/mrna+methylation+mirna,26577,254,29.248,5049,3
+TabPFN-Wide ×1,shamir,breast/methylation,5000,440,4.66,7375,3
+TabPFN-Wide ×1,shamir,breast/mirna,1046,440,1.081,1354,3
+TabPFN-Wide ×1,shamir,breast/mrna,20531,440,29.035,6767,3
+TabPFN-Wide ×1,shamir,breast/mrna+methylation+mirna,26577,440,43.859,8717,3
+TabPFN-Wide ×1,shamir,gbm/methylation,5000,274,2.634,4598,3
+TabPFN-Wide ×1,shamir,gbm/mirna,534,274,0.353,555,3
+TabPFN-Wide ×1,shamir,gbm/mrna,12042,274,7.831,10972,3
+TabPFN-Wide ×1,shamir,gbm/mrna+methylation+mirna,17576,274,12.735,15981,3
+TabPFN-Wide ×1,shamir,sarcoma/methylation,5000,254,2.463,4266,3
+TabPFN-Wide ×1,shamir,sarcoma/mirna,1046,254,0.787,765,3
+TabPFN-Wide ×1,shamir,sarcoma/mrna,20531,254,20.619,17026,3
+TabPFN-Wide ×1,shamir,sarcoma/mrna+methylation+mirna,26577,254,29.232,5049,3
 TabPFN-Wide ×8,hdlss,ALLAML,7129,72,8.106,1748,3
 TabPFN-Wide ×8,hdlss,BASEHOCK,4862,1993,90.826,7556,3
 TabPFN-Wide ×8,hdlss,CLL_SUB_111,11340,111,20.146,4215,3
@@ -769,18 +769,18 @@ TabPFN-Wide ×8,mlomics,OV/methylation,19031,284,93.941,17930,3
 TabPFN-Wide ×8,mlomics,OV/mirna,244,284,0.873,533,3
 TabPFN-Wide ×8,mlomics,OV/mrna,14229,284,64.048,13425,3
 TabPFN-Wide ×8,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,565.046,11440,3
-TabPFN-Wide ×8,shamir,breast/methylation,5000,440,19.857,7376,3
-TabPFN-Wide ×8,shamir,breast/mirna,1046,440,3.275,1354,3
-TabPFN-Wide ×8,shamir,breast/mrna,20531,440,162.95,6767,3
-TabPFN-Wide ×8,shamir,breast/mrna+methylation+mirna,26577,440,249.987,8717,3
-TabPFN-Wide ×8,shamir,gbm/methylation,5000,274,13.314,4598,3
-TabPFN-Wide ×8,shamir,gbm/mirna,534,274,1.252,555,3
-TabPFN-Wide ×8,shamir,gbm/mrna,12042,274,44.679,10972,3
-TabPFN-Wide ×8,shamir,gbm/mrna+methylation+mirna,17576,274,80.529,15981,3
-TabPFN-Wide ×8,shamir,sarcoma/methylation,5000,254,12.412,4266,3
-TabPFN-Wide ×8,shamir,sarcoma/mirna,1046,254,2.125,765,3
-TabPFN-Wide ×8,shamir,sarcoma/mrna,20531,254,101.153,17026,3
-TabPFN-Wide ×8,shamir,sarcoma/mrna+methylation+mirna,26577,254,155.406,5049,3
+TabPFN-Wide ×8,shamir,breast/methylation,5000,440,22.973,7375,3
+TabPFN-Wide ×8,shamir,breast/mirna,1046,440,3.192,1354,3
+TabPFN-Wide ×8,shamir,breast/mrna,20531,440,163.251,6767,3
+TabPFN-Wide ×8,shamir,breast/mrna+methylation+mirna,26577,440,250.087,8717,3
+TabPFN-Wide ×8,shamir,gbm/methylation,5000,274,13.502,4598,3
+TabPFN-Wide ×8,shamir,gbm/mirna,534,274,1.205,555,3
+TabPFN-Wide ×8,shamir,gbm/mrna,12042,274,45.527,10972,3
+TabPFN-Wide ×8,shamir,gbm/mrna+methylation+mirna,17576,274,81.055,15981,3
+TabPFN-Wide ×8,shamir,sarcoma/methylation,5000,254,12.501,4266,3
+TabPFN-Wide ×8,shamir,sarcoma/mirna,1046,254,2.157,765,3
+TabPFN-Wide ×8,shamir,sarcoma/mrna,20531,254,101.542,17026,3
+TabPFN-Wide ×8,shamir,sarcoma/mrna+methylation+mirna,26577,254,154.522,5049,3
 XGBoost,hdlss,ALLAML,7129,72,0.491,0,3
 XGBoost,hdlss,BASEHOCK,4862,1993,0.837,0,3
 XGBoost,hdlss,CLL_SUB_111,11340,111,1.634,0,3
@@ -815,15 +815,15 @@ XGBoost,mlomics,OV/methylation,19031,284,7.754,0,3
 XGBoost,mlomics,OV/mirna,244,284,1.511,0,3
 XGBoost,mlomics,OV/mrna,14229,284,6.039,0,3
 XGBoost,mlomics,OV/mrna+cnv+methylation+mirna,53032,284,19.621,0,3
-XGBoost,shamir,breast/methylation,5000,440,5.559,0,3
-XGBoost,shamir,breast/mirna,1046,440,2.216,0,3
-XGBoost,shamir,breast/mrna,20531,440,14.389,0,3
-XGBoost,shamir,breast/mrna+methylation+mirna,26577,440,20.488,0,3
-XGBoost,shamir,gbm/methylation,5000,274,3.001,0,3
-XGBoost,shamir,gbm/mirna,534,274,1.59,0,3
-XGBoost,shamir,gbm/mrna,12042,274,5.412,0,3
-XGBoost,shamir,gbm/mrna+methylation+mirna,17576,274,6.907,0,3
-XGBoost,shamir,sarcoma/methylation,5000,254,4.808,0,3
-XGBoost,shamir,sarcoma/mirna,1046,254,2.595,0,3
-XGBoost,shamir,sarcoma/mrna,20531,254,11.355,0,3
-XGBoost,shamir,sarcoma/mrna+methylation+mirna,26577,254,13.812,0,3
+XGBoost,shamir,breast/methylation,5000,440,5.449,0,3
+XGBoost,shamir,breast/mirna,1046,440,2.054,0,3
+XGBoost,shamir,breast/mrna,20531,440,14.246,0,3
+XGBoost,shamir,breast/mrna+methylation+mirna,26577,440,20.362,0,3
+XGBoost,shamir,gbm/methylation,5000,274,2.912,0,3
+XGBoost,shamir,gbm/mirna,534,274,1.466,0,3
+XGBoost,shamir,gbm/mrna,12042,274,5.25,0,3
+XGBoost,shamir,gbm/mrna+methylation+mirna,17576,274,6.846,0,3
+XGBoost,shamir,sarcoma/methylation,5000,254,4.693,0,3
+XGBoost,shamir,sarcoma/mirna,1046,254,2.512,0,3
+XGBoost,shamir,sarcoma/mrna,20531,254,11.256,0,3
+XGBoost,shamir,sarcoma/mrna+methylation+mirna,26577,254,13.679,0,3

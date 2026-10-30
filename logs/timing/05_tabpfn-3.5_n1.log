@@ -287,105 +287,108 @@ mlomics/OV/mrna+cnv+methylation+mirna repeat 1: ok 4.393s, 1669 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 53032 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 70 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
 mlomics/OV/mrna+cnv+methylation+mirna repeat 2: ok 4.405s, 1669 MB
+== tabpfn-3.5:n1
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mrna repeat 0: ok 8.587s, 2100 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mrna repeat 1: ok 10.623s, 2100 MB
+shamir/breast/mrna repeat 0: ok 9.489s, 2100 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mrna repeat 2: ok 9.125s, 2100 MB
+shamir/breast/mrna repeat 1: ok 8.942s, 2100 MB
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
+  self.n_estimators_ = scale_n_estimators_for_feature_coverage(
+shamir/breast/mrna repeat 2: ok 9.399s, 2100 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 5000 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 7 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/methylation repeat 0: ok 2.168s, 2198 MB
+shamir/breast/methylation repeat 0: ok 2.039s, 2199 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 5000 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 7 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/methylation repeat 1: ok 1.896s, 2198 MB
+shamir/breast/methylation repeat 1: ok 1.906s, 2199 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 5000 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 7 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/methylation repeat 2: ok 1.911s, 2198 MB
+shamir/breast/methylation repeat 2: ok 1.879s, 2199 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 1046 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 2 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mirna repeat 0: ok 1.929s, 1960 MB
+shamir/breast/mirna repeat 0: ok 2.16s, 1960 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 1046 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 2 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mirna repeat 1: ok 1.999s, 1960 MB
+shamir/breast/mirna repeat 1: ok 1.974s, 1960 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 1046 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 2 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mirna repeat 2: ok 1.977s, 1960 MB
+shamir/breast/mirna repeat 2: ok 2.61s, 1960 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mrna+methylation+mirna repeat 0: ok 10.788s, 2100 MB
+shamir/breast/mrna+methylation+mirna repeat 0: ok 10.705s, 2100 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mrna+methylation+mirna repeat 1: ok 10.869s, 2100 MB
+shamir/breast/mrna+methylation+mirna repeat 1: ok 10.735s, 2100 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mrna+methylation+mirna repeat 2: ok 10.789s, 2100 MB
+shamir/breast/mrna+methylation+mirna repeat 2: ok 10.638s, 2100 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 12042 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 16 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/mrna repeat 0: ok 2.201s, 1689 MB
+shamir/gbm/mrna repeat 0: ok 2.325s, 1689 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 12042 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 16 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/mrna repeat 1: ok 2.194s, 1689 MB
+shamir/gbm/mrna repeat 1: ok 2.191s, 1689 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 12042 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 16 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/mrna repeat 2: ok 2.283s, 1689 MB
+shamir/gbm/mrna repeat 2: ok 2.198s, 1689 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 5000 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 7 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/methylation repeat 0: ok 2.716s, 1689 MB
+shamir/gbm/methylation repeat 0: ok 1.829s, 1689 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 5000 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 7 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/methylation repeat 1: ok 1.882s, 1689 MB
+shamir/gbm/methylation repeat 1: ok 1.832s, 1689 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 5000 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 7 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/methylation repeat 2: ok 1.873s, 1689 MB
-shamir/gbm/mirna repeat 0: ok 1.567s, 1435 MB
-shamir/gbm/mirna repeat 1: ok 1.558s, 1435 MB
-shamir/gbm/mirna repeat 2: ok 1.595s, 1435 MB
+shamir/gbm/methylation repeat 2: ok 2.725s, 1689 MB
+shamir/gbm/mirna repeat 0: ok 1.668s, 1435 MB
+shamir/gbm/mirna repeat 1: ok 1.579s, 1435 MB
+shamir/gbm/mirna repeat 2: ok 1.589s, 1435 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 17576 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/mrna+methylation+mirna repeat 0: ok 2.552s, 1689 MB
+shamir/gbm/mrna+methylation+mirna repeat 0: ok 2.871s, 1689 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 17576 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/mrna+methylation+mirna repeat 1: ok 2.769s, 1689 MB
+shamir/gbm/mrna+methylation+mirna repeat 1: ok 2.667s, 1689 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 17576 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/mrna+methylation+mirna repeat 2: ok 2.782s, 1689 MB
+shamir/gbm/mrna+methylation+mirna repeat 2: ok 2.77s, 1689 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mrna repeat 0: ok 8.397s, 1621 MB
+shamir/sarcoma/mrna repeat 0: ok 9.49s, 1622 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mrna repeat 1: ok 8.347s, 1621 MB
+shamir/sarcoma/mrna repeat 1: ok 10.194s, 1622 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mrna repeat 2: ok 8.386s, 1621 MB
+shamir/sarcoma/mrna repeat 2: ok 9.958s, 1622 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 5000 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 7 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/methylation repeat 0: ok 1.845s, 1629 MB
+shamir/sarcoma/methylation repeat 0: ok 2.08s, 1629 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 5000 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 7 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/methylation repeat 1: ok 1.826s, 1629 MB
+shamir/sarcoma/methylation repeat 1: ok 1.966s, 1629 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 5000 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 7 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/methylation repeat 2: ok 1.826s, 1629 MB
+shamir/sarcoma/methylation repeat 2: ok 2.018s, 1629 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 1046 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 2 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mirna repeat 0: ok 1.941s, 1469 MB
+shamir/sarcoma/mirna repeat 0: ok 2.218s, 1470 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 1046 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 2 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mirna repeat 1: ok 1.932s, 1469 MB
+shamir/sarcoma/mirna repeat 1: ok 2.06s, 1470 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 1046 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 2 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mirna repeat 2: ok 1.936s, 1469 MB
+shamir/sarcoma/mirna repeat 2: ok 2.083s, 1470 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mrna+methylation+mirna repeat 0: ok 10.376s, 1567 MB
+shamir/sarcoma/mrna+methylation+mirna repeat 0: ok 10.667s, 1568 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mrna+methylation+mirna repeat 1: ok 10.395s, 1567 MB
+shamir/sarcoma/mrna+methylation+mirna repeat 1: ok 10.907s, 1568 MB
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 1 estimators covers at most 768 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mrna+methylation+mirna repeat 2: ok 10.394s, 1567 MB
+shamir/sarcoma/mrna+methylation+mirna repeat 2: ok 10.537s, 1568 MB

@@ -945,123 +945,124 @@ mlomics/OV/mrna+cnv+methylation+mirna fold 3: AUROC 0.9754 (34.28s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 53032 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 70 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
 mlomics/OV/mrna+cnv+methylation+mirna fold 4: AUROC 0.9758 (30.17s)
+== tabpfn-3.5:n8
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mrna fold 0: AUROC 0.9871 (50.65s)
+shamir/breast/mrna fold 0: AUROC 0.9866 (47.11s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mrna fold 1: AUROC 0.9876 (44.06s)
+shamir/breast/mrna fold 1: AUROC 0.9878 (30.97s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mrna fold 2: AUROC 0.9914 (48.7s)
+shamir/breast/mrna fold 2: AUROC 0.9920 (27.31s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mrna fold 3: AUROC 0.9922 (43.99s)
+shamir/breast/mrna fold 3: AUROC 0.9920 (17.92s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mrna fold 4: AUROC 0.9796 (40.64s)
-shamir/breast/methylation fold 0: AUROC 0.9430 (22.87s)
-shamir/breast/methylation fold 1: AUROC 0.9623 (27.78s)
-shamir/breast/methylation fold 2: AUROC 0.9732 (28.26s)
-shamir/breast/methylation fold 3: AUROC 0.9642 (31.9s)
-shamir/breast/methylation fold 4: AUROC 0.9387 (36.44s)
-shamir/breast/mirna fold 0: AUROC 0.9754 (39.95s)
-shamir/breast/mirna fold 1: AUROC 0.9806 (31.98s)
-shamir/breast/mirna fold 2: AUROC 0.9806 (34.83s)
-shamir/breast/mirna fold 3: AUROC 0.9551 (38.58s)
-shamir/breast/mirna fold 4: AUROC 0.9657 (19.32s)
+shamir/breast/mrna fold 4: AUROC 0.9798 (25.3s)
+shamir/breast/methylation fold 0: AUROC 0.9421 (12.33s)
+shamir/breast/methylation fold 1: AUROC 0.9620 (23.04s)
+shamir/breast/methylation fold 2: AUROC 0.9732 (23.15s)
+shamir/breast/methylation fold 3: AUROC 0.9641 (24.18s)
+shamir/breast/methylation fold 4: AUROC 0.9388 (16.08s)
+shamir/breast/mirna fold 0: AUROC 0.9753 (23.14s)
+shamir/breast/mirna fold 1: AUROC 0.9806 (22.91s)
+shamir/breast/mirna fold 2: AUROC 0.9809 (7.8s)
+shamir/breast/mirna fold 3: AUROC 0.9553 (14.79s)
+shamir/breast/mirna fold 4: AUROC 0.9663 (10.07s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mrna+methylation+mirna fold 0: AUROC 0.9855 (30.02s)
+shamir/breast/mrna+methylation+mirna fold 0: AUROC 0.9856 (22.96s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mrna+methylation+mirna fold 1: AUROC 0.9846 (22.56s)
+shamir/breast/mrna+methylation+mirna fold 1: AUROC 0.9846 (18.98s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mrna+methylation+mirna fold 2: AUROC 0.9866 (43.47s)
+shamir/breast/mrna+methylation+mirna fold 2: AUROC 0.9871 (21.33s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mrna+methylation+mirna fold 3: AUROC 0.9916 (43.45s)
+shamir/breast/mrna+methylation+mirna fold 3: AUROC 0.9916 (22.17s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/breast/mrna+methylation+mirna fold 4: AUROC 0.9769 (47.68s)
+shamir/breast/mrna+methylation+mirna fold 4: AUROC 0.9766 (24.13s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 12042 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 16 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/mrna fold 0: AUROC 0.9514 (35.9s)
+shamir/gbm/mrna fold 0: AUROC 0.9522 (9.28s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 12042 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 16 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/mrna fold 1: AUROC 0.9560 (35.4s)
+shamir/gbm/mrna fold 1: AUROC 0.9556 (7.0s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 12042 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 16 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/mrna fold 2: AUROC 0.9902 (43.53s)
+shamir/gbm/mrna fold 2: AUROC 0.9902 (17.1s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 12042 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 16 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/mrna fold 3: AUROC 0.9739 (35.08s)
+shamir/gbm/mrna fold 3: AUROC 0.9743 (9.75s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 12042 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 16 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/mrna fold 4: AUROC 0.9782 (31.48s)
-shamir/gbm/methylation fold 0: AUROC 0.8995 (9.14s)
-shamir/gbm/methylation fold 1: AUROC 0.8399 (8.82s)
-shamir/gbm/methylation fold 2: AUROC 0.9127 (10.08s)
-shamir/gbm/methylation fold 3: AUROC 0.9014 (15.09s)
-shamir/gbm/methylation fold 4: AUROC 0.8997 (20.34s)
-shamir/gbm/mirna fold 0: AUROC 0.8995 (29.54s)
-shamir/gbm/mirna fold 1: AUROC 0.8906 (27.71s)
-shamir/gbm/mirna fold 2: AUROC 0.9332 (28.27s)
-shamir/gbm/mirna fold 3: AUROC 0.8570 (34.84s)
-shamir/gbm/mirna fold 4: AUROC 0.9088 (27.64s)
+shamir/gbm/mrna fold 4: AUROC 0.9801 (6.73s)
+shamir/gbm/methylation fold 0: AUROC 0.8989 (8.81s)
+shamir/gbm/methylation fold 1: AUROC 0.8403 (9.23s)
+shamir/gbm/methylation fold 2: AUROC 0.9127 (13.42s)
+shamir/gbm/methylation fold 3: AUROC 0.9010 (9.73s)
+shamir/gbm/methylation fold 4: AUROC 0.9003 (8.93s)
+shamir/gbm/mirna fold 0: AUROC 0.8996 (14.43s)
+shamir/gbm/mirna fold 1: AUROC 0.8910 (11.64s)
+shamir/gbm/mirna fold 2: AUROC 0.9325 (19.35s)
+shamir/gbm/mirna fold 3: AUROC 0.8596 (18.16s)
+shamir/gbm/mirna fold 4: AUROC 0.9073 (8.24s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17576 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/mrna+methylation+mirna fold 0: AUROC 0.9688 (38.05s)
+shamir/gbm/mrna+methylation+mirna fold 0: AUROC 0.9688 (12.44s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17576 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/mrna+methylation+mirna fold 1: AUROC 0.9521 (30.89s)
+shamir/gbm/mrna+methylation+mirna fold 1: AUROC 0.9521 (8.08s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17576 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/mrna+methylation+mirna fold 2: AUROC 0.9793 (34.85s)
+shamir/gbm/mrna+methylation+mirna fold 2: AUROC 0.9793 (13.83s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17576 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/mrna+methylation+mirna fold 3: AUROC 0.9796 (33.29s)
+shamir/gbm/mrna+methylation+mirna fold 3: AUROC 0.9796 (19.1s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 17576 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 23 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/gbm/mrna+methylation+mirna fold 4: AUROC 0.9795 (27.92s)
+shamir/gbm/mrna+methylation+mirna fold 4: AUROC 0.9795 (8.28s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mrna fold 0: AUROC 0.9458 (13.56s)
+shamir/sarcoma/mrna fold 0: AUROC 0.9468 (19.12s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mrna fold 1: AUROC 0.9396 (16.62s)
+shamir/sarcoma/mrna fold 1: AUROC 0.9401 (18.61s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mrna fold 2: AUROC 0.9051 (13.58s)
+shamir/sarcoma/mrna fold 2: AUROC 0.9064 (26.92s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mrna fold 3: AUROC 0.9330 (15.23s)
+shamir/sarcoma/mrna fold 3: AUROC 0.9330 (17.36s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 20531 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 27 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mrna fold 4: AUROC 0.9334 (48.59s)
-shamir/sarcoma/methylation fold 0: AUROC 0.9181 (27.06s)
-shamir/sarcoma/methylation fold 1: AUROC 0.9020 (32.8s)
-shamir/sarcoma/methylation fold 2: AUROC 0.8879 (34.59s)
-shamir/sarcoma/methylation fold 3: AUROC 0.9269 (33.5s)
-shamir/sarcoma/methylation fold 4: AUROC 0.9149 (34.91s)
-shamir/sarcoma/mirna fold 0: AUROC 0.9403 (32.04s)
-shamir/sarcoma/mirna fold 1: AUROC 0.9454 (32.49s)
-shamir/sarcoma/mirna fold 2: AUROC 0.9108 (34.06s)
-shamir/sarcoma/mirna fold 3: AUROC 0.9477 (24.95s)
-shamir/sarcoma/mirna fold 4: AUROC 0.9390 (15.05s)
+shamir/sarcoma/mrna fold 4: AUROC 0.9335 (20.85s)
+shamir/sarcoma/methylation fold 0: AUROC 0.9148 (19.03s)
+shamir/sarcoma/methylation fold 1: AUROC 0.9007 (17.11s)
+shamir/sarcoma/methylation fold 2: AUROC 0.8899 (14.42s)
+shamir/sarcoma/methylation fold 3: AUROC 0.9272 (7.25s)
+shamir/sarcoma/methylation fold 4: AUROC 0.9158 (10.82s)
+shamir/sarcoma/mirna fold 0: AUROC 0.9420 (24.61s)
+shamir/sarcoma/mirna fold 1: AUROC 0.9465 (16.66s)
+shamir/sarcoma/mirna fold 2: AUROC 0.9113 (12.27s)
+shamir/sarcoma/mirna fold 3: AUROC 0.9458 (17.51s)
+shamir/sarcoma/mirna fold 4: AUROC 0.9411 (6.93s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mrna+methylation+mirna fold 0: AUROC 0.9356 (18.81s)
+shamir/sarcoma/mrna+methylation+mirna fold 0: AUROC 0.9349 (28.77s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mrna+methylation+mirna fold 1: AUROC 0.9353 (15.57s)
+shamir/sarcoma/mrna+methylation+mirna fold 1: AUROC 0.9327 (23.04s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mrna+methylation+mirna fold 2: AUROC 0.8904 (25.68s)
+shamir/sarcoma/mrna+methylation+mirna fold 2: AUROC 0.8920 (30.1s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mrna+methylation+mirna fold 3: AUROC 0.9418 (43.8s)
+shamir/sarcoma/mrna+methylation+mirna fold 3: AUROC 0.9410 (35.94s)
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/tabpfn/classifier.py:845: UserWarning: Running 8 estimators covers at most 6144 of 26577 features (max_features_per_estimator=768); the remaining features are never sampled by any ensemble member. Pass n_estimators >= 35 to cover all features.
   self.n_estimators_ = scale_n_estimators_for_feature_coverage(
-shamir/sarcoma/mrna+methylation+mirna fold 4: AUROC 0.9200 (45.67s)
+shamir/sarcoma/mrna+methylation+mirna fold 4: AUROC 0.9200 (22.09s)

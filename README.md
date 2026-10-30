@@ -117,11 +117,10 @@ for m in tabomics-v2.5:n2 tabomics-v2.5:n4 tabomics-v2.5:n1:fp32; do
     python scripts/07_ablations.py --timing --models $m > logs/timing/07_${m//:/_}.log 2>&1; done' &
 ```
 
-**Machines.** The runs of the paper used two identical machines, each with eight NVIDIA A100 80 GB GPUs and the same
-environment (`manifests/software.txt`): the benchmarks (04, 05) and every timing on the first, the timings on its GPU 0
-alone; the ablations (07), the development datasets, 08, 09 and 10 on the second, and the figure of 10 on the first.
-Summed over their folds, the
-benchmark runs took 32 GPU hours for 04 (3 to 13 per model) and about 98 for 05 (1 to 26 per model), and 07 took 27.
+**Machines.** All the runs of the paper used one machine with eight NVIDIA A100 80 GB GPUs and the environment of
+`manifests/software.txt`; every timing ran alone on its GPU 0. Summed over their folds, the benchmark runs took 32 hours
+for 04 (3 to 13 per model) and about 101 for 05 (1 to 27 per model; the random forest and the elastic-net LR run on CPU,
+the other models on GPU), and 07 took 27.
 
 ### 4. Results
 

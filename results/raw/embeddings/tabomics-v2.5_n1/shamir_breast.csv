@@ -1,11 +1,11 @@
 classifier,roc_auc,accuracy,hyperparameter,components,dimension,model,suite,task,fold
-logreg,0.9898061862372382,0.9090909090909091,0.01,,192,tabomics-v2.5:n1,shamir,breast/mrna,0
-knn,0.9611387583763811,0.8977272727272727,11.0,,192,tabomics-v2.5:n1,shamir,breast/mrna,0
+logreg,0.9899108434847526,0.9090909090909091,0.01,,192,tabomics-v2.5:n1,shamir,breast/mrna,0
+knn,0.9608347136815801,0.8977272727272727,11.0,,192,tabomics-v2.5:n1,shamir,breast/mrna,0
 logreg,0.9890563337475861,0.9090909090909091,0.01,,192,tabomics-v2.5:n1,shamir,breast/mrna,1
-knn,0.9905580498186302,0.8977272727272727,11.0,,192,tabomics-v2.5:n1,shamir,breast/mrna,1
+knn,0.9904321917831082,0.8977272727272727,11.0,,192,tabomics-v2.5:n1,shamir,breast/mrna,1
 logreg,0.9922346662483343,0.9659090909090909,0.01,,192,tabomics-v2.5:n1,shamir,breast/mrna,2
-knn,0.9760119999807152,0.9545454545454546,11.0,,192,tabomics-v2.5:n1,shamir,breast/mrna,2
+knn,0.9759596713569578,0.9545454545454546,11.0,,192,tabomics-v2.5:n1,shamir,breast/mrna,2
 logreg,0.9928096804303888,0.9318181818181818,0.01,,192,tabomics-v2.5:n1,shamir,breast/mrna,3
-knn,0.9770138894148779,0.8977272727272727,11.0,,192,tabomics-v2.5:n1,shamir,breast/mrna,3
+knn,0.9768090054898237,0.8977272727272727,11.0,,192,tabomics-v2.5:n1,shamir,breast/mrna,3
 logreg,0.9862525472117534,0.8522727272727273,0.01,,192,tabomics-v2.5:n1,shamir,breast/mrna,4
-knn,0.9676689861350131,0.8522727272727273,11.0,,192,tabomics-v2.5:n1,shamir,breast/mrna,4
+knn,0.967940613004384,0.8522727272727273,11.0,,192,tabomics-v2.5:n1,shamir,breast/mrna,4

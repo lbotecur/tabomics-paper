@@ -407,9 +407,9 @@
   },
   "predictability_auroc": {
     "mrna": 0.9858555470535098,
-    "methylation_as_loaded": 0.47614521387958975,
-    "methylation_permuted_labels": 0.5234746826535492,
-    "methylation_in_mrna_order": 0.47614521387958975,
+    "methylation_as_loaded": 0.4760144949253414,
+    "methylation_permuted_labels": 0.5231958155511527,
+    "methylation_in_mrna_order": 0.4760144949253414,
     "methylation_in_mrna_order_samples": 247
   }
 }

@@ -119,39 +119,48 @@ mlomics/OV/mirna repeat 2: ok 1.511s, 0 MB
 mlomics/OV/mrna+cnv+methylation+mirna repeat 0: ok 19.664s, 0 MB
 mlomics/OV/mrna+cnv+methylation+mirna repeat 1: ok 19.608s, 0 MB
 mlomics/OV/mrna+cnv+methylation+mirna repeat 2: ok 19.621s, 0 MB
-shamir/breast/mrna repeat 0: ok 14.422s, 0 MB
-shamir/breast/mrna repeat 1: ok 14.389s, 0 MB
-shamir/breast/mrna repeat 2: ok 14.357s, 0 MB
-shamir/breast/methylation repeat 0: ok 5.637s, 0 MB
-shamir/breast/methylation repeat 1: ok 5.556s, 0 MB
-shamir/breast/methylation repeat 2: ok 5.559s, 0 MB
-shamir/breast/mirna repeat 0: ok 2.229s, 0 MB
-shamir/breast/mirna repeat 1: ok 2.208s, 0 MB
-shamir/breast/mirna repeat 2: ok 2.216s, 0 MB
-shamir/breast/mrna+methylation+mirna repeat 0: ok 20.56s, 0 MB
-shamir/breast/mrna+methylation+mirna repeat 1: ok 20.488s, 0 MB
-shamir/breast/mrna+methylation+mirna repeat 2: ok 20.418s, 0 MB
-shamir/gbm/mrna repeat 0: ok 5.472s, 0 MB
-shamir/gbm/mrna repeat 1: ok 5.412s, 0 MB
-shamir/gbm/mrna repeat 2: ok 5.373s, 0 MB
-shamir/gbm/methylation repeat 0: ok 3.067s, 0 MB
-shamir/gbm/methylation repeat 1: ok 3.001s, 0 MB
-shamir/gbm/methylation repeat 2: ok 3.0s, 0 MB
-shamir/gbm/mirna repeat 0: ok 1.573s, 0 MB
-shamir/gbm/mirna repeat 1: ok 1.59s, 0 MB
-shamir/gbm/mirna repeat 2: ok 1.747s, 0 MB
-shamir/gbm/mrna+methylation+mirna repeat 0: ok 6.96s, 0 MB
-shamir/gbm/mrna+methylation+mirna repeat 1: ok 6.907s, 0 MB
-shamir/gbm/mrna+methylation+mirna repeat 2: ok 6.903s, 0 MB
-shamir/sarcoma/mrna repeat 0: ok 11.407s, 0 MB
-shamir/sarcoma/mrna repeat 1: ok 11.311s, 0 MB
-shamir/sarcoma/mrna repeat 2: ok 11.355s, 0 MB
-shamir/sarcoma/methylation repeat 0: ok 4.822s, 0 MB
-shamir/sarcoma/methylation repeat 1: ok 4.808s, 0 MB
-shamir/sarcoma/methylation repeat 2: ok 4.807s, 0 MB
-shamir/sarcoma/mirna repeat 0: ok 2.619s, 0 MB
-shamir/sarcoma/mirna repeat 1: ok 2.595s, 0 MB
-shamir/sarcoma/mirna repeat 2: ok 2.586s, 0 MB
-shamir/sarcoma/mrna+methylation+mirna repeat 0: ok 13.842s, 0 MB
-shamir/sarcoma/mrna+methylation+mirna repeat 1: ok 13.812s, 0 MB
-shamir/sarcoma/mrna+methylation+mirna repeat 2: ok 13.805s, 0 MB
+== xgboost
+/mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/xgboost/core.py:751: UserWarning: [23:51:40] WARNING: /__w/xgboost/xgboost/src/common/error_msg.cc:62: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.
+Potential solutions:
+- Use a data structure that matches the device ordinal in the booster.
+- Set the device for booster before call to inplace_predict.
+
+This warning will only be shown once.
+
+  return func(**kwargs)
+shamir/breast/mrna repeat 0: ok 14.273s, 0 MB
+shamir/breast/mrna repeat 1: ok 14.244s, 0 MB
+shamir/breast/mrna repeat 2: ok 14.246s, 0 MB
+shamir/breast/methylation repeat 0: ok 5.455s, 0 MB
+shamir/breast/methylation repeat 1: ok 5.449s, 0 MB
+shamir/breast/methylation repeat 2: ok 5.444s, 0 MB
+shamir/breast/mirna repeat 0: ok 2.081s, 0 MB
+shamir/breast/mirna repeat 1: ok 2.054s, 0 MB
+shamir/breast/mirna repeat 2: ok 2.049s, 0 MB
+shamir/breast/mrna+methylation+mirna repeat 0: ok 20.463s, 0 MB
+shamir/breast/mrna+methylation+mirna repeat 1: ok 20.362s, 0 MB
+shamir/breast/mrna+methylation+mirna repeat 2: ok 20.321s, 0 MB
+shamir/gbm/mrna repeat 0: ok 5.304s, 0 MB
+shamir/gbm/mrna repeat 1: ok 5.25s, 0 MB
+shamir/gbm/mrna repeat 2: ok 5.248s, 0 MB
+shamir/gbm/methylation repeat 0: ok 2.932s, 0 MB
+shamir/gbm/methylation repeat 1: ok 2.908s, 0 MB
+shamir/gbm/methylation repeat 2: ok 2.912s, 0 MB
+shamir/gbm/mirna repeat 0: ok 1.49s, 0 MB
+shamir/gbm/mirna repeat 1: ok 1.462s, 0 MB
+shamir/gbm/mirna repeat 2: ok 1.466s, 0 MB
+shamir/gbm/mrna+methylation+mirna repeat 0: ok 6.905s, 0 MB
+shamir/gbm/mrna+methylation+mirna repeat 1: ok 6.821s, 0 MB
+shamir/gbm/mrna+methylation+mirna repeat 2: ok 6.846s, 0 MB
+shamir/sarcoma/mrna repeat 0: ok 11.256s, 0 MB
+shamir/sarcoma/mrna repeat 1: ok 11.315s, 0 MB
+shamir/sarcoma/mrna repeat 2: ok 11.186s, 0 MB
+shamir/sarcoma/methylation repeat 0: ok 4.723s, 0 MB
+shamir/sarcoma/methylation repeat 1: ok 4.693s, 0 MB
+shamir/sarcoma/methylation repeat 2: ok 4.691s, 0 MB
+shamir/sarcoma/mirna repeat 0: ok 2.569s, 0 MB
+shamir/sarcoma/mirna repeat 1: ok 2.512s, 0 MB
+shamir/sarcoma/mirna repeat 2: ok 2.502s, 0 MB
+shamir/sarcoma/mrna+methylation+mirna repeat 0: ok 13.72s, 0 MB
+shamir/sarcoma/mrna+methylation+mirna repeat 1: ok 13.674s, 0 MB
+shamir/sarcoma/mrna+methylation+mirna repeat 2: ok 13.679s, 0 MB
