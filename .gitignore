@@ -23,3 +23,6 @@ workdir/
 
 # Built by pip install .
 build/
+
+# Settings of each run, written by the runner to refuse resuming with other settings (local only)
+*.settings.json

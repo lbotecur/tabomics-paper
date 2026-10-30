@@ -1,6 +1,6 @@
 classifier,roc_auc,accuracy,hyperparameter,components,dimension,model,suite,task,fold
 logreg,,0.8461538461538461,100.0,,192,pca,mlomics,COAD/mrna,0
-knn,,0.6730769230769231,11.0,,192,pca,mlomics,COAD/mrna,0
+knn,,0.6538461538461539,11.0,,192,pca,mlomics,COAD/mrna,0
 logreg,0.9349987821215444,0.8846153846153846,10000.0,,192,pca,mlomics,COAD/mrna,1
 knn,0.6052094750943856,0.28846153846153844,11.0,,192,pca,mlomics,COAD/mrna,1
 logreg,0.9426704014939309,0.8846153846153846,10000.0,,192,pca,mlomics,COAD/mrna,2

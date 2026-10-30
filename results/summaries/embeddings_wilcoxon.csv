@@ -1,25 +1,25 @@
 model,other,n,wins,losses,median_difference,p,p_holm,significant,classifier,metric
 TabOmics v2.5 ×1,All genes,8,6,2,0.008396163739864237,0.1484375,0.4453125,False,logreg,roc_auc
 TabOmics v2.5 ×1,PCA,8,7,1,0.02261591759074666,0.0234375,0.140625,False,logreg,roc_auc
-TabOmics v2.5 ×1,PLS,8,7,1,0.0227066410421517,0.0234375,0.140625,False,logreg,roc_auc
-TabOmics v2.5 ×1,TabOmics v2.5 ×8,8,2,5,-2.1147976554281023e-05,0.46875,0.46875,False,logreg,roc_auc
-TabOmics v2.5 ×1,TabPFNv2 ×1,8,7,1,0.013792475047448849,0.0390625,0.15625,False,logreg,roc_auc
+TabOmics v2.5 ×1,PLS,8,7,1,0.02274048641598808,0.0234375,0.140625,False,logreg,roc_auc
+TabOmics v2.5 ×1,TabOmics v2.5 ×8,8,3,5,-2.1147976554281023e-05,0.7421875,0.7421875,False,logreg,roc_auc
+TabOmics v2.5 ×1,TabPFNv2 ×1,8,7,1,0.013680179056927977,0.0390625,0.15625,False,logreg,roc_auc
 TabOmics v2.5 ×1,TabPFN-Wide ×1,8,7,1,0.006532992261578552,0.1953125,0.4453125,False,logreg,roc_auc
-TabOmics v2.5 ×1,All genes,8,7,1,0.034582924380365754,0.0390625,0.1953125,False,logreg,accuracy
-TabOmics v2.5 ×1,PCA,8,6,2,0.09032174727270681,0.0390625,0.1953125,False,logreg,accuracy
-TabOmics v2.5 ×1,PLS,8,6,2,0.06976682245338972,0.0390625,0.1953125,False,logreg,accuracy
-TabOmics v2.5 ×1,TabOmics v2.5 ×8,8,3,1,0.0,0.375,0.375,False,logreg,accuracy
+TabOmics v2.5 ×1,All genes,8,7,1,0.034582924380365754,0.0234375,0.1171875,False,logreg,accuracy
+TabOmics v2.5 ×1,PCA,8,6,2,0.09032174727270681,0.0390625,0.15625,False,logreg,accuracy
+TabOmics v2.5 ×1,PLS,8,6,2,0.07158500427157155,0.0390625,0.15625,False,logreg,accuracy
+TabOmics v2.5 ×1,TabOmics v2.5 ×8,8,3,2,0.0,0.8125,0.8125,False,logreg,accuracy
 TabOmics v2.5 ×1,TabPFNv2 ×1,8,8,0,0.04235225388210473,0.0078125,0.046875,True,logreg,accuracy
-TabOmics v2.5 ×1,TabPFN-Wide ×1,8,6,2,0.013446102819237249,0.1484375,0.296875,False,logreg,accuracy
-TabOmics v2.5 ×1,All genes,8,8,0,0.055538694708854974,0.0078125,0.046875,True,knn,roc_auc
-TabOmics v2.5 ×1,PCA,8,8,0,0.2523907324269768,0.0078125,0.046875,True,knn,roc_auc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,8,6,2,0.009718830091964503,0.109375,0.21875,False,logreg,accuracy
+TabOmics v2.5 ×1,All genes,8,8,0,0.05526775591736749,0.0078125,0.046875,True,knn,roc_auc
+TabOmics v2.5 ×1,PCA,8,8,0,0.2521197936354893,0.0078125,0.046875,True,knn,roc_auc
 TabOmics v2.5 ×1,PLS,8,7,1,0.03238919694606096,0.0234375,0.09375,False,knn,roc_auc
-TabOmics v2.5 ×1,TabOmics v2.5 ×8,8,6,1,0.0002747717691502505,0.21875,0.296875,False,knn,roc_auc
-TabOmics v2.5 ×1,TabPFNv2 ×1,8,7,1,0.018000172033159234,0.0546875,0.1640625,False,knn,roc_auc
-TabOmics v2.5 ×1,TabPFN-Wide ×1,8,6,2,0.0018224201911860027,0.1484375,0.296875,False,knn,roc_auc
-TabOmics v2.5 ×1,All genes,8,8,0,0.16885923915774664,0.0078125,0.046875,True,knn,accuracy
-TabOmics v2.5 ×1,PCA,8,8,0,0.33377599183569334,0.0078125,0.046875,True,knn,accuracy
+TabOmics v2.5 ×1,TabOmics v2.5 ×8,8,5,2,0.0001850252227029725,0.21875,0.296875,False,knn,roc_auc
+TabOmics v2.5 ×1,TabPFNv2 ×1,8,7,1,0.018768294761248694,0.0546875,0.1640625,False,knn,roc_auc
+TabOmics v2.5 ×1,TabPFN-Wide ×1,8,6,2,0.0015425212841207459,0.1484375,0.296875,False,knn,roc_auc
+TabOmics v2.5 ×1,All genes,8,8,0,0.16515553545404293,0.0078125,0.046875,True,knn,accuracy
+TabOmics v2.5 ×1,PCA,8,8,0,0.33569906875877026,0.0078125,0.046875,True,knn,accuracy
 TabOmics v2.5 ×1,PLS,8,8,0,0.05773330061709586,0.0078125,0.046875,True,knn,accuracy
-TabOmics v2.5 ×1,TabOmics v2.5 ×8,8,3,2,0.0,0.8125,0.8125,False,knn,accuracy
-TabOmics v2.5 ×1,TabPFNv2 ×1,8,6,2,0.04388976833006686,0.0390625,0.1171875,False,knn,accuracy
-TabOmics v2.5 ×1,TabPFN-Wide ×1,8,5,2,0.007836197798884392,0.109375,0.21875,False,knn,accuracy
+TabOmics v2.5 ×1,TabOmics v2.5 ×8,8,2,2,0.0,1.0,1.0,False,knn,accuracy
+TabOmics v2.5 ×1,TabPFNv2 ×1,8,6,2,0.04502613196643046,0.0390625,0.1171875,False,knn,accuracy
+TabOmics v2.5 ×1,TabPFN-Wide ×1,8,5,2,0.0047390572390573205,0.109375,0.21875,False,knn,accuracy

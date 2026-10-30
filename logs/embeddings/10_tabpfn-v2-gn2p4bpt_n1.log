@@ -41,27 +41,27 @@ tabpfn-v2-gn2p4bpt:n1 | mlomics/OV/mrna fold 2 | logreg AUROC 0.983 | knn AUROC 
 tabpfn-v2-gn2p4bpt:n1 | mlomics/OV/mrna fold 3 | logreg AUROC 0.959 | knn AUROC 0.936
 tabpfn-v2-gn2p4bpt:n1 | mlomics/OV/mrna fold 4 | logreg AUROC 0.972 | knn AUROC 0.956
 tabpfn-v2-gn2p4bpt:n1 | shamir/breast/mrna fold 0 | logreg AUROC 0.981 | knn AUROC 0.942
-tabpfn-v2-gn2p4bpt:n1 | shamir/breast/mrna fold 1 | logreg AUROC 0.989 | knn AUROC 0.981
-tabpfn-v2-gn2p4bpt:n1 | shamir/breast/mrna fold 2 | logreg AUROC 0.986 | knn AUROC 0.963
-tabpfn-v2-gn2p4bpt:n1 | shamir/breast/mrna fold 3 | logreg AUROC 0.983 | knn AUROC 0.967
+tabpfn-v2-gn2p4bpt:n1 | shamir/breast/mrna fold 1 | logreg AUROC 0.989 | knn AUROC 0.976
+tabpfn-v2-gn2p4bpt:n1 | shamir/breast/mrna fold 2 | logreg AUROC 0.986 | knn AUROC 0.962
+tabpfn-v2-gn2p4bpt:n1 | shamir/breast/mrna fold 3 | logreg AUROC 0.983 | knn AUROC 0.966
 tabpfn-v2-gn2p4bpt:n1 | shamir/breast/mrna fold 4 | logreg AUROC 0.980 | knn AUROC 0.972
-tabpfn-v2-gn2p4bpt:n1 | shamir/gbm/mrna fold 0 | logreg AUROC 0.925 | knn AUROC 0.908
-tabpfn-v2-gn2p4bpt:n1 | shamir/gbm/mrna fold 1 | logreg AUROC 0.910 | knn AUROC 0.876
-tabpfn-v2-gn2p4bpt:n1 | shamir/gbm/mrna fold 2 | logreg AUROC 0.965 | knn AUROC 0.943
-tabpfn-v2-gn2p4bpt:n1 | shamir/gbm/mrna fold 3 | logreg AUROC 0.946 | knn AUROC 0.918
-tabpfn-v2-gn2p4bpt:n1 | shamir/gbm/mrna fold 4 | logreg AUROC 0.948 | knn AUROC 0.923
+tabpfn-v2-gn2p4bpt:n1 | shamir/gbm/mrna fold 0 | logreg AUROC 0.925 | knn AUROC 0.912
+tabpfn-v2-gn2p4bpt:n1 | shamir/gbm/mrna fold 1 | logreg AUROC 0.911 | knn AUROC 0.875
+tabpfn-v2-gn2p4bpt:n1 | shamir/gbm/mrna fold 2 | logreg AUROC 0.965 | knn AUROC 0.939
+tabpfn-v2-gn2p4bpt:n1 | shamir/gbm/mrna fold 3 | logreg AUROC 0.944 | knn AUROC 0.918
+tabpfn-v2-gn2p4bpt:n1 | shamir/gbm/mrna fold 4 | logreg AUROC 0.949 | knn AUROC 0.922
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 5 members, which is less than n_splits=10.
   warnings.warn(
-tabpfn-v2-gn2p4bpt:n1 | shamir/sarcoma/mrna fold 0 | logreg AUROC 0.931 | knn AUROC 0.910
+tabpfn-v2-gn2p4bpt:n1 | shamir/sarcoma/mrna fold 0 | logreg AUROC 0.931 | knn AUROC 0.912
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 5 members, which is less than n_splits=10.
   warnings.warn(
-tabpfn-v2-gn2p4bpt:n1 | shamir/sarcoma/mrna fold 1 | logreg AUROC 0.933 | knn AUROC 0.912
+tabpfn-v2-gn2p4bpt:n1 | shamir/sarcoma/mrna fold 1 | logreg AUROC 0.931 | knn AUROC 0.914
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 4 members, which is less than n_splits=10.
   warnings.warn(
-tabpfn-v2-gn2p4bpt:n1 | shamir/sarcoma/mrna fold 2 | logreg AUROC 0.887 | knn AUROC 0.863
+tabpfn-v2-gn2p4bpt:n1 | shamir/sarcoma/mrna fold 2 | logreg AUROC 0.888 | knn AUROC 0.866
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 5 members, which is less than n_splits=10.
   warnings.warn(
-tabpfn-v2-gn2p4bpt:n1 | shamir/sarcoma/mrna fold 3 | logreg AUROC 0.936 | knn AUROC 0.938
+tabpfn-v2-gn2p4bpt:n1 | shamir/sarcoma/mrna fold 3 | logreg AUROC 0.936 | knn AUROC 0.942
 /mnt/beegfs/lbote/envs/tabomics-paper-env/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 5 members, which is less than n_splits=10.
   warnings.warn(
-tabpfn-v2-gn2p4bpt:n1 | shamir/sarcoma/mrna fold 4 | logreg AUROC 0.942 | knn AUROC 0.875
+tabpfn-v2-gn2p4bpt:n1 | shamir/sarcoma/mrna fold 4 | logreg AUROC 0.942 | knn AUROC 0.881
