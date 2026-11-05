@@ -39,7 +39,7 @@ results/summaries/ and figures/:
 - importance_omics_*.csv (script 09): the AUROC of the top-k genes per task (the mean over folds, random genes
   averaged over draws first) and over tasks, with TabOmics v2.5 x1 against each other method, Wilcoxon paired by task,
   Holm over the methods; stability, and the PAM50 genes found, per task.
-- figures/importance_synthetic.pdf: the recovery AUROC and the test AUROC on the synthetic tables against their
+- figures/importance_synthetic.pdf: the recovery AUROC and the predictive AUROC on the synthetic tables against their
   width, mean and standard error over the 15 tables of each width.
 - tables/importance_omics.tex: the gene table of the paper: the AUROC of the top-k genes over the tasks, the
   stability of the rankings, and the PAM50 genes among the top 10 of the breast tasks.
@@ -385,9 +385,9 @@ IMPORTANCE_STYLES = {  # color and line of each method in the figure of the synt
 
 
 def synthetic_figure(results: pd.DataFrame, path) -> None:
-    """Recovery AUROC and test AUROC against the number of features: mean and standard error over the tables."""
+    """Recovery AUROC and predictive AUROC against the number of features: mean and standard error over the tables."""
     fig, axes = plt.subplots(1, 2, figsize=(9, 3.2), sharey=True)
-    panels = (("recovery_auroc", "Feature recovery"), ("test_auroc", "Test rows"))
+    panels = (("recovery_auroc", "Recovery AUROC"), ("test_auroc", "Predictive AUROC"))
     for ax, (metric, title) in zip(axes, panels, strict=True):
         for method, (color, line) in IMPORTANCE_STYLES.items():
             values = results[results.method == method].groupby("features")[metric]
