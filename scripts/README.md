@@ -30,29 +30,6 @@ python scripts/06_statistics.py            # last: summaries, tests, tables and 
 The computational cost is a separate run, `--timing` in 04, 05 and 07, on a machine that runs nothing else; the main
 README gives the loop used for the paper.
 
-## Follow-up on coarse labels
-
-`11_coarse_luminal_embeddings.py` tests whether embeddings from frozen TabOmics v2.5 (one member), conditioned on
-luminal versus non-luminal status, recover the finer LumA/LumB distinction in Shamir breast mRNA.
-
-```bash
-python scripts/11_coarse_luminal_embeddings.py --device cuda:0
-```
-
-Set `TABOMICS_DATA` as for the paper or pass `--data-root /path/to/data` (the directory containing `Shamir/`). For each
-of the five paper folds, ten seeds draw half of the training patients as support, stratified by the binary label.
-LumA and LumB form the luminal class. Basal, Her2 and Normal form the non-luminal class. The original PAM50 labels
-define the existing outer splits and score the held-out neighborhoods. The model, support sampling and baselines
-use the binary labels. The score is the mean fraction of same-subtype patients among the ten closest *luminal*
-query patients, averaged equally over LumA and LumB. Distances are Euclidean, with the query patient excluded.
-
-The comparisons are expression standardized on support, five-component PLS fitted to the binary support labels,
-the predicted luminal probability, and TabOmics embeddings from the same support with the binary labels permuted.
-Distances use the returned embedding coordinates and PLS scores. The output is
-`results/followups/coarse_luminal_embeddings.csv` (one row per fold, seed and method). The console shows paired
-differences and variation across support draws, which reuse query patients. For a quick run, use
-`--seeds 0 --output /tmp/coarse_luminal_smoke.csv`.
-
 Nothing these scripts write into the repository contains data or sample identifiers: only file names, counts, row
 indices, summary statistics, hashes, tables and figures. The only per-sample output, the representations of the
 embedding figure, stays in a cache outside the repository (`10_embeddings.py --figure`).
