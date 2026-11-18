@@ -55,6 +55,12 @@ def _load_omic(path: Path) -> pd.DataFrame:
 
 def load_task(name: str, data_root: str | Path) -> tuple[np.ndarray, np.ndarray, list[int]]:
     """Features (float32, patients sorted by sample ID), labels 0..C-1, and the categorical columns (none)."""
+    X, labels = load_labeled_task(name, data_root)
+    return X, LabelEncoder().fit_transform(labels), []
+
+
+def load_labeled_task(name: str, data_root: str | Path) -> tuple[np.ndarray, np.ndarray]:
+    """Load the same patients and features as load_task, with the original subtype names."""
     cancer, _, omics = name.partition("/")
     if cancer not in LABEL_COLUMNS:
         raise ValueError(f"{cancer} is not one of {tuple(LABEL_COLUMNS)}")
@@ -67,7 +73,7 @@ def load_task(name: str, data_root: str | Path) -> tuple[np.ndarray, np.ndarray,
     counts = labels.loc[samples].value_counts()
     samples = [s for s in samples if counts[labels[s]] >= N_SPLITS]  # a class must reach every test fold
     X = pd.concat([data[omic].loc[samples] for omic in (omics or "mrna").split("+")], axis=1)
-    return X.to_numpy(dtype=np.float32), LabelEncoder().fit_transform(labels.loc[samples].to_numpy()), []
+    return X.to_numpy(dtype=np.float32), labels.loc[samples].to_numpy()
 
 
 def folds(y: np.ndarray) -> list[tuple[np.ndarray, np.ndarray]]:
